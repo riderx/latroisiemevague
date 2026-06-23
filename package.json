@@ -1,0 +1,24 @@
+{
+  "name": "latroisiemevague",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "crawl": "bun scripts/crawl-wordpress.mjs",
+    "build": "astro build",
+    "check": "astro check",
+    "preview": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "astro": "^6.3.1",
+    "cheerio": "^1.1.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.101.0"
+  }
+}
