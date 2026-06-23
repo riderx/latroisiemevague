@@ -1,29 +1,23 @@
 ---
-import site from '../data/site.json'
+import { readFile } from 'node:fs/promises'
+import path from 'node:path'
 import '../styles/site.css'
 
 type Page = {
+  id: string
   path: string
   title: string
   description: string
   bodyClass: string
-  headHtml: string
-  bodyHtml: string
-}
-
-export function getStaticPaths() {
-  return (site.pages as Page[]).map((page) => {
-    const slug = page.path === '/' ? undefined : page.path.replace(/^\/|\/$/g, '')
-
-    return {
-      params: { slug },
-      props: { page },
-    }
-  })
 }
 
 const { page } = Astro.props as { page: Page }
-const canonical = new URL(page.path, site.origin).toString()
+const canonical = new URL(page.path, 'https://latroisiemevague.com').toString()
+const contentDir = path.join(process.cwd(), 'page-content/pages', page.id)
+const [headHtml, bodyHtml] = await Promise.all([
+  readFile(path.join(contentDir, 'head.html'), 'utf8'),
+  readFile(path.join(contentDir, 'body.html'), 'utf8'),
+])
 ---
 
 <!doctype html>
@@ -35,10 +29,10 @@ const canonical = new URL(page.path, site.origin).toString()
     <title>{page.title}</title>
     {page.description && <meta name="description" content={page.description} />}
     <link rel="canonical" href={canonical} />
-    <Fragment set:html={page.headHtml} />
+    <Fragment set:html={headHtml} />
   </head>
   <body class={page.bodyClass}>
-    <Fragment set:html={page.bodyHtml} />
+    <Fragment set:html={bodyHtml} />
     <script is:inline>
       (() => {
         const closeMenus = () => {

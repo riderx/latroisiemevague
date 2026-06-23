@@ -4,5 +4,6 @@
 /.astro/
 /.wrangler/
 /output/
+/.wordpress-import/
 codedb.snapshot
 *.log

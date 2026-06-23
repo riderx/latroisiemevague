@@ -1,8 +1,15 @@
-import site from '../data/site.json'
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
+
+type SitemapManifest = {
+  origin: string
+  pages: Array<{ path: string }>
+}
 
 export function GET() {
-  const urls = site.pages.map((page) => {
-    const loc = new URL(page.path, site.origin).toString()
+  const manifest = JSON.parse(readFileSync(path.join(process.cwd(), 'page-content/pages/manifest.json'), 'utf8')) as SitemapManifest
+  const urls = manifest.pages.map((page) => {
+    const loc = new URL(page.path, manifest.origin).toString()
 
     return `<url><loc>${loc}</loc></url>`
   })

@@ -1,12 +1,13 @@
 import * as cheerio from 'cheerio'
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { spawnSync } from 'node:child_process'
+import { mkdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const origin = 'https://latroisiemevague.com'
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const publicDir = path.join(rootDir, 'public')
-const dataFile = path.join(rootDir, 'src/data/site.json')
+const dataFile = path.join(rootDir, '.wordpress-import/site.json')
 const downloadedAssets = new Set()
 
 async function fetchResponse(url) {
@@ -203,9 +204,9 @@ async function extractPage(pageUrl) {
     bodyHtml: $('body').html() || '',
   }
 }
-
 async function main() {
   await mkdir(publicDir, { recursive: true })
+  await mkdir(path.dirname(dataFile), { recursive: true })
 
   const urls = (await sitemapUrls()).map((value) => new URL(value))
   const pages = []
@@ -215,13 +216,22 @@ async function main() {
     pages.push(await extractPage(url))
   }
 
-  const existing = JSON.parse(await readFile(dataFile, 'utf8'))
-  existing.generatedAt = new Date().toISOString()
-  existing.origin = origin
-  existing.pages = pages
+  const exportData = {
+    generatedAt: new Date().toISOString(),
+    origin,
+    pages,
+  }
 
-  await writeFile(dataFile, `${JSON.stringify(existing, null, 2)}\n`)
-  console.log(`Wrote ${pages.length} pages and ${downloadedAssets.size} assets`)
+  await writeFile(dataFile, `${JSON.stringify(exportData, null, 2)}\n`)
+  console.log(`Wrote temporary WordPress export with ${pages.length} pages and ${downloadedAssets.size} assets`)
+
+  const materialize = spawnSync(process.execPath, [path.join(rootDir, 'scripts/materialize-pages.mjs'), dataFile], {
+    stdio: 'inherit',
+  })
+
+  if (materialize.status !== 0) {
+    throw new Error(`Failed to materialize Astro pages: ${materialize.status}`)
+  }
 }
 
 main().catch((error) => {

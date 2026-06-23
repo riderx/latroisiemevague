@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-06-23T14:40:17.712Z",
+  "origin": "https://latroisiemevague.com",
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "title": "La Troisième Vague"
+    },
+    {
+      "id": "a-propos",
+      "path": "/a-propos/",
+      "title": "À propos - La troisième vague"
+    },
+    {
+      "id": "a-quoi-vous-attendre-lors-de-votre-prochain-voyage-au-lsd",
+      "path": "/a-quoi-vous-attendre-lors-de-votre-prochain-voyage-au-lsd/",
+      "title": "À quoi vous attendre lors de votre prochain voyage au LSD - La troisième vague"
+    },
+    {
+      "id": "author-julien",
+      "path": "/author/julien/",
+      "title": "Julien Coulaud, auteur sur La troisième vague"
+    },
+    {
+      "id": "ayahuasca-lancien-antidepresseur",
+      "path": "/ayahuasca-lancien-antidepresseur/",
+      "title": "Ayahuasca, l'ancien antidépresseur - La troisième vague"
+    },
+    {
+      "id": "blog",
+      "path": "/blog/",
+      "title": "Blog - La troisième vague"
+    },
+    {
+      "id": "category-actualites",
+      "path": "/category/actualites/",
+      "title": "Archives des Actualités - La troisième vague"
+    },
+    {
+      "id": "category-guides",
+      "path": "/category/guides/",
+      "title": "Archives des Guides - La troisième vague"
+    },
+    {
+      "id": "category-information",
+      "path": "/category/information/",
+      "title": "Archives des Information - La troisième vague"
+    },
+    {
+      "id": "comment-faire-son-propre-ayahuasca-chez-soit",
+      "path": "/comment-faire-son-propre-ayahuasca-chez-soit/",
+      "title": "Comment faire son propre Ayahuasca chez soit - La troisième vague"
+    },
+    {
+      "id": "comment-les-psychedeliques-liberent-les-mecanismes-de-controle-de-votre-cerveau",
+      "path": "/comment-les-psychedeliques-liberent-les-mecanismes-de-controle-de-votre-cerveau/",
+      "title": "Comment les psychédéliques libèrent les mécanismes de contrôle de votre cerveau - La troisième vague"
+    },
+    {
+      "id": "contact",
+      "path": "/contact/",
+      "title": "Contact - La troisième vague"
+    },
+    {
+      "id": "jet-popup-popup",
+      "path": "/jet-popup/popup/",
+      "title": "Popup - La troisième vague"
+    },
+    {
+      "id": "johns-hopkins-ouvre-le-plus-grand-centre-de-recherche-psychedelique-du-monde",
+      "path": "/johns-hopkins-ouvre-le-plus-grand-centre-de-recherche-psychedelique-du-monde/",
+      "title": "Johns Hopkins ouvre le plus grand centre de recherche psychédélique du monde - La troisième vague"
+    },
+    {
+      "id": "la-recherche-clinique-prouve-que-le-microdosage-du-lsd-nest-pas-un-placebo",
+      "path": "/la-recherche-clinique-prouve-que-le-microdosage-du-lsd-nest-pas-un-placebo/",
+      "title": "La recherche clinique prouve que le microdosage du LSD n'est pas un placebo - La troisième vague"
+    },
+    {
+      "id": "le-microdosage-des-psychedeliques-est-lie-a-une-meilleure-humeur-et-a-un-meilleur-objectif-dans-deux-nouveaux-documents-de-recherche",
+      "path": "/le-microdosage-des-psychedeliques-est-lie-a-une-meilleure-humeur-et-a-un-meilleur-objectif-dans-deux-nouveaux-documents-de-recherche/",
+      "title": "Le microdosage des psychédéliques est lié à une meilleure humeur et à un meilleur objectif dans deux nouveaux documents de recherche - La troisième vague"
+    },
+    {
+      "id": "les-psychedeliques-peuvent-ils-induire-des-etats-de-flow",
+      "path": "/les-psychedeliques-peuvent-ils-induire-des-etats-de-flow/",
+      "title": "Les psychédéliques peuvent-ils induire des états de flow ? - La troisième vague"
+    },
+    {
+      "id": "lsd-contexte-set-setting",
+      "path": "/lsd-contexte-set-setting/",
+      "title": "LSD / Contexte (set & setting) - La troisième vague"
+    },
+    {
+      "id": "microdosing-volumetrique-avec-le-lsd",
+      "path": "/microdosing-volumetrique-avec-le-lsd/",
+      "title": "Microdosing volumétrique avec le LSD - La troisième vague"
+    },
+    {
+      "id": "microdosing",
+      "path": "/microdosing/",
+      "title": "Microdosing - La troisième vague"
+    },
+    {
+      "id": "microdosing-1p-lsd",
+      "path": "/microdosing/1p-lsd/",
+      "title": "1P-LSD - La troisième vague"
+    },
+    {
+      "id": "microdosing-champignons-psilocybin",
+      "path": "/microdosing/champignons-psilocybin/",
+      "title": "Champignons Psilocybin - La troisième vague"
+    },
+    {
+      "id": "microdosing-dmt",
+      "path": "/microdosing/dmt/",
+      "title": "DMT - La troisième vague"
+    },
+    {
+      "id": "microdosing-lsd",
+      "path": "/microdosing/lsd/",
+      "title": "LSD - La troisième vague"
+    },
+    {
+      "id": "oups-404",
+      "path": "/oups-404/",
+      "title": "404 - La troisième vague"
+    },
+    {
+      "id": "portfolio",
+      "path": "/portfolio/",
+      "title": "Portfolios Archive - La troisième vague"
+    },
+    {
+      "id": "pouvez-vous-traiter-la-depression-avec-le-microdosage",
+      "path": "/pouvez-vous-traiter-la-depression-avec-le-microdosage/",
+      "title": "Pouvez-vous traiter la dépression avec le microdosage ? - La troisième vague"
+    },
+    {
+      "id": "quelle-est-la-legalite-de-layahuasca-dans-votre-pays",
+      "path": "/quelle-est-la-legalite-de-layahuasca-dans-votre-pays/",
+      "title": "Quelle est la légalité de l'ayahuasca dans votre pays ? - La troisième vague"
+    },
+    {
+      "id": "risque-cardiaque-potentiel",
+      "path": "/risque-cardiaque-potentiel/",
+      "title": "Risque cardiaque potentiel - La troisième vague"
+    },
+    {
+      "id": "services",
+      "path": "/services/",
+      "title": "Services - La troisième vague"
+    },
+    {
+      "id": "substances",
+      "path": "/substances/",
+      "title": "Substances - La troisième vague"
+    },
+    {
+      "id": "substances-ayahuasca",
+      "path": "/substances/ayahuasca/",
+      "title": "Ayahuasca - La troisième vague"
+    },
+    {
+      "id": "substances-champignons-psilocybin",
+      "path": "/substances/champignons-psilocybin/",
+      "title": "Champignons Psilocybin - La troisième vague"
+    },
+    {
+      "id": "substances-dmt",
+      "path": "/substances/dmt/",
+      "title": "DMT - La troisième vague"
+    },
+    {
+      "id": "substances-lsd",
+      "path": "/substances/lsd/",
+      "title": "LSD - La troisième vague"
+    },
+    {
+      "id": "synthese-de-la-recherche-psychedelique-sur-la-dependance",
+      "path": "/synthese-de-la-recherche-psychedelique-sur-la-dependance/",
+      "title": "Synthèse de la recherche psychédélique sur la dépendance - La troisième vague"
+    },
+    {
+      "id": "trip-au-dmt-a-quoi-vous-attendre",
+      "path": "/trip-au-dmt-a-quoi-vous-attendre/",
+      "title": "Trip au DMT : À quoi vous attendre ? - La troisième vague"
+    }
+  ]
+}
