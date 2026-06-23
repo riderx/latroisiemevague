@@ -1,0 +1,73 @@
+---
+import site from '../data/site.json'
+import '../styles/site.css'
+
+type Page = {
+  path: string
+  title: string
+  description: string
+  bodyClass: string
+  headHtml: string
+  bodyHtml: string
+}
+
+export function getStaticPaths() {
+  return (site.pages as Page[]).map((page) => {
+    const slug = page.path === '/' ? undefined : page.path.replace(/^\/|\/$/g, '')
+
+    return {
+      params: { slug },
+      props: { page },
+    }
+  })
+}
+
+const { page } = Astro.props as { page: Page }
+const canonical = new URL(page.path, site.origin).toString()
+---
+
+<!doctype html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <title>{page.title}</title>
+    {page.description && <meta name="description" content={page.description} />}
+    <link rel="canonical" href={canonical} />
+    <Fragment set:html={page.headHtml} />
+  </head>
+  <body class={page.bodyClass}>
+    <Fragment set:html={page.bodyHtml} />
+    <script is:inline>
+      (() => {
+        const closeMenus = () => {
+          document.querySelectorAll('.raven-nav-menu-mobile').forEach((menu) => {
+            menu.classList.remove('ltv-menu-open')
+          })
+        }
+
+        document.addEventListener('click', (event) => {
+          const target = event.target
+          if (!(target instanceof Element)) return
+
+          if (target.closest('.raven-nav-menu-toggle, .raven-nav-menu-toggle-button')) {
+            event.preventDefault()
+            document.querySelectorAll('.raven-nav-menu-mobile').forEach((menu) => {
+              menu.classList.add('ltv-menu-open')
+            })
+          }
+
+          if (target.closest('.raven-nav-menu-close-button')) {
+            event.preventDefault()
+            closeMenus()
+          }
+        })
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') closeMenus()
+        })
+      })()
+    </script>
+  </body>
+</html>
