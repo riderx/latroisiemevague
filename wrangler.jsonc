@@ -1,21 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "latroisiemevague",
-  "account_id": "9ee3d7479a3c359681e3fab2c8cb22c0",
-  "compatibility_date": "2026-06-23",
-  "assets": {
-    "directory": "./dist",
-    "not_found_handling": "none"
-  },
-  "workers_dev": false,
-  "routes": [
-    {
-      "pattern": "latroisiemevague.com",
-      "custom_domain": true
-    },
-    {
-      "pattern": "www.latroisiemevague.com",
-      "custom_domain": true
-    }
-  ]
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-06-23"
 }

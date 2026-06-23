@@ -9,8 +9,8 @@
     "crawl": "bun scripts/crawl-wordpress.mjs",
     "build": "astro build",
     "check": "astro check",
-    "preview": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "preview": "wrangler pages dev dist",
+    "deploy": "wrangler pages deploy dist --project-name latroisiemevague --branch main"
   },
   "dependencies": {
     "astro": "^6.3.1",
