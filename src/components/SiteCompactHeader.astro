@@ -1,0 +1,101 @@
+---
+const { currentPath = '/' } = Astro.props as { currentPath?: string }
+
+const nav = [
+  { label: 'Accueil', href: '/' },
+  {
+    label: 'Substances',
+    href: '/substances/',
+    children: [
+      { label: 'LSD', href: '/substances/lsd/' },
+      { label: 'DMT', href: '/substances/dmt/' },
+      { label: 'Champignons Psilocybin', href: '/substances/champignons-psilocybin/' },
+      { label: 'Ayahuasca', href: '/substances/ayahuasca/' },
+    ],
+  },
+  {
+    label: 'Microdosing',
+    href: '/microdosing/',
+    children: [
+      { label: 'LSD', href: '/microdosing/lsd/' },
+      { label: 'DMT', href: '/microdosing/dmt/' },
+      { label: '1P-LSD', href: '/microdosing/1p-lsd/' },
+      { label: 'Champignons Psilocybin', href: '/microdosing/champignons-psilocybin/' },
+    ],
+  },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'À propos', href: '/a-propos/' },
+  { label: 'Contact', href: '/contact/' },
+]
+
+const isActive = (href: string) => href === '/' ? currentPath === '/' : currentPath.startsWith(href)
+---
+
+<header class="border-b border-[#e5e8ee] bg-white">
+  <div class="mx-auto flex h-[143px] max-w-[1100px] items-start justify-between px-5 pt-[33px] lg:h-[124px] lg:items-center lg:px-0 lg:pt-0">
+    <a href="/" aria-label="Homepage" class="shrink-0">
+      <img src="/assets/uploads/2020/05/logo-1.png" alt="" class="h-[60px] w-[60px] object-contain" />
+    </a>
+
+    <div class="hidden items-center gap-6 lg:flex">
+      <nav class="flex items-center gap-5" aria-label="Navigation principale">
+        {nav.map((item) => (
+          <div class="group relative">
+            <a
+              href={item.href}
+              class:list={[
+                'flex items-center gap-1.5 py-4 text-[16px] leading-none text-[#777] transition-colors hover:text-[#111] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5665ff]',
+                isActive(item.href) ? 'font-bold text-[#111]' : '',
+              ]}
+            >
+              <span>{item.label}</span>
+              {item.children && <span class="text-[13px] leading-none">⌄</span>}
+            </a>
+            {item.children && (
+              <div class="invisible absolute left-0 top-full z-50 w-[228px] bg-white py-0 opacity-0 ring-1 ring-[#d8d8d8] group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                {item.children.map((child) => (
+                  <a
+                    href={child.href}
+                    class:list={[
+                      'block px-6 py-[9px] text-[16px] leading-[1.25] text-[#20242a] hover:bg-[#0788ff] hover:text-white',
+                      isActive(child.href) ? 'bg-[#0788ff] text-white' : '',
+                    ]}
+                  >
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+
+      <form action="/" class="flex h-[39px] w-[150px] items-center rounded-[3px] border border-[#bfc6d0] bg-white px-3 text-[#6e7480]">
+        <label class="sr-only" for="site-search">Search</label>
+        <input id="site-search" type="search" name="s" placeholder="Search" class="min-w-0 flex-1 bg-transparent text-[16px] leading-none outline-none placeholder:text-[#6e7480]" />
+        <button type="submit" aria-label="Search" class="ml-2 flex h-5 w-5 items-center justify-center text-[#6e7480]">
+          <svg viewBox="0 0 20 20" aria-hidden="true" class="h-5 w-5 fill-current"><path d="M8.5 3a5.5 5.5 0 0 1 4.38 8.83l3.15 3.14-1.06 1.06-3.14-3.15A5.5 5.5 0 1 1 8.5 3Zm0 1.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" /></svg>
+        </button>
+      </form>
+    </div>
+
+    <details class="relative lg:hidden">
+      <summary class="flex h-10 w-14 cursor-pointer list-none items-center justify-center rounded-[4px] border border-[#ddd] bg-white text-[#777] [&::-webkit-details-marker]:hidden">
+        <span class="sr-only">Menu</span>
+        <span class="relative h-0.5 w-5 bg-current before:absolute before:left-0 before:top-[-7px] before:h-0.5 before:w-5 before:bg-current before:content-[''] after:absolute after:left-0 after:top-[7px] after:h-0.5 after:w-5 after:bg-current after:content-['']"></span>
+      </summary>
+      <div class="absolute right-0 z-20 mt-3 w-[290px] bg-white p-5 shadow-[0_20px_45px_rgba(47,57,95,0.16)] ring-1 ring-[#e8ebff]">
+        {nav.map((item) => (
+          <div class="border-b border-[#eef1ff] last:border-0">
+            <a href={item.href} class="block py-3 text-base text-[#006cff] hover:text-[#4f5cff]">{item.label}</a>
+            {item.children && (
+              <div class="pb-3 pl-4">
+                {item.children.map((child) => <a href={child.href} class="block py-2 text-sm text-[#30395f]/75 hover:text-[#006cff]">{child.label}</a>)}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </details>
+  </div>
+</header>

@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css'
+import SiteCompactHeader from '../components/SiteCompactHeader.astro'
 import SiteFooter from '../components/SiteFooter.astro'
-import SiteHeader from '../components/SiteHeader.astro'
 
 type Page = {
   id: string
@@ -12,7 +12,24 @@ type Page = {
 
 const { page, content } = Astro.props as { page: Page; content: string }
 const canonical = new URL(page.path, 'https://latroisiemevague.com').toString()
-const eyebrow = page.path.split('/').filter(Boolean).slice(0, 1).join(' / ')
+
+const stripTags = (value: string) => value.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
+let body = content.trim()
+let pageHeading = page.title.split(' - ')[0]
+let breadcrumbs = ''
+
+const headingMatch = body.match(/^<h1[^>]*>([\s\S]*?)<\/h1>\s*/i)
+if (headingMatch) {
+  pageHeading = stripTags(headingMatch[1]) || pageHeading
+  body = body.slice(headingMatch[0].length).trimStart()
+}
+
+const breadcrumbMatch = body.match(/^<ol[^>]*>([\s\S]*?)<\/ol>\s*/i)
+if (breadcrumbMatch) {
+  breadcrumbs = breadcrumbMatch[0]
+  body = body.slice(breadcrumbMatch[0].length).trimStart()
+}
+body = body.replace(/<img([^>]*?)\sloading="lazy"([^>]*)>/i, '<img$1 loading="eager"$2>')
 ---
 
 <!doctype html>
@@ -27,25 +44,20 @@ const eyebrow = page.path.split('/').filter(Boolean).slice(0, 1).join(' / ')
     <link rel="icon" href="/assets/uploads/2020/08/cropped-favicon-32x32.png" sizes="32x32" />
   </head>
   <body class="bg-white font-sans text-[#11183d] antialiased">
-    <SiteHeader currentPath={page.path} />
+    <SiteCompactHeader currentPath={page.path} />
 
-    <main class="overflow-hidden">
-      <section class="relative bg-white px-7 pb-20 pt-[250px] md:px-0 md:pb-24 md:pt-[250px]">
-        <div class="pointer-events-none absolute right-[-180px] top-[-220px] h-[500px] w-[900px] rounded-bl-[55%] rounded-br-[30%] rounded-tl-[35%] bg-[#f0f2ff]"></div>
-        <div class="pointer-events-none absolute right-[170px] top-[138px] hidden h-[225px] w-[360px] rotate-[18deg] rounded-[50%] bg-[#f0f2ff] md:block"></div>
-        <div class="relative mx-auto max-w-[960px] text-center">
-          {eyebrow && <p class="mb-6 text-[15px] font-bold uppercase text-[#56c8ff]">{eyebrow}</p>}
-          <h1 class="text-pretty text-[38px] font-extrabold leading-[1.25] text-[#30395f] md:text-[58px]">{page.title}</h1>
-          {page.description && <p class="mx-auto mt-7 max-w-[760px] text-[18px] font-medium leading-[1.65] text-[#11183d] md:text-[21px]">{page.description}</p>}
+    <main>
+      <section class="bg-[#f6f7f9]">
+        <div class="mx-auto max-w-[1100px] px-5 pb-[7px] pt-[21px] lg:px-0">
+          <h1 class="text-[42px] font-bold leading-[1.2] tracking-[0] text-[#252a31]">{pageHeading}</h1>
+          {breadcrumbs && <nav class="ltv-breadcrumb mt-3" aria-label="Breadcrumb" set:html={breadcrumbs} />}
         </div>
       </section>
 
-      <section class="relative px-7 pb-28 md:px-0">
-        <div class="pointer-events-none absolute left-[-115px] top-4 h-[250px] w-[250px] rounded-full border border-[#dfe3ff]">
-          <div class="absolute inset-9 rounded-full border border-[#ffd9bd]"></div>
-          <div class="absolute inset-[72px] rounded-full border border-[#cff5c8]"></div>
+      <section class="px-5 pb-20 pt-[106px] md:pt-[220px] md:pb-24 lg:px-0">
+        <div class="mx-auto max-w-[1100px]">
+          <article class="prose ltv-content ltv-guide-content max-w-[760px] lg:ml-[26px]" set:html={body} />
         </div>
-        <article class="prose ltv-content relative mx-auto max-w-[820px]" set:html={content} />
       </section>
     </main>
 
