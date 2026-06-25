@@ -1,0 +1,84 @@
+---
+const { currentPath = '/' } = Astro.props as { currentPath?: string }
+
+const nav = [
+  { label: 'Accueil', href: '/' },
+  {
+    label: 'Substances',
+    href: '/substances/',
+    children: [
+      { label: 'LSD', href: '/substances/lsd/' },
+      { label: 'DMT', href: '/substances/dmt/' },
+      { label: 'Champignons Psilocybin', href: '/substances/champignons-psilocybin/' },
+      { label: 'Ayahuasca', href: '/substances/ayahuasca/' },
+    ],
+  },
+  {
+    label: 'Microdosing',
+    href: '/microdosing/',
+    children: [
+      { label: 'LSD', href: '/microdosing/lsd/' },
+      { label: 'DMT', href: '/microdosing/dmt/' },
+      { label: '1P-LSD', href: '/microdosing/1p-lsd/' },
+      { label: 'Champignons Psilocybin', href: '/microdosing/champignons-psilocybin/' },
+    ],
+  },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'À propos', href: '/a-propos/' },
+  { label: 'Contact', href: '/contact/' },
+]
+
+const isActive = (href: string) => href === '/' ? currentPath === '/' : currentPath.startsWith(href)
+---
+
+<header class="site-header pointer-events-none absolute inset-x-0 top-0 z-40">
+  <div class="mx-auto flex max-w-[1140px] items-start justify-between px-7 pt-1 lg:px-0">
+    <a href="/" class="pointer-events-auto block" aria-label="Homepage">
+      <img src="/assets/uploads/2020/05/logo-1.png" alt="" class="mt-7 h-[190px] w-[190px] object-contain md:mt-0 md:h-[198px] md:w-[198px]" />
+    </a>
+
+    <nav class="pointer-events-auto mt-[88px] hidden items-center gap-8 lg:flex" aria-label="Navigation principale">
+      {nav.map((item) => (
+        <div class="group relative">
+          <a
+            href={item.href}
+            class:list={[
+              'block py-3 text-[18px] leading-none text-[#006cff] transition-colors hover:text-[#4f5cff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5665ff]',
+              isActive(item.href) ? 'text-[#4f5cff]' : '',
+            ]}
+          >
+            {item.label}
+          </a>
+          {item.children && (
+            <div class="invisible absolute left-0 top-full min-w-64 translate-y-2 bg-white py-3 opacity-0 shadow-[0_18px_40px_rgba(47,57,95,0.12)] ring-1 ring-[#e8ebff] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              {item.children.map((child) => (
+                <a href={child.href} class="block px-5 py-3 text-[15px] leading-none text-[#006cff] transition-colors hover:bg-[#f4f6ff] hover:text-[#4f5cff]">
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </nav>
+
+    <details class="pointer-events-auto relative mt-[118px] lg:hidden">
+      <summary class="flex h-11 w-11 cursor-pointer list-none items-center justify-center text-[#242a3a] [&::-webkit-details-marker]:hidden">
+        <span class="sr-only">Menu</span>
+        <span class="relative h-0.5 w-5 bg-current before:absolute before:left-0 before:top-[-7px] before:h-0.5 before:w-5 before:bg-current before:content-[''] after:absolute after:left-0 after:top-[7px] after:h-0.5 after:w-5 after:bg-current after:content-['']"></span>
+      </summary>
+      <div class="absolute right-0 mt-3 w-[290px] bg-white p-5 shadow-[0_20px_45px_rgba(47,57,95,0.16)] ring-1 ring-[#e8ebff]">
+        {nav.map((item) => (
+          <div class="border-b border-[#eef1ff] last:border-0">
+            <a href={item.href} class="block py-3 text-base text-[#006cff] hover:text-[#4f5cff]">{item.label}</a>
+            {item.children && (
+              <div class="pb-3 pl-4">
+                {item.children.map((child) => <a href={child.href} class="block py-2 text-sm text-[#30395f]/75 hover:text-[#006cff]">{child.label}</a>)}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </details>
+  </div>
+</header>

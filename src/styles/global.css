@@ -1,11 +1,12 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import "tailwindcss" source(none);
+@source "..";
 
 @theme {
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --color-brand-900: #143c35;
-  --color-brand-700: #23705f;
-  --color-brand-100: #e6f3ed;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --color-wave-blue: #006cff;
+  --color-wave-indigo: #5665ff;
+  --color-wave-ink: #30395f;
+  --color-wave-sky: #56c8ff;
 }
 
 @layer base {
@@ -16,17 +17,129 @@
   body {
     text-rendering: optimizeLegibility;
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 @layer components {
-  .ltv-content > *:first-child {
-    margin-top: 0;
+  .prose {
+    color: #11183d;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.8;
+  }
+
+  .prose > * + * {
+    margin-top: 1.25rem;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    color: #30395f;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .prose h1 {
+    font-size: 2.4rem;
+  }
+
+  .prose h2 {
+    margin-top: 3rem;
+    font-size: 2rem;
+  }
+
+  .prose h3 {
+    margin-top: 2.5rem;
+    font-size: 1.55rem;
+  }
+
+  .prose h4 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+  }
+
+  .prose h5,
+  .prose h6 {
+    margin-top: 2rem;
+    color: #56c8ff;
+    font-size: 0.95rem;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .prose a {
+    color: #0084ff;
+    font-weight: 700;
+    transition: color 160ms ease;
+  }
+
+  .prose a:hover {
+    color: #5665ff;
+  }
+
+  .prose strong {
+    color: #30395f;
+    font-weight: 800;
+  }
+
+  .prose ul,
+  .prose ol {
+    padding-left: 1.4rem;
+  }
+
+  .prose ul {
+    list-style: disc;
+  }
+
+  .prose ol {
+    list-style: decimal;
+  }
+
+  .prose li + li {
+    margin-top: 0.45rem;
+  }
+
+  .prose blockquote {
+    border-left: 3px solid #5665ff;
+    color: #30395f;
+    font-style: italic;
+    padding-left: 1.25rem;
+  }
+
+  .prose code {
+    background: #f2f4ff;
+    color: #30395f;
+    font-size: 0.92em;
+    padding: 0.15rem 0.35rem;
+  }
+
+  .prose pre {
+    background: #30395f;
+    color: white;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  .prose pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
   }
 
   .ltv-content img {
+    display: block;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     max-height: 34rem;
+    max-width: 100%;
     object-fit: cover;
   }
 
@@ -34,14 +147,15 @@
     margin-block: 2.5rem;
   }
 
-  .ltv-content a[href^="/"]:not(:has(img)) {
-    text-decoration-thickness: 0.08em;
-    text-underline-offset: 0.18em;
-  }
-
   .ltv-content table {
+    border-collapse: collapse;
     display: block;
     overflow-x: auto;
-    border-collapse: collapse;
+  }
+
+  .ltv-content th,
+  .ltv-content td {
+    border: 1px solid #dfe3ff;
+    padding: 0.65rem 0.8rem;
   }
 }

@@ -1,0 +1,151 @@
+---
+import '../styles/global.css'
+import SiteFooter from '../components/SiteFooter.astro'
+import SiteHeader from '../components/SiteHeader.astro'
+
+const title = 'La Troisième Vague'
+const description = 'Ressources pour une utilisation des substances psychédéliques sécurisée, structurée et responsable.'
+const canonical = 'https://latroisiemevague.com/'
+
+const cards = [
+  { title: 'Éducation sur les psychédéliques', href: '/substances/', image: '/assets/uploads/2020/05/home-box-1.png' },
+  { title: 'Ressources sur le microdosing', href: '/microdosing/', image: '/assets/uploads/2020/05/home-box-2.png' },
+  { title: 'Découvrez les actualités de La Troisième Vague', href: '#blog', image: '/assets/uploads/2020/05/home-box-3.png' },
+]
+
+const posts = [
+  {
+    title: 'Comment les psychédéliques libèrent les mécanismes de contrôle de votre cerveau',
+    href: '/comment-les-psychedeliques-liberent-les-mecanismes-de-controle-de-votre-cerveau/',
+    image: '/assets/uploads/2020/09/mechanismes-controle-cerveau-1024x683.jpg',
+    excerpt: 'L’une des plus célèbres études récentes sur les psychédéliques a examiné les effets du LSD sur le cerveau de volontaires, en utilisant l’imagerie cérébrale à haute résolution. L’une des conclusions',
+  },
+  {
+    title: 'Trip au DMT : À quoi vous attendre ?',
+    href: '/trip-au-dmt-a-quoi-vous-attendre/',
+    image: '/assets/uploads/2020/09/dmt-trip-1024x683.jpg',
+    excerpt: 'Si vous avez envisagé d’essayer de fumer du DMT, vous avez probablement déjà expérimenté des psychédéliques auparavant et vous vous trouvez maintenant imprégné d’une bonne dose de curiosité pour des',
+  },
+  {
+    title: 'Quelle est la légalité de l’ayahuasca dans votre pays ?',
+    href: '/quelle-est-la-legalite-de-layahuasca-dans-votre-pays/',
+    image: '/assets/uploads/2020/09/legalite-ayahuasca-1024x683.jpg',
+    excerpt: 'Avertissement : l’ayahuasca est une substance potentiellement illégale, et nous n’encourageons ni ne tolérons l’utilisation de cette substance lorsqu’elle est contraire à la loi. Cependant, nous acceptons que l’utilisation de',
+  },
+]
+---
+
+<!doctype html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/assets/uploads/2020/08/cropped-favicon-32x32.png" sizes="32x32" />
+  </head>
+  <body class="bg-white font-sans text-[#11183d] antialiased">
+    <SiteHeader currentPath="/" />
+
+    <main class="overflow-hidden">
+      <section class="relative min-h-[600px] bg-white px-7 pb-20 pt-[158px] md:min-h-[720px] md:px-0 md:pt-[220px]">
+        <div class="pointer-events-none absolute right-[-180px] top-[-220px] h-[520px] w-[940px] rounded-bl-[55%] rounded-br-[30%] rounded-tl-[35%] bg-[#f0f2ff] md:right-[-120px] md:top-[-250px]"></div>
+        <div class="pointer-events-none absolute right-[170px] top-[138px] hidden h-[245px] w-[385px] rotate-[18deg] rounded-[50%] bg-[#f0f2ff] md:block"></div>
+        <div class="pointer-events-none absolute right-[-95px] top-[95px] h-[95px] w-[280px] rounded-[50%] bg-[#f0f2ff] md:hidden"></div>
+
+        <div class="relative mx-auto max-w-[1140px]">
+          <div class="max-w-[720px] text-center md:text-left">
+            <h1 class="text-[30px] font-extrabold uppercase leading-[1.35] tracking-[0] text-[#30395f] md:text-[56px] md:leading-[1.34]">
+              Bienvenue sur<br />La troisième vague
+            </h1>
+            <p class="mx-auto mt-14 max-w-[720px] text-[16px] font-medium leading-[1.65] text-[#11183d] md:mx-0 md:mt-14 md:text-[22px] md:leading-[1.55]">
+              Ressources pour une utilisation des substances psychédéliques sécurisée, structurée et responsable.
+            </p>
+            <a href="/microdosing/" class="mt-14 inline-flex rounded-full bg-[#5665ff] px-8 py-4 text-[16px] font-bold text-white shadow-[0_14px_24px_rgba(86,101,255,0.2)] transition hover:bg-[#4050f7] md:px-9 md:text-[18px]">
+              Découvrir le microdosing
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative px-7 pb-24 pt-4 md:px-0 md:pb-28">
+        <div class="pointer-events-none absolute left-[-96px] top-[-10px] h-[150px] w-[150px] rounded-full border border-[#dfe3ff] md:left-[-115px] md:top-20 md:h-[250px] md:w-[250px]">
+          <div class="absolute inset-[22px] rounded-full border border-[#ffd9bd] md:inset-9"></div>
+          <div class="absolute inset-[45px] rounded-full border border-[#cff5c8] md:inset-[72px]"></div>
+        </div>
+        <div class="mx-auto max-w-[860px] text-center">
+          <p class="text-[18px] font-bold uppercase leading-none text-[#56c8ff]">Qui sommes-nous</p>
+          <p class="mt-12 text-[19px] font-semibold leading-[1.62] text-[#11183d] md:mt-14 md:text-[24px] md:leading-[1.44]">
+            Chez La Troisième vague, nous fournissons des informations bien documentées et de qualité spécifiques aux psychédéliques classiques - et comment elles peuvent être utilisées pour aider des gens comme vous à vivre une vie plus dynamique.<br />
+            Explorez nos guides sur les psychédéliques, notre cours de microdosage et une bibliothèque d'articles toujours croissante pour commencer votre voyage. Que vous ayez des questions sur la façon de faire pousser des champignons, comment intégrer des expériences psychédéliques ou encore comment intégrer des modalités comme le yoga et le travail respiratoire dans votre vie, nous avons exactement ce dont vous avez besoin.
+          </p>
+          <p class="mx-auto mt-7 max-w-[820px] text-[14px] font-medium italic leading-[1.55] text-[#11183d] md:text-[15px]">
+            La troisième vague n’encourage pas les activités illégales. Toutes les informations que nous fournissons sont uniquement destinées à l’éducation et à l’information.
+          </p>
+        </div>
+      </section>
+
+      <section class="px-7 pb-32 md:px-0 md:pb-36">
+        <div class="mx-auto grid max-w-[1140px] gap-6 md:grid-cols-3">
+          {cards.map((card) => (
+            <a href={card.href} class="group flex min-h-[300px] flex-col items-center justify-center rounded-[8px] bg-white px-8 py-10 text-center shadow-[0_24px_45px_rgba(48,57,95,0.08)] ring-1 ring-[#f0f2ff] transition hover:-translate-y-1 hover:shadow-[0_28px_50px_rgba(86,101,255,0.16)] md:min-h-[330px]">
+              <img src={card.image} alt="" class="h-[108px] w-[118px] object-contain" loading="lazy" decoding="async" />
+              <h2 class="mt-8 max-w-[240px] text-[18px] font-bold leading-[1.45] text-[#30395f] transition-colors group-hover:text-[#006cff]">{card.title}</h2>
+              <span class="mt-auto block h-[3px] w-full translate-y-10 rounded-full bg-[#5665ff]"></span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="relative bg-[#f7f8ff] px-7 pb-24 pt-28 md:px-0 md:pb-28 md:pt-32">
+        <div class="pointer-events-none absolute inset-x-[-20%] top-[-120px] h-[210px] rounded-[50%] bg-white"></div>
+        <div class="relative mx-auto max-w-[760px] text-center">
+          <p class="text-[15px] font-bold uppercase text-[#56c8ff]">Newsletter</p>
+          <h2 class="mt-9 text-[28px] font-extrabold leading-[1.35] text-[#30395f] md:text-[34px]">
+            Soyez toujours au courant de l'actualité des psychédéliques
+          </h2>
+          <p class="mx-auto mt-9 max-w-[700px] text-[15px] font-medium leading-[1.6] text-[#30395f]/55">
+            Nous vous enverrons une sélection des contenus les plus populaires, de nos recherches sur ce domaine, des évènements, de nos articles ainsi que nos différentes ressources d’apprentissage.
+          </p>
+          <form class="mx-auto mt-10 flex max-w-[780px] flex-col gap-3 md:flex-row" action="#">
+            <label class="sr-only" for="newsletter-email">Email</label>
+            <input id="newsletter-email" type="email" placeholder="Email" class="min-h-14 flex-1 border border-[#e4e8f6] bg-white px-5 text-base text-[#30395f] outline-none transition placeholder:text-[#30395f]/45 focus:border-[#5665ff]" />
+            <button type="submit" class="min-h-14 bg-[#5665ff] px-8 text-base font-bold text-white shadow-[0_12px_22px_rgba(86,101,255,0.16)] transition hover:bg-[#4050f7]">
+              Tenez moi au courant !
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section id="blog" class="bg-white px-7 py-28 md:px-0 md:py-32">
+        <div class="mx-auto max-w-[1140px]">
+          <p class="mb-9 text-[15px] font-bold uppercase text-[#56c8ff]">Blog</p>
+          <div class="grid gap-8 md:grid-cols-3">
+            {posts.map((post) => (
+              <article>
+                <a href={post.href} class="group block">
+                  <img src={post.image} alt="" class="h-[200px] w-full object-cover transition group-hover:opacity-90" loading="lazy" decoding="async" />
+                  <h2 class="mt-7 text-[28px] font-extrabold leading-[1.28] text-[#0084ff] transition-colors group-hover:text-[#5665ff]">{post.title}</h2>
+                </a>
+                <p class="mt-7 text-[16px] font-medium leading-[1.6] text-[#11183d]">{post.excerpt}</p>
+                <a href={post.href} class="mt-5 inline-block text-[15px] font-bold text-[#0084ff] hover:text-[#5665ff]">Lire la suite</a>
+              </article>
+            ))}
+          </div>
+          <div class="mt-16 text-center">
+            <a href="/blog/" class="inline-flex rounded-full bg-[#5665ff] px-7 py-4 text-[15px] font-bold text-white shadow-[0_14px_24px_rgba(86,101,255,0.2)] transition hover:bg-[#4050f7]">Tous nos articles</a>
+          </div>
+          <div class="mx-auto mt-20 flex max-w-[520px] items-center justify-center gap-8 text-center text-[13px] font-bold text-[#c3c8da]">
+            <span class="h-px flex-1 bg-[#c3c8da]"></span>
+            <a href="https://thethirdwave.co/" class="hover:text-[#5665ff]">En Partenariat avec The Third Wave</a>
+            <span class="h-px flex-1 bg-[#c3c8da]"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </body>
+</html>

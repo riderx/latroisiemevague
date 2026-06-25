@@ -145,6 +145,16 @@ function extractContent(meta, bodyHtml) {
 async function writeRoute(meta) {
   const file = routeFile(meta.path)
   const fromDir = path.dirname(file)
+
+  if (meta.id === 'home') {
+    const homePath = importPath(fromDir, path.join(rootDir, 'src/layouts/HomePage.astro'))
+    const source = `---\nimport HomePage from '${homePath}'\n---\n\n<HomePage />\n`
+
+    await mkdir(path.dirname(file), { recursive: true })
+    await writeFile(file, source)
+    return
+  }
+
   const layoutPath = importPath(fromDir, path.join(rootDir, 'src/layouts/TailwindPage.astro'))
   const contentPath = `${importPath(fromDir, path.join(contentRoot, `${meta.id}.html`))}?raw`
   const source = `---\nimport TailwindPage from '${layoutPath}'\nimport content from '${contentPath}'\n\nconst routePage = ${JSON.stringify(meta, null, 2)}\n---\n\n<TailwindPage page={routePage} content={content} />\n`

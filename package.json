@@ -13,12 +13,11 @@
     "deploy": "wrangler pages deploy dist --project-name latroisiemevague --branch main"
   },
   "dependencies": {
-    "astro": "^6.3.1",
+    "astro": "6.3.1",
     "cheerio": "^1.1.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.1",
     "@types/node": "^26.0.0",
     "tailwindcss": "^4.3.1",
