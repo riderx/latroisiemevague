@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../layouts/WordPressPage.astro'
+import TailwindPage from '../layouts/TailwindPage.astro'
+import content from '../content-data/pages/home.html?raw'
 
 const routePage = {
   "id": "home",
   "path": "/",
   "title": "La Troisième Vague",
-  "description": "Ressources pour une utilisation des substances psychédéliques sécurisée, structurée et responsable.",
-  "bodyClass": "home page-template page-template-full-width page-template-full-width-php page page-id-491 no-js elementor-default elementor-kit-489 elementor-page elementor-page-491 jupiterx-header-overlapped jupiterx-header-overlapped-tablet jupiterx-header-overlapped-mobile"
+  "description": "Ressources pour une utilisation des substances psychédéliques sécurisée, structurée et responsable."
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

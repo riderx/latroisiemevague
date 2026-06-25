@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../../layouts/WordPressPage.astro'
+import TailwindPage from '../../../layouts/TailwindPage.astro'
+import content from '../../../content-data/pages/category-actualites.html?raw'
 
 const routePage = {
   "id": "category-actualites",
   "path": "/category/actualites/",
   "title": "Archives des Actualités - La troisième vague",
-  "description": "",
-  "bodyClass": "archive category category-actualites category-19 no-js elementor-default elementor-kit-489"
+  "description": ""
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

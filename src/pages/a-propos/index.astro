@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../layouts/WordPressPage.astro'
+import TailwindPage from '../../layouts/TailwindPage.astro'
+import content from '../../content-data/pages/a-propos.html?raw'
 
 const routePage = {
   "id": "a-propos",
   "path": "/a-propos/",
   "title": "À propos - La troisième vague",
-  "description": "Notre mission est de partager un contenu fiable, basé sur la recherche, qui vous aide à vous sentir en sécurité, soutenu et responsabilisé dans votre cheminement vers la transformation personnelle.",
-  "bodyClass": "page-template page-template-full-width page-template-full-width-php page page-id-120 no-js elementor-default elementor-kit-489 elementor-page elementor-page-120"
+  "description": "Notre mission est de partager un contenu fiable, basé sur la recherche, qui vous aide à vous sentir en sécurité, soutenu et responsabilisé dans votre cheminement vers la transformation personnelle."
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

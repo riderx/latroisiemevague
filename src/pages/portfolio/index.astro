@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../layouts/WordPressPage.astro'
+import TailwindPage from '../../layouts/TailwindPage.astro'
+import content from '../../content-data/pages/portfolio.html?raw'
 
 const routePage = {
   "id": "portfolio",
   "path": "/portfolio/",
   "title": "Portfolios Archive - La troisième vague",
-  "description": "",
-  "bodyClass": "archive post-type-archive post-type-archive-portfolio no-js elementor-default elementor-kit-489"
+  "description": ""
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

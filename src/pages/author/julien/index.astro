@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../../layouts/WordPressPage.astro'
+import TailwindPage from '../../../layouts/TailwindPage.astro'
+import content from '../../../content-data/pages/author-julien.html?raw'
 
 const routePage = {
   "id": "author-julien",
   "path": "/author/julien/",
   "title": "Julien Coulaud, auteur sur La troisième vague",
-  "description": "",
-  "bodyClass": "archive author author-julien author-5 no-js elementor-default elementor-kit-489"
+  "description": ""
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

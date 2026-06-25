@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../layouts/WordPressPage.astro'
+import TailwindPage from '../../layouts/TailwindPage.astro'
+import content from '../../content-data/pages/a-quoi-vous-attendre-lors-de-votre-prochain-voyage-au-lsd.html?raw'
 
 const routePage = {
   "id": "a-quoi-vous-attendre-lors-de-votre-prochain-voyage-au-lsd",
   "path": "/a-quoi-vous-attendre-lors-de-votre-prochain-voyage-au-lsd/",
   "title": "À quoi vous attendre lors de votre prochain voyage au LSD - La troisième vague",
-  "description": "Imaginez-vous dans un bateau sur une rivière… Vous ne vous souvenez pas exactement comment ou quand vous y êtes arrivé, mais vous savez que vous y êtes allé de votre plein gré.",
-  "bodyClass": "post-template-default single single-post postid-719 single-format-standard no-js elementor-default elementor-kit-489 elementor-page elementor-page-719 jupiterx-post-template-1"
+  "description": "Imaginez-vous dans un bateau sur une rivière… Vous ne vous souvenez pas exactement comment ou quand vous y êtes arrivé, mais vous savez que vous y êtes allé de votre plein gré."
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

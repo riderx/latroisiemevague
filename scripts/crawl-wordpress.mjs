@@ -44,12 +44,12 @@ function sameOriginUrl(value, baseUrl = origin) {
 }
 
 function outputPathForUrl(url) {
-  const cleanPath = decodeURIComponent(url.pathname)
+  const cleanPath = decodeURIComponent(localPathForUrl(url))
   return path.join(publicDir, cleanPath)
 }
 
 function localPathForUrl(url) {
-  return encodeURI(url.pathname).replace(/%2F/g, '/')
+  return encodeURI(url.pathname).replace(/%2F/g, '/').replace(/^\/wp-content\/uploads\//, '/assets/uploads/')
 }
 
 function isAssetPath(pathname) {
@@ -59,6 +59,7 @@ function isAssetPath(pathname) {
 async function downloadAsset(assetUrl) {
   const url = typeof assetUrl === 'string' ? sameOriginUrl(assetUrl) : assetUrl
   if (!url || !isAssetPath(url.pathname)) return
+  if (/^\/wp-(content|includes)\//.test(url.pathname) && !url.pathname.startsWith('/wp-content/uploads/')) return
 
   const key = url.pathname
   if (downloadedAssets.has(key)) return
@@ -225,12 +226,12 @@ async function main() {
   await writeFile(dataFile, `${JSON.stringify(exportData, null, 2)}\n`)
   console.log(`Wrote temporary WordPress export with ${pages.length} pages and ${downloadedAssets.size} assets`)
 
-  const materialize = spawnSync(process.execPath, [path.join(rootDir, 'scripts/materialize-pages.mjs'), dataFile], {
+  const materialize = spawnSync(process.execPath, [path.join(rootDir, 'scripts/convert-tailwind-pages.mjs'), dataFile], {
     stdio: 'inherit',
   })
 
   if (materialize.status !== 0) {
-    throw new Error(`Failed to materialize Astro pages: ${materialize.status}`)
+    throw new Error(`Failed to convert Tailwind pages: ${materialize.status}`)
   }
 }
 

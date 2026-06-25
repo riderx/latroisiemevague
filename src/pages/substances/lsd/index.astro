@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../../layouts/WordPressPage.astro'
+import TailwindPage from '../../../layouts/TailwindPage.astro'
+import content from '../../../content-data/pages/substances-lsd.html?raw'
 
 const routePage = {
   "id": "substances-lsd",
   "path": "/substances/lsd/",
   "title": "LSD - La troisième vague",
-  "description": "Mieux connu sous le nom de LSD ou \"acide\", le diéthylamide de l’acide lysergique est un puissant psychédélique dérivé d’une substance chimique présente dans le champignon du seigle",
-  "bodyClass": "page-template-default page page-id-562 page-child parent-pageid-550 no-js elementor-default elementor-kit-489 elementor-page elementor-page-562"
+  "description": "Mieux connu sous le nom de LSD ou \"acide\", le diéthylamide de l’acide lysergique est un puissant psychédélique dérivé d’une substance chimique présente dans le champignon du seigle"
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

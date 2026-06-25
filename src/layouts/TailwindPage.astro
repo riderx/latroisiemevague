@@ -1,0 +1,108 @@
+---
+import '../styles/global.css'
+
+type Page = {
+  id: string
+  path: string
+  title: string
+  description: string
+}
+
+const { page, content } = Astro.props as { page: Page; content: string }
+const canonical = new URL(page.path, 'https://latroisiemevague.com').toString()
+const nav = [
+  { label: 'Accueil', href: '/' },
+  { label: 'Substances', href: '/substances/' },
+  { label: 'Microdosing', href: '/microdosing/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'À propos', href: '/a-propos/' },
+  { label: 'Contact', href: '/contact/' },
+]
+
+const isHome = page.path === '/'
+const eyebrow = isHome ? 'La Troisième Vague' : page.path.split('/').filter(Boolean).slice(0, 1).join(' / ')
+---
+
+<!doctype html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <title>{page.title}</title>
+    {page.description && <meta name="description" content={page.description} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/assets/uploads/2020/08/cropped-favicon-32x32.png" sizes="32x32" />
+  </head>
+  <body class="min-h-screen bg-stone-50 text-slate-900 antialiased">
+    <header class="sticky top-0 z-50 border-b border-stone-200/80 bg-stone-50/95 backdrop-blur">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
+        <a href="/" class="flex items-center gap-3" aria-label="La Troisième Vague">
+          <img src="/assets/uploads/2020/05/logo-1.png" alt="" class="h-14 w-14 rounded-full object-contain" />
+          <span class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-900">La Troisième Vague</span>
+        </a>
+
+        <nav class="hidden items-center gap-1 md:flex" aria-label="Navigation principale">
+          {nav.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                'rounded-full px-4 py-2 text-sm font-medium transition',
+                page.path === item.href ? 'bg-emerald-900 text-white' : 'text-slate-700 hover:bg-white hover:text-emerald-900',
+              ]}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <details class="group relative md:hidden">
+          <summary class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full border border-stone-300 bg-white text-slate-900 shadow-sm">
+            <span class="sr-only">Menu</span>
+            <span class="h-0.5 w-5 bg-current before:block before:h-0.5 before:w-5 before:-translate-y-1.5 before:bg-current before:content-[''] after:block after:h-0.5 after:w-5 after:translate-y-1 after:bg-current after:content-['']"></span>
+          </summary>
+          <div class="absolute right-0 mt-3 w-64 rounded-xl border border-stone-200 bg-white p-2 shadow-xl">
+            {nav.map((item) => (
+              <a href={item.href} class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-stone-100 hover:text-emerald-900">
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <main>
+      <section class="border-b border-stone-200 bg-white">
+        <div class="mx-auto grid max-w-7xl gap-8 px-5 py-14 lg:grid-cols-[1fr_0.45fr] lg:px-8 lg:py-20">
+          <div class="max-w-3xl">
+            {eyebrow && <p class="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-emerald-700">{eyebrow}</p>}
+            <h1 class="text-4xl font-semibold leading-tight text-slate-950 md:text-6xl">{page.title}</h1>
+            {page.description && <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{page.description}</p>}
+          </div>
+          <div class="hidden items-end justify-end lg:flex">
+            <div class="w-full max-w-xs rounded-2xl border border-emerald-900/10 bg-emerald-50 p-6 text-sm leading-6 text-emerald-950 shadow-sm">
+              Informations éducatives sur les psychédéliques, le microdosing et les pratiques d'intégration.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-5xl px-5 py-12 lg:px-8 lg:py-16">
+        <article class="ltv-content prose prose-slate max-w-none prose-headings:font-semibold prose-headings:text-slate-950 prose-a:font-semibold prose-a:text-emerald-800 prose-img:rounded-xl prose-img:shadow-sm" set:html={content} />
+      </section>
+    </main>
+
+    <footer class="border-t border-stone-200 bg-slate-950 text-white">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-10 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-200">La Troisième Vague</p>
+          <p class="mt-2 max-w-xl text-sm leading-6 text-slate-300">Ce site fournit des contenus éducatifs et n'encourage aucune activité illégale.</p>
+        </div>
+        <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-300" aria-label="Navigation pied de page">
+          {nav.map((item) => <a href={item.href} class="hover:text-white">{item.label}</a>)}
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

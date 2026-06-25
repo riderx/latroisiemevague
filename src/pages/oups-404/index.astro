@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../layouts/WordPressPage.astro'
+import TailwindPage from '../../layouts/TailwindPage.astro'
+import content from '../../content-data/pages/oups-404.html?raw'
 
 const routePage = {
   "id": "oups-404",
   "path": "/oups-404/",
   "title": "404 - La troisième vague",
-  "description": "La page n'a pas été trouvée.",
-  "bodyClass": "page-template page-template-full-width page-template-full-width-php page page-id-147 no-js elementor-default elementor-kit-489 elementor-page elementor-page-147"
+  "description": "La page n'a pas été trouvée."
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

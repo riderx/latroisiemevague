@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../layouts/WordPressPage.astro'
+import TailwindPage from '../../layouts/TailwindPage.astro'
+import content from '../../content-data/pages/services.html?raw'
 
 const routePage = {
   "id": "services",
   "path": "/services/",
   "title": "Services - La troisième vague",
-  "description": "",
-  "bodyClass": "page-template page-template-full-width page-template-full-width-php page page-id-926 no-js elementor-default elementor-kit-489 elementor-page elementor-page-926"
+  "description": ""
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../layouts/WordPressPage.astro'
+import TailwindPage from '../../layouts/TailwindPage.astro'
+import content from '../../content-data/pages/microdosing-volumetrique-avec-le-lsd.html?raw'
 
 const routePage = {
   "id": "microdosing-volumetrique-avec-le-lsd",
   "path": "/microdosing-volumetrique-avec-le-lsd/",
   "title": "Microdosing volumétrique avec le LSD - La troisième vague",
-  "description": "Tout ce dont vous avez besoin est une petite bouteille, une seringue de 1 ml et un peu d’eau distillée ou d’alcool.",
-  "bodyClass": "post-template-default single single-post postid-784 single-format-standard no-js elementor-default elementor-kit-489 elementor-page elementor-page-784 jupiterx-post-template-1"
+  "description": "Tout ce dont vous avez besoin est une petite bouteille, une seringue de 1 ml et un peu d’eau distillée ou d’alcool."
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

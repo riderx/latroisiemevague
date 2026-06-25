@@ -1,13 +1,13 @@
 ---
-import WordPressPage from '../../layouts/WordPressPage.astro'
+import TailwindPage from '../../layouts/TailwindPage.astro'
+import content from '../../content-data/pages/substances.html?raw'
 
 const routePage = {
   "id": "substances",
   "path": "/substances/",
   "title": "Substances - La troisième vague",
-  "description": "Guides complets pour psychédéliques comprenant leur histoire, la pharmacologie, les effets, la recherche et les mythes.",
-  "bodyClass": "page-template-default page page-id-550 page-parent no-js elementor-default elementor-kit-489 elementor-page elementor-page-550"
+  "description": "Guides complets pour psychédéliques comprenant leur histoire, la pharmacologie, les effets, la recherche et les mythes."
 }
 ---
 
-<WordPressPage page={routePage} />
+<TailwindPage page={routePage} content={content} />

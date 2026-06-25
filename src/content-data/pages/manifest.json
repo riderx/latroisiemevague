@@ -1,0 +1,228 @@
+{
+  "origin": "https://latroisiemevague.com",
+  "generatedAt": "2026-06-23T14:40:17.712Z",
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "title": "La Troisième Vague",
+      "description": "Ressources pour une utilisation des substances psychédéliques sécurisée, structurée et responsable."
+    },
+    {
+      "id": "a-propos",
+      "path": "/a-propos/",
+      "title": "À propos - La troisième vague",
+      "description": "Notre mission est de partager un contenu fiable, basé sur la recherche, qui vous aide à vous sentir en sécurité, soutenu et responsabilisé dans votre cheminement vers la transformation personnelle."
+    },
+    {
+      "id": "a-quoi-vous-attendre-lors-de-votre-prochain-voyage-au-lsd",
+      "path": "/a-quoi-vous-attendre-lors-de-votre-prochain-voyage-au-lsd/",
+      "title": "À quoi vous attendre lors de votre prochain voyage au LSD - La troisième vague",
+      "description": "Imaginez-vous dans un bateau sur une rivière… Vous ne vous souvenez pas exactement comment ou quand vous y êtes arrivé, mais vous savez que vous y êtes allé de votre plein gré."
+    },
+    {
+      "id": "author-julien",
+      "path": "/author/julien/",
+      "title": "Julien Coulaud, auteur sur La troisième vague",
+      "description": ""
+    },
+    {
+      "id": "ayahuasca-lancien-antidepresseur",
+      "path": "/ayahuasca-lancien-antidepresseur/",
+      "title": "Ayahuasca, l'ancien antidépresseur - La troisième vague",
+      "description": "Bien que l'ayahuasca soit une boisson psychédélique véritablement ancienne, elle connaît un renouveau moderne."
+    },
+    {
+      "id": "blog",
+      "path": "/blog/",
+      "title": "Blog - La troisième vague",
+      "description": "Tenez-vous au courant de l'actualité des psychédéliques tout en restant à jour sur les dernières ressources disponibles."
+    },
+    {
+      "id": "category-actualites",
+      "path": "/category/actualites/",
+      "title": "Archives des Actualités - La troisième vague",
+      "description": ""
+    },
+    {
+      "id": "category-guides",
+      "path": "/category/guides/",
+      "title": "Archives des Guides - La troisième vague",
+      "description": ""
+    },
+    {
+      "id": "category-information",
+      "path": "/category/information/",
+      "title": "Archives des Information - La troisième vague",
+      "description": ""
+    },
+    {
+      "id": "comment-faire-son-propre-ayahuasca-chez-soit",
+      "path": "/comment-faire-son-propre-ayahuasca-chez-soit/",
+      "title": "Comment faire son propre Ayahuasca chez soit - La troisième vague",
+      "description": "Nous vous présentons ici les meilleurs moyens de créer une infusion de type ayahuasca dans votre cuisine."
+    },
+    {
+      "id": "comment-les-psychedeliques-liberent-les-mecanismes-de-controle-de-votre-cerveau",
+      "path": "/comment-les-psychedeliques-liberent-les-mecanismes-de-controle-de-votre-cerveau/",
+      "title": "Comment les psychédéliques libèrent les mécanismes de contrôle de votre cerveau - La troisième vague",
+      "description": "L'une des plus célèbres études récentes sur les psychédéliques a examiné les effets du LSD sur le cerveau de volontaires, en utilisant l'imagerie cérébrale à haute résolution."
+    },
+    {
+      "id": "contact",
+      "path": "/contact/",
+      "title": "Contact - La troisième vague",
+      "description": "Que vous souhaitiez rejoindre notre communauté de personnes partageant les mêmes idées ou nous parler, n'hésitez-pas à nous contacter !"
+    },
+    {
+      "id": "jet-popup-popup",
+      "path": "/jet-popup/popup/",
+      "title": "Popup - La troisième vague",
+      "description": ""
+    },
+    {
+      "id": "johns-hopkins-ouvre-le-plus-grand-centre-de-recherche-psychedelique-du-monde",
+      "path": "/johns-hopkins-ouvre-le-plus-grand-centre-de-recherche-psychedelique-du-monde/",
+      "title": "Johns Hopkins ouvre le plus grand centre de recherche psychédélique du monde - La troisième vague",
+      "description": "Le mercredi 4 septembre, Johns Hopkins Medicine a annoncé l’ouverture d’un centre de recherche consacré à l’étude des substances psychédéliques pour les troubles mentaux."
+    },
+    {
+      "id": "la-recherche-clinique-prouve-que-le-microdosage-du-lsd-nest-pas-un-placebo",
+      "path": "/la-recherche-clinique-prouve-que-le-microdosage-du-lsd-nest-pas-un-placebo/",
+      "title": "La recherche clinique prouve que le microdosage du LSD n'est pas un placebo - La troisième vague",
+      "description": "Est-ce sans danger ? Et, deuxièmement, est-il plus efficace qu’un placebo ? La toute première étude contrôlée sur les effets des microdoses de LSD répond par l’affirmative à ces deux questions."
+    },
+    {
+      "id": "le-microdosage-des-psychedeliques-est-lie-a-une-meilleure-humeur-et-a-un-meilleur-objectif-dans-deux-nouveaux-documents-de-recherche",
+      "path": "/le-microdosage-des-psychedeliques-est-lie-a-une-meilleure-humeur-et-a-un-meilleur-objectif-dans-deux-nouveaux-documents-de-recherche/",
+      "title": "Le microdosage des psychédéliques est lié à une meilleure humeur et à un meilleur objectif dans deux nouveaux documents de recherche - La troisième vague",
+      "description": "Sur le total, 26,6 % ont déclaré que le microdosage améliorait leur humeur, notamment en réduisant les symptômes de la dépression ; 14,8 % ont déclaré que cela les aidait à se concentrer ; 12,9 % ont déclaré que cela aidait la mémoire de travail, et 11,3 % ont déclaré que cela améliorait leur auto-efficacité."
+    },
+    {
+      "id": "les-psychedeliques-peuvent-ils-induire-des-etats-de-flow",
+      "path": "/les-psychedeliques-peuvent-ils-induire-des-etats-de-flow/",
+      "title": "Les psychédéliques peuvent-ils induire des états de flow ? - La troisième vague",
+      "description": "Vous êtes-vous déjà trouvé dans un état de fascination totale pour ce que vous faites ? Vous êtes-vous déjà retrouvé affamé à mi-chemin du vertige après de nombreuses heures qui semblaient s’écouler alors que vous travailliez à la réalisation de votre objectif ?"
+    },
+    {
+      "id": "lsd-contexte-set-setting",
+      "path": "/lsd-contexte-set-setting/",
+      "title": "LSD / Contexte (set & setting) - La troisième vague",
+      "description": "Avant de vivre une expérience psychédélique, le voyageur (personne qui prend du psychédélique) doit faire un certain nombre de préparatifs."
+    },
+    {
+      "id": "microdosing-volumetrique-avec-le-lsd",
+      "path": "/microdosing-volumetrique-avec-le-lsd/",
+      "title": "Microdosing volumétrique avec le LSD - La troisième vague",
+      "description": "Tout ce dont vous avez besoin est une petite bouteille, une seringue de 1 ml et un peu d’eau distillée ou d’alcool."
+    },
+    {
+      "id": "microdosing",
+      "path": "/microdosing/",
+      "title": "Microdosing - La troisième vague",
+      "description": "Notre objectif est de fournir des informations documentées concernant la science, les avantages, les protocoles et les effets du microdosage."
+    },
+    {
+      "id": "microdosing-1p-lsd",
+      "path": "/microdosing/1p-lsd/",
+      "title": "1P-LSD - La troisième vague",
+      "description": "Informations concernant le microdosage de 1P-LSD intégré dans une routine hebdomadaire, ses effets, ses risques et quoi en attendre."
+    },
+    {
+      "id": "microdosing-champignons-psilocybin",
+      "path": "/microdosing/champignons-psilocybin/",
+      "title": "Champignons Psilocybin - La troisième vague",
+      "description": "Informations concernant le microdosage de champignons psilocybin intégré dans une routine hebdomadaire, ses effets et ses risques."
+    },
+    {
+      "id": "microdosing-dmt",
+      "path": "/microdosing/dmt/",
+      "title": "DMT - La troisième vague",
+      "description": "Contrairement à de nombreux autres psychédéliques, dont la psilocybine et le LSD, le DMT est métabolisé trop rapidement pour être actif par voie orale."
+    },
+    {
+      "id": "microdosing-lsd",
+      "path": "/microdosing/lsd/",
+      "title": "LSD - La troisième vague",
+      "description": "Informations concernant le microdosage de LSD intégré dans une routine hebdomadaire, ses effets, ses risques et quoi en attendre."
+    },
+    {
+      "id": "oups-404",
+      "path": "/oups-404/",
+      "title": "404 - La troisième vague",
+      "description": "La page n'a pas été trouvée."
+    },
+    {
+      "id": "portfolio",
+      "path": "/portfolio/",
+      "title": "Portfolios Archive - La troisième vague",
+      "description": ""
+    },
+    {
+      "id": "pouvez-vous-traiter-la-depression-avec-le-microdosage",
+      "path": "/pouvez-vous-traiter-la-depression-avec-le-microdosage/",
+      "title": "Pouvez-vous traiter la dépression avec le microdosage ? - La troisième vague",
+      "description": "Un nombre croissant de preuves suggère que divers psychédéliques peuvent traiter la dépression. De grandes études récentes, utilisant les psychédéliques psilocybine et ayahuasca, ont montré qu'une seule dose modérée de ces substances peut réduire de manière significative les scores de dépression."
+    },
+    {
+      "id": "quelle-est-la-legalite-de-layahuasca-dans-votre-pays",
+      "path": "/quelle-est-la-legalite-de-layahuasca-dans-votre-pays/",
+      "title": "Quelle est la légalité de l'ayahuasca dans votre pays ? - La troisième vague",
+      "description": "Quelques mois seulement après qu'un tribunal français ait décidé que l'ayahuasca n'était pas une substance contrôlée, une nouvelle loi a été adoptée qui rend illégale la possession de la plupart des ingrédients des brassins d'ayahuasca."
+    },
+    {
+      "id": "risque-cardiaque-potentiel",
+      "path": "/risque-cardiaque-potentiel/",
+      "title": "Risque cardiaque potentiel - La troisième vague",
+      "description": "Le risque de maladie cardiaque est un sujet de préoccupation. La MDMA a été au centre de l’attention à cet égard – diverses études ont montré qu’il existe un lien entre la consommation régulière de MDMA à forte dose et les malformations cardiaques."
+    },
+    {
+      "id": "services",
+      "path": "/services/",
+      "title": "Services - La troisième vague",
+      "description": ""
+    },
+    {
+      "id": "substances",
+      "path": "/substances/",
+      "title": "Substances - La troisième vague",
+      "description": "Guides complets pour psychédéliques comprenant leur histoire, la pharmacologie, les effets, la recherche et les mythes."
+    },
+    {
+      "id": "substances-ayahuasca",
+      "path": "/substances/ayahuasca/",
+      "title": "Ayahuasca - La troisième vague",
+      "description": "L'Ayahuasca est une infusion ou un thé enthéogène fabriqué à partir de la vigne Banisteriopsis caapi et de la feuille de Psychotria viridis."
+    },
+    {
+      "id": "substances-champignons-psilocybin",
+      "path": "/substances/champignons-psilocybin/",
+      "title": "Champignons Psilocybin - La troisième vague",
+      "description": "Les champignons psilocybine contiennent le composé psychoactif psilocybine, un composé psychédélique naturel capable de produire de puissantes hallucinations et des expériences de type mystique, ainsi que d'autres effets."
+    },
+    {
+      "id": "substances-dmt",
+      "path": "/substances/dmt/",
+      "title": "DMT - La troisième vague",
+      "description": "Le DMT, ou N,N-Diméthyltryptamine, est un produit chimique psychédélique qui se trouve naturellement dans les plantes et les animaux, des organismes sous-marins aux mammifères terrestres."
+    },
+    {
+      "id": "substances-lsd",
+      "path": "/substances/lsd/",
+      "title": "LSD - La troisième vague",
+      "description": "Mieux connu sous le nom de LSD ou \"acide\", le diéthylamide de l’acide lysergique est un puissant psychédélique dérivé d’une substance chimique présente dans le champignon du seigle"
+    },
+    {
+      "id": "synthese-de-la-recherche-psychedelique-sur-la-dependance",
+      "path": "/synthese-de-la-recherche-psychedelique-sur-la-dependance/",
+      "title": "Synthèse de la recherche psychédélique sur la dépendance - La troisième vague",
+      "description": "La dépendance peut être un problème assez moderne par rapport à la chronologie de l'utilisation traditionnelle des psychédéliques, mais les psychédéliques ont été utilisés dans le traitement de la dépendance par divers groupes religieux."
+    },
+    {
+      "id": "trip-au-dmt-a-quoi-vous-attendre",
+      "path": "/trip-au-dmt-a-quoi-vous-attendre/",
+      "title": "Trip au DMT : À quoi vous attendre ? - La troisième vague",
+      "description": "Si vous avez envisagé d'essayer de prendre du DMT, vous avez probablement déjà expérimenté des psychédéliques et vous vous retrouvez maintenant imprégné d'une bonne dose de curiosité pour des choses plus fortes."
+    }
+  ]
+}

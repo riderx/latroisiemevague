@@ -7,7 +7,7 @@ type SitemapManifest = {
 }
 
 export function GET() {
-  const manifest = JSON.parse(readFileSync(path.join(process.cwd(), 'page-content/pages/manifest.json'), 'utf8')) as SitemapManifest
+  const manifest = JSON.parse(readFileSync(path.join(process.cwd(), 'src/content-data/pages/manifest.json'), 'utf8')) as SitemapManifest
   const urls = manifest.pages.map((page) => {
     const loc = new URL(page.path, manifest.origin).toString()
 
