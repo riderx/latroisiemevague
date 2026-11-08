@@ -6,8 +6,11 @@ import Footer from '../components/Footer.astro'
 import Analytics from '../components/Analytics.astro'
 import { SITE } from '../data/site'
 interface Props { title: string; description: string; path?: string; type?: 'website' | 'article'; schema?: object; noindex?: boolean; image?: string; published?: string; modified?: string }
-const { title, description, path = Astro.url.pathname, type = 'website', schema, noindex = false, image = '/og.jpg', published, modified } = Astro.props
+const { title: fullTitle, description, path = Astro.url.pathname, type = 'website', schema, noindex = false, image = '/og.jpg', published, modified } = Astro.props
 const canonical = new URL(path, SITE).href
+// Google cuts titles near 60 characters and already shows the site name, so a long title drops the suffix.
+const suffix = ' | La Troisième Vague'
+const title = fullTitle.endsWith(suffix) && fullTitle.length > 60 ? fullTitle.slice(0, -suffix.length) : fullTitle
 const og = new URL(image, SITE).href
 ---
 <!doctype html>

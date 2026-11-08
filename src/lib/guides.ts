@@ -43,6 +43,13 @@ function prepare(guide: Guide) {
     if (label) $(element).text(label)
     if (label === 'Légalité') $(element).after('<p class="guide-editorial-update"><strong>Contexte juridique.</strong> Cette section traduit le contexte présenté par la source anglaise. Elle ne constitue pas une vérification actualisée des lois de chaque pays. Dépénalisation, autorisation médicale et légalité générale sont des notions distinctes.</p>')
   })
+  // Some sources jump from h2 to h4: lower such a heading to one level below the previous heading.
+  let previous = 2
+  $('h2,h3,h4,h5,h6').each((_, element) => {
+    const level = Number(element.tagName[1])
+    if (level > previous + 1) element.tagName = `h${previous + 1}`
+    previous = Number(element.tagName[1])
+  })
   $('h2,h3,h4').each((index, element) => {
     if ($(element).attr('id')) return
     let id = slug($(element).text()) || `section-${index + 1}`

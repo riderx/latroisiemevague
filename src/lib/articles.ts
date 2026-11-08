@@ -26,6 +26,15 @@ const covers: Record<string, string> = {
   'trip-au-dmt-a-quoi-vous-attendre': 's-dmt',
 }
 
+/** Shorter `<title>` for articles whose heading is longer than Google shows (about 60 characters). */
+export const seoTitles: Record<string, string> = {
+  'johns-hopkins-ouvre-le-plus-grand-centre-de-recherche-psychedelique-du-monde': 'Johns Hopkins ouvre un centre de recherche psychédélique',
+  'comment-les-psychedeliques-liberent-les-mecanismes-de-controle-de-votre-cerveau': 'Psychédéliques et réseau du mode par défaut du cerveau',
+  'la-recherche-clinique-prouve-que-le-microdosage-du-lsd-nest-pas-un-placebo': 'Microdosage du LSD : ce que montre un essai contrôlé',
+  'synthese-de-la-recherche-psychedelique-sur-la-dependance': 'Psychédéliques et dépendances : la recherche et ses limites',
+  'ayahuasca-lancien-antidepresseur': 'Ayahuasca et dépression : premiers essais et limites',
+}
+
 export type Article = { id: string; path: string; title: string; description: string; category: string; categoryId: string; published: string; modified: string; html: string; text: string; cover: string; words: number }
 
 const clean = (title: string) => title.replace(/\s*[-–|]\s*La troisième vague\s*$/i, '').trim()
