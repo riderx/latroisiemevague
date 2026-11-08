@@ -6,17 +6,17 @@ import Base from './Base.astro'
 import Ill from '../components/Ill.astro'
 import Arrow from '../components/Arrow.astro'
 import { articles, formatDate, type Article } from '../lib/articles'
-import { tintFor, SITE } from '../data/site'
+import { tintFor, SITE, ogImage } from '../data/site'
 const { article } = Astro.props as { article: Article }
 const canonical = SITE + article.path
 const others = articles.filter(a => a.path !== article.path).sort((a, b) => Number(b.categoryId === article.categoryId) - Number(a.categoryId === article.categoryId)).slice(0, 3)
 const schema = { '@context': 'https://schema.org', '@graph': [
   { '@type': 'BlogPosting', headline: article.title, description: article.description, inLanguage: 'fr-FR', datePublished: article.published, dateModified: article.modified, url: canonical, mainEntityOfPage: canonical, wordCount: article.words,
-    author: { '@type': 'Person', name: 'Julien Coulaud', url: SITE + '/a-propos/' }, publisher: { '@type': 'Organization', name: 'La Troisième Vague', logo: { '@type': 'ImageObject', url: SITE + '/favicon.svg' } }, image: SITE + '/og.jpg', articleSection: article.category },
+    author: { '@type': 'Person', name: 'Julien Coulaud', url: SITE + '/a-propos/' }, publisher: { '@type': 'Organization', name: 'La Troisième Vague', logo: { '@type': 'ImageObject', url: SITE + '/favicon.svg' } }, image: SITE + ogImage(article.path), articleSection: article.category },
   { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Articles', item: SITE + '/blog/' }, { '@type': 'ListItem', position: 3, name: article.title, item: canonical }] },
 ] }
 ---
-<Base title={`${article.title} | La Troisième Vague`} description={article.description} path={article.path} type="article" schema={schema} published={article.published} modified={article.modified}>
+<Base title={`${article.title} | La Troisième Vague`} description={article.description} path={article.path} type="article" schema={schema} published={article.published} modified={article.modified} image={ogImage(article.path)}>
   <section class="ahead"><div class="in">
     <h1>{article.title}</h1>
     <p class="byline"><span>Publié le <b><time datetime={article.published}>{formatDate(article.published)}</time></b></span><span>{Math.ceil(article.words / 230)} min de lecture</span><span>{article.category}</span></p>
