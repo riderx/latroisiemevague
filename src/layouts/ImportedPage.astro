@@ -1,0 +1,14 @@
+---
+import '../styles/migration.css'
+import type { Page } from '../lib/pages'
+import { headFor, bodyFor } from '../lib/pages'
+const { page, body = bodyFor(page), head = headFor(page) } = Astro.props as { page: Page; body?: string; head?: string }
+---
+<!doctype html>
+<html lang="fr-FR">
+  <head><Fragment set:html={head} /></head>
+  <body class={page.bodyClass}>
+    <Fragment set:html={body} />
+    <script>import '../scripts/site'</script>
+  </body>
+</html>

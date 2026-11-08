@@ -1,0 +1,36 @@
+---
+import ImportedPage from '../layouts/ImportedPage.astro'
+import { pages, headFor, bodyFor } from '../lib/pages'
+import { load } from 'cheerio'
+const page = pages.find(page => page.path === '/contact/')!
+const $ = load(bodyFor(page), null, false)
+$('main').html(`<section class="search-page"><h1>Rechercher</h1><form role="search" action="/recherche/"><label for="search-query">Rechercher sur La Troisième Vague</label><p><input type="search" id="search-query" name="s" required><button type="submit">Rechercher</button></p></form><p id="search-status" role="status"></p><div class="search-results"></div></section>`)
+const head = load(headFor(page), null, false)
+head('title').text('Recherche - La troisième vague')
+head('meta[name=robots]').attr('content', 'noindex, follow')
+head('link[rel=canonical]').attr('href', 'https://latroisiemevague.com/recherche/')
+head('script[type="application/ld+json"]').remove()
+---
+<ImportedPage page={page} head={head.html()} body={$.html()} />
+<script>
+  const query = new URLSearchParams(location.search).get('s') || ''
+  const input = document.querySelector<HTMLInputElement>('#search-query')!
+  input.value = query
+  const status = document.querySelector('#search-status')!
+  if (query) {
+    try {
+      const response = await fetch('/search.json')
+      const pages: { title: string; path: string; description: string; text: string }[] = await response.json()
+      const normalize = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+      const words = normalize(query).split(/\s+/).filter(Boolean)
+      const matches = pages.filter(page => words.every(word => normalize(page.title + ' ' + page.text).includes(word)))
+      status.textContent = `${matches.length} résultat${matches.length === 1 ? '' : 's'}`
+      for (const page of matches) {
+        const article = document.createElement('article'), title = document.createElement('h2'), link = document.createElement('a'), excerpt = document.createElement('p')
+        link.href = page.path; link.textContent = page.title.replace(' - La troisième vague', '')
+        excerpt.textContent = page.description || page.text.slice(0, 240)
+        title.append(link); article.append(title, excerpt); document.querySelector('.search-results')!.append(article)
+      }
+    } catch { status.textContent = 'La recherche est indisponible. Veuillez réessayer.' }
+  }
+</script>

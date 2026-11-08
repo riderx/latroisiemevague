@@ -1,0 +1,9 @@
+---
+import ImportedPage from '../layouts/ImportedPage.astro'
+import { pages } from '../lib/pages'
+export function getStaticPaths() {
+  return pages.map(page => ({ params: { slug: page.path.slice(1).replace(/\/$/, '') || undefined }, props: { page } }))
+}
+const { page } = Astro.props
+---
+<ImportedPage page={page} />

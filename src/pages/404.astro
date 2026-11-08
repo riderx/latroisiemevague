@@ -1,0 +1,7 @@
+---
+import ImportedPage from '../layouts/ImportedPage.astro'
+import { pages, headFor } from '../lib/pages'
+const page = pages.find(page => page.path === '/oups-404/')!
+const head = headFor(page).replace(/<meta name="robots"[^>]*>/g, '<meta name="robots" content="noindex, follow">')
+---
+<ImportedPage page={page} head={head} />

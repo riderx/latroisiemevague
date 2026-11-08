@@ -1,241 +1,203 @@
 import * as cheerio from 'cheerio'
-import { spawnSync } from 'node:child_process'
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile, access } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { createHash } from 'node:crypto'
 
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const origin = 'https://latroisiemevague.com'
-const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const publicDir = path.join(rootDir, 'public')
-const dataFile = path.join(rootDir, '.wordpress-import/site.json')
-const downloadedAssets = new Set()
-
-async function fetchResponse(url) {
-  const response = await fetch(url, {
-    headers: {
-      'user-agent': 'latroisiemevague-astro-migration/1.0',
-    },
-  })
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`)
+const cache = path.join(root, '.wordpress-import/cache')
+const contentRoot = path.join(root, 'src/content-data/pages')
+const assets = new Map()
+const failures = []
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+let lastRequest = 0
+async function request(url) {
+  for (let attempt = 0; attempt < 5; attempt++) {
+    await sleep(Math.max(0, 650 - (Date.now() - lastRequest)))
+    lastRequest = Date.now()
+    const response = await fetch(url, { signal: AbortSignal.timeout(60000) })
+    if (response.ok) return response
+    if (response.status !== 429 && response.status < 500) throw new Error(`${response.status} ${url}`)
+    console.log(`Retrying ${response.status}: ${url}`)
+    await sleep(Math.min(60000, 15000 * (attempt + 1)))
   }
-
-  return response
+  throw new Error(`Unable to fetch ${url}`)
 }
-
-async function fetchText(url) {
-  const response = await fetchResponse(url)
-  return response.text()
+async function cachedText(url) {
+  const file = path.join(cache, encodeURIComponent(new URL(url).pathname + new URL(url).search) + '.html')
+  try { return await readFile(file, 'utf8') } catch {}
+  const html = await (await request(url)).text()
+  await writeFile(file, html)
+  return html
 }
-
-function sameOriginUrl(value, baseUrl = origin) {
-  if (!value || value.startsWith('data:') || value.startsWith('mailto:') || value.startsWith('tel:') || value.startsWith('#')) {
-    return null
-  }
-
+function internal(url) { return ['latroisiemevague.com', 'www.latroisiemevague.com'].includes(url.hostname) }
+function localAsset(url) {
+  if (internal(url)) return url.pathname.replace(/^\/wp-content\/uploads\//, '/assets/uploads/').replace(/^\/wp-content\//, '/assets/wordpress/').replace(/^\/wp-includes\//, '/assets/wordpress/includes/')
+  return `/assets/external/${createHash('sha256').update(url.href).digest('hex').slice(0, 16)}${path.extname(url.pathname) || (url.hostname === 'fonts.googleapis.com' ? '.css' : '.png')}`
+}
+function isAsset(url) { return /\.(?:avif|css|eot|gif|ico|jpe?g|mp4|otf|pdf|png|svg|ttf|webm|webp|woff2?)$/i.test(url.pathname) || url.hostname === 'fonts.googleapis.com' }
+async function download(url) {
+  const local = localAsset(url)
+  if (assets.has(local)) return local + url.hash
+  assets.set(local, url.href)
+  const file = path.join(root, 'public', decodeURIComponent(local))
+  try { await access(file); return local + url.hash } catch {}
   try {
-    const url = new URL(value, baseUrl)
-    return url.origin === origin ? url : null
+    const response = await request(url.href)
+    const css = response.headers.get('content-type')?.includes('text/css') || url.pathname.endsWith('.css')
+    const data = css ? await rewriteCss(await response.text(), url.href) : Buffer.from(await response.arrayBuffer())
+    await mkdir(path.dirname(file), { recursive: true })
+    await writeFile(file, data)
+  } catch (error) {
+    failures.push({ url: url.href, error: String(error) })
+    console.warn(String(error))
   }
-  catch {
-    return null
+  return local + url.hash
+}
+async function rewrite(value, base, asset = false) {
+  value = value?.trim()
+  if (!value || /^(?:#|data:|mailto:|tel:)/i.test(value)) return value
+  let url
+  try { url = new URL(value, base) } catch { return value }
+  if ((asset && /^https?:$/.test(url.protocol)) || (isAsset(url) && internal(url))) return download(url)
+  if (internal(url) && url.pathname.startsWith('/cdn-cgi/l/email-protection') && url.hash) {
+    const encoded = url.hash.slice(1), key = parseInt(encoded.slice(0, 2), 16)
+    return 'mailto:' + Buffer.from(encoded.slice(2).match(/../g).map(byte => parseInt(byte, 16) ^ key)).toString()
   }
-}
-
-function outputPathForUrl(url) {
-  const cleanPath = decodeURIComponent(localPathForUrl(url))
-  return path.join(publicDir, cleanPath)
-}
-
-function localPathForUrl(url) {
-  return encodeURI(url.pathname).replace(/%2F/g, '/').replace(/^\/wp-content\/uploads\//, '/assets/uploads/')
-}
-
-function isAssetPath(pathname) {
-  return /\.(avif|css|eot|gif|ico|jpeg|jpg|js|json|mp4|otf|png|svg|ttf|txt|webm|webp|woff|woff2|xml)$/i.test(pathname)
-}
-
-async function downloadAsset(assetUrl) {
-  const url = typeof assetUrl === 'string' ? sameOriginUrl(assetUrl) : assetUrl
-  if (!url || !isAssetPath(url.pathname)) return
-  if (/^\/wp-(content|includes)\//.test(url.pathname) && !url.pathname.startsWith('/wp-content/uploads/')) return
-
-  const key = url.pathname
-  if (downloadedAssets.has(key)) return
-  downloadedAssets.add(key)
-
-  const destination = outputPathForUrl(url)
-  await mkdir(path.dirname(destination), { recursive: true })
-
-  const response = await fetchResponse(url.href)
-  const contentType = response.headers.get('content-type') || ''
-
-  if (contentType.includes('text/css') || url.pathname.endsWith('.css')) {
-    const css = await response.text()
-    const rewritten = await rewriteCssUrls(css, url.href)
-    await writeFile(destination, rewritten)
-    return
-  }
-
-  const body = Buffer.from(await response.arrayBuffer())
-  await writeFile(destination, body)
-}
-
-async function rewriteCssUrls(css, baseUrl) {
-  const matches = [...css.matchAll(/url\((['"]?)(.*?)\1\)/g)]
-  let rewritten = css
-
-  for (const match of matches) {
-    const raw = match[2].trim()
-    const url = sameOriginUrl(raw, baseUrl)
-    if (!url) continue
-
-    await downloadAsset(url)
-    rewritten = rewritten.replace(match[0], `url("${localPathForUrl(url)}")`)
-  }
-
-  return rewritten.replaceAll(origin, '')
-}
-
-function rewriteSrcset(value, baseUrl) {
+  if (internal(url) && !asset) return url.pathname.replace(/(?<!\/|\.[a-z]+)$/, '/') + url.search + url.hash
   return value
-    .split(',')
-    .map((part) => {
-      const [rawUrl, ...rest] = part.trim().split(/\s+/)
-      const url = sameOriginUrl(rawUrl, baseUrl)
-      const nextUrl = url ? localPathForUrl(url) : rawUrl
-      return [nextUrl, ...rest].join(' ')
-    })
-    .join(', ')
 }
-
-async function rewriteElementUrls($, baseUrl) {
-  const urlAttributes = ['href', 'src', 'poster', 'data-src', 'data-lazy-src']
-
-  for (const element of $('*').toArray()) {
-    const node = $(element)
-
-    for (const attr of urlAttributes) {
+async function rewriteCss(css, base) {
+  for (const match of [...css.matchAll(/url\(\s*(['"]?)(.*?)\1\s*\)/g)]) {
+    // These obsolete theme images do not render on the live site; preserve its visible design.
+    if (match[2].includes('letroisiemecycle.com/')) { css = css.replace(match[0], 'none'); continue }
+    css = css.replace(match[0], `url("${await rewrite(match[2], base, true)}")`)
+  }
+  for (const match of [...css.matchAll(/@import\s+(['"])(.*?)\1/g)]) {
+    css = css.replace(match[0], `@import "${await rewrite(match[2], base, true)}"`)
+  }
+  return css
+}
+async function rewriteDom($, url) {
+  for (const el of $('*').toArray()) {
+    const node = $(el)
+    for (const name of Object.keys(el.attribs || {})) {
+      if (/^on/i.test(name)) node.removeAttr(name)
+    }
+    for (const attr of ['src', 'href', 'poster', 'action']) {
       const value = node.attr(attr)
-      const url = sameOriginUrl(value, baseUrl)
-      if (!url) continue
-
-      if (isAssetPath(url.pathname)) {
-        await downloadAsset(url)
+      if (value) node.attr(attr, /^javascript:/i.test(value) ? '#' : await rewrite(value, url, ['src', 'poster'].includes(attr) || (el.tagName === 'link' && node.attr('rel') === 'stylesheet')))
+    }
+    if (node.attr('srcset')) {
+      const parts = []
+      for (const part of node.attr('srcset').split(',')) {
+        const [src, ...size] = part.trim().split(/\s+/)
+        parts.push([await rewrite(src, url, true), ...size].join(' '))
       }
-
-      node.attr(attr, isAssetPath(url.pathname) ? localPathForUrl(url) : `${url.pathname}${url.hash}`)
+      node.attr('srcset', parts.join(', '))
     }
-
-    for (const attr of ['srcset', 'data-srcset']) {
-      const value = node.attr(attr)
-      if (!value) continue
-
-      const parts = value.split(',').map((part) => part.trim().split(/\s+/)[0])
-      for (const part of parts) {
-        const url = sameOriginUrl(part, baseUrl)
-        if (url && isAssetPath(url.pathname)) {
-          await downloadAsset(url)
-        }
-      }
-
-      node.attr(attr, rewriteSrcset(value, baseUrl))
-    }
-
-    const style = node.attr('style')
-    if (style) {
-      node.attr('style', await rewriteCssUrls(style, baseUrl))
-    }
+    if (node.attr('style')) node.attr('style', await rewriteCss(node.attr('style'), url))
+    if (el.tagName === 'style') node.text(await rewriteCss(node.text(), url))
+    if (el.tagName === 'img') node.attr('decoding', 'async')
   }
 }
-
-async function sitemapUrls() {
-  const indexXml = await fetchText(`${origin}/sitemap_index.xml`)
-  const $index = cheerio.load(indexXml, { xmlMode: true })
-  const sitemapLocations = $index('sitemap > loc')
-    .toArray()
-    .map((loc) => $index(loc).text().trim())
-    .filter(Boolean)
-
-  const urls = new Set([`${origin}/`])
-
-  for (const sitemapLocation of sitemapLocations) {
-    const xml = await fetchText(sitemapLocation)
-    const $ = cheerio.load(xml, { xmlMode: true })
-
-    $('url > loc').each((_, loc) => {
-      const value = $(loc).text().trim()
-      const url = sameOriginUrl(value)
-      if (url) urls.add(url.href)
+function prepareForms($) {
+  $('form[role=search]').attr('action', '/recherche/')
+  $('form.wpcf7-form, form.jet-subscribe-form__form').each((_, el) => {
+    const form = $(el)
+    const kind = form.hasClass('wpcf7-form') ? 'contact' : 'newsletter'
+    form.attr('action', '/api/forms').attr('method', 'post').attr('data-form-kind', kind).removeAttr('novalidate')
+    form.find('input[type=hidden], [name^=_wpcf7]').remove()
+    form.find('.wpcf7-response-output, .jet-subscribe-form__message').remove()
+    form.prepend(`<input type="hidden" name="kind" value="${kind}">`)
+    form.append('<label class="form-trap" aria-hidden="true">Site web<input name="website" tabindex="-1" autocomplete="off"></label><p class="form-status" role="status" aria-live="polite"></p>')
+    form.find('[aria-required=true], input[type=email]').attr('required', '')
+    form.find('input:not([type=hidden]), textarea').each((_, field) => {
+      const input = $(field)
+      if (input.attr('placeholder')) input.attr('aria-label', input.attr('placeholder'))
     })
-  }
-
-  return [...urls].sort()
-}
-
-function pagePathFromUrl(url) {
-  const pathname = url.pathname.endsWith('/') ? url.pathname : `${url.pathname}/`
-  return pathname || '/'
-}
-
-async function extractPage(pageUrl) {
-  const html = await fetchText(pageUrl.href)
-  const $ = cheerio.load(html, { decodeEntities: false })
-
-  $('script').remove()
-  $('link[rel="preload"][as="script"]').remove()
-  $('link[rel="dns-prefetch"], link[rel="alternate"], link[rel="https://api.w.org/"]').remove()
-
-  await rewriteElementUrls($, pageUrl.href)
-
-  const headParts = []
-  $('head link[rel="stylesheet"], head link[rel="icon"], head link[rel="shortcut icon"], head style').each((_, element) => {
-    headParts.push($.html(element))
+    form.find('.jet-subscribe-form__submit').each((_, button) => {
+      const link = $(button)
+      link.replaceWith(`<button type="submit" class="${link.attr('class')}">${link.html()}</button>`)
+    })
   })
-
-  $('body script').remove()
-
-  return {
-    path: pagePathFromUrl(pageUrl),
-    title: $('head title').first().text().trim() || 'La Troisième Vague',
-    description: $('head meta[name="description"]').first().attr('content') || '',
-    bodyClass: $('body').attr('class') || '',
-    headHtml: headParts.join('\n'),
-    bodyHtml: $('body').html() || '',
-  }
+  $('form#commentform').remove()
 }
 async function main() {
-  await mkdir(publicDir, { recursive: true })
-  await mkdir(path.dirname(dataFile), { recursive: true })
-
-  const urls = (await sitemapUrls()).map((value) => new URL(value))
+  await mkdir(cache, { recursive: true }); await mkdir(contentRoot, { recursive: true })
+  const sitemap = cheerio.load(await cachedText(origin + '/sitemap_index.xml'), { xmlMode: true })
+  const urls = new Set([origin + '/'])
+  for (const loc of sitemap('sitemap > loc').toArray()) {
+    const $ = cheerio.load(await cachedText(sitemap(loc).text()), { xmlMode: true })
+    $('url > loc').each((_, el) => urls.add($(el).text()))
+  }
+  const sourceUrls = [...urls]
   const pages = []
-
-  for (const [index, url] of urls.entries()) {
-    console.log(`[${index + 1}/${urls.length}] ${url.href}`)
-    pages.push(await extractPage(url))
+  const redirects = new Map([['/les-psychedeliques-peuvent-ils-induire-des-etats-de-flux/', '/les-psychedeliques-peuvent-ils-induire-des-etats-de-flow/']])
+  for (const url of urls) {
+    console.log(`[${pages.length + 1}/${urls.size}] ${url}`)
+    if (redirects.has(new URL(url).pathname)) continue
+    const html = await cachedText(url)
+    const $ = cheerio.load(html.replace(/�PNG[\s\S]*?IEND�B`�/g, ''))
+    if (!$('body').length || !$('title').length) throw new Error(`Not a page: ${url}`)
+    const canonical = $('link[rel=canonical]').attr('href')
+    if (canonical && new URL(canonical).pathname !== new URL(url).pathname) {
+      redirects.set(new URL(url).pathname, new URL(canonical).pathname)
+      urls.add(canonical)
+      continue
+    }
+    $('a[href]').each((_, el) => {
+      const href = $(el).attr('href')
+      try {
+        const link = new URL(href, url)
+        if (internal(link) && !link.search && !isAsset(link) && !/\.(?:php|xml|json)$|\/(?:wp-|cdn-cgi\/|feed\/|comments\/)/.test(link.pathname)) {
+          link.hash = ''; link.protocol = 'https:'; link.hostname = 'latroisiemevague.com'
+          if (!link.pathname.endsWith('/')) link.pathname += '/'
+          urls.add(link.href)
+        }
+      } catch {}
+    })
+    const pathName = new URL(url).pathname
+    const id = pathName === '/' ? 'home' : pathName.replace(/^\/|\/$/g, '').replace(/\//g, '-')
+    const sourceBlocks = []
+    $('main p, main h1, main h2, main h3, main h4, main h5, main h6, main td, main blockquote, main .elementor-widget-text-editor').each((_, el) => {
+      if ($(el).hasClass('must-log-in') || $(el).parents('form').length || $(el).find('form').length) return
+      const text = $(el).text().replace(/\s+/g, ' ').trim()
+      if (text && !text.includes('[email protected]')) sourceBlocks.push(createHash('sha256').update(text).digest('hex'))
+    })
+    const meta = { sourceContentHashes: [...new Set(sourceBlocks)], id, path: pathName, title: $('title').text(), description: $('meta[name=description]').attr('content') || '', bodyClass: ($('body').attr('class') || '').replace(/\bno-js\b/g, '') }
+    $('script:not([type="application/ld+json"]), link[rel="https://api.w.org/"], link[rel=shortlink], link[rel=pingback], link[rel=alternate], link[rel=dns-prefetch], link[rel=preload][as=script], meta[name=generator]').remove()
+    $('[data-settings], [data-element_type], [data-widget_type]').removeAttr('data-settings').removeAttr('data-element_type').removeAttr('data-widget_type')
+    $('.elementor-invisible').removeClass('elementor-invisible')
+    $('[data-cfemail]').each((_, el) => {
+      const node = $(el), encoded = node.attr('data-cfemail'), key = parseInt(encoded.slice(0, 2), 16)
+      const email = Buffer.from(encoded.slice(2).match(/../g).map(byte => parseInt(byte, 16) ^ key)).toString()
+      if (node.is('a')) node.attr('href', `mailto:${email}`).text(email)
+      else { node.parent('a').attr('href', `mailto:${email}`); node.replaceWith(email) }
+    })
+    prepareForms($)
+    // These template IDs are duplicated by WordPress's desktop/mobile menus.
+    $('nav').each((_, el) => $(el).attr('aria-label', $(el).hasClass('raven-nav-menu-mobile') ? 'Navigation mobile' : 'Navigation principale'))
+    $('.must-log-in').html('<a href="/contact/">Contactez-nous</a> pour réagir à cet article.')
+    if (pathName === '/substances/lsd/') $('a[href="#note-01"]').attr('href', '#notes')
+    await rewriteDom($, url)
+    $('link[rel=canonical]').attr('href', origin + pathName)
+    for (const el of $('meta[property="og:image"], meta[property="og:image:secure_url"], meta[name="twitter:image"]').toArray()) {
+      const src = pathName === '/jet-popup/popup/' ? $('body img').first().attr('src') : await rewrite($(el).attr('content'), url, true)
+      $(el).attr('content', src.startsWith('/') ? origin + src : src)
+    }
+    $('script[type="application/ld+json"]').each((_, el) => {
+      $(el).text($(el).text().replaceAll(origin + '/wp-content/uploads/', origin + '/assets/uploads/'))
+    })
+    if (!$('main').length) $('body').wrapInner('<main></main>')
+    await writeFile(path.join(contentRoot, `${id}.html`), $('body').html().replace(/[ \t]+$/gm, '').trim() + '\n')
+    await writeFile(path.join(contentRoot, `${id}.head.html`), $('head').html().replace(/[ \t]+$/gm, '').trim() + '\n')
+    pages.push(meta)
   }
-
-  const exportData = {
-    generatedAt: new Date().toISOString(),
-    origin,
-    pages,
-  }
-
-  await writeFile(dataFile, `${JSON.stringify(exportData, null, 2)}\n`)
-  console.log(`Wrote temporary WordPress export with ${pages.length} pages and ${downloadedAssets.size} assets`)
-
-  const materialize = spawnSync(process.execPath, [path.join(rootDir, 'scripts/convert-tailwind-pages.mjs'), dataFile], {
-    stdio: 'inherit',
-  })
-
-  if (materialize.status !== 0) {
-    throw new Error(`Failed to convert Tailwind pages: ${materialize.status}`)
-  }
+  const manifest = { origin, generatedAt: new Date().toISOString(), sourceUrls, pages: pages.sort((a,b) => a.path.localeCompare(b.path)), redirects: Object.fromEntries(redirects), assetFailures: failures }
+  await writeFile(path.join(contentRoot, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n')
+  console.log(`Imported ${pages.length} pages, ${assets.size} assets, ${failures.length} asset failures`)
+  if (failures.length) process.exitCode = 1
 }
-
-main().catch((error) => {
-  console.error(error)
-  process.exitCode = 1
-})
+main().catch(error => { console.error(error); process.exitCode = 1 })

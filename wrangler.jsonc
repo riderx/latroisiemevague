@@ -1,6 +1,53 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "latroisiemevague",
-  "pages_build_output_dir": "./dist",
-  "compatibility_date": "2026-06-23"
+  "name": "latroisiemevague-v2",
+  "main": "worker/forms.ts",
+  "compatibility_date": "2026-06-23",
+  "workers_dev": false,
+  "preview_urls": false,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "latroisiemevague",
+      "database_id": "03887bb8-94b3-40ef-8a6a-35a45b634ab3",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_sender_addresses": [
+        "contact@latroisiemevague.com"
+      ],
+      "allowed_destination_addresses": [
+        "martindonadieu@gmail.com",
+        "orion.aubert@gmail.com"
+      ]
+    }
+  ],
+  "vars": {
+    "EMAIL_FROM": "contact@latroisiemevague.com"
+  },
+  "triggers": {
+    "crons": [
+      "*/5 * * * *"
+    ]
+  },
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "routes": [
+    {
+      "pattern": "v2.latroisiemevague.com",
+      "custom_domain": true
+    }
+  ]
 }

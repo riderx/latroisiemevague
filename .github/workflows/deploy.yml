@@ -34,7 +34,9 @@ jobs:
             ${{ runner.os }}-bun-
       - run: bun install --frozen-lockfile
       - run: bun run check
+      - run: bun run test
       - run: bun run build
+      - run: bun run verify:migration
       - run: bun run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

@@ -7,3 +7,8 @@
 /.wordpress-import/
 codedb.snapshot
 *.log
+
+/test-results/
+/playwright-report/
+.dev.vars*
+.env*

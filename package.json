@@ -6,11 +6,16 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "crawl": "bun scripts/crawl-wordpress.mjs",
+    "crawl": "node scripts/crawl-wordpress.mjs && node scripts/complete-import.mjs",
     "build": "astro build",
-    "check": "astro check",
-    "preview": "wrangler pages dev dist",
-    "deploy": "wrangler pages deploy dist --project-name latroisiemevague --branch main"
+    "check": "astro check && tsc -p tsconfig.worker.json",
+    "preview": "wrangler dev",
+    "deploy": "bun run db:migrate && wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply DB --remote",
+    "test": "node --experimental-strip-types --test tests/forms.test.ts",
+    "test:browser": "playwright test",
+    "verify:migration": "node scripts/verify-migration.mjs",
+    "types": "wrangler types worker-configuration.d.ts"
   },
   "dependencies": {
     "astro": "6.3.1",
@@ -18,9 +23,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@tailwindcss/vite": "^4.3.1",
+    "@playwright/test": "^1.65.0",
     "@types/node": "^26.0.0",
-    "tailwindcss": "^4.3.1",
     "typescript": "^6.0.3",
     "wrangler": "^4.101.0"
   }
