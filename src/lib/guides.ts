@@ -25,10 +25,19 @@ const slug = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g,
 const normalizePath = (path: string) => path.replace(/\/+$/, '') || '/'
 const sectionLabels: Record<string, string> = { overview: 'Présentation', experience: 'Expérience', effects: 'Effets', benefits: 'Bénéfices potentiels et risques', benefitsandrisks: 'Bénéfices potentiels et risques', use: 'Recherche thérapeutique', therapeuticuse: 'Recherche thérapeutique', growth: 'Développement personnel', personalgrowth: 'Développement personnel', development: 'Développement professionnel', microdosing: 'Microdosage', legality: 'Légalité', history: 'Histoire', historyandstats: 'Histoire et statistiques', myths: 'Mythes', faq: 'Questions fréquentes', footnotes: 'Références', pharmacology: 'Pharmacologie', ethicalconsiderations: 'Considérations éthiques' }
 const riskNotice = '<p class="guide-editorial-update"><strong>Réduction des risques.</strong> Le passage qui suit reprend les informations pratiques de la source anglaise : doses, préparation ou approvisionnement. Il informe, il n’incite pas à consommer. Selon le produit, l’usage peut être interdit en France. La teneur d’un produit varie, et les mélanges augmentent les risques. En cas de malaise, appelez le 15 ou le 112. <a href="/aide/">Numéros d’aide et d’écoute</a></p>'
-/** Puts the risk notice at the start of each run of practical blocks (after its heading when the run opens with one). */
+/**
+ * Puts the risk notice at the start of each run of practical blocks (after its heading when the run opens with one).
+ * In the FAQ every question becomes its own disclosure, so each practical question gets its own notice.
+ */
 function withRiskNotices(guide: Guide, blocks: string[]) {
   const practical = new Set(guide.practicalBlocks ?? [])
-  return blocks.flatMap((block, i) => !practical.has(i) || practical.has(i - 1) ? [block] : /^<h[2-6]/.test(block.trim()) ? [block, riskNotice] : [riskNotice, block])
+  let inFaq = false
+  return blocks.flatMap((block, i) => {
+    const heading = block.trim().match(/^<h([2-6])/)
+    if (heading?.[1] === '2') inFaq = /id="faq"/.test(block)
+    const startsRun = practical.has(i) && (!practical.has(i - 1) || (inFaq && heading !== null))
+    return !startsRun ? [block] : heading ? [block, riskNotice] : [riskNotice, block]
+  })
 }
 function prepare(guide: Guide) {
   const $ = load(withRiskNotices(guide, applyEditorialUpdates(guide.id, guide.blocks, guide.contentHash)).join('\n'), null, false)
