@@ -1,0 +1,18 @@
+---
+import '../styles/reading-navigation.css'
+interface Props { items: { id: string; title: string }[]; contentId: string }
+const { items, contentId } = Astro.props
+---
+<aside class="reader-toc guide-toc" id="sommaire" data-reading-toc data-content-id={contentId}>
+  <details open>
+    <summary>
+      <span class="reader-toc-title">Table des matières</span>
+      <span class="reader-percentage" data-reading-percentage aria-hidden="true">0 %</span>
+      <span class="reader-current" data-reading-current aria-hidden="true">{items[0]?.title}</span>
+      <svg class="reader-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+    </summary>
+    <nav class="reader-toc-links" aria-label="Table des matières"><ol>{items.map((item, index) => <li><a href={`#${item.id}`}><span class="reader-section-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><span>{item.title}</span></a></li>)}</ol></nav>
+  </details>
+  <progress class="reader-progress" max="100" value="0" aria-label="Progression de lecture"></progress>
+</aside>
+<script>import '../scripts/reading-navigation'</script>

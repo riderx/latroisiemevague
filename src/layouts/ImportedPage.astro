@@ -3,11 +3,12 @@ import '../styles/migration.css'
 import Analytics from '../components/Analytics.astro'
 import type { Page } from '../lib/pages'
 import { headFor, bodyFor } from '../lib/pages'
+import { articleHead } from '../lib/article-seo'
 const { page, body = bodyFor(page), head = headFor(page) } = Astro.props as { page: Page; body?: string; head?: string }
 ---
 <!doctype html>
 <html lang="fr-FR">
-  <head><Fragment set:html={head} /><Analytics /></head>
+  <head><Fragment set:html={articleHead(head, body)} /><Analytics /></head>
   <body class={page.bodyClass}>
     <Fragment set:html={body} />
     <script>import '../scripts/site'</script>

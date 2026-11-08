@@ -19,6 +19,12 @@ This is an authorized French translation and adaptation, not an exact facsimile 
 
 The source snapshots and translation caches remain in ignored `.wordpress-import/thirdwave/`. Introductory bare text in the WordPress source is wrapped into paragraphs before extraction, so definitions are retained. Numeric reference links and their destinations are preserved; legacy Word-style footnote names are restored as HTML IDs. Bibliographic titles remain in their original language.
 
+## Article layout and search metadata
+
+All 32 guides use the source site's two-column introduction and left-hand contents structure, with locally hosted source illustrations recorded in `guide-illustrations.json`. The French contents panel highlights the active section, indicates completed sections and reading progress, and follows scrolling in both directions without changing browser history. On mobile it becomes a compact sticky disclosure. Normal anchor links remain available without JavaScript; reduced-motion preferences are respected.
+
+Guides have distinct titles and H1s for substance and microdosing pages, French descriptions, canonical URLs, social metadata, source-linked Article schema and dated sitemap entries. Existing French publication dates are retained where the original WordPress metadata provides them. The 15 legacy blog posts receive BlogPosting schema using their existing bylines, publication dates, descriptions and images; article bodies remain unchanged. The automated SEO verification checks all 47 articles. Search indexing and ranking remain decisions made by search engines.
+
 ## Editorial updates
 
 Source text contains older predictions and categorical claims. The French edition explicitly corrects, among other examples:

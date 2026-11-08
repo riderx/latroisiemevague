@@ -7,6 +7,15 @@ export type Guide = GuideEntry & {
   omissions: { heading: string; reason: string }[]
 }
 const files = import.meta.glob('../content-data/guides/*.json', { eager: true, import: 'default' }) as Record<string, Guide>
+const legacyHeads = import.meta.glob('../content-data/pages/{substances,microdosing}-*.head.html', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>
+export function guideDates(guide: Guide) {
+  const legacyId = guide.path.slice(1, -1).replaceAll('/', '-')
+  const head = legacyHeads[`../content-data/pages/${legacyId}.head.html`]
+  const $ = load(head || '')
+  const schema = $('script[type="application/ld+json"]').html()
+  const published = schema ? JSON.parse(schema)['@graph']?.find((item: { '@type': string }) => item['@type'] === 'WebPage')?.datePublished : undefined
+  return { published: published || guide.translatedAt, modified: guide.translatedAt }
+}
 export const guideFor = (entry: GuideEntry): Guide => {
   const guide = files[`../content-data/guides/${entry.id}.json`]
   if (!guide?.blocks?.length || guide.blocks.length !== guide.sourceBlockCount) throw new Error(`French translation incomplete: ${entry.id}`)

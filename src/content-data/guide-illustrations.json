@@ -1,0 +1,130 @@
+{
+  "psychedelics-2c-b": {
+    "path": "/assets/guides/molecules/2c-b.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/2c-b.svg"
+  },
+  "psychedelics-4-aco-dmt": {
+    "path": "/assets/guides/molecules/4-aco-dmt.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2021/12/4-aco-dmt.svg"
+  },
+  "psychedelics-5-meo-dmt": {
+    "path": "/assets/guides/molecules/5-meo-dmt.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/5-meo-dmt.svg"
+  },
+  "psychedelics-amanita-muscaria": {
+    "path": "/assets/guides/molecules/amanita-muscaria.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2023/04/amanita-muscaria.svg"
+  },
+  "psychedelics-ayahuasca": {
+    "path": "/assets/guides/molecules/ayahuasca.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2023/02/ayahuasca.svg"
+  },
+  "psychedelics-cacao": {
+    "path": "/assets/guides/molecules/cacao.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2022/02/cacao.svg"
+  },
+  "psychedelics-cannabis": {
+    "path": "/assets/guides/molecules/cannabis.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/cannabis-1.svg"
+  },
+  "psychedelics-datura": {
+    "path": "/assets/guides/molecules/datura.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/datura.svg"
+  },
+  "psychedelics-dmt": {
+    "path": "/assets/guides/molecules/dmt.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/dmt.svg"
+  },
+  "psychedelics-ibogaine": {
+    "path": "/assets/guides/molecules/ibogaine.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/ibogaine.svg"
+  },
+  "psychedelics-kambo": {
+    "path": "/assets/guides/molecules/kambo.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/kambo.svg"
+  },
+  "psychedelics-kanna": {
+    "path": "/assets/guides/molecules/kanna.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2022/05/kanna.svg"
+  },
+  "psychedelics-ketamine": {
+    "path": "/assets/guides/molecules/ketamine.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/ketamine.svg"
+  },
+  "psychedelics-kratom": {
+    "path": "/assets/guides/molecules/kratom.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/kratom.svg"
+  },
+  "psychedelics-lsd": {
+    "path": "/assets/guides/molecules/lsd.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/lsd.svg"
+  },
+  "psychedelics-mdma": {
+    "path": "/assets/guides/molecules/mdma.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/mdma.svg"
+  },
+  "psychedelics-mescaline": {
+    "path": "/assets/guides/molecules/mescaline.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/08/mescaline.svg"
+  },
+  "psychedelics-peyote": {
+    "path": "/assets/guides/molecules/peyote.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/peyote.svg"
+  },
+  "psychedelics-shrooms": {
+    "path": "/assets/guides/molecules/shrooms.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/psilocybin-mushrooms.svg"
+  },
+  "psychedelics-salvia": {
+    "path": "/assets/guides/molecules/salvia.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/salvia.svg"
+  },
+  "psychedelics-san-pedro": {
+    "path": "/assets/guides/molecules/san-pedro.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/08/san-pedro.svg"
+  },
+  "psychedelics-tobacco": {
+    "path": "/assets/guides/molecules/tobacco.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/tobacco.svg"
+  },
+  "microdosing-lsd": {
+    "path": "/assets/guides/molecules/lsd.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/lsd.svg"
+  },
+  "microdosing-mushrooms": {
+    "path": "/assets/guides/molecules/shrooms.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/psilocybin-mushrooms.svg"
+  },
+  "microdosing-1p-lsd": {
+    "path": "/assets/guides/molecules/1p-lsd.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/1p-lsd-1.svg"
+  },
+  "microdosing-4-aco-dmt": {
+    "path": "/assets/guides/molecules/4-aco-dmt.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2021/12/4-aco-dmt.svg"
+  },
+  "microdosing-ayahuasca": {
+    "path": "/assets/guides/molecules/ayahuasca.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2023/02/ayahuasca.svg"
+  },
+  "microdosing-marijuana": {
+    "path": "/assets/guides/molecules/cannabis.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/cannabis-1.svg"
+  },
+  "microdosing-dmt": {
+    "path": "/assets/guides/molecules/dmt.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/dmt.svg"
+  },
+  "microdosing-ibogaine": {
+    "path": "/assets/guides/molecules/ibogaine.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/07/ibogaine.svg"
+  },
+  "microdosing-mescaline": {
+    "path": "/assets/guides/molecules/mescaline.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/08/mescaline.svg"
+  },
+  "microdosing-psilocybin-truffles": {
+    "path": "/assets/guides/molecules/shrooms.svg",
+    "sourceUrl": "https://thethirdwave.co/app/uploads/2020/06/psilocybin-mushrooms.svg"
+  }
+}

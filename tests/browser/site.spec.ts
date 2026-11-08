@@ -14,6 +14,8 @@ test('all migrated pages render with local assets and no browser errors', async 
     const guide = guideCatalog.find(guide => guide.path === route.path)
     await expect(page).toHaveTitle(guide ? guideTitle(guide) : listingPages[route.path as keyof typeof listingPages]?.title ?? route.title)
     await expect(page.locator('main')).toBeVisible()
+    if (guide) await expect(page.locator('.guide-illustration img')).toHaveJSProperty('complete', true)
+    if (guide) expect(await page.locator('.guide-illustration img').evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0)
   }
   expect(errors).toEqual([])
 })
