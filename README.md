@@ -1,6 +1,6 @@
 # La Troisième Vague
 
-Astro migration of `https://latroisiemevague.com`, deployed to a Cloudflare Worker at **https://latroisiemevague.com**. The www hostname redirects to the canonical domain.
+Astro migration of `https://latroisiemevague.com`, deployed to a Cloudflare Worker at **https://latroisiemevague.com**. The www hostname also serves the site; canonical URLs use the main domain.
 
 ## Development and verification
 
