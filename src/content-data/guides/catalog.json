@@ -1,0 +1,308 @@
+[
+  {
+    "id": "psychedelics-index",
+    "name": "Psychédéliques",
+    "category": "psychedelics",
+    "path": "/substances/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/",
+    "hub": true,
+    "slug": "index"
+  },
+  {
+    "id": "psychedelics-2c-b",
+    "name": "2C-B",
+    "category": "psychedelics",
+    "path": "/substances/2c-b/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/2c-b/",
+    "hub": false,
+    "slug": "2c-b"
+  },
+  {
+    "id": "psychedelics-4-aco-dmt",
+    "name": "4-AcO-DMT",
+    "category": "psychedelics",
+    "path": "/substances/4-aco-dmt/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/4-aco-dmt/",
+    "hub": false,
+    "slug": "4-aco-dmt"
+  },
+  {
+    "id": "psychedelics-5-meo-dmt",
+    "name": "5-MeO-DMT",
+    "category": "psychedelics",
+    "path": "/substances/5-meo-dmt/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/5-meo-dmt/",
+    "hub": false,
+    "slug": "5-meo-dmt"
+  },
+  {
+    "id": "psychedelics-amanita-muscaria",
+    "name": "Amanite tue-mouches",
+    "category": "psychedelics",
+    "path": "/substances/amanita-muscaria/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/amanita-muscaria/",
+    "hub": false,
+    "slug": "amanita-muscaria"
+  },
+  {
+    "id": "psychedelics-ayahuasca",
+    "name": "Ayahuasca",
+    "category": "psychedelics",
+    "path": "/substances/ayahuasca/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/ayahuasca/",
+    "hub": false,
+    "slug": "ayahuasca"
+  },
+  {
+    "id": "psychedelics-cacao",
+    "name": "Cacao",
+    "category": "psychedelics",
+    "path": "/substances/cacao/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/cacao/",
+    "hub": false,
+    "slug": "cacao"
+  },
+  {
+    "id": "psychedelics-cannabis",
+    "name": "Cannabis",
+    "category": "psychedelics",
+    "path": "/substances/cannabis/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/cannabis/",
+    "hub": false,
+    "slug": "cannabis"
+  },
+  {
+    "id": "psychedelics-datura",
+    "name": "Datura",
+    "category": "psychedelics",
+    "path": "/substances/datura/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/datura/",
+    "hub": false,
+    "slug": "datura"
+  },
+  {
+    "id": "psychedelics-dmt",
+    "name": "DMT",
+    "category": "psychedelics",
+    "path": "/substances/dmt/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/dmt/",
+    "hub": false,
+    "slug": "dmt"
+  },
+  {
+    "id": "psychedelics-ibogaine",
+    "name": "Ibogaïne",
+    "category": "psychedelics",
+    "path": "/substances/ibogaine/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/ibogaine/",
+    "hub": false,
+    "slug": "ibogaine"
+  },
+  {
+    "id": "psychedelics-kambo",
+    "name": "Kambô",
+    "category": "psychedelics",
+    "path": "/substances/kambo/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/kambo/",
+    "hub": false,
+    "slug": "kambo"
+  },
+  {
+    "id": "psychedelics-kanna",
+    "name": "Kanna",
+    "category": "psychedelics",
+    "path": "/substances/kanna/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/kanna/",
+    "hub": false,
+    "slug": "kanna"
+  },
+  {
+    "id": "psychedelics-ketamine",
+    "name": "Kétamine",
+    "category": "psychedelics",
+    "path": "/substances/ketamine/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/ketamine/",
+    "hub": false,
+    "slug": "ketamine"
+  },
+  {
+    "id": "psychedelics-kratom",
+    "name": "Kratom",
+    "category": "psychedelics",
+    "path": "/substances/kratom/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/kratom/",
+    "hub": false,
+    "slug": "kratom"
+  },
+  {
+    "id": "psychedelics-lsd",
+    "name": "LSD",
+    "category": "psychedelics",
+    "path": "/substances/lsd/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/lsd/",
+    "hub": false,
+    "slug": "lsd"
+  },
+  {
+    "id": "psychedelics-mdma",
+    "name": "MDMA",
+    "category": "psychedelics",
+    "path": "/substances/mdma/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/mdma/",
+    "hub": false,
+    "slug": "mdma"
+  },
+  {
+    "id": "psychedelics-mescaline",
+    "name": "Mescaline",
+    "category": "psychedelics",
+    "path": "/substances/mescaline/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/mescaline/",
+    "hub": false,
+    "slug": "mescaline"
+  },
+  {
+    "id": "psychedelics-peyote",
+    "name": "Peyotl",
+    "category": "psychedelics",
+    "path": "/substances/peyote/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/peyote/",
+    "hub": false,
+    "slug": "peyote"
+  },
+  {
+    "id": "psychedelics-shrooms",
+    "name": "Champignons à psilocybine",
+    "category": "psychedelics",
+    "path": "/substances/champignons-psilocybin/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/shrooms/",
+    "hub": false,
+    "slug": "shrooms"
+  },
+  {
+    "id": "psychedelics-salvia",
+    "name": "Salvia divinorum",
+    "category": "psychedelics",
+    "path": "/substances/salvia/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/salvia/",
+    "hub": false,
+    "slug": "salvia"
+  },
+  {
+    "id": "psychedelics-san-pedro",
+    "name": "San Pedro",
+    "category": "psychedelics",
+    "path": "/substances/san-pedro/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/san-pedro/",
+    "hub": false,
+    "slug": "san-pedro"
+  },
+  {
+    "id": "psychedelics-tobacco",
+    "name": "Tabac",
+    "category": "psychedelics",
+    "path": "/substances/tabac/",
+    "sourceUrl": "https://thethirdwave.co/psychedelics/tobacco/",
+    "hub": false,
+    "slug": "tobacco"
+  },
+  {
+    "id": "microdosing-index",
+    "name": "Microdosing",
+    "category": "microdosing",
+    "path": "/microdosing/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/",
+    "hub": true,
+    "slug": "index"
+  },
+  {
+    "id": "microdosing-lsd",
+    "name": "LSD",
+    "category": "microdosing",
+    "path": "/microdosing/lsd/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/lsd/",
+    "hub": false,
+    "slug": "lsd"
+  },
+  {
+    "id": "microdosing-mushrooms",
+    "name": "Champignons à psilocybine",
+    "category": "microdosing",
+    "path": "/microdosing/champignons-psilocybin/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/mushrooms/",
+    "hub": false,
+    "slug": "mushrooms"
+  },
+  {
+    "id": "microdosing-1p-lsd",
+    "name": "1P-LSD",
+    "category": "microdosing",
+    "path": "/microdosing/1p-lsd/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/1p-lsd/",
+    "hub": false,
+    "slug": "1p-lsd"
+  },
+  {
+    "id": "microdosing-4-aco-dmt",
+    "name": "4-AcO-DMT",
+    "category": "microdosing",
+    "path": "/microdosing/4-aco-dmt/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/4-aco-dmt/",
+    "hub": false,
+    "slug": "4-aco-dmt"
+  },
+  {
+    "id": "microdosing-ayahuasca",
+    "name": "Ayahuasca",
+    "category": "microdosing",
+    "path": "/microdosing/ayahuasca/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/ayahuasca/",
+    "hub": false,
+    "slug": "ayahuasca"
+  },
+  {
+    "id": "microdosing-marijuana",
+    "name": "Cannabis",
+    "category": "microdosing",
+    "path": "/microdosing/cannabis/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/marijuana/",
+    "hub": false,
+    "slug": "marijuana"
+  },
+  {
+    "id": "microdosing-dmt",
+    "name": "DMT",
+    "category": "microdosing",
+    "path": "/microdosing/dmt/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/dmt/",
+    "hub": false,
+    "slug": "dmt"
+  },
+  {
+    "id": "microdosing-ibogaine",
+    "name": "Ibogaïne",
+    "category": "microdosing",
+    "path": "/microdosing/ibogaine/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/ibogaine/",
+    "hub": false,
+    "slug": "ibogaine"
+  },
+  {
+    "id": "microdosing-mescaline",
+    "name": "Mescaline",
+    "category": "microdosing",
+    "path": "/microdosing/mescaline/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/mescaline/",
+    "hub": false,
+    "slug": "mescaline"
+  },
+  {
+    "id": "microdosing-psilocybin-truffles",
+    "name": "Truffes à psilocybine",
+    "category": "microdosing",
+    "path": "/microdosing/truffes-psilocybine/",
+    "sourceUrl": "https://thethirdwave.co/microdosing/psilocybin-truffles/",
+    "hub": false,
+    "slug": "psilocybin-truffles"
+  }
+]

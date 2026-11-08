@@ -23,15 +23,17 @@ html { scroll-behavior: smooth; }
 .listing-megamenu > summary span { font-size: 20px; font-weight: 400; transition: transform .15s; }
 .listing-megamenu[open] > summary span { transform: rotate(45deg); }
 .listing-megamenu[open] > summary { color: var(--listing-accent); }
-.listing-megamenu-panel { position: absolute; top: 100%; left: 0; right: 0; background: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 38px max(32px, calc((100vw - 1184px) / 2)); box-shadow: 0 14px 22px #2526330b; border-top: 1px solid var(--listing-line); border-bottom: 1px solid var(--listing-line); }
+.listing-megamenu-panel { position: absolute; top: 100%; left: 0; right: 0; background: #fff; display: grid; grid-template-columns: 2fr 1fr; gap: 48px; padding: 38px max(32px, calc((100vw - 1184px) / 2)); box-shadow: 0 14px 22px #2526330b; border-top: 1px solid var(--listing-line); border-bottom: 1px solid var(--listing-line); max-height: calc(100dvh - 92px); overflow-y: auto; overscroll-behavior: contain; }
 .listing-megamenu-panel section + section { border-left: 1px solid var(--listing-line); padding-left: 60px; }
 .listing-megamenu-panel h2 { font-family: inherit; text-transform: uppercase; letter-spacing: .09em; color: var(--listing-muted); font-size: 12px; font-weight: 650; margin-bottom: 20px; }
 .listing-megamenu-panel ul { list-style: none; padding: 0; margin: 0 0 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
+.listing-megamenu-panel section:first-child ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.listing-megamenu-panel section:nth-child(2) ul { grid-template-columns: 1fr; }
 .listing-megamenu-panel li a { display: inline-block; padding-block: 4px; font-size: 17px; font-weight: 450; }
 .listing-menu-all { color: var(--listing-accent) !important; display: inline-flex; gap: 12px; padding-top: 12px; }
 .listing-menu-utility { display: none; }
 .listing-search-link { border: 1px solid var(--listing-accent); color: var(--listing-accent) !important; border-radius: 50%; width: 42px; height: 42px; display: grid; place-items: center; }
-.listing-breadcrumb { font-size: 12px; color: var(--listing-muted); display: flex; gap: 12px; padding-top: 23px; }
+.listing-breadcrumb { font-size: 12px; color: var(--listing-muted); display: flex; flex-wrap: wrap; gap: 12px; padding-top: 23px; }
 .listing-breadcrumb a:hover { text-decoration: underline; }
 .listing-hero { padding-top: 35px; padding-bottom: 76px; text-align: center; max-width: 900px; }
 .listing-hero-mark { display: block; margin: 0 auto 22px; }
@@ -58,6 +60,7 @@ html { scroll-behavior: smooth; }
 .listing-card-art { background: #f8f8fc; display: flex; align-items: center; justify-content: center; min-height: 168px; border-bottom: 1px solid var(--listing-line); padding: 22px; }
 .listing-card-art img { width: 108px; height: 108px; object-fit: contain; }
 .listing-card-copy { padding: 22px; display: flex; flex: 1; flex-direction: column; }
+.listing-card-text { min-height: 188px; }
 .listing-card h3 { font: 400 25px/1.2 Georgia, "Times New Roman", serif; letter-spacing: -.025em; margin-bottom: 13px; }
 .listing-card p { color: var(--listing-muted); font-size: 13px; line-height: 1.8; margin-bottom: 26px; }
 .listing-card-action { font-size: 12px; font-weight: 650; color: var(--listing-accent); display: flex; justify-content: space-between; margin-top: auto; }
@@ -136,7 +139,8 @@ html { scroll-behavior: smooth; }
   .listing-search-link { height: 32px; width: 32px; }
   .listing-search-link svg { width: 15px; }
   .listing-megamenu > summary { padding-block: 25px; gap: 6px; }
-  .listing-megamenu-panel { grid-template-columns: 1fr; gap: 28px; padding: 26px 24px 32px; }
+  .listing-megamenu-panel { grid-template-columns: 1fr; gap: 28px; padding: 26px 24px 32px; max-height: calc(100dvh - 78px); }
+  .listing-megamenu-panel section:first-child ul, .listing-megamenu-panel section:nth-child(2) ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .listing-megamenu-panel section + section { border-left: 0; border-top: 1px solid var(--listing-line); padding: 23px 0 0; }
   .listing-megamenu-panel h2 { margin-bottom: 12px; }
   .listing-megamenu-panel li a { font-size: 15px; }

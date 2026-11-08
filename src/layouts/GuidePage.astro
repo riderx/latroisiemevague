@@ -1,0 +1,58 @@
+---
+import '../styles/listings.css'
+import '../styles/guides.css'
+import Analytics from '../components/Analytics.astro'
+import ListingNavigation from '../components/ListingNavigation.astro'
+import { guideCatalog, guideContent, type Guide } from '../lib/guides'
+import { guideTitle } from '../content-data/guide-catalog'
+const { guide } = Astro.props as { guide: Guide }
+const { html, toc, description, words, evidence } = guideContent(guide)
+const title = guideTitle(guide)
+const canonical = new URL(guide.path, 'https://latroisiemevague.com').href
+const parentPath = guide.category === 'psychedelics' ? '/substances/' : '/microdosing/'
+const categoryName = guide.category === 'psychedelics' ? 'Substances' : 'Microdosing'
+const date = guide.translatedAt.slice(0, 10)
+const related = guideCatalog.filter(item => item.path !== guide.path).sort((a, b) => Number(b.name === guide.name) - Number(a.name === guide.name) || Number(b.category === guide.category) - Number(a.category === guide.category)).slice(0, 4)
+const schema = { '@context': 'https://schema.org', '@graph': [
+  { '@type': 'Article', '@id': canonical + '#article', url: canonical, headline: title, description, inLanguage: 'fr-FR', dateModified: date,
+    author: { '@type': 'Organization', name: 'Third Wave', url: 'https://thethirdwave.co/' },
+    translator: { '@type': 'Organization', name: 'La Troisième Vague', url: 'https://latroisiemevague.com/' },
+    publisher: { '@type': 'Organization', name: 'La Troisième Vague', url: 'https://latroisiemevague.com/' }, isBasedOn: guide.sourceUrl, mainEntityOfPage: canonical, wordCount: words,
+    image: 'https://latroisiemevague.com/assets/uploads/2020/09/cover-share-fb.jpg' },
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://latroisiemevague.com/' }, { '@type': 'ListItem', position: 2, name: categoryName, item: new URL(parentPath, canonical).href }, { '@type': 'ListItem', position: 3, name: guide.name, item: canonical }] },
+] }
+---
+<!doctype html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title><meta name="description" content={description} /><link rel="canonical" href={canonical} />
+    <meta property="og:type" content="article" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content="https://latroisiemevague.com/assets/uploads/2020/09/cover-share-fb.jpg" /><meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/uploads/2020/08/cropped-favicon-32x32.png" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\u003c')} /><Analytics />
+  </head>
+  <body class="listing-site guide-site">
+    <a class="listing-skip" href="#contenu">Aller au contenu</a>
+    <ListingNavigation currentPath={guide.path} />
+    <main id="contenu">
+      <nav class="listing-breadcrumb listing-container" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><a href={parentPath}>{categoryName}</a><span aria-hidden="true">/</span><span>{guide.name}</span></nav>
+      <header class="listing-hero listing-container guide-hero">
+        <img class="listing-hero-mark" src="/assets/uploads/2020/05/logo-1.png" width="56" height="56" alt="" />
+        <p class="listing-eyebrow">{guide.category === 'microdosing' ? 'Le guide du microdosing' : 'Le guide des substances'}</p>
+        <h1>{guide.name}</h1>
+        <p class="guide-meta">Version française de <a href={guide.sourceUrl}>Third Wave</a> · <time datetime={date}>{new Date(date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time> · {Math.ceil(words / 230)} min de lecture</p>
+      </header>
+      <div class="guide-reading listing-container">
+        <aside class="guide-toc" id="sommaire"><details open><summary>Dans ce guide</summary><nav aria-label="Sommaire"><ol><li><a href="#point-recherche">Repères et état de la recherche</a></li>{toc.map(item => <li><a href={`#${item.id}`}>{item.title}</a></li>)}<li><a href="#source-originale">Source et traduction</a></li></ol></nav></details></aside>
+        <article class="guide-prose">
+          <section class="guide-evidence" id="point-recherche"><p class="listing-eyebrow">Repères de l’édition française</p><h2>Lire ce guide avec le recul nécessaire</h2><Fragment set:html={evidence} /></section>
+          <div class="guide-translated-content"><Fragment set:html={html} /></div>
+          <footer class="guide-attribution" id="source-originale"><h2>Source et traduction</h2><p>Source : <a href={guide.sourceUrl}>{guide.originalTitle || guide.name} — Third Wave</a>. Version anglaise consultée le {new Date(guide.retrievedAt).toLocaleDateString('fr-FR', { timeZone: 'UTC' })}.</p><p>Traduction française assistée par IA et adaptation éditoriale autorisées. Les sections commerciales et certaines instructions pratiques ont été écartées. Les compléments éditoriaux sont distingués du texte traduit et renvoient à leurs sources.</p><p>Une éventuelle relecture médicale citée dans le texte concerne la version anglaise. La version française n’a pas fait l’objet d’une validation médicale indépendante. Les passages juridiques décrivent le contexte de la source et ne remplacent pas la vérification des règles en vigueur dans votre pays.</p></footer>
+        </article>
+      </div>
+      <section class="guide-related listing-container"><p class="listing-eyebrow">Poursuivre la lecture</p><h2>Pour approfondir</h2><div class="guide-related-grid">{related.map(item => <a href={item.path}><span>{item.category === 'microdosing' ? 'Microdosing' : 'Substances'}</span><h3>{item.name}</h3><span class="guide-related-action">Lire le guide →</span></a>)}</div><a class="listing-text-link" href={parentPath}>Tous les guides {guide.category === 'microdosing' ? 'du microdosing' : 'des substances'} →</a></section>
+    </main>
+    <footer class="listing-footer"><div class="listing-container listing-footer-top"><a class="listing-brand" href="/">La Troisième Vague</a><nav aria-label="Pied de page"><a href="/substances/">Substances</a><a href="/microdosing/">Microdosing</a><a href="/blog/">Articles</a><a href="/contact/">Contact</a></nav></div></footer>
+  </body>
+</html>

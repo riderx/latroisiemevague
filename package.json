@@ -14,7 +14,8 @@
     "db:migrate": "wrangler d1 migrations apply DB --remote",
     "test": "node --experimental-strip-types --test tests/forms.test.ts",
     "test:browser": "playwright test",
-    "verify:migration": "node scripts/verify-migration.mjs",
+    "verify:migration": "node scripts/verify-migration.mjs && node scripts/verify-guides.mjs",
+    "import:guides": "node scripts/import-thirdwave.mjs && node scripts/review-thirdwave.mjs && node scripts/translate-thirdwave.mjs && node scripts/apply-guide-corrections.mjs",
     "types": "wrangler types worker-configuration.d.ts"
   },
   "dependencies": {

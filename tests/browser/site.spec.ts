@@ -1,15 +1,18 @@
 import { test, expect } from '@playwright/test'
 import { readFileSync } from 'node:fs'
 import { listingPages } from '../../src/content-data/listings'
+import { guideCatalog, guideTitle } from '../../src/content-data/guide-catalog'
 const manifest = JSON.parse(readFileSync('src/content-data/pages/manifest.json', 'utf8'))
 
 test('all migrated pages render with local assets and no browser errors', async ({ page }) => {
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
   page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`) })
-  for (const route of manifest.pages) {
+  const routes = [...manifest.pages, ...guideCatalog.filter(guide => !manifest.pages.some((page: { path: string }) => page.path === guide.path))]
+  for (const route of routes) {
     await page.goto(route.path)
-    await expect(page).toHaveTitle(listingPages[route.path as keyof typeof listingPages]?.title ?? route.title)
+    const guide = guideCatalog.find(guide => guide.path === route.path)
+    await expect(page).toHaveTitle(guide ? guideTitle(guide) : listingPages[route.path as keyof typeof listingPages]?.title ?? route.title)
     await expect(page.locator('main')).toBeVisible()
   }
   expect(errors).toEqual([])
@@ -78,6 +81,8 @@ test('French listing hubs expose published guides and fit desktop and mobile scr
     await page.goto(path)
     await expect(page.locator('main h1')).toHaveCount(1)
     await expect(page.locator('dialog, [role="dialog"]')).toHaveCount(0)
+    await expect(page.locator('.listing-card')).toHaveCount(path === '/substances/' ? 22 : 10)
+    await expect(page.locator('.listing-status')).toHaveCount(0)
     await expect(page.locator('.listing-upcoming-grid a')).toHaveCount(0)
     for (const slug of slugs) await expect(page.locator(`main a[href="${path}${slug}/"]`).first()).toBeVisible()
     await page.screenshot({ path: `output/${path.slice(1, -1)}-listing-desktop.png`, fullPage: true })
@@ -102,4 +107,31 @@ test('French listing hubs expose published guides and fit desktop and mobile scr
   await expect(page.locator('#protocoles')).toContainText('Approche Stamets')
   await page.goto('/recherche/?s=Fadiman')
   await expect(page.locator('.search-results a[href="/microdosing/"]')).toBeVisible()
+})
+
+test('new guide references, related pages, search and mobile menu work', async ({ page }) => {
+  await page.goto('/substances/4-aco-dmt/')
+  await expect(page.locator('.guide-translated-content')).toContainText('Présentation')
+  await page.locator('.guide-toc a[href="#footnotes"]').click()
+  await expect(page).toHaveURL(/#footnotes$/)
+  await expect(page.locator('#footnotes')).toHaveText('Références')
+  await expect(page.locator('.guide-toc summary')).toBeInViewport()
+  await expect(page.locator('.guide-related-grid a')).toHaveCount(4)
+  for (const path of ['/substances/champignons-psilocybin/', '/substances/ibogaine/', '/microdosing/truffes-psilocybine/']) {
+    await page.goto(path)
+    await page.setViewportSize({ width: 320, height: 740 })
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(321)
+  }
+  const menu = page.locator('.listing-megamenu')
+  await menu.locator('summary').click()
+  await menu.locator('a[href="/substances/tabac/"]').click()
+  await expect(page).toHaveURL('/substances/tabac/')
+  await page.goto('/recherche/?s=ibogaïne')
+  await expect(page.locator('.search-results a[href="/substances/ibogaine/"]')).toBeVisible()
+  await page.goto('/substances/lsd/')
+  await page.setViewportSize({ width: 1440, height: 1000 })
+  await page.screenshot({ path: 'output/new-guide-desktop-viewport.png' })
+  await page.screenshot({ path: 'output/new-guide-desktop.png', fullPage: true })
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.screenshot({ path: 'output/new-guide-mobile.png' })
 })

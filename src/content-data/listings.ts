@@ -1,8 +1,9 @@
 import manifest from './pages/manifest.json' with { type: 'json' }
+import catalogueData from './guides/catalog.json' with { type: 'json' }
 
 export type ListingCategory = 'psychedelics' | 'microdosing'
 type CatalogueEntry = { name: string; slug: string; description: string; image?: string }
-const publishedPaths = new Set(manifest.pages.map(page => page.path))
+const publishedPaths = new Set([...manifest.pages.map(page => page.path), ...catalogueData.filter(guide => !guide.hub).map(guide => guide.path)])
 const catalogue: Record<ListingCategory, CatalogueEntry[]> = {
   psychedelics: [
     { name: 'LSD', slug: 'lsd', description: 'Histoire, effets et recherche autour du diéthylamide de l’acide lysergique.', image: '/assets/uploads/2020/08/microdosing-lsd.svg' },

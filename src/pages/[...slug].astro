@@ -1,11 +1,14 @@
 ---
 import ImportedPage from '../layouts/ImportedPage.astro'
 import ListingPage from '../layouts/ListingPage.astro'
+import GuidePage from '../layouts/GuidePage.astro'
+import { guideCatalog, guideFor } from '../lib/guides'
 import { pages } from '../lib/pages'
 export function getStaticPaths() {
   return pages.map(page => ({ params: { slug: page.path.slice(1).replace(/\/$/, '') || undefined }, props: { page } }))
 }
 const { page } = Astro.props
 const listingCategory = page.path === '/substances/' ? 'psychedelics' : page.path === '/microdosing/' ? 'microdosing' : undefined
+const guideEntry = guideCatalog.find(entry => entry.path === page.path)
 ---
-{listingCategory ? <ListingPage category={listingCategory} /> : <ImportedPage page={page} />}
+{listingCategory ? <ListingPage category={listingCategory} /> : guideEntry ? <GuidePage guide={guideFor(guideEntry)} /> : <ImportedPage page={page} />}
