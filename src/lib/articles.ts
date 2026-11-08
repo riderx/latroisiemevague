@@ -6,6 +6,7 @@ import { bodyFor, headFor, type Page } from './pages'
 export const retiredPosts: Record<string, string> = {
   '/comment-faire-son-propre-ayahuasca-chez-soit/': '/substances/ayahuasca/',
   '/microdosing-volumetrique-avec-le-lsd/': '/microdosing/lsd/',
+  '/johns-hopkins-ouvre-le-plus-grand-centre-de-recherche-psychedelique-du-monde/': '/recherche-psychedelique-2026/',
 }
 
 const categories: Record<string, string> = { information: 'Comprendre', actualites: 'Actualités', guides: 'Guides pratiques' }
