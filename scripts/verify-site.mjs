@@ -116,5 +116,29 @@ for (const [hub, category] of [['/substances/', 'psychedelics'], ['/microdosing/
   }
 }
 
+// Agent access: a Markdown copy of every page, a Markdown 404, llms.txt, trust pages and Organization data.
+for (const route of documents.keys()) if (route.endsWith('/')) {
+  const md = await readFile(path.join('dist', route, 'index.md'), 'utf8').catch(() => '')
+  check(md.length > 200 && /^# /m.test(md) && md.includes(`Source : ${ORIGIN}`), `${route}: missing or empty index.md`)
+}
+const notFoundMd = await readFile('dist/404.md', 'utf8').catch(() => '')
+check(notFoundMd.includes(`${ORIGIN}/llms.txt`) && notFoundMd.includes(`${ORIGIN}/sitemap.xml`), '404.md: missing links to llms.txt and the sitemap')
+const llms = await readFile('dist/llms.txt', 'utf8').catch(() => '')
+check(/^# La Troisième Vague\n\n> /.test(llms), 'llms.txt: missing H1 and summary blockquote')
+check(/^## When to use$/m.test(llms), 'llms.txt: missing When to use section')
+for (const guide of guideCatalog.filter(g => !g.hub)) check(llms.includes(`${ORIGIN}${guide.path}index.md`), `llms.txt: missing ${guide.path}`)
+for (const link of llms.matchAll(/\((https:\/\/latroisiemevague\.com[^)]*)\)/g)) {
+  const target = link[1].slice(ORIGIN.length)
+  check(await exists(target.endsWith('/') ? target + 'index.html' : target), `llms.txt: broken link ${link[1]}`)
+}
+for (const route of ['/a-propos/', '/contact/', '/confidentialite/']) {
+  const $ = documents.get(route)
+  check($ && $('main').text().replace(/\s+/g, ' ').trim().length >= 500, `${route}: trust page needs at least 500 characters`)
+}
+for (const [from, to] of [['/about/', '/a-propos/'], ['/privacy/', '/confidentialite/']]) check(redirects.get(from) === to, `missing redirect ${from} -> ${to}`)
+const homeGraph = JSON.parse(documents.get('/')('script[type="application/ld+json"]').first().html())['@graph']
+const org = homeGraph.find(item => item['@type'] === 'Organization')
+check(org?.description && org.knowsAbout?.length && org.contactPoint?.contactType && org.contactPoint?.url, 'home: Organization JSON-LD needs description, knowsAbout and contactPoint')
+
 if (errors.length) { console.error(`${errors.length} site problems:\n${errors.join('\n')}`); process.exit(1) }
 console.log(`Verified ${documents.size} pages, ${assets.size} local assets, ${redirects.size} redirects, ${articlePaths.length} articles on /blog/ and ${guideCatalog.length} guides on their hubs.`)

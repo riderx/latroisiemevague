@@ -14,3 +14,7 @@
 /blog/page/2/ /blog/ 301
 /blog/page/3/ /blog/ 301
 /blog/page/4/ /blog/ 301
+/about /a-propos/ 301
+/about/ /a-propos/ 301
+/privacy /confidentialite/ 301
+/privacy/ /confidentialite/ 301
