@@ -236,7 +236,7 @@
 
 /* hero life, part 2: wind in the plants, chemistry and neurons */
 .hx{position:absolute;will-change:transform}
-.hx.palm{transform-origin:0% 46%;animation:frond 6.5s ease-in-out infinite}
+.hx.palm{transform-origin:0% 46%}
 .hx.wheat{transform-origin:12% 100%;animation:wheat 4.8s ease-in-out infinite}
 @keyframes frond{0%,100%{transform:rotate(0)}40%{transform:rotate(-2.2deg)}70%{transform:rotate(1deg)}}
 @keyframes wheat{0%,100%{transform:rotate(0)}35%{transform:rotate(3.2deg)}65%{transform:rotate(-1.4deg)}}

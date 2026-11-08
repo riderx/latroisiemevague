@@ -21,3 +21,7 @@ Public : francophones adultes curieux, parfois inquiets. Site d'information et d
 - Toute instruction pratique : comment se procurer, cultiver, préparer, extraire, doser ou consommer une substance (posologies en mg/g par palier, recettes, voies d'administration détaillées comme mode d'emploi). Remplacez par une phrase neutre du type : « Les doses varient fortement selon le produit et la personne ; ce guide ne donne pas de repères de dosage. »
 - Tout ton promotionnel, toute mention commerciale (kits, cours, coaching, codes promo, « notre partenaire »).
 - Les mentions de durée d'effet ou de mécanisme restent, car ce sont des informations de sécurité.
+
+## Titres et accroches
+- Utile et simple d’abord : dire ce qu’on trouve sur la page, sans formule. Exemple de référence : « Les psychédéliques : effets, risques, recherche ».
+- Pas de jeux de mots, pas de promesses, pas de slogans (« sans tabou », « à la lumière de… », « tout ce qu’il faut savoir »).
