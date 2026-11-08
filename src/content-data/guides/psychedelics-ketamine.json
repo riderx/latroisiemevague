@@ -6,22 +6,13 @@
   "path": "/substances/ketamine/",
   "hub": false,
   "id": "psychedelics-ketamine",
-  "sourceBlockCount": 169,
-  "sourceWords": 4734,
-  "omissions": [
-    {
-      "heading": "“Ketamine is a cat or horse tranquilizer and not suitable for human consumption”",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Where can I find legal ketamine clinics?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 173,
+  "sourceWords": 4876,
+  "omissions": [],
   "description": "Our Ultimate Ketamine Guide. Learn more about the ketamine experience, its use as a \"miracle treatment\" for depression, to its potential for spiritual growth.",
   "originalTitle": "Ketamine Guide - The Ketamine Experience, Therapeutic Use & More",
-  "retrievedAt": "2026-11-08T03:49:13.334Z",
-  "contentHash": "0c06d699fb553b570e3a0b6e3a9d1a0d456ffe3e70c244474fea070ffd4879b6",
+  "retrievedAt": "2026-11-08T17:30:00.284Z",
+  "contentHash": "8a1e62d9b6c2e766508231820e1dcf8e810e7ac73676166c3e0b32dd30d3d4da",
   "blocks": [
     "<h2 id=\"overview\">La kétamine</h2>",
     "<p class=\"guide-editorial-update\"><strong>La kétamine est un anesthésique dissociatif. L’eskétamine est l’une de ses deux formes moléculaires. Dans l’Union européenne, le médicament Spravato est autorisé dans certaines situations de dépression. Ses conditions d’emploi sont précises et nécessitent une surveillance médicale. Le lien ci-dessous renvoie aux informations de l’EMA.</strong><a href=\"https://www.ema.europa.eu/en/medicines/human/EPAR/spravato\">(source)</a></p>",
@@ -102,11 +93,15 @@
     "<p>Les sources rapportent une fréquence environ cinq fois supérieure au Royaume-Uni par rapport aux États-Unis. Les données britanniques de 2013 concernaient surtout les 20 à 24 ans. Environ la moitié des consommateurs associaient la kétamine à d’autres produits, souvent de l’alcool.<a href=\"https://thethirdwave.co/psychedelics/ketamine/#_ftn43\"><sup>[43]</sup></a><a href=\"https://thethirdwave.co/psychedelics/ketamine/#_ftn44\"><sup>[44]</sup></a></p>",
     "<p>Des sources décrivent une diffusion accrue en Chine, un pays producteur de kétamine. Elles l’attribuent en partie au faible coût de fabrication.<a href=\"https://thethirdwave.co/psychedelics/ketamine/#_ftn45\"><sup>[45]</sup></a></p>",
     "<h2 id=\"myths\">Idées reçues</h2>",
+    "<h3><b>“Ketamine is a cat or horse tranquilizer and not suitable for human consumption”</b></h3>",
+    "<p>A common misrepresentation by the media, this myth gives the impression that ketamine use in humans is somehow deviant. But despite its wider use in veterinary medicine, ketamine was originally devised for and tested on humans.<a href=\"https://thethirdwave.co/psychedelics/ketamine/#_ftn37\"><sup>[37]</sup></a> Nowadays, it’s perhaps the most effective therapy for treatment-resistant depression, while remaining one of our most reliable anesthetics. In fact, it’s one of only two injected general anesthetics listed on the World Health Organization’s Model List of Essential Medicines—a core list of “the most efficacious, safe and cost-effective medicines for priority conditions.”<a href=\"https://thethirdwave.co/psychedelics/ketamine/#_ftn46\"><sup>[46]</sup></a></p>",
     "<h3><b>Peut-elle provoquer des troubles psychotiques ?</b></h3>",
     "<p>La dissociation peut modifier fortement les perceptions et désorienter. Ces effets sont souvent temporaires. On ne peut toutefois exclure des complications psychiques, notamment en présence d’antécédents de troubles psychotiques.</p>",
     "<h3><b>Quel risque de dépendance ?</b></h3>",
     "<p>La kétamine peut entraîner une dépendance psychologique et, lors d’un usage prolongé, une dépendance physique. Un cadre médical réduit certains risques sans les supprimer. La comparaison avec une tasse de café n’est pas un repère fiable.</p>",
     "<h2 id=\"faq\">Questions fréquentes</h2>",
+    "<h4><b>Where can I find legal ketamine clinics?</b></h4>",
+    "<p><span>To support your journey with experiencing ketamine legally, we’ve curated, verified, and vetted </span><a href=\"https://thethirdwave.co/directory/clinics/category/ketamine/\"><span>legal ketamine clinics</span></a><span> along with </span><a href=\"https://thethirdwave.co/directory/therapists/category/ketamine-assisted-psychotherapy-kap/\"><span>KAP therapists </span></a><span>in our psychedelic provider directory; maybe you can find the right one for you.</span></p>",
     "<h4><b>Les analyses recherchent-elles la kétamine ?</b></h4>",
     "<p>Les tests courants ne recherchent pas toujours cette substance. Certains panels élargis l’incluent, et un faux positif au PCP est possible. Les sources évoquent 2 à 4 jours de détection urinaire pour la kétamine. Sa norkétamine peut être détectée dans le sang ou les urines jusqu’à 14 jours, voire davantage après des prises fréquentes. Ces délais varient.<a href=\"https://thethirdwave.co/psychedelics/ketamine/#_ftn47\"><sup>[47]</sup></a></p>",
     "<h4>Quelles limites pour les offres à domicile ?</h4>",
@@ -196,5 +191,11 @@
   "translatedAt": "2026-11-08T03:58:58.863Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    79,
+    80,
+    86,
+    87
+  ]
 }

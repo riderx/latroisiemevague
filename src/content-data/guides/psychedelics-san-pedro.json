@@ -6,26 +6,13 @@
   "path": "/substances/san-pedro/",
   "hub": false,
   "id": "psychedelics-san-pedro",
-  "sourceBlockCount": 187,
-  "sourceWords": 6514,
-  "omissions": [
-    {
-      "heading": "Dosage",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "How do I take it?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Where can I source San Pedro?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 194,
+  "sourceWords": 6766,
+  "omissions": [],
   "description": "San Pedro (huachuma) is a sustainable alternative to peyote, containing psychoactive mescaline. Learn about San Pedro cactus medicine and effects.",
   "originalTitle": "San Pedro Guide: Experience, Benefits, & Side Effects [2023]",
-  "retrievedAt": "2026-11-08T03:49:13.583Z",
-  "contentHash": "64c519b45cfc48f4ad31e5306aca79ffd46ea9397265f56fe292446efdbfdfee",
+  "retrievedAt": "2026-11-08T17:30:08.564Z",
+  "contentHash": "3443d42305ac34692dbe0e591ff324fe11b00f80bb45d933aaab84acb305f1df",
   "blocks": [
     "<h2 id=\"overview\">San Pedro : présentation</h2>",
     "<p>Le San Pedro, nommé Trichocereus pachanoi ou Echinopsis pachanoi, est un cactus allongé des Andes. Il est présent en Argentine, Bolivie, Colombie, au Chili, en Équateur et au Pérou. Il contient de la mescaline, une substance qui modifie les perceptions. Cette molécule a joué un rôle dans l’apparition du terme « psychédélique ».<i></i><i></i><a href=\"https://thethirdwave.co/psychedelics/mescaline/\">Source</a></p>",
@@ -56,6 +43,9 @@
     "<p>La mescaline agit sur plusieurs récepteurs de la sérotonine, notamment les sous-types 1A, 2A, 2B et 2C. Elle sert souvent de point de comparaison dans les recherches sur les hallucinogènes. Sa structure chimique diffère de celle du LSD.</p>",
     "<p>L’activation du récepteur 5-HT2A explique probablement une grande part des modifications perceptives provoquées par la mescaline.<a href=\"https://thethirdwave.co/psychedelics/mescaline/\">Source</a><a href=\"https://thethirdwave.co/psychedelics/san-pedro/#_ftn29\"><sup>[29]</sup></a></p>",
     "<p>Des travaux explorent aussi le rôle des circuits dopaminergiques. Ils ne permettent pas de résumer son action à un mécanisme unique sur la dopamine.<a href=\"https://thethirdwave.co/psychedelics/san-pedro/#_ftn30\"><sup>[30]</sup></a></p>",
+    "<h3><b>Dosage</b></h3>",
+    "<p>There’s no way to tell how much mescaline a cactus contains just by looking at it, which can make finding the right dosage tricky—especially given San Pedro’s variability. Just 50g dried cactus material might contain as little as 150mg of mescaline (a threshold dose) or as much as 1150mg of mescaline (a potential overdose).<a href=\"https://thethirdwave.co/psychedelics/san-pedro/#_ftn27\"><sup>[27]</sup></a> It’s best to work with a qualified San Pedro ceremony facilitator to ensure you get the right dose.</p>",
+    "<p><em>San Pedro dosage requirements vary greatly depending on the consumption method and your desired effects. To learn more about determining dosage based on the size of the cactus, check out our&nbsp;<a href=\"https://thethirdwave.co/san-pedro-preparation/\">guide to San Pedro preparation</a>.&nbsp;&nbsp;</em>        </p>",
     "<h2 id=\"benefitsandrisks\">Effets étudiés et risques</h2>",
     "<h3>Ce que la recherche examine<b></b></h3>",
     "<p>Les usages de soin autochtones associent parfois le cactus à une réflexion personnelle ou à une expérience spirituelle. Cela ne démontre pas une efficacité contre la dépression, l’anxiété ou la dépendance.</p>",
@@ -131,9 +121,13 @@
     "<h4>Quels dangers sont connus ?</h4>",
     "<p>Les données ne permettent pas d’affirmer une absence de mortalité ou de toxicité. Une perception altérée expose aussi aux accidents. Les antécédents psychiatriques, les maladies cardiaques ou hépatiques et l’hypertension peuvent augmenter les risques. La grossesse et l’allaitement sont également concernés.<a href=\"https://thethirdwave.co/psychedelics/san-pedro/#pharmacology\">Source</a></p>",
     "<p>Une détresse aiguë, une confusion ou des symptômes psychotiques peuvent survenir. Toute expérience difficile ne se résume pas à un contexte mal choisi. L’absence habituelle de séquelles dans certains récits ne garantit pas une récupération sans complication.<a href=\"https://thethirdwave.co/set-setting-lsd/\">Source</a><a href=\"https://thethirdwave.co/myth-bad-trips/\">Source</a><a href=\"https://thethirdwave.co/cope-anxiety-paranoia-trip/\">Source</a></p>",
+    "<h4>How do I take it?</h4>",
+    "<p>San Pedro is best taken on an empty stomach as a brew, juice, or dried powder (i.e. in capsules or stirred into water).<a href=\"https://thethirdwave.co/psychedelics/san-pedro/#_ftn1\"><sup>[1]</sup></a><a href=\"https://thethirdwave.co/psychedelics/san-pedro/#_ftn25\"><sup>[25]</sup></a> Expect it to taste bitter, though—perhaps unbearably so. Chasing it down with fruit juice (especially unsweetened grapefruit juice) may help, but folk wisdom holds that “if one’s heart is pure, the bitterness will not be tasted.”<a href=\"https://thethirdwave.co/psychedelics/san-pedro/#_ftn65\"><sup>[65]</sup></a> In other words, if you’re mindful of the bitterness, experiencing it without resistance, the gag reflex shouldn’t kick in.</p>",
     "<h4>Quel cadre juridique pour la culture ?</h4>",
     "<p>Les références abordent des questions botaniques et juridiques. Aucun conseil pour obtenir ou cultiver le cactus n’est proposé ici.<a href=\"https://thethirdwave.co/psychedelics/san-pedro/#legality\">Source</a><a href=\"https://thethirdwave.co/psychedelics/san-pedro/#_ftn66\"><sup>[66]</sup></a><a href=\"https://thethirdwave.co/psychedelics/san-pedro/#_ftn9\"><sup>[9]</sup></a><a href=\"https://thethirdwave.co/growing-san-pedro-cactus/\">Source</a><i></i><a href=\"https://thethirdwave.co/psychedelics/san-pedro/#_ftn24\"><sup>[24]</sup></a><a href=\"https://troutsnotes.com/pachanot/\">Source</a></p>",
     "<p>Ce texte ne décrit pas de technique de culture.<em><a href=\"https://thethirdwave.co/growing-san-pedro-cactus/\">Source</a></em></p>",
+    "<h4>Where can I source San Pedro?</h4>",
+    "<p>If you’d rather not grow your own San Pedro at home or forage through the Andes mountains, we get it–completely. Fortunately, you can find San Pedro cacti online and even in local garden centers. If you’re interested in sourcing San Pedro from trusted sellers, check out Third Wave’s <a href=\"https://thethirdwave.co/product/sourcing/\">Ultimate Guide to Sourcing Psychedelic Medicines</a>.</p>",
     "<h4>La substance peut-elle persister dans une plante ancienne ?</h4>",
     "<p>Des restes anciens peuvent encore contenir de la mescaline. Ce constat ne permet pas de juger la sécurité d’un produit conservé. Aucune méthode de préparation ou de stockage n’est indiquée ici.</p>",
     "<h4>Que sait-on du microdosage ?</h4>",
@@ -218,5 +212,14 @@
   "translatedAt": "2026-11-08T04:03:35.037Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    29,
+    30,
+    31,
+    107,
+    108,
+    112,
+    113
+  ]
 }

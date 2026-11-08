@@ -6,18 +6,13 @@
   "path": "/substances/cacao/",
   "hub": false,
   "id": "psychedelics-cacao",
-  "sourceBlockCount": 101,
-  "sourceWords": 3701,
-  "omissions": [
-    {
-      "heading": "Sourcing",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 107,
+  "sourceWords": 3840,
+  "omissions": [],
   "description": "All you need to know about cacao: the differences between regular chocolate and ceremonial cacao, the history of consumption, cacao dosage & benefits.",
   "originalTitle": "Ultimate Guide to Cacao: Cacao Dosage, Benefits & Ceremonial Use",
-  "retrievedAt": "2026-11-08T03:49:13.174Z",
-  "contentHash": "618d5d42257dd7604cb4ea478e6a10613ffd7fdab981c8ad32b3d4fa4d7bac56",
+  "retrievedAt": "2026-11-08T17:29:52.984Z",
+  "contentHash": "b8c14640f23a2be29ffb99defc66539047d8c63633a65a625111242e2b468b6b",
   "blocks": [
     "<h2 id=\"overview\">Présentation</h2>",
     "<p>Les fèves de cacao sont les graines du Theobroma cacao. Cet arbre à feuilles persistantes vient des Amériques. Ses fruits renferment une pulpe sucrée et 30 à 50 graines, utilisées pour fabriquer le chocolat. </p>",
@@ -33,7 +28,7 @@
     "<p>Les pâtes dites « cérémonielles » proviennent souvent de petites exploitations d’Amérique centrale ou du Sud. Cette origine et cette appellation ne garantissent aucune composition précise. </p>",
     "<p>La poudre de cacao contient moins de matière grasse que la pâte. Certains produits sont alcalinisés selon le procédé dit hollandais. Ces transformations changent leurs caractéristiques. </p>",
     "<h3>Quels effets sont rapportés ? </h3>",
-    "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les méthodes pratiques de la source ne sont pas reprises. La composition du produit et les interactions influencent les risques. Cette page ne donne pas de mode d’administration. </p>",
+    "<p>Ceremonial cacao is generally chopped into shavings and dissolved in hot water to consume as a beverage similar to hot chocolate. But without all the added sugars, a ceremonial cacao drink won’t produce the same head rush and the taste is somewhat bitter. With a caffeine content comparable to a cup of decaf coffee, it also won’t stimulate the nervous system and cause the buzz of coffee-like jitters.</p>",
     "<p>Les composants stimulants du cacao peuvent agir sur le système cardiovasculaire. Des récits de cérémonies décrivent chaleur, vigilance et émotions plus présentes. Certains participants évoquent une parole plus facile, de l’empathie ou des sensations tactiles différentes. Ce sont des ressentis personnels. </p>",
     "<p>Certains témoignages comparent leur sentiment d’ouverture à celui décrit sous MDMA. Une comparaison subjective ne démontre pas des effets équivalents. Le cacao ne produit pas les modifications perceptives caractéristiques de la psilocybine. </p>",
     "<h3>Quantités : limites de ce guide</h3>",
@@ -70,6 +65,12 @@
     "<p>Au Guatemala, Keith Wilson, ancien géologue, a participé à la diffusion des cérémonies modernes au cacao. Leur efficacité thérapeutique reste peu documentée. </p>",
     "<h2 id=\"legality\">Légalité</h2>",
     "<p>Le cacao est généralement commercialisé comme aliment. Ce statut ne vaut pas autorisation de le présenter comme un médicament. </p>",
+    "<h2 id=\"sourcing\">Sourcing</h2>",
+    "<p>\n            Thanks to its legality, finding ceremonial-grade cacao and lesser cacao-based products is relatively easy. The only difficulty can be confirming how ethically it’s sourced within a globalized economic system dependent upon labor from developing nations.</p>",
+    "<p>While most industrial chocolate production now occurs in West Africa or the Caribbean, ceremonial cacao should come from small farms in Central or South American countries, including Peru, the Dominican Republic, Guatemala, and Ecuador. These operations should be rooted in traditional, manual production methods, and employ indigenous populations. Check the sellers’ websites for descriptions of their sustainability and Fair Trade labor practices before purchasing.</p>",
+    "<p>Some sellers we feel comfortable recommending are:</p>",
+    "<ul>\n<li><a href=\"https://ceremonial-cacao.com/\">Ora Cacao</a></li>\n<li><a href=\"https://www.cacaolaboratory.com/\">Cacao Laboratory</a></li>\n<li><a href=\"https://www.keithscacao.com/pages/about-keiths-cacao\">Keith’s Cacao</a></li>\n<li><a href=\"https://snehasacred.com/store\">Nana Marina’s Cacao</a></li>\n<li><a href=\"https://soulliftcacao.com/\">Soul Lift</a></li>\n<li><a href=\"http://www.cacaospirit.com/\">Cacao Spirit</a></li>\n</ul>",
+    "<p>The Food Empowerment Project’s <a href=\"https://foodispower.org/chocolate-list/\">Chocolate List </a>is another helpful resource grouping global chocolate makers based on ethical business practices.        </p>",
     "<h2 id=\"recipe\">Préparation : limites de ce guide</h2>",
     "<p>Cette page ne décrit pas de recette ni de méthode de consommation. </p>",
     "<p>La composition du cacao diffère selon les produits. </p>",
@@ -96,7 +97,7 @@
     "<p>Lors du quatrième voyage de Christophe Colomb, son entourage a décrit la valeur monétaire des fèves pour les populations locales. Environ deux décennies plus tard, Hernán Cortés aurait rapporté trois coffres de fèves aztèques. </p>",
     "<p>Le premier envoi officiel cité vers l’Europe relie Veracruz à Séville en 1585. Des médecins ont décrit le cacao avant sa diffusion dans l’aristocratie au XVIIe siècle. Le sucre y a progressivement remplacé le piment. L’expansion coloniale anglaise, française et néerlandaise a accru la production de cacao et de sucre, largement fondée sur l’esclavage. </p>",
     "<p>L’industrialisation du XIXe siècle a fait apparaître plusieurs formes de chocolat encore courantes. </p>",
-    "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Cette édition omet les indications pratiques de la source. La transformation des produits peut modifier leur composition ; aucune méthode de préparation n’est donnée. </p>",
+    "<p>In 1828, Conrad J. van Houten patented the dominant method of preparing chocolate called “Dutching”. This entails using a hydraulic press to separate the fats of cocoa butter from roasted cacao beans and pulverizing the resulting cake into cocoa powder, which is then treated with alkaline salts to dissolve more easily in water. The powder can then be recombined with butter into the melt-in-your-mouth chocolate most of us were raised with.</p>",
     "<p>La source situe en 1849 la création d’un chocolat à manger par l’Anglais Joseph Storrs Fry. Elle attribue ensuite à Daniel Peter un chocolat au lait en 1879, avec le lait en poudre d’Henri Nestlé. Ces repères historiques demandent vérification. </p>",
     "<p>Cadbury et Hershey’s se sont développés autour du tournant des XIXe et XXe siècles. Après les abolitions de l’esclavage dans les Amériques, la production s’est étendue vers l’Asie et l’Afrique équatoriales. Les industriels y recherchaient notamment des coûts plus faibles. </p>",
     "<p>Les revenus des producteurs dépendent des variations des marchés mondiaux. La source évoque environ trois millions de tonnes de fèves consommées chaque année, sans repère récent. Les débouchés sont surtout alimentaires, avec aussi des usages dans les savons et les cosmétiques. </p>",
@@ -124,5 +125,13 @@
   "translatedAt": "2026-11-08T03:57:49.599Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+  ]
 }

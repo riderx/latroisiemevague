@@ -6,22 +6,13 @@
   "path": "/substances/ayahuasca/",
   "hub": false,
   "id": "psychedelics-ayahuasca",
-  "sourceBlockCount": 175,
-  "sourceWords": 4677,
-  "omissions": [
-    {
-      "heading": "Where can I buy ayahuasca?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "How to make ayahuasca?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 182,
+  "sourceWords": 4835,
+  "omissions": [],
   "description": "Curious about Ayahuasca? Learn about the experience, benefits, and side effects of Ayahuasca, a psychoactive tea derived from plants containing MAOIs & DMT.",
   "originalTitle": "Ayahuasca Guide: Experience, Benefits, & Side Effects [2023]",
-  "retrievedAt": "2026-11-08T03:49:13.164Z",
-  "contentHash": "77ef9ad0aceac4411e7458f83b9f79856b246e9dc60bba41fbdf7f567909f897",
+  "retrievedAt": "2026-11-08T17:29:51.962Z",
+  "contentHash": "2b5195d35a28279a438cc90ffa106e74813a770181908d684d1d5aa9d16b6e16",
   "blocks": [
     "<h2 id=\"overview\">L’ayahuasca en bref</h2>",
     "<p>L’ayahuasca est une boisson utilisée dans les cérémonies de peuples autochtones d’Amazonie. Elle associe généralement Banisteriopsis caapi et Psychotria viridis. Cette dernière contient de la DMT, une substance psychédélique. B. caapi contient des inhibiteurs de la monoamine oxydase (IMAO), notamment des β-carbolines, qui prolongent les effets de la DMT.<em></em><em></em><em></em><a href=\"https://thethirdwave.co/psychedelics/dmt/\"> (source) </a><em></em></p>",
@@ -134,7 +125,7 @@
     "<p>Des personnes décrivent une réévaluation parfois éprouvante de leurs relations, de leurs comportements et de leur vie. Ce ressenti n’est pas universel.</p>",
     "<p>La partie « Effets » et la vidéo de Paul F. Austin décrivent ces expériences rapportées.<a href=\"https://thethirdwave.co/psychedelics/ayahuasca/#effects\"> (source) </a><a href=\"https://thethirdwave.co/ayahuasca-experience-what-to-expect/\"> (source) </a><a href=\"https://thethirdwave.co/ayahuasca-experience-what-to-expect/\"> (source) </a></p>",
     "<h4>Que dit la loi ?</h4>",
-    "",
+    "<p><span>If you’re interested in working with this medicine, you can read about the </span><a href=\"https://thethirdwave.co/legality-ayahuasca/\"><span>legality of ayahuasca worldwide</span></a><span> and view a complete list of </span><a href=\"https://thethirdwave.co/directory/search/?geodir_search=1&amp;stype=gd_retreat&amp;snear=&amp;s=ay&amp;sgeo_lat=&amp;sgeo_lon=\"><span>verified ayahuasca retreats</span></a><span> in Third Wave’s psychedelic Directory. </span></p>",
     "<h4>Les dépistages recherchent-ils la DMT ?</h4>",
     "<p>Les dépistages courants ne recherchent généralement pas la DMT. Sa structure diffère de celle des substances habituellement testées. Cela ne permet pas de garantir un résultat négatif pour tout test.<a href=\"https://www.erowid.org/chemicals/dmt/dmt_testing.shtml\"> (source) </a></p>",
     "<h4>Quels troubles digestifs sont possibles ?</h4>",
@@ -144,7 +135,14 @@
     "<p><a href=\"https://chacruna.net/can-people-really-die-from-drinking-ayahuasca-as-announced-in-the-media/\"> (source) </a>Des morts ont été signalées après une prise d’ayahuasca, parfois avec d’autres substances ou des maladies préexistantes. Le risque ne peut pas être écarté parce que les cas semblent rares.</p>",
     "<h4>Quelles questions posent les retraites ?</h4>",
     "<p>Les liens de la source décrivent des cérémonies, des retraites et un mouvement religieux. Ils ne constituent pas une recommandation commerciale.<a href=\"https://thethirdwave.co/ayahuasca-ceremony/\"> (source) </a><a href=\"https://thethirdwave.co/directory/search/?geodir_search=1&amp;stype=gd_retreat&amp;s\"> (source) </a><a href=\"https://en.wikipedia.org/wiki/Uni%C3%A3o_do_Vegetal\"> (source) </a></p>",
-    "",
+    "<p>See our Essential Guide to Ayahuasca Retreats for details on ayahuasca tourism or find <a href=\"https://thethirdwave.co/directory/retreats/category/ayahuasca/\">legal Ayahuasca Retreats</a> in our <a href=\"https://thethirdwave.co/directory/search/?geodir_search=1&amp;stype=gd_retreat&amp;snear=&amp;s=ay&amp;sgeo_lat=&amp;sgeo_lon=\">psychedelic directory</a>.</p>",
+    "<h4>Where can I buy ayahuasca?</h4>",
+    "<p>Beyond the witches’ markets of South America, you’re unlikely to find ayahuasca for sale. Certainly, if you do find ayahuasca tea for sale on the internet, you should view it with extreme caution (not least because it’s generally illegal). But ayahuasca ingredients (traditional and alternative) are widely available online.</p>",
+    "<p>Search ethnobotanical suppliers and reputable headshop websites to purchase ayahuasca plant materials.</p>",
+    "<h4>How to make ayahuasca?</h4>",
+    "<p>Traditional ayahuasca is a boiled decoction of <em>B. caapi</em> vine and <em>P. viridis</em> leaves. The latter ingredient is sometimes substituted with <a href=\"https://erowid.org/chemicals/ayahuasca/ayahuasca_info10.shtml\">other plants</a>. Different traditions also have their own special rituals for ayahuasca preparation.</p>",
+    "<p>Various non-traditional <a href=\"https://erowid.org/chemicals/ayahuasca/ayahuasca_info11.shtml\">ayahuasca recipes</a> exist, too, using plants native to regions beyond the Amazon. One ayahuasca recipe, for instance, calls for Syrian rue and Illinois bundle flower.</p>",
+    "<p>Pharmacologically, there are just two components to the brew—DMT and MAOI—and each of these can be found in a variety of plants native to virtually every continent.</p>",
     "<h4>Quelle est la durée des effets ?</h4>",
     "<p>Les effets immédiats durent habituellement cinq à huit heures. Des changements peuvent être ressentis ensuite. Ils varient d’une personne à l’autre et ne démontrent pas une guérison.<a href=\"https://thethirdwave.co/psychedelics/ayahuasca/#_ftn29\"><sup>[29]</sup></a><a href=\"https://thethirdwave.co/psychedelics/ayahuasca/#_ftn30\"><sup>[30]</sup></a></p>",
     "<h4>Une expérience peut-elle être difficile ?</h4>",
@@ -202,5 +200,14 @@
   "translatedAt": "2026-11-08T03:53:02.109Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128
+  ]
 }

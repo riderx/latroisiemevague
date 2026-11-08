@@ -4,7 +4,7 @@ import { evidenceFor, applyEditorialUpdates } from '../content-data/guide-update
 export type Guide = GuideEntry & {
   blocks: string[]; retrievedAt: string; translatedAt: string; sourceWords: number; sourceBlockCount: number;
   contentHash: string; originalTitle: string; translationModel: string; translationVersion: string;
-  omissions: { heading: string; reason: string }[]
+  omissions: { heading: string; reason: string }[]; practicalBlocks?: number[]
 }
 const files = import.meta.glob(['../content-data/guides/*.json', '!../content-data/guides/catalog.json'], { eager: true, import: 'default' }) as Record<string, Guide>
 const legacyHeads = import.meta.glob('../content-data/pages/{substances,microdosing}-*.head.html', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>
@@ -24,8 +24,14 @@ export const guideFor = (entry: GuideEntry): Guide => {
 const slug = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 const normalizePath = (path: string) => path.replace(/\/+$/, '') || '/'
 const sectionLabels: Record<string, string> = { overview: 'Présentation', experience: 'Expérience', effects: 'Effets', benefits: 'Bénéfices potentiels et risques', benefitsandrisks: 'Bénéfices potentiels et risques', use: 'Recherche thérapeutique', therapeuticuse: 'Recherche thérapeutique', growth: 'Développement personnel', personalgrowth: 'Développement personnel', development: 'Développement professionnel', microdosing: 'Microdosage', legality: 'Légalité', history: 'Histoire', historyandstats: 'Histoire et statistiques', myths: 'Mythes', faq: 'Questions fréquentes', footnotes: 'Références', pharmacology: 'Pharmacologie', ethicalconsiderations: 'Considérations éthiques' }
+const riskNotice = '<p class="guide-editorial-update"><strong>Réduction des risques.</strong> Cette section reprend les informations pratiques de la source anglaise : doses, préparation ou approvisionnement. Elle informe, elle n’incite pas à consommer. La plupart de ces substances sont interdites en France. La teneur d’un produit varie, et les mélanges augmentent les risques. En cas de malaise, appelez le 15 ou le 112. <a href="/aide/">Numéros d’aide et d’écoute</a></p>'
+/** Puts the risk notice at the start of each run of practical blocks (after its heading when the run opens with one). */
+function withRiskNotices(guide: Guide, blocks: string[]) {
+  const practical = new Set(guide.practicalBlocks ?? [])
+  return blocks.flatMap((block, i) => !practical.has(i) || practical.has(i - 1) ? [block] : /^<h[2-6]/.test(block.trim()) ? [block, riskNotice] : [riskNotice, block])
+}
 function prepare(guide: Guide) {
-  const $ = load(applyEditorialUpdates(guide.id, guide.blocks, guide.contentHash).join('\n'), null, false)
+  const $ = load(withRiskNotices(guide, applyEditorialUpdates(guide.id, guide.blocks, guide.contentHash)).join('\n'), null, false)
   if (guide.slug === 'ibogaine') {
     $('p').each((_, el) => { const html = $(el).html(); if (html) $(el).html(html.replace(/dépendance à l['’]opium/g, 'dépendance aux opioïdes')) })
   }

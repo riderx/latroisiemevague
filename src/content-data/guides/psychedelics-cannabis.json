@@ -11,8 +11,8 @@
   "omissions": [],
   "description": "Read our guide to Cannabis which covers everything you need to know about this plant and its applications - from recreation to healing! Learn more.",
   "originalTitle": "Guide to Cannabis - The Cannabis Experience, Benefits, & Side Effects",
-  "retrievedAt": "2026-11-08T03:49:13.223Z",
-  "contentHash": "d4943d83ff986eb51bb16732195f885d132a777b62ff2cc4cf0549b8ee8f356f",
+  "retrievedAt": "2026-11-08T17:29:54.109Z",
+  "contentHash": "e7feca73297dab90afecf5cd600850ff41f226ec9e968538f337b642867ff58f",
   "blocks": [
     "<h2 id=\"overview\">Le cannabis en bref</h2>",
     "<p>Originaire d’Asie, le cannabis est utilisé depuis des millénaires pour ses fibres, dans des soins et des rites. Ses composants comprennent le THC et le CBD. Leur proportion change d’un produit à l’autre, tout comme les effets et les risques.</p>",
@@ -27,7 +27,7 @@
     "<p>La composition du produit, notamment les proportions de THC et de CBD, influence les effets ressentis. Le CBD pourrait limiter certains effets du THC : anxiété, méfiance excessive, troubles de mémoire et de coordination. Cette protection n’est pas garantie.</p>",
     "<p>Les noms « Haze », « Blue Dream » ou « Strawberry Cough » sont souvent associés à une stimulation mentale. « Hindu Kush » et « Girl Scout Cookies » sont plutôt décrits comme sédatifs. Ces descriptions accompagnent les étiquettes sativa et indica. Le rôle attribué au myrcène reste incertain ; le nom d’une variété ne prédit pas votre réaction.</p>",
     "<p>Les témoignages distinguent parfois les effets des fleurs et ceux de la résine, décrite comme plus « cérébrale ». Les produits alimentaires peuvent provoquer d’abord de l’angoisse ou de la méfiance, puis une forte somnolence. Ces descriptions ne permettent pas de prévoir une expérience individuelle.<a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn1\"><sup>[1]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn2\"><sup>[2]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn3\"><sup>[3]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn4\"><sup>[4]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn5\"><sup>[5]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn6\"><sup>[6]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn7\"><sup>[7]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn8\"><sup>[8]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn9\"><sup>[9]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn10\"><sup>[10]</sup></a></p>",
-    "",
+    "<p><em>Are you feeling drawn to work with plant medicines? <a href=\"https://thethirdwave.co/directory/\">Third Wave’s vetted Psychedelic Directory</a> offers an honest, in-depth guide to safely accessing these substances.</em></p>",
     "<h2 id=\"effects\">Effets sur l’organisme</h2>",
     "<h3><b>Les composants de la plante</b></h3>",
     "<p>Plus de 100 cannabinoïdes ont été recensés dans la plante. Ces molécules associent des structures de terpènes et de phénols et participent à sa défense contre les parasites. On trouve notamment le THC, ou delta-9-tétrahydrocannabinol, et le CBD, ou cannabidiol. S’y ajoutent le CBC (cannabichromène), le CBN (cannabinol), le CBG (cannabigérol) et le THCV/THV (tétrahydrocannabivarine). Plusieurs ne produisent pas d’intoxication et font l’objet de recherches médicales.<a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn11\"><sup>[11]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cannabis/#_ftn12\"><sup>[12]</sup></a><a href=\"https://thethirdwave.co/psychedelics/cbd/\">(source)</a></p>",
@@ -462,5 +462,6 @@
   "translatedAt": "2026-11-08T03:54:51.174Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": []
 }

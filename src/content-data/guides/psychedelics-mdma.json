@@ -6,18 +6,13 @@
   "path": "/substances/mdma/",
   "hub": false,
   "id": "psychedelics-mdma",
-  "sourceBlockCount": 183,
-  "sourceWords": 6016,
-  "omissions": [
-    {
-      "heading": "How do I take MDMA?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 186,
+  "sourceWords": 6114,
+  "omissions": [],
   "description": "MDMA is a synthetic compound that alters mood and perception, producing euphoria, empathy, & self-love. Discover MDMA benefits, MDMA microdosing, effects & experience.",
   "originalTitle": "MDMA Guide: MDMA Dosage, Benefits, & Side Effects - Third Wave",
-  "retrievedAt": "2026-11-08T03:49:13.417Z",
-  "contentHash": "dfd9daf2dc16a9b45110dc6c6b9c572b8261efa97ea97a2b0f9dc94ccb638f9d",
+  "retrievedAt": "2026-11-08T17:30:03.419Z",
+  "contentHash": "e7a9f7250fa20216d441c64907ee6a96be1a83ba6fc80e5eb14b9796a4acd94e",
   "blocks": [
     "<h2 id=\"overview\">MDMA : présentation</h2>",
     "<p>La MDMA, ou 3,4-méthylènedioxyméthamphétamine, est une substance de synthèse proche des stimulants et des psychédéliques. Elle modifie l’humeur et les perceptions. Elle peut provoquer de l’euphorie, un sentiment de proximité et des sensations plus intenses, notamment avec la musique. Son usage s’est diffusé dans les fêtes et les festivals. À la fin des années 1970, certains thérapeutes l’exploraient pour les difficultés émotionnelles et conjugales. Leo Zeff a contribué à cet usage en psychothérapie. En 1985, la DEA l’a classée en catégorie I aux États-Unis.</p>",
@@ -96,7 +91,7 @@
     "<p>Une piste similaire concerne l’anxiété chez les personnes atteintes d’une maladie potentiellement mortelle. MAPS a présenté un essai de phase II sur ce sujet. Son existence ne démontre pas l’efficacité du traitement.<a href=\"https://thethirdwave.co/psychedelics/mdma/#_ftn19\"><sup>[19]</sup></a><a href=\"https://maps.org/research/mdma/anxiety/life-threatening-illness\">Source</a></p>",
     "<h3>Dépendance à l’alcool<b></b></h3>",
     "<p>En 2017, Ben Sessa a lancé un premier essai sur la MDMA associée à une psychothérapie de la dépendance à l’alcool. Il s’intéresse notamment aux traumatismes vécus par certains patients. Son hypothèse est qu’une détresse moins forte pourrait faciliter le travail sur ces souvenirs. Cela ne permet pas de qualifier la MDMA de traitement idéal.<a href=\"https://www.theguardian.com/science/2017/jun/30/world-first-trials-mdma-treat-alcohol-addiction-set-begin\">Source</a></p>",
-    "",
+    "<p><em>Are you feeling drawn to work with plant medicines? <a href=\"https://thethirdwave.co/directory/\">Third Wave’s vetted Psychedelic Directory</a> offers an honest, in-depth guide to safely accessing these substances.</em></p>",
     "<h2 id=\"personalgrowth\">Vécu personnel</h2>",
     "<h3>Interprétations spirituelles<b></b></h3>",
     "<p>Certaines personnes donnent un sens spirituel aux sentiments d’unité, d’empathie ou de compassion ressentis sous MDMA. Des guides religieux en ont aussi parlé. Ces interprétations personnelles ne prouvent pas un bénéfice clinique.<a href=\"http://www.maps.org/news-letters/v06n1/06133spi.html\">Source</a></p>",
@@ -145,6 +140,9 @@
     "<h4>Que peut-on ressentir ?<b></b></h4>",
     "<p>La MDMA exerce une action stimulante. Des personnes rapportent une euphorie physique et émotionnelle, des couleurs plus vives et une endurance ressentie comme accrue, notamment pendant la danse.</p>",
     "<p>Les réactions indésirables comprennent sueurs, déshydratation, mâchoires crispées et tremblements involontaires.<a href=\"https://thethirdwave.co/psychedelics/mdma/#_ftn28\"><sup>[28]</sup></a></p>",
+    "<h4><b>How do I take MDMA?</b></h4>",
+    "<p>MDMA may be ingested as an oral tablet or in crystal or powdered form, which can be taken orally or insufflated (snorted). <a href=\"https://www.globaldrugsurvey.com/mdma-how-you-take-it-might-be-more-important-that-you-think/\">Snorting MDMA</a> tends to be unpopular, however, because of the bad flavor, potential for nose bleeds (as well as anxiety and palpitations), and the relatively short-lived effects. Many people mix the crystal into their drinks to avoid the bitter taste. Smoking or vaping is another option, but it’s even less popular than snorting.</p>",
+    "<p>Effects will take up to an hour to appear. Don’t redose too frequently. Don’t mix with other drugs.</p>",
     "<h4>Quelle est la durée des effets ?<b></b></h4>",
     "<p>Les sources rapportent une durée de trois à six heures. Le début survient souvent entre 20 et 90 minutes. La phase la plus intense peut durer de 90 minutes à trois heures, puis diminuer sur environ deux heures.</p>",
     "<p>Après les effets principaux, une fatigue ou une humeur dépressive peut apparaître. Leur intensité varie. Elles peuvent persister de 12 à 72 heures, parfois jusqu’à une semaine.<a href=\"https://thethirdwave.co/psychedelics/mdma/#_ftn28\"><sup>[28]</sup></a><a href=\"https://thethirdwave.co/psychedelics/mdma/#_ftn29\"><sup>[29]</sup></a></p>",
@@ -206,5 +204,10 @@
   "translatedAt": "2026-11-08T04:00:44.861Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    126,
+    127,
+    128
+  ]
 }

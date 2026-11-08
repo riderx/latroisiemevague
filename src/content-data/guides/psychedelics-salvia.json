@@ -6,18 +6,13 @@
   "path": "/substances/salvia/",
   "hub": false,
   "id": "psychedelics-salvia",
-  "sourceBlockCount": 111,
-  "sourceWords": 3386,
-  "omissions": [
-    {
-      "heading": "Dosing & method of consumption",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 116,
+  "sourceWords": 3596,
+  "omissions": [],
   "description": "Salvia divinorum is the most potent naturally-occuring psychedelic. Learn more about salvia benefits, its psychedelic effects, dosage, experience.",
   "originalTitle": "Our Salvia Guide - The Salvia Experience, Benefits, Dosage & More",
-  "retrievedAt": "2026-11-08T03:49:13.556Z",
-  "contentHash": "608e1d5af5ea54f0b0fa32e79fbbd527f5187162f9c73b7c77450ab06ccdd41e",
+  "retrievedAt": "2026-11-08T17:30:07.523Z",
+  "contentHash": "4bc6f8204a8d6e680dff33fa8dea0d22c79e0b6cedcedb6ab1849e37cc8cf18c",
   "blocks": [
     "<h2 id=\"overview\">Salvia : présentation</h2>",
     "<p>Salvia divinorum est une plante vivace de la famille de la menthe, les Labiatae. Elle vient des forêts humides de la Sierra Mazateca, dans l’État mexicain d’Oaxaca. Elle pousse en altitude, notamment dans les ravins. Elle peut dépasser un mètre, avec de grandes feuilles vertes, des tiges creuses carrées et des fleurs blanches à calice pourpre.<i></i><i></i><i></i></p>",
@@ -25,6 +20,11 @@
     "<p>Cette plante peut provoquer des visions et une désorientation intense. Les recherches sur la douleur, la dépendance et la dépression restent limitées. Les usages mazatèques et les récits personnels ne prouvent pas une efficacité médicale.<i></i></p>",
     "<p>Aux États-Unis, les règles sur Salvia divinorum diffèrent selon les États et le cadre fédéral. L’ethnobotaniste Daniel Siebert défend son statut légal et tient un centre d’information sur cette plante.<i></i><a href=\"http://www.sagewisdom.org/\"><i></i></a></p>",
     "<h2 id=\"experience\">Effets ressentis</h2>",
+    "<h3>Dosing &amp; method of consumption</h3>",
+    "<p><i>Salvia divinorum</i> can be chewed, smoked, or taken as a purified tincture. A threshold dose of Salvinorin A is 200mcg, while the upper limit for most people is around 1000mcg (1mg). The amount of plant material, extract, or tincture required for a single dose will depend on the strength of the product being used.</p>",
+    "<p>One quarter to half a gram of dried leaf is a fairly mid-level dose for smoking. It’s important to inhale the entire dose in two to three minutes, though, due to the quick metabolization of Salvinorin A in the body. A water pipe or high-temperature vaporizer can make this easier.</p>",
+    "<p>Keep in mind, however, that two products of allegedly the same strength may contain<a href=\"https://erowid.org/plants/salvia/salvia_dose.shtml%20\"> very different levels of Salvinorin A</a>.</p>",
+    "<p>Chewing <i>Salvia divinorum</i> involves rolling fresh or dried leaves (rehydrated in water) into a ball or cylinder called a “quid.” The quid is kept under the tongue and chewed once every ten seconds or so for at least half an hour before its spit out. With a quid, a mid-level dose of Salvinorin A requires about 30g of fresh leaves or 2-8g of dried leaves. The chew can be sweetened with sugar or Stevia extract to help with the bitter flavor.</p>",
     "<h3>Quels effets peut-elle provoquer ?</h3>",
     "<p>La durée dépend de la forme du produit. Après inhalation, le maximum survient dans les 180 premières secondes, puis les effets diminuent en 5 à 30 minutes. Par voie buccale, ils peuvent commencer après 15 à 20 minutes et culminer pendant 30 à 60 minutes. La lumière et le bruit peuvent modifier le ressenti. Les teintures peuvent agir plus vite que les feuilles.<i></i></p>",
     "<p>Les effets comprennent des picotements et une perception différente du corps. Certaines personnes décrivent une attention plus nette. D’autres perdent leurs repères ou leur sentiment d’identité. Des images rapides, des vertiges et des difficultés motrices sont possibles. Les récits mentionnent aussi une vision en tunnel, des voix, des êtres imaginaires, des rires incontrôlables ou l’impression de devenir un objet. Ces perceptions ne reflètent pas nécessairement la réalité.<i></i><i></i><a href=\"https://thethirdwave.co/psychedelics/salvia/#_ftn1\"><sup>[1]</sup></a><a href=\"https://thethirdwave.co/psychedelics/salvia/#_ftn2\"><sup>[2]</sup></a><a href=\"https://thethirdwave.co/psychedelics/salvia/#_ftn3\"><sup>[3]</sup></a><a href=\"https://thethirdwave.co/psychedelics/salvia/#_ftn4\"><sup>[4]</sup></a></p>",
@@ -134,5 +134,12 @@
   "translatedAt": "2026-11-08T04:02:50.493Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ]
 }

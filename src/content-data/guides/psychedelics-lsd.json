@@ -6,26 +6,13 @@
   "path": "/substances/lsd/",
   "hub": false,
   "id": "psychedelics-lsd",
-  "sourceBlockCount": 200,
-  "sourceWords": 6249,
-  "omissions": [
-    {
-      "heading": "Where can I buy LSD?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "How do I take it?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "How do I microdose with LSD?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 211,
+  "sourceWords": 6501,
+  "omissions": [],
   "description": "Third Wave's LSD Guide is the most complete online resource for LSD information, including psychedelic effects, safety protocols, myths, & legality.",
   "originalTitle": "LSD Guide: LSD Dosage, Effects, Experience & Benefits - Third Wave",
-  "retrievedAt": "2026-11-08T03:49:13.389Z",
-  "contentHash": "c2e305dcab0428ae0e6c50f6d36ee8163fca48ffa63b1c28a8f1db824c7a45c4",
+  "retrievedAt": "2026-11-08T17:30:02.393Z",
+  "contentHash": "46f062439aef7281fc34f13e5a1889c285f4719b209226d5221e66f6535d873a",
   "blocks": [
     "<h2 id=\"overview\">Le LSD en bref </h2>",
     "<p>Le LSD, ou « acide », est le diéthylamide de l’acide lysergique. Il dérive d’un composé de l’ergot du seigle. Albert Hofmann l’a synthétisé en 1938 à Bâle, en Suisse. Il en a découvert les effets psychédéliques plusieurs années plus tard, après une exposition accidentelle. <a href=\"https://thethirdwave.co/the-history-of-lsd/\"> (référence) </a></p>",
@@ -87,7 +74,7 @@
     "<h3><b>Études du cerveau et de la sécurité </b></h3>",
     "<p>La Fondation Beckley a financé par une collecte publique une étude auprès de 20 volontaires. L’IRM et la magnétoencéphalographie ont servi à observer le cerveau sous LSD. Les chercheurs ont relié des changements de circulation sanguine et de communication entre régions à la perception de soi. Les liens proposés avec la créativité restent des hypothèses. <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/27071089\"> (référence) </a><a href=\"https://thethirdwave.co/psychedelics/lsd/#_ftn11\"><sup>[11]</sup></a></p>",
     "<p>Une enquête américaine publiée en 2015 portait sur environ 130 000 personnes. Elle ne retrouvait pas d’association entre usage de psychédéliques et troubles mentaux, détresse, idées suicidaires, dépression ou anxiété. Une enquête de population ne peut cependant exclure un risque individuel. <a href=\"https://thethirdwave.co/psychedelics/lsd/#_ftn12\"><sup>[12]</sup></a></p>",
-    "",
+    "<p><em>Are you feeling drawn to work with plant medicines for your mental health? <a href=\"https://thethirdwave.co/directory/\">Third Wave’s vetted Psychedelic Directory</a> offers an honest, in-depth guide to safely accessing these substances.</em>        </p>",
     "<h2 id=\"growth\">Expériences personnelles rapportées </h2>",
     "<p>Certaines personnes décrivent une « dissolution de l’ego » : leurs limites personnelles semblent s’atténuer ou disparaître temporairement. Elles rapportent parfois un sentiment de lien avec le monde. Ce vécu peut modifier leur regard sur elles-mêmes, sans garantir un changement bénéfique. <a href=\"https://thethirdwave.co/psychedelics/lsd/#_ftn13\"><sup>[13]</sup></a></p>",
     "<p>Des <a href=\"http://www.collective-evolution.com/2015/01/11/8-famous-people-whose-creativity-innovation-was-inspired-by-lsd/\">artistes et écrivains</a> ont attribué une part de leur inspiration aux psychédéliques. Aldous Huxley en parlait dans <a href=\"http://amzn.to/2FJdXvM\"><i>Les Portes de la perception</i></a> (1954) et <a href=\"http://amzn.to/2FVUwDm\"><i>Île</i></a> (1962). Ces livres ont influencé la contre-culture des années 1960. Huxley a aussi demandé du LSD à sa femme sur son lit de mort ; ce récit ne constitue pas une preuve thérapeutique. <a href=\"https://maps.org/news-letters/v10n3/10317hux.html\"> (référence) </a></p>",
@@ -176,6 +163,11 @@
     "<p>Les délais cités sont de six à douze heures dans le sang et de deux à quatre jours dans les urines. Le métabolite 2-oxo-3-hydroxy-LSD peut persister davantage dans les urines. Ces durées restent indicatives. </p>",
     "<p>Une analyse des cheveux peut aussi rechercher le LSD lui-même. Elle peut repérer une exposition isolée ou faible sur une période prolongée. La durée exacte dépend de l’analyse et ne peut être fixée ici. </p>",
     "<p>Les dépistages habituels ne recherchent généralement pas le LSD. Un examen spécifique peut être nécessaire. </p>",
+    "<h4>Where can I buy LSD?</h4>",
+    "<p>Being an illegal substance in nearly every country around the world, acquiring LSD comes with a certain set of risks. We do not condone or endorse breaking the law, but we do realize that consenting adults sometimes engage in illegal activity in otherwise nonviolent ways.</p>",
+    "<p>There are underground, black market sources—both online and offline —that can be used to purchase LSD.</p>",
+    "<p>Many music and art festivals will have LSD “vendors” (illegal, of course), and asking around at these events will likely lead you to them.</p>",
+    "<p>All of that said, the purity and safety of the substances you’re buying can rarely be verified with any degree of certainty, so it’s best to use a testing kit for LSD or any other substance you buy from an unverified source.</p>",
     "<h4><b>Une analyse garantit-elle la sécurité ? </b></h4>",
     "<p>Aucune recommandation de vendeur, de test commercial ou de service lié à la consommation n’est proposée ici. <a href=\"https://shrsl.com/1hxux\"> (référence) </a></p>",
     "<p>Aucun mode d’obtention, de préparation ou de consommation du LSD n’est décrit dans ce guide. </p>",
@@ -187,6 +179,12 @@
     "<h4><b>Des séquelles psychologiques sont-elles possibles ? </b></h4>",
     "<p>Le LSD peut entraîner une détresse psychologique importante. Le cadre et les antécédents personnels ou familiaux comptent, mais ne prédisent pas toutes les réactions. <a href=\"https://thethirdwave.co/set-setting-lsd/\"> (référence) </a></p>",
     "<p>La panique et la désorientation peuvent être intenses. Une vulnérabilité psychiatrique augmente les préoccupations. Même un environnement rassurant ne garantit pas l’absence de complication. </p>",
+    "<h4><b>How do I take it?</b></h4>",
+    "<p>LSD is most often sold as blotter, dissolved onto paper squares. It can also be taken in tablets, as a crystal or as a liquid, though these forms are not common these days.</p>",
+    "<p>In blotter form, a tab of the paper is held on the tongue until dissolved. The paper can be swallowed.</p>",
+    "<p>25-100ug is recommended as a first dose. This is typically about a quarter to a full tab.</p>",
+    "<h4><b>How do I microdose with LSD?</b></h4>",
+    "<p>A microdose of LSD is typically around 10ug, and is re-dosed every four days. Microdoses are easiest to measure out with blotter paper, which can be cut into tenths. <a href=\"https://thethirdwave.co/microdosing/lsd/\">Click here for a detailed guide on microdosing with LSD</a>.</p>",
     "<h4><b>Qu’en est-il de la tolérance ? </b></h4>",
     "<p>Cette section ne propose aucun calendrier de prises ni aucune méthode pour contourner la tolérance. </p>",
     "<h4><b>Que sait-on des mélanges ? </b></h4>",
@@ -231,5 +229,18 @@
   "translatedAt": "2026-11-08T03:59:58.523Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    149,
+    150,
+    151,
+    152,
+    153,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170
+  ]
 }

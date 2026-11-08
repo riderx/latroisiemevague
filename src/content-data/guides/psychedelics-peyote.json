@@ -6,30 +6,13 @@
   "path": "/substances/peyote/",
   "hub": false,
   "id": "psychedelics-peyote",
-  "sourceBlockCount": 176,
-  "sourceWords": 5817,
-  "omissions": [
-    {
-      "heading": "Dosage",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Where to buy peyote?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Peyote is legal to grow in many countries even where mescaline is illegal, but this doesn’t include ",
-      "reason": "Operational drug instructions"
-    },
-    {
-      "heading": "How do you take peyote?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 184,
+  "sourceWords": 6098,
+  "omissions": [],
   "description": "Learn how to take peyote, the right peyote dosage, and what to expect on a peyote trip. Third Wave's guide covers peyote benefits, experience & effects.",
   "originalTitle": "Peyote Trip: How to Take Peyote, Dosage, & Effects - Third Wave",
-  "retrievedAt": "2026-11-08T03:49:13.503Z",
-  "contentHash": "d3038a8bd365339d109fe1de65fdb3bc84f36fb44741b8a9d309b088f4bae888",
+  "retrievedAt": "2026-11-08T17:30:05.496Z",
+  "contentHash": "aa133736a02430483d25c53fa0653e19ee4e1902b968317ebfa2b220ada67a06",
   "blocks": [
     "<h2 id=\"overview\">Le peyote en bref </h2>",
     "<p>Le peyote, Lophophora williamsii, est un petit cactus vert et arrondi, sans épines. Il pousse près du sol. Il contient de la mescaline, une substance psychédélique. Ses parties supérieures sont parfois appelées « boutons » ou « couronnes ». <i></i></p>",
@@ -48,6 +31,9 @@
     "<h3><b>Action sur les récepteurs </b></h3>",
     "<p>La mescaline interagit avec plusieurs récepteurs de la sérotonine, notamment les sous-types 1A et 2A/B/C. Elle sert souvent de comparaison dans l’étude des psychédéliques. Ses effets peuvent rappeler ceux du LSD, sans que les deux molécules aient la même structure. </p>",
     "<p>L’action sur le récepteur 5-HT2A semble jouer un rôle central dans les effets psychédéliques de la mescaline. </p>",
+    "<h3><b>Dosage</b></h3>",
+    "<p>A light dose of peyote is 50-100g fresh or 10-20g dry, which equates in either case to roughly three to six mid-sized buttons. Moderate doses range up to 150g fresh or 30g dry (six to twelve buttons), while strong doses range up to 200g fresh or 40g dry (eight to sixteen buttons). Anything above this is considered heavy.</p>",
+    "<p>It is hard to be precise, however, due to the varying levels of mescaline in any given peyote button. Growing location and season of harvest can also affect their potency, as can age—older peyote tends to be more potent.        </p>",
     "<h2 id=\"benefitsandrisks\">Effets étudiés et dangers </h2>",
     "<h3><b>Usages et effets rapportés </b></h3>",
     "<p>L’Église amérindienne emploie le peyote dans des cérémonies liées au soin et à la spiritualité. Des participants rapportent gratitude, compassion ou sentiment de lien avec le monde. D’autres évoquent moins d’anxiété, de dépression, de stress post-traumatique ou d’envies liées aux addictions. Ces récits ne valident pas un traitement. </p>",
@@ -72,7 +58,7 @@
     "<p><strong>Un entretien avec le médecin Joe Tafur aborde le peyote et les traditions spirituelles autochtones. La transcription est conservée comme ressource documentaire. <em></em><em></em><a href=\"https://thethirdwave.co/podcast/episode-92-joe-tafur/\"> (référence) </a></strong></p>",
     "<p>À partir des données de la NSDUH, des chercheurs de l’université d’Alabama ont observé moins d’idées suicidaires chez les personnes ayant déjà pris un psychédélique. Cette association ne prouve pas que la mescaline prévienne le suicide. <a href=\"https://www.uab.edu/news/research/item/5650-classic-psychedelic-use-found-to-be-protective-with-regard-to-psychological-distress-and-suicidality-study-finds\"> (référence) </a></p>",
     "<p>Une étude publiée en 2013 associait l’expérimentation du peyote ou de la mescaline à une fréquence moindre d’agoraphobie. Ce trouble anxieux concerne notamment des lieux ressentis comme menaçants ou difficiles à quitter. L’étude ne démontre pas un effet thérapeutique. <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3747247/\"> (référence) </a></p>",
-    "",
+    "<p><em>Are you feeling drawn to work with plant medicines? <a href=\"https://thethirdwave.co/directory/\">Third Wave’s vetted Psychedelic Directory</a> offers an honest, in-depth guide to safely accessing these substances.</em>        </p>",
     "<h2 id=\"legality\">Cadre légal </h2>",
     "<p>Les règles sur le peyote dépendent du pays, de la plante et du contexte religieux ou scientifique. Les informations suivantes reprennent les sources citées. Elles ne confirment pas le droit actuellement applicable. </p>",
     "<h3><b>États-Unis </b></h3>",
@@ -133,10 +119,15 @@
     "<h4><b>Description botanique </b></h4>",
     "<p>Le guide décrit les traits suivants : </p>",
     "<ul><li>Petit cactus arrondi, parfois en groupes </li><li>Surface épaisse et cireuse, verte à bleu-vert </li><li>Côtes irrégulières en nombre variable </li><li>Touffes claires, jaunâtres ou blanches, sans épines </li><li>Fleurs parfois roses ou blanches au sommet </li></ul>",
+    "<h4><b>Where to buy peyote?</b></h4>",
+    "<p>Many people find peyote for sale online. While that means that reputable suppliers are just a click away, it’s important to understand that buying it this way could mean supporting illegal or unsustainable harvesting practices—as well as contributing to the peyote shortage among Native Americans who use peyote for religious purposes. See Ethical Considerations for more information.</p>",
     "<h4><b>Quels enjeux pose la culture ? </b></h4>",
+    "<p>Peyote is legal to grow in many countries even where mescaline is illegal, but this doesn’t include the United States (with some notable <a href=\"https://thethirdwave.co/psychedelics/peyote/#legality\">exceptions</a>). In many countries, you can buy peyote seeds and living buttons to grow at home. Always check your local laws before <a href=\"https://seedsofthedivine.co.uk/product/lophophora-williamsii-caespitosa-peyote-seeds-x100/\">cultivating peyote</a> and be aware that, while it’s a relatively low-maintenance cactus to grow, it may take several years to establish a decent-sized garden.<a href=\"https://thethirdwave.co/psychedelics/peyote/#_ftn52\"><sup>[52]</sup></a> If growing peyote from seed, it’ll probably take decades. There are numerous resources online for learning <a href=\"https://knehnav.home.xs4all.nl/cultivation.htm\">how to grow peyote</a> at home.</p>",
     "<p>Les prélèvements sauvages fragilisent les populations de peyote. Protéger la plante aide aussi à préserver les rites des communautés concernées. Aucun conseil de culture n’est donné ici. <i></i></p>",
     "<h4><b>Que montrent les vestiges anciens ? </b></h4>",
     "<p>Des analyses ont retrouvé de la mescaline dans des vestiges de peyote très anciens, parfois millénaires. Cela ne permet pas de prévoir la teneur d’un produit actuel. Aucun conseil de conservation ou de préparation n’est fourni. <a href=\"https://thethirdwave.co/psychedelics/peyote/#_ftn53\"><sup>[53]</sup></a></p>",
+    "<h4><b>How do you take peyote?</b></h4>",
+    "<p>Peyote buttons can be eaten whole or brewed as peyote tea. A moderate dose of 200-400 mg mescaline can be achieved by ingesting around six buttons.</p>",
     "<h4><b>Ce guide décrit-il des modes de consommation ? </b></h4>",
     "<p>Aucune méthode de consommation du peyote ou de la mescaline extraite n’est présentée ici. </p>",
     "<h4><b>Que désigne « pomada de peyote » ? </b></h4>",
@@ -211,5 +202,15 @@
   "translatedAt": "2026-11-08T04:01:57.181Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    17,
+    18,
+    19,
+    105,
+    106,
+    108,
+    112,
+    113
+  ]
 }

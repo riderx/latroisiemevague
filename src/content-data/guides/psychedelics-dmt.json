@@ -6,22 +6,13 @@
   "path": "/substances/dmt/",
   "hub": false,
   "id": "psychedelics-dmt",
-  "sourceBlockCount": 111,
-  "sourceWords": 3804,
-  "omissions": [
-    {
-      "heading": "How do you take DMT?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Like most psychedelics, DMT is a very powerful drug and has the potential to be very unpleasant if n",
-      "reason": "Operational drug instructions"
-    }
-  ],
+  "sourceBlockCount": 114,
+  "sourceWords": 3907,
+  "omissions": [],
   "description": "Third Wave's DMT guide covers how to take DMT, proper DMT dosage, effects and experience. Explore research-based DMT content for a safe psychedelic trip.",
   "originalTitle": "DMT Guide: DMT Trip, Experience, Benefits, Dosage & More - Third Wave",
-  "retrievedAt": "2026-11-08T03:49:13.258Z",
-  "contentHash": "b13b0b4df032b9d053ca54a61db084278d3c1d6c6939a1026889b43e4809dfa4",
+  "retrievedAt": "2026-11-08T17:29:56.202Z",
+  "contentHash": "63bfe633ef9797c76949f1bceedd7873939cf6624143e282d498074f4666027b",
   "blocks": [
     "<h2 id=\"overview\">La DMT en bref</h2>",
     "<p>La N,N-diméthyltryptamine, ou DMT, est un psychédélique présent chez certaines plantes et certains animaux, aquatiques comme terrestres. Elle contribue aux effets de l’ayahuasca, utilisée dans des rites de peuples autochtones d’Amazonie. Psychotria viridis fait partie des plantes associées à cette boisson. Un autre guide traite spécifiquement de l’ayahuasca.<i></i><a href=\"https://thethirdwave.co/psychedelics/ayahuasca/\">(source)</a></p>",
@@ -100,6 +91,8 @@
     "<p>La source indique que les tests courants ne recherchent généralement pas la DMT. Sa structure diffère des produits habituellement ciblés. Cela ne garantit ni une absence de détection ni l’impossibilité d’un faux positif. Le résultat dépend du test employé.<a href=\"https://www.erowid.org/chemicals/dmt/dmt_testing.shtml\">(source)</a></p>",
     "<h4><b>Un test chimique peut-il garantir la sécurité ?</b></h4>",
     "<p>Une analyse peut renseigner sur un produit, mais elle comporte des limites. Elle ne permet jamais d’affirmer qu’une prise serait sans danger.<a href=\"https://www.bunkpolice.com/?ref=nzi3ymi\">(source)</a></p>",
+    "<h4><b>How do you take DMT?</b></h4>",
+    "<p>DMT can be taken in many forms, but most typically it is either taken in the <a href=\"https://thethirdwave.co/microdosing/ayahuasca/\">ayahuasca brew</a> or smoked as a powder. You can read a detailed guide to smoking it <a href=\"https://thethirdwave.co/expect-dmt/\">here</a>. The powder form will produce a short-lasting but intense trip, and the ayahuasca brew will produce a long-lasting experience.</p>",
     "<h4><b>Quels dangers présente la DMT ?</b></h4>",
     "<p>La perception peut être bouleversée et des effets physiques indésirables peuvent survenir. Les autres produits présents et l’environnement peuvent accroître les dangers.</p>",
     "<h4><b>Que sait-on du microdosage de DMT ?</b></h4>",
@@ -107,6 +100,7 @@
     "<h4><b>Quelle est la durée des effets ?</b></h4>",
     "<p>Après inhalation, les effets durent environ 5 à 30 minutes. Avec l’ayahuasca, les durées rapportées vont de deux à 15 heures. Elles se situent souvent autour de quatre à six heures. Ces repères ne prédisent pas votre réaction.</p>",
     "<h4><b>Une expérience difficile est-elle possible ?</b></h4>",
+    "<p>Like most psychedelics, DMT is a very powerful drug and has the potential to be very unpleasant if not treated with respect. Follow the <a href=\"https://thethirdwave.co/set-setting-lsd/\">6S’s of psychedelic use</a> to minimize the risks of a bad experience. Start with a low dose if it’s your first time.</p>",
     "<h4><b>La perte de repères est-elle systématique ?</b></h4>",
     "<p>Non, toutes les personnes ne décrivent pas une rupture complète avec leur environnement, notamment avec l’ayahuasca. La DMT peut toutefois modifier fortement les perceptions. Après inhalation, des impressions de sortie du corps sont rapportées. Leur survenue n’est ni certaine ni prévisible.<a href=\"https://thethirdwave.co/psychedelics/ayahuasca/\">(source)</a></p>",
     "<h4><b>Le corps contient-il naturellement de la DMT ?</b></h4>",
@@ -138,5 +132,10 @@
   "translatedAt": "2026-11-08T03:56:41.793Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    77,
+    78,
+    86
+  ]
 }

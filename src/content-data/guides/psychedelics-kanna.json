@@ -6,26 +6,13 @@
   "path": "/substances/kanna/",
   "hub": false,
   "id": "psychedelics-kanna",
-  "sourceBlockCount": 98,
-  "sourceWords": 3585,
-  "omissions": [
-    {
-      "heading": "Preparing Kanna",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Dosing",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Sourcing",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 113,
+  "sourceWords": 4242,
+  "omissions": [],
   "description": "What is kanna? This guide shares everything you need to know about kanna effects, its history, uses, ways to cultivate and purchase kanna, dosage, legalities, and myths.",
   "originalTitle": "The Ultimate Guide to Kanna - Kanna Effects, Dosage & More",
-  "retrievedAt": "2026-11-08T03:49:13.309Z",
-  "contentHash": "65edc9da551604aaf68f1c1567c4b1125701c9a142a5481556e2b84702c76f8f",
+  "retrievedAt": "2026-11-08T17:29:59.231Z",
+  "contentHash": "c3812471d63a3bc2fe41a281ed9fd5921ec912896fbb3846a123aaf2f8dcca1a",
   "blocks": [
     "<h2 id=\"overview\">Le kanna</h2>",
     "<h3>Une plante d’Afrique du Sud</h3>",
@@ -43,6 +30,11 @@
     "<p>Les Khoikhoi utilisaient plusieurs plantes sous les noms channa, kanna ou kougoed. Sceletium tortuosum en faisait partie, mais d’autres Sceletium contenant des alcaloïdes portaient aussi ces noms. Leonotis leonurus et Salsola dealata, appelé Ganna, ont également été proposés. Dans Phantastica, publié en 1924, le pharmacologue Louis Lewin envisageait aussi Sclerocarya caffra ou Sclerocarya schweinfurthiana.<a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftn8\"><sup>[8]</sup></a></p>",
     "<h2 id=\"experience\">Effets rapportés</h2>",
     "<p>Les explorateurs décrivaient des rires, une agitation, des visions ou une somnolence après l’usage de plantes appelées kanna. Ces récits restent difficiles à interpréter : l’espèce concernée est souvent inconnue. Les descriptions actuelles de Sceletium tortuosum évoquent généralement des effets moins marqués.<a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftn8\"><sup>[8]</sup></a></p>",
+    "<h3>Preparing Kanna</h3>",
+    "<p>The entire plant is known to contain alkaloids, but it must be prepared properly before it can be used. As is characteristic of the genera Sceletium and Mesembryanthemum, kanna is known to contain oxalic acid, which can produce severe irritation and allergies. To break down the oxalic acid, a process of fermentation is required.</p>",
+    "<p>Traditionally, the plant material is harvested in October, when the plant is most potent, then crushed between two rocks and allowed to “ferment” for a few days in a closed container. Animal skins or hemp bags were originally used for this purpose. The container is placed in the sun, then two or three days later the bag is opened, and the contents are mixed well. The bag is sealed and placed outside again. After a week, the kanna is taken from the bag and spread out to dry in the sun. When the plant material has dried, it is chopped or powdered and ready to be used.</p>",
+    "<p>Another method involves toasting fresh plant material over coals until it has completely dried and then powdering the result <a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftn7\"><sup>[7]</sup></a>.</p>",
+    "<p>Products currently on the market consist of either the processed dried material, or a variety of extracts. Some shops or herbalists also stock various tinctures or elixirs that contain kanna or a combination of kanna and other plant medicines.</p>",
     "<h3>Extraits de kanna</h3>",
     "<p>Les méthodes de préparation et d’extraction ne sont pas détaillées ici.</p>",
     "<h2 id=\"what-to-expect\">Ce que décrivent les témoignages</h2>",
@@ -58,6 +50,11 @@
     "<p>Des travaux rapportent une inhibition de l’acétylcholinestérase et une action sur les récepteurs cannabinoïdes. Chez le rat, des extraits ont aussi agi sur les systèmes du GABA, des opioïdes, de la cholécystokinine, des prostaglandines et de la mélatonine.</p>",
     "<h3>Toxicité</h3>",
     "<p>L’acide oxalique et les autres oxalates présents chez certaines Aizoacées peuvent être toxiques en quantité importante. Une transformation de la plante ne suffit pas à garantir sa sécurité.<a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftn7\"><sup>[7]</sup></a><a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftn12\"><sup>[12]</sup></a><a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftn13\"><sup>[13]</sup></a></p>",
+    "<h3>Dosing</h3>",
+    "<h4>Kanna Powder</h4>",
+    "<p>Powdered kanna is consumed orally and held in the mouth for about ten minutes. Saliva will collect in the mouth and this can be swallowed. For Sceletium tortuosum dosage, two grams produce a “tranquil mellowness” after 30 minutes, and five grams of the powder is sufficient to relieve anxiety, with higher dosages leading to more entheogenic effects (euphoria, visions) <a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftn7\"><sup>[7]</sup></a>. Doses from five grams up (equivalent to 150 mg mesembrine) can produce other effects such as mydriasis, analgesia, loss of appetite, tingling in mouth, gagging reflex, congested feeling in the head, and noises in the ears.</p>",
+    "<h4>Kanna Extract</h4>",
+    "<p>The dosage for Zembrin, a commercial Sceletium tortuosum extract from South Africa, is 25 – 50 mg per day for cognitive effects, with South African psychiatrists prescribing between 100 – 200 mg per day for major depression and anxiety. Researchers found that up to six mg per kg of body weight per day would be completely safe to consume <a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftn14\"><sup>[14]</sup></a>. For the average human adult, that means 420 mg per day, which is far above the effective dose</p>",
     "<h3>Microdosage</h3>",
     "<p>La composition des produits et la sensibilité individuelle varient. Aucun repère de dosage n’est fourni ici.</p>",
     "<p>Aucun repère de dosage n’est fourni ici. Les produits commerciaux ne garantissent pas une composition uniforme.<a href=\"https://kaempathogenics.com/products/kanna-chews?utm_source=ThirdWave&amp;utm_medium=blog&amp;utm_campaign=Promotion\">(source)</a><a href=\"https://kaempathogenics.com/products/kannatincture?utm_source=ThirdWave&amp;utm_medium=blog&amp;utm_campaign=Promotion\">(source)</a><strong></strong></p>",
@@ -83,6 +80,11 @@
     "<h3>Statut réglementaire</h3>",
     "<p>Le statut du kanna dépend du pays et de la présentation du produit. La vente d’une plante ne signifie pas qu’elle est autorisée comme médicament. Les allégations thérapeutiques relèvent notamment de la FDA aux États-Unis et de la TGA en Australie. Ce texte ne permet pas d’établir le droit applicable partout.</p>",
     "<p>Les sources mentionnent un extrait appelé Zembrin en Afrique du Sud. Elles ne suffisent pas à confirmer ses conditions actuelles de délivrance.</p>",
+    "<h3>Sourcing</h3>",
+    "<p>Given its legal status, there are no restrictions on kanna, except when it comes to making claims for it as a healthcare or pharmaceutical product. Therefore, finding kanna and kanna-based products is relatively easy. As with many products, the only difficulty can be confirming how the plant material was sourced, and whether it was ethical, especially within a globalized economic system dependent upon labor from developing nations.</p>",
+    "<p>Kanna and kanna extracts can sometimes be obtained from herbal stores, but keep in mind that some plant products can quickly appear and then disappear. Kanna extracts can be sold at various potencies, up to 100x, and have a strong, almost bitter tobacco flavor. Kanna can also be sold as tinctures or in combination with other plant medicines.</p>",
+    "<p>Third Wave recommends the kanna extract “<a href=\"https://lddy.no/141zn\">Play” from the Hearthstone Collective</a>. “Play” contains kanna, lion’s mane, rhodiola, theobromine, and B-complex vitamins for an outgoing, energizing, and stimulating experience. “Relax” is for anxiety, calming the mind and for grounding. The Hearthstone Collective works with ethically sourced plant (and fungi) material from plants with high levels of alkaloids. They produce a high-quality product to help you reconnect with your body and nature, to build community around powerful medicines, and to help restore the ecology of our beautiful earth.</p>",
+    "<p>Seeds of Sceletium tortuosum and other Sceletium species, sometimes under the synonym<br>\nMesembryanthemums, are occasionally available through specialist nurseries and ethnobotanical sources. Cactus and plant enthusiasts sometimes offer living specimens of the genus, and they can sometimes be found through plant swaps or giveaways.</p>",
     "<h2 id=\"ethical-considerations\">Environnement et savoirs traditionnels</h2>",
     "<p>L’usage du kanna hors d’Afrique du Sud soulève la question du respect des savoirs locaux. Sceletium tortuosum pousse à l’état sauvage dans certaines régions de ce pays. En 2005, J.E. Victor et E. Powell l’ont classé en « préoccupation mineure » sur la liste rouge sud-africaine.<a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftn17\"><sup>[17]</sup></a></p>",
     "<p>Les prélèvements sauvages peuvent fragiliser les populations de cette plante. Des espèces voisines contiennent également des alcaloïdes comparables.</p>",
@@ -102,8 +104,8 @@
     "<p>Ce guide ne fournit aucune consigne de culture.</p>",
     "<h3>Le kanna contient-il de la caféine ?</h3>",
     "<p>La plante elle-même ne renferme pas de caféine.</p>",
-    "<p class=\"guide-editorial-update\">Cette édition écarte les modes d’emploi et les recommandations commerciales.</p>",
-    "",
+    "<h3>How much kanna extract should I take?</h3>",
+    "<p>This is dependent on how your kanna extract is made. The dosage of a 10x extract would be 2.0g, and a 100x extract would be 0.2g. The exact amount is likely to vary depending on manufacturer, so check the description on the product for the recommended dosage.        </p>",
     "<h2 id=\"references\">Références</h2>",
     "<p> <em>Nous remercions particulièrement Phoebe McPherson et Ryan Latreille pour avoir contribué leur expertise à ce guide.</em></p>",
     "<p><a href=\"https://thethirdwave.co/psychedelics/kanna/#_ftnref1\">[1]</a> Gerbaulet, M., (1996). Révision du genre Sceletium N.E. Br. (Aizoaceae). Botanische Jahrbücher 118, 9–24.</p>",
@@ -129,5 +131,22 @@
   "translatedAt": "2026-11-08T03:58:06.406Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    36,
+    37,
+    38,
+    39,
+    40,
+    66,
+    67,
+    68,
+    69,
+    70
+  ]
 }

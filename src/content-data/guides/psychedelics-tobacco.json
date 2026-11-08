@@ -6,30 +6,13 @@
   "path": "/substances/tabac/",
   "hub": false,
   "id": "psychedelics-tobacco",
-  "sourceBlockCount": 97,
-  "sourceWords": 3676,
-  "omissions": [
-    {
-      "heading": "Dosing",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Sourcing",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Smoking causes permanent damage:",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "What are some uses of tobacco other than smoking?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 109,
+  "sourceWords": 4438,
+  "omissions": [],
   "description": "This guide shares everything you need to know about the tobacco plant including tobacco's spiritual use, dosage, its history, and the effects of modern commercialization.",
   "originalTitle": "Tobacco Plant Guide - Tobacco's Spiritual Use, Legality & More",
-  "retrievedAt": "2026-11-08T03:49:13.603Z",
-  "contentHash": "89b21a5ff256aee869d776cd8549bf27427456290ba986d78171ef1826aef3d0",
+  "retrievedAt": "2026-11-08T17:30:09.568Z",
+  "contentHash": "a848bfcc3038221618433fc2b08f4e6b0b3dd2e9071823316092d57bf4d7bbfb",
   "blocks": [
     "<p>Le tabac provient des feuilles de plantes du genre Nicotiana, présentes dans les Amériques et en Australie. Les principales espèces utilisées sont N. tabacum et N. rustica. Il intervient dans des traditions spirituelles comme offrande ou symbole de protection. Ses usages commerciaux et rituels exposent à la nicotine, à la dépendance et à des risques graves pour la santé. </p>",
     "<h2 id=\"overview\">Le tabac en bref </h2>",
@@ -72,6 +55,9 @@
     "<p>La toxicité dépend du produit et de l’exposition. La nicotine peut provoquer une intoxication mortelle, même si sa dose létale médiane humaine n’est pas connue. Les sources discutent une estimation basse de 500 à 1 000 mg chez l’adulte, soit 6,5 à 13 mg/kg. Ces chiffres incertains ne constituent pas un seuil de sécurité. <a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn9\"><sup>[9]</sup></a><a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn10\"><sup>[10]</sup></a><a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn11\"><sup>[11]</sup></a></p>",
     "<p>Une intoxication grave peut entraîner des convulsions puis une paralysie respiratoire mortelle. L’évolution peut être très rapide, en quelques minutes. </p>",
     "<p>Les premiers signes comprennent nausées, vomissements, diarrhée, salivation, douleurs abdominales, sueurs et pâleur. Le cœur et la respiration peuvent s’accélérer, avec hypertension, céphalées, vertiges ou troubles sensoriels. Ils peuvent ensuite ralentir tandis que la tension chute. Confusion, somnolence, faiblesse, difficulté à respirer, perte de connaissance, convulsions ou coma signalent une intoxication grave. <a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn12\"><sup>[12]</sup></a></p>",
+    "<h3>Dosing</h3>",
+    "<p>Unless you are consuming a commercial product, the dosage of any tobacco product may be hard to judge. An individual aiming to use tobacco in a ceremonial context may choose to use loose leaf organic tobacco rolled in organic hemp papers. When rolling your own product, however, the dosage will inevitably vary from a standardized cigarette. If you are pursuing an alternative to commercial products, then it is important to be aware of how much you’re consuming. As with many substances, the recommendation is to start low and work up. Dosage will also depend on how you are consuming the product, particularly with inhalation. In time, tolerance is developed. Beginner smokers may feel irritation in the throat and lungs, but in time they become accustomed to this. To be clear, this does not mean that the smoke is no longer aggravating your respiratory system (because it is), but your body has simply adapted to the stressor. To minimize harm to your system, it’s best to use tobacco for infrequent ceremonial purposes only. You should also be aware that smoking too much too quickly can result in lightheadedness and nausea.</p>",
+    "<ul>\n<li>A threshold dose of nicotine is 0.2 mg. A light dose is 0.5 – 2 mg. Commercial cigarettes contain between 6.17 to 12.65 mg, but the amount breathed in is between 1 to 2 mg per cigarette. <a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn13\"><sup>[13]</sup></a></li>\n<li>An average dose is 2 – 4 mg. Hapé or rapé is between 15.5 – 18.9 mg/g of nicotine. A beginning dose for hapé/rapé is 0.25 grams, representing an average dose.</li>\n<li>A strong dose is between 4 – 6 mg, with mapacho cigarettes being up to three times the strength of commercial cigarettes. So, a single mapacho cigarette is a strong dose. More than 6 mg is considered a very strong dose.</li>\n</ul>",
     "<h2 id=\"benefits-and-risks\">Effets étudiés et dangers </h2>",
     "<p>Les études sur le tabac documentent surtout la dépendance et les maladies graves. Certains travaux isolent les effets de la nicotine. Leurs résultats ne se confondent pas avec ceux du tabac fumé. </p>",
     "<h3>Ce qu’étudie la recherche </h3>",
@@ -86,6 +72,11 @@
     "<h2 id=\"legality\">Cadre légal </h2>",
     "<p>La plupart des pays autorisent le tabac sous conditions, avec restrictions d’âge et fiscalité. Les sources citent généralement 18 ans pour l’achat, contre 21 ans aux États-Unis. La vente sans autorisation peut entraîner des poursuites, notamment fiscales. En Australie, culture et vente nécessitent une autorisation ; ces indications documentaires ne remplacent pas les textes locaux en vigueur. </p>",
     "<p>Les politiques de santé publique cherchent à réduire le tabagisme. Elles peuvent limiter la publicité, interdire de fumer dans certains lieux et imposer des emballages neutres. Les campagnes d’arrêt et les règles sur les marques varient selon les pays. </p>",
+    "<h2 id=\"sourcing\">Sourcing</h2>",
+    "<p>By contrast, commercial tobacco is usually produced through large tobacco crops, and includes the use of herbicides, insecticides, and chemicals to assist in the curing process. Most plants in the Solanaceae family are susceptible to tobacco mosaic virus, which is spread by aphids and other sap-sucking insects. In the case of cultivated tobacco, this can be a considerable problem, hence the concerns about chemicals on commercial tobacco products.</p>",
+    "<p>With tobacco, it is important to know your state and federal laws. In the United States, production and sale of tobacco products is regulated by the US Food and Drug Administration and the Bureau of Alcohol, Tobacco, and Firearms. The sale of tobacco without a license is illegal, but provided a grower does not sell or trade their tobacco crop, there are no restrictions on growing your own. Nor does federal law restrict quantity, so homeowners can grow as much tobacco as they choose. In Australia, it is both illegal to grow and sell without a license.</p>",
+    "<p>If you are in the US, you can legally grow your own tobacco plant as an alternative to purchasing tobacco. Tobacco is easy to grow and grows in a variety of climates. It can be a very weedy plant; tobacco seeds are tiny and each seed capsule contains hundreds of seeds, which can then be spread easily. Plants can be started indoors, then seedlings can be carefully transplanted to the garden. They grow as small herbaceous plants, developing large leaves. Flowering tobacco can be a beautiful addition to an English-style herb garden. Potential problems with cultivating include tobacco mosaic virus (TMV), aphids (which also spread TMV), and black shank disease.</p>",
+    "<p>An important part of tobacco is the curing of the leaves for flavor and texture. The curing process includes wilting, yellowing, coloring, and drying. The most common methods of curing tobacco are by air, fire, or flue. An example of air-cured tobacco is burley tobacco, commonly used in cigarettes. Tobacco can be sun cured, but this is usually done with aromatic types and to a limited extent with air-cured types.</p>",
     "<h2 id=\"ethical-considerations\">Traditions et respect des personnes </h2>",
     "<p>Des initiatives font connaître les relations entre le tabac et les Premières Nations. Son image commerciale tend à masquer son rôle religieux ancien. Reconnaître cette histoire ne change pas les risques sanitaires du produit. </p>",
     "<p>Les rôles spirituels et les usages traditionnels de soin diffèrent selon les régions. Ils demandent une description respectueuse des communautés concernées. Ce respect ne suppose pas de valider leurs effets médicaux. </p>",
@@ -97,6 +88,8 @@
     "<p>Les représentations du tabac mêlent habitudes commerciales, traditions et messages de santé. La nicotine et la fumée ont des risques qu’il faut distinguer. </p>",
     "<h3>La nicotine explique-t-elle tous les dangers ? </h3>",
     "<p>La nicotine entretient surtout la dépendance, mais la fumée contient bien d’autres substances nocives. Les sources recensent environ 7 000 composés, dont le monoxyde de carbone, ainsi que des goudrons. Tous ne sont pas classés comme toxiques. Environ 70 substances cancérogènes sont identifiées dans la fumée. <sup><a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn15\">[15]</a><a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn16\">[16]</a><a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn17\">[17]</a></sup><a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn18\"><sup>[18]</sup></a></p>",
+    "<h3>Smoking causes permanent damage:</h3>",
+    "<p>Yes, it’s true that habitual smoking results in damage, and this guide is not intended to promote chronic tobacco smoking. However, it’s worth noting that the damage from smoking can improve quickly after quitting, regardless of age. The risk of having a heart attack falls by 50% after about three years of smoking cessation. In the case of lung cancer, an ex-smoker’s risk drops to half after 10 years of cessation <a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn19\"><sup>[19]</sup></a>.        </p>",
     "<h2 id=\"faq\">Questions fréquentes</h2>",
     "<h3>Quel sens a l’offrande ? </h3>",
     "<p>L’offrande peut exprimer un remerciement envers la terre ou le Créateur. Elle accompagne parfois une demande de conseil, de protection ou d’aide. Partager une chose jugée précieuse marque le respect. D’autres cultures donnent ce rôle à des aliments, boissons ou végétaux. </p>",
@@ -106,6 +99,8 @@
     "<p>Plusieurs peuples autochtones associent l’offrande à une demande de savoir, de conseil, de prière, d’enseignement ou de chant. Les règles dépendent de la communauté et du contexte. Cette description ne constitue pas une consigne de participation. </p>",
     "<h3>Qu’est-ce qu’un lien de tabac ? </h3>",
     "<p>Certains rites emploient un petit paquet symbolique appelé « lien de tabac ». Il peut avoir le sens d’une offrande. Les couleurs et les usages dépendent de la tradition ; aucune fabrication n’est détaillée ici. <a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftn20\"><sup>[20]</sup></a></p>",
+    "<h3>What are some uses of tobacco other than smoking?</h3>",
+    "<p>Tobacco is used in various ways: as an offering, smudging, insufflation (as snuff), as an enema, or chewed. Tobacco can be used medicinally through oral consumption, inhalation, or as a poultice.        </p>",
     "<h2 id=\"references\">Sources citées </h2>",
     "<p> <sub><a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftnref1\">[1]</a> <a href=\"https://www.drugabuse.gov/publications/drugfacts/cigarettes-other-tobacco-products\">https://www.drugabuse.gov/publications/drugfacts/cigarettes-other-tobacco-products</a></sub></p>",
     "<p><sub><a href=\"https://thethirdwave.co/psychedelics/tobacco/#_ftnref2\">[2]</a> Motohiro, T., &amp; John, E. C. (2005) NEONICOTINOID INSECTICIDE TOXICOLOGY: Mechanisms of Selective Action. <a href=\"https://doi.org/10.1146/annurev.pharmtox.45.120403.095930\">https://doi.org/10.1146/annurev.pharmtox.45.120403.095930</a></sub></p>",
@@ -132,5 +127,19 @@
   "translatedAt": "2026-11-08T04:04:11.248Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    41,
+    42,
+    43,
+    58,
+    59,
+    60,
+    61,
+    62,
+    74,
+    75,
+    85,
+    86
+  ]
 }

@@ -6,42 +6,13 @@
   "path": "/substances/champignons-psilocybin/",
   "hub": false,
   "id": "psychedelics-shrooms",
-  "sourceBlockCount": 192,
-  "sourceWords": 7221,
-  "omissions": [
-    {
-      "heading": "Buying Psilocybin Mushrooms",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Growing and Harvesting Psilocybin Mushrooms",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "How to Identify Psychedelic Mushrooms",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "How to Grow Psychedelic Psilocybin Mushrooms",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "Where can I find a legal psilocybin retreats?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "How do I take psilocybin mushrooms?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    },
-    {
-      "heading": "How do I microdose with psilocybin mushrooms?",
-      "reason": "Practical instructions or commercial promotion; replaced with a non-procedural editorial note."
-    }
-  ],
+  "sourceBlockCount": 220,
+  "sourceWords": 8243,
+  "omissions": [],
   "description": "A Third Wave Guide to Magic Mushrooms. Learn more about psilocybin, the fungi that enables mystical experiences, personal development, and spiritual growth.",
   "originalTitle": "Psilocybin Mushrooms Guide: Growing, Experience, Benefits - Third Wave",
-  "retrievedAt": "2026-11-08T03:49:13.537Z",
-  "contentHash": "75c9af3feb4beaf14cc16cbba6aa980603840c51873fdc07384ae116c18cac38",
+  "retrievedAt": "2026-11-08T17:30:06.530Z",
+  "contentHash": "7b103401580504ab34aa335a99b3f5019a6c38799e110ad124d1981c1a46cd56",
   "blocks": [
     "<h2 id=\"overview\">Les champignons à psilocybine </h2>",
     "<p>Plus de 180 espèces de champignons contiennent de la psilocybine ou de la psilocine. Ces substances modifient les perceptions et peuvent provoquer des hallucinations ou un vécu dit mystique. Des traditions mésoaméricaines les emploient depuis longtemps dans des rites religieux. Leur usage est aussi répandu parmi les psychédéliques en Europe et aux États-Unis. </p>",
@@ -147,9 +118,22 @@
     "<h2 id=\"legality\">Cadre juridique</h2>",
     "<h3>Séjours et offres commerciales </h3>",
     "<p>Ce guide n’oriente vers aucun fournisseur ni séjour commercial. <a href=\"https://thethirdwave.co/directory/\">(source)</a><a href=\"https://thethirdwave.co/directory/retreats/category/psilocybin-mushroom/\">(source)</a></p>",
+    "<h3>Buying Psilocybin Mushrooms</h3>",
+    "<p>Psilocybin has been illegal in most countries for decades, so make sure to familiarize yourself with local laws before <a href=\"https://thethirdwave.co/buy-magic-mushrooms/\">buying psilocybin mushrooms</a>. In the Netherlands, for example, it’s possible to purchase <a href=\"https://trufflemagic.com/webshop/?ap_id=thethirdwave\">“magic truffles”</a> that contain psilocybin without breaking the law due to a legal loophole. Psilocybin in some form is also legal in Brazil, the British Virgin Islands, and Jamaica.</p>",
+    "<p>On May 7, 2019, citizens of Denver, Colorado, voted to decriminalize psilocybin mushrooms.<a href=\"https://thethirdwave.co/psychedelics/shrooms/#_ftn24\"><sup>[24]</sup></a> This means it’s no longer a punishable offense for adults aged 21 and older to possess them for personal use. This doesn’t make them legal, though. If you’re caught selling or otherwise distributing psilocybin mushrooms, and possibly even growing them, you could still face criminal charges. The law remains unchanged for the rest of Colorado—at least for the time being.</p>",
+    "<p>In June the same year, Oakland, California, followed suit with an amendment of its own: Council members voted unanimously to decriminalize not just psilocybin mushrooms but all “entheogenic plants” containing indoleamines, tryptamines, and phenethylamines. Like in Denver, this only applies to adults aged 21 years and older and doesn’t include synthetic substances derived from plants or fungi, such as LSD. However, unlike in Denver, it also decriminalizes (or rather deprioritizes for law enforcement) the cultivation and distribution of the specified psychedelics—which includes psilocybin mushrooms.<a href=\"https://thethirdwave.co/psychedelics/shrooms/#_ftn25\"><sup>[25]</sup></a><a href=\"https://thethirdwave.co/psychedelics/shrooms/#_ftn26\"><sup>[26]</sup></a> <a href=\"https://thethirdwave.co/oakland-activists-regulate-psychedelics/\">Oakland is implementing a “Grow, Gather, Gift” framework</a> for legalization, which encourages people to grow their own, gather their own, and gift their own plant medicines rather than establishing a for-profit market.</p>",
+    "<p><a href=\"https://thethirdwave.co/legality-psilocybin-mushrooms/\">Read our article on the legality of psilocybin mushrooms</a>.</p>",
+    "<p><i><span>Before sourcing legal mushrooms, it’s important to consider how you want to consume them. To help you decide, read more about the </span></i><a href=\"https://thethirdwave.co/how-to-take-mushrooms/\"><i><span>differences between mushroom capsules, edibles, teas, and raw forms</span></i></a><i><span> in our recent article. </span></i><em>Then check out, <a href=\"https://thethirdwave.co/product/sourcing/\">&nbsp;Third Wave’s Ultimate Guide to Sourcing Psychedelic Medicines</a> for specific vendor recommendations, legal alternative options, and access to our entire library of psychedelic guides.</em></p>",
     "<h3>Repères historiques aux États-Unis </h3>",
     "<p><span>La source décrit des votes de 2020 en faveur de dépénalisations locales et de dispositifs thérapeutiques. Ces changements ne supprimaient pas toutes les restrictions fédérales. Ils ne constituent pas un état actuel du droit. </span></p>",
     "<p><em><span>La source renvoie à un article de 2021 sur les votes américains. Il s’agit d’un repère historique. </span><a href=\"https://thethirdwave.co/psilocybin-news/\"><span>(source)</span></a></em><span><em></em></span></p>",
+    "<h3>Growing and Harvesting Psilocybin Mushrooms</h3>",
+    "<p>While psilocybin is illegal at the federal level in the U.S., psilocybin mushrooms were deemed legal to <a href=\"https://caselaw.findlaw.com/nm-court-of-appeals/1401800.html\">grow and possess</a> (as long as they’re <a href=\"https://www.inverse.com/article/7772-magic-mushrooms-are-legal-in-new-mexico-how-bout-that\">not dried</a>) in New Mexico in 2005. In 1978, the Florida supreme court ruled that harvesting wild psilocybin mushrooms was effectively legal until the state legislature said otherwise. So far, no new laws have been passed to regulate the harvest of wild-picked psilocybin mushrooms.</p>",
+    "<p>With the exception of <a href=\"https://thethirdwave.co/legality-psilocybin-mushrooms/\">three states</a>, psilocybin <a href=\"https://thethirdwave.co/buying-psilocybin-spores/\">mushroom spores</a> are perfectly legal to possess in the U.S., as the spores don’t contain psilocybin or psilocin, the chemicals that are specifically regulated by federal law. However, despite the spores being legal, <a href=\"https://thethirdwave.co/psychedelics/shrooms/grow-psilocybin-mushrooms/\">growing mushrooms</a> from the spores is still considered an illicit activity.</p>",
+    "<p><em>Are you feeling confused by the legal ambiguity of spores vs mushrooms? Are you wondering how to acquire spores without crossing lawful boundaries? Learn more about <a href=\"https://thethirdwave.co/buying-psilocybin-spores/\">experimenting with psilocybin spores</a>.</em></p>",
+    "<p><em>Third Wave also offers extensive resources for <a href=\"https://thethirdwave.co/psychedelics/shrooms/grow-psilocybin-mushrooms/\">growing psilocybin mushrooms</a> and <a href=\"https://thethirdwave.co/how-to-store-mushrooms/\">storing them for maximum shelf life</a>.</em></p>",
+    "<p><em>Are you missing that gardening gene? No worries. If you’d prefer to buy psychedelic medicine online, Third Wave’s <a href=\"https://thethirdwave.co/product/sourcing/\">Ultimate Guide to Sourcing Psychedelic Medicines</a> provides recommendations for legal sourcing in most countries. In addition, you’ll receive step-by-step instructions for navigating the Dark Web and exploring lesser-known (legal) psychedelic alternatives with similar effects.</em></p>",
+    "<p><em>For other legal mushroom products that can boost your health (without the psychoactivity!), check out <a href=\"http://www.us.foursigmatic.com/#_a_thirdwave\">Four Sigmatic.</a></em>        </p>",
     "<h2 id=\"history\">Histoire et données d’usage </h2>",
     "<h3><b>Repères historiques </b></h3>",
     "<p>Des images préhistoriques, notamment au Sahara, sont interprétées comme des représentations de champignons. Certaines remonteraient à plus de 7 000 ans. Leurs liens avec des rites ou des usages psychédéliques restent hypothétiques. Leur influence sur l’art, la religion ou les règles sociales n’est pas établie. <a href=\"https://thethirdwave.co/psychedelics/shrooms/#_ftn27\"><sup>[27]</sup></a><a href=\"https://thethirdwave.co/podcast/episode-24-jerry-brown/\">(source)</a></p>",
@@ -167,6 +151,14 @@
     "<p>La source recense plus de 180 espèces contenant des composés psychédéliques. Voici quelques espèces mentionnées, sans guide d’identification. <a href=\"https://thethirdwave.co/psilocybe-cubensis/\">(source)</a></p>",
     "<ul><li><a href=\"https://thethirdwave.co/psilocybe-cubensis/\"><i>(source)</i></a><i>Psilocybe cubensis est une espèce bien connue et fréquemment cultivée. Cette mention ne constitue pas un conseil de culture. </i></li><li><i>Psilocybe cyanescens est moins connu que P. cubensis. La source décrit des champignons plus petits et une activité psychoactive variable. </i></li><li><i>Psilocybe azurescens, décrit dans les années 1990 et associé aux travaux de Paul Stamets, peut contenir beaucoup de psilocybine. </i></li><li><a href=\"https://thethirdwave.co/psychedelics/amanita-muscaria/\"><i>(source)</i></a><i>L’amanite tue-mouches, Amanita muscaria, contient de l’acide iboténique et du muscimole, et non de la psilocybine. Des usages rituels sont décrits en Sibérie et dans les régions baltes. </i></li><li><em><a href=\"https://thethirdwave.co/psilocybe-natalensis-mushrooms/\">(source)</a></em>Psilocybe natalensis a été décrit en 1995 dans le Natal, en Afrique du Sud. Certains récits le disent 1,5 à 2 fois plus actif que P. cubensis. Ces comparaisons ne constituent pas une mesure fiable. <em></em><em></em></li><li><a href=\"https://thethirdwave.co/psilocybe-cyanescens/\"><em>(source)</em></a>Psilocybe cyanescens est aussi appelé « Wavy Caps ». Il contient de la psilocybine et de la psilocine. La source décrit son habitat ligneux, son chapeau ondulé et un bleuissement. Ces traits ne suffisent pas à identifier une espèce sans risque. </li></ul>",
     "<p>Le genre Psilocybe n’est pas le seul à comprendre des espèces avec des composés actifs. La source mentionne aussi Panaeolus, Gymnopilus, Inocybe et Conocybe. Cette liste ne permet pas d’identifier un champignon. <a href=\"https://thethirdwave.co/psilocybe-cubensis/\"><em>(source)</em>(source)<em>(source)</em>(source)<em>(source)</em>(source)<em>(source)</em></a></p>",
+    "<h3><b>How to Identify Psychedelic Mushrooms</b></h3>",
+    "<p>Of course, when you first begin mushroom hunting, heed caution. Aside from <a href=\"https://thethirdwave.co/penis-envy/\">distinct strains like Penis Envy</a> and <a href=\"https://thethirdwave.co/journey-with-golden-teachers/\">Golden Teacher</a>, there are many <a href=\"https://thethirdwave.co/psilocybe-cubensis/\">types of similar-looking mushrooms</a> with varying levels of toxicity, and usually, only well-trained mushroom hunters can differentiate between species. If you know what to look for, choosing a deadly mushroom is unlikely, but it’s important to be aware of what you’re doing. Misidentified mushrooms can cause sickness or (though rarely) even death when consumed.</p>",
+    "<p>That said, psilocybe cubensis grows in abundance in tropical zones throughout the world. They are classic stubby-stemmed parasol-shaped mushrooms with predominantly light-to-golden-brownish caps that are bulbous before fruiting, and flat and wide in diameter when fully mature. <span>&nbsp;</span>The most <a href=\"https://thethirdwave.co/journey-with-golden-teachers/\">popular cubensis variety is Golden Teachers</a>, known for medium-strength effects and profoundly insightful journeys.</p>",
+    "<p>Psilocybe azurescens, on the other hand, is endemic to the West Coast of the United States and appear slimmer and more convex. <a href=\"https://thethirdwave.co/finding-psychedelic-mushrooms/\">Read more about how to identify psychedelic mushrooms </a>and gain expertise in <a href=\"https://thethirdwave.co/best-mushroom-experts/\">mushroom foraging and cultivation</a> from top mycologists and mycelial specialists worldwide.</p>",
+    "<h3><b>How to Grow Psychedelic Psilocybin Mushrooms</b></h3>",
+    "<p><b><i>Disclaimer:</i></b><i> Growing psilocybin mushrooms for consumption is a potentially illegal activity, and we do not encourage or condone this activity where it is against the law.</i></p>",
+    "<p>Growing your own psilocybin mushrooms is a good alternative to the potentially dangerous practice of collecting them. As well as providing a reliable, year-round supply, home cultivation eliminates the risk of misidentifying mushrooms in the wild. For many growers, it’s also a fun, low-cost hobby.</p>",
+    "<p>While there are <a href=\"https://thethirdwave.co/mushroom-grow-kits/\">ready-made mushroom kits available online</a>, it’s usually best to start from scratch. The kits do contain a living mycelium substrate (the material underlying mushroom growth), which you need to grow your own mushrooms, but making your own substrate is not only more consistent, it’s also less prone to contamination. For more information on how to start your own psilocybin grow, <a href=\"https://thethirdwave.co/psychedelics/shrooms/grow-psilocybin-mushrooms/\">check out our guide here</a>.</p>",
     "<h2 id=\"myths\">Idées reçues </h2>",
     "<h3><b>Saignements et lésions des reins : que sait-on ? </b></h3>",
     "<p>Les références citées n’établissent pas que la psilocybine provoque des hémorragies cérébrales ou digestives. Un rapport de 1981 relevait surtout des pupilles dilatées et des réflexes accentués. D’autres revues ne rapportaient pas de complications chez des personnes en bonne santé. Ces observations ne garantissent pas l’absence de risque. <a href=\"https://thethirdwave.co/psychedelics/shrooms/#_ftn33\"><sup>[33]</sup></a><a href=\"https://thethirdwave.co/psychedelics/shrooms/#_ftn34\"><sup>[34]</sup></a><a href=\"https://thethirdwave.co/psychedelics/shrooms/#_ftn35\"><sup>[35]</sup></a></p>",
@@ -178,6 +170,8 @@
     "<p>Intoxication et toxicité ne désignent pas la même chose. La psilocybine modifie la conscience et le fonctionnement du corps. Son profil de toxicité ne permet pas de la qualifier de sans danger. </p>",
     "<p>Certaines espèces de champignons provoquent des intoxications graves, parfois mortelles. La confusion entre espèces constitue donc un risque distinct des effets de la psilocybine. Aucun guide en ligne ne garantit une identification fiable. <a href=\"http://www.merckmanuals.com/professional/injuries-poisoning/poisoning/mushroom-poisoning\">(source)</a></p>",
     "<h2 id=\"faq\">Questions fréquentes </h2>",
+    "<h4>Where can I find a legal psilocybin retreats?</h4>",
+    "<p>To support your journey with experiencing psilocybin mushrooms legally, we’ve also curated, verified, and vetted legal <a href=\"https://thethirdwave.co/directory/retreats/category/psilocybin-mushroom/\">psilocybin mushroom retreats</a> in our psychedelic provider directory; maybe you can find the right one for you.</p>",
     "<h4><b>Les tests détectent-ils la psilocybine ? </b></h4>",
     "<p>La plupart des dépistages courants ne recherchent pas la psilocybine ni ses métabolites. Des analyses élargies peuvent toutefois les inclure. <a href=\"https://thethirdwave.co/psychedelics/shrooms/#_ftn40\"><sup>[40]</sup></a></p>",
     "<h4><b>Une expérience peut-elle laisser des séquelles psychiques ? </b></h4>",
@@ -189,6 +183,11 @@
     "<p>Aucune instruction d’achat, de culture ou de préparation n’est fournie ici. Les liens sont conservés à titre documentaire. <a href=\"https://thethirdwave.co/buying-psilocybin-spores/\">(source)</a><a href=\"https://thethirdwave.co/buy-magic-mushrooms/\">(source)</a><a href=\"https://thethirdwave.co/legality-psilocybin-mushrooms/\">(source)</a></p>",
     "<h4><b>Conservation : limites de ce guide </b></h4>",
     "<p>Ce texte ne décrit aucune méthode de conservation ou de préparation d’un produit psychoactif. <a href=\"https://thethirdwave.co/how-long-do-shrooms-last/\">(source)</a><a href=\"https://thethirdwave.co/how-long-do-shrooms-last/\">(source)</a><a href=\"https://thethirdwave.co/how-to-store-mushrooms/\">(source)</a></p>",
+    "<h4><b>How do I take psilocybin mushrooms?</b></h4>",
+    "<p>Psilocybin mushrooms can be <a href=\"https://thethirdwave.co/how-to-eat-shrooms/\">eaten whole, brewed in a tea, taken in capsules, or cooked into food</a>. A moderate dose is 1-2.5g, which can be weighed on a scale.</p>",
+    "<p><i><span>Did you know the consumption method can affect your psilocybin experience? Check out our recent article to learn more about how </span></i><a href=\"https://thethirdwave.co/how-to-take-mushrooms/\"><i><span>different forms of magic mushroom can affect the onset, duration, and intensity</span></i></a><i><span> of the journey.</span></i></p>",
+    "<h4><b>How do I microdose with psilocybin mushrooms?</b></h4>",
+    "<p><a href=\"https://thethirdwave.co/microdosing/mushrooms/\">Psilocybin mushrooms can be microdosed</a> by ingesting around 0.1-0.3 g, but <a href=\"https://thethirdwave.co/psilocybin-tolerance/\">everyone’s tolerance is different</a>.</p>",
     "<h4><b>Que signifie la tolérance ? </b></h4>",
     "<p>Une tolérance peut apparaître rapidement avec la psilocybine. Les effets d’une prise rapprochée peuvent alors diminuer, sans que les risques disparaissent. <a href=\"https://thethirdwave.co/psilocybin-tolerance/\">(source)</a></p>",
     "<p><em>Une tolérance croisée peut aussi réduire les effets d’autres psychédéliques aux mécanismes proches. Cela ne permet pas de prévenir une expérience difficile. <a href=\"https://thethirdwave.co/psilocybin-tolerance/\">(source)</a></em></p>",
@@ -239,5 +238,35 @@
   "translatedAt": "2026-11-08T04:04:34.253Z",
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
-  "editorialCorrectionsApplied": true
+  "editorialCorrectionsApplied": true,
+  "practicalBlocks": [
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    156,
+    157,
+    169,
+    170,
+    171,
+    172,
+    173
+  ]
 }
