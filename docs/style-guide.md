@@ -25,3 +25,10 @@ Public : francophones adultes curieux, parfois inquiets. Site d'information et d
 ## Titres et accroches
 - Utile et simple d’abord : dire ce qu’on trouve sur la page, sans formule. Exemple de référence : « Les psychédéliques : effets, risques, recherche ».
 - Pas de jeux de mots, pas de promesses, pas de slogans (« sans tabou », « à la lumière de… », « tout ce qu’il faut savoir »).
+
+## Règle d’or : utile, simple, clair
+- Chaque phrase doit apprendre quelque chose au lecteur. Sinon, on la supprime.
+- Phrases courtes (15 à 20 mots en général), mots courants, une idée par phrase. Ce qui peut se dire en 8 mots ne se dit pas en 20.
+- Pas d’emphase ni de lyrisme (« fascinant », « profond », « véritable voyage », « au cœur de », « il est essentiel de noter que »). Pas d’introduction ni de conclusion creuse.
+- On garde les faits, les chiffres, les risques, les études et leurs limites. On coupe le remplissage, les répétitions et le ton promotionnel.
+- Ton : un ami bien informé qui explique simplement, avec « vous ».
