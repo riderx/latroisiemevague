@@ -20,7 +20,9 @@ for (const entry of guideCatalog) {
   check(guide.editorialCorrectionsApplied === true, `${entry.id}: editorial corrections not applied`)
   check(raw('a[href]').length === source.publishedLinkCount, `${entry.id}: reference changes differ from the editorial audit`)
   for (const id of source.headingIds) check($(`[id="${id}"]`).length === 1, `${entry.id}: missing section ${id}`)
-  check($('title').text() === guideTitle(entry), `${entry.id}: incorrect title`)
+  // Same rule as src/layouts/Base.astro: a title over 60 characters drops the site-name suffix.
+  const title = guideTitle(entry), shortTitle = title.length > 60 ? title.replace(/ \| La Troisième Vague$/, '') : title
+  check($('title').text() === shortTitle, `${entry.id}: incorrect title`)
   check($('main h1').length === 1, `${entry.id}: expected one H1`)
   check($('html').attr('lang') === 'fr-FR', `${entry.id}: incorrect language`)
   check($('link[rel=canonical]').attr('href') === `https://latroisiemevague.com${entry.path}`, `${entry.id}: incorrect canonical`)
