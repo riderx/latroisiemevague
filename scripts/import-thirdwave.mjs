@@ -8,11 +8,11 @@ const names={'2c-b':'2C-B','4-aco-dmt':'4-AcO-DMT','5-meo-dmt':'5-MeO-DMT','aman
 const slugMap={shrooms:'champignons-psilocybin',mushrooms:'champignons-psilocybin',marijuana:'cannabis',tobacco:'tabac','psilocybin-truffles':'truffes-psilocybine'}
 const entries=[]
 const delay=ms=>new Promise(r=>setTimeout(r,ms))
-await mkdir(destination,{recursive:true})
+await mkdir(destination,{recursive:true});await mkdir(cache,{recursive:true})
 async function fetchCached(url,key){const file=`${cache}/${key}.html`;try{return await readFile(file,'utf8')}catch{}await delay(800);const r=await fetch(url);if(!r.ok)throw new Error(`${r.status} ${url}`);const html=await r.text();await writeFile(file,html);return html}
 const inventories={}
 for(const category of ['psychedelics','microdosing']){
- const $=load(await readFile(`${cache}/${category}.html`,'utf8'))
+ const $=load(await fetchCached(`${origin}/${category}/`,category))
  inventories[category]=[...new Set($('article a[href]').map((_,e)=>$(e).attr('href')).get().filter(h=>new RegExp(`thethirdwave.co/${category}/[^/#?]+/?$`).test(h)))];
  entries.push({category,sourceUrl:`${origin}/${category}/`,slug:'index',name:category==='psychedelics'?'Psychédéliques':'Microdosing',path:category==='psychedelics'?'/substances/':'/microdosing/',hub:true})
  for(const sourceUrl of inventories[category]){const slug=new URL(sourceUrl).pathname.split('/').filter(Boolean).at(-1);entries.push({category,sourceUrl,slug,name:names[slug],path:`/${category==='psychedelics'?'substances':'microdosing'}/${slugMap[slug]||slug}/`,hub:false})}
@@ -47,6 +47,7 @@ for(const [index,entry] of entries.entries()){
    flush()
    $(container).html(output.join(''))
  }
+ // Practical sections (dosing, sourcing, preparation) are kept and tagged so the site can show a risk notice before them.
  const seen=new Set();const blocks=[];const omissions=[];let skipLevel=0
  main.find(blockSelector).each((_,element)=>{
    const node=$(element),tag=element.tagName
@@ -55,20 +56,19 @@ for(const [index,entry] of entries.entries()){
    if(!text&&tag!=='img'&&tag!=='figure')return
    if(/^h[2-6]$/.test(tag)){
      const level=Number(tag[1]);if(skipLevel&&level<=skipLevel)skipLevel=0
-     if(omittedHeadings.test(text)){skipLevel=level;omissions.push({heading:text,reason:'Practical instructions or commercial promotion; replaced with a non-procedural editorial note.'});return}
+     if(omittedHeadings.test(text))skipLevel=level
    }
-   if(skipLevel)return
+   let practical=skipLevel>0
    if(/(?:shop|buy|order|purchase|get|join|enroll|book|sign up|download|subscribe).{0,65}(?:course|kit|discount|coaching|retreat|newsletter|community|product|consultation)|third wave.{0,40}(?:course|coaching|certif)|microdosing collective/i.test(text))return
-   // Do not republish operational drug-production, sourcing, or administration instructions.
    if(/(?:^|[.!?]\s+)(?:start with|take|consume|mix|grind|dissolve|soak|brew|inject|smoke|vaporize|weigh|cut)\s.{0,90}(?:\b\d+(?:\.\d+)?\s?(?:mg|g|μg|ug|mcg|grams|micrograms)|blotter|powder|dose|vine|syringe|capsule)|volumetric method.{0,100}submerg|(?:every|each) (?:third|other|second) day|one day on|two days off|where to (?:buy|find|source)|how to (?:grow|make|extract)/i.test(text)){
-     omissions.push({heading:text.slice(0,100),reason:'Operational drug instructions'});return
+     practical=true
    }
    if(seen.has(text)&&text)return
    if(text)seen.add(text)
    const clone=node.clone()
    clone.find('*').addBack().each((_,el)=>{for(const attr of Object.keys(el.attribs||{}))if(!['href','src','alt','title','id','colspan','rowspan'].includes(attr))$(el).removeAttr(attr)})
    clone.find('a').addBack('a').each((_,el)=>{const a=$(el);try{const url=new URL(a.attr('href'),entry.sourceUrl);a.attr('href',url.href)}catch{a.removeAttr('href')}})
-   blocks.push({html:$.html(clone),text,tag})
+   blocks.push({html:$.html(clone),text,tag,practical})
  })
  const sourceWords=blocks.map(b=>b.text).join(' ').split(/\s+/).length
  for (const block of blocks) {
@@ -87,7 +87,7 @@ for(const [index,entry] of entries.entries()){
    }
    block.html=fragment.html()
  }
- entry.blocks=blocks;entry.sourceBlockCount=blocks.length;entry.sourceWords=sourceWords;entry.omissions=omissions
+ entry.blocks=blocks;entry.practicalBlocks=blocks.flatMap((b,i)=>b.practical?[i]:[]);entry.sourceBlockCount=blocks.length;entry.sourceWords=sourceWords;entry.omissions=omissions
  entry.description=$('meta[name=description]').attr('content')||''
  entry.originalTitle=$('title').text()
  entry.retrievedAt=new Date().toISOString()

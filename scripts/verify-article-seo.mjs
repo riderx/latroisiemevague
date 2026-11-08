@@ -4,7 +4,13 @@ import { load } from 'cheerio'
 import { guideCatalog, guideHeading } from '../src/content-data/guide-catalog.ts'
 const manifest = JSON.parse(await readFile('src/content-data/pages/manifest.json', 'utf8'))
 const sitemap = load(await readFile('dist/sitemap.xml', 'utf8'), { xmlMode: true })
-const paths = [...guideCatalog.map(guide => guide.path), ...manifest.postPaths]
+// src/lib/articles.ts needs Vite to import, so read its `retiredPosts` map from source.
+const retiredBlock = (await readFile('src/lib/articles.ts', 'utf8')).match(/export const retiredPosts[^=]*=\s*\{([^}]*)\}/)?.[1]
+assert(retiredBlock, 'retiredPosts not found in src/lib/articles.ts')
+const retired = new Set([...retiredBlock.matchAll(/'([^']+)'\s*:/g)].map(m => m[1]))
+const postPaths = manifest.postPaths.filter(path => !retired.has(path))
+assert(postPaths.length > 0 && postPaths.length === manifest.postPaths.length - retired.size, 'retired posts must come from the legacy post list')
+const paths = [...guideCatalog.map(guide => guide.path), ...postPaths]
 const titles = new Set(), descriptions = new Set()
 for (const path of paths) {
   const $ = load(await readFile(`dist${path}index.html`, 'utf8'))
@@ -41,15 +47,18 @@ for (const path of paths) {
   if (guide) {
     assert.equal($('main h1').text(), guideHeading(guide))
     assert.equal($('.reader-toc').length, 1)
-    assert($('.reader-toc summary').text().includes('Table des matières'))
+    assert($('.reader-toc summary').text().includes('Sommaire'))
     assert.equal($('.reader-progress[aria-label="Progression de lecture"]').length, 1)
     assert.equal($('.guide-illustration img[width][height][alt]').length, 1)
-    assert(sitemap('url').toArray().some(el => sitemap(el).find('loc').text() === canonical && sitemap(el).find('lastmod').text() === article.dateModified))
-    assert($('time').toArray().some(el => $(el).attr('datetime') === article.datePublished), `${path}: visible publication date`)
+    assert(sitemap('url').toArray().some(el => sitemap(el).find('loc').text() === canonical && sitemap(el).find('lastmod').text() === article.dateModified.slice(0, 10)), `${path}: sitemap lastmod`)
+    // Guides display their update date; it must match the schema.
+    assert($('time').toArray().some(el => $(el).attr('datetime') === article.dateModified), `${path}: visible update date`)
   } else {
+    assert(sitemap('url').toArray().some(el => sitemap(el).find('loc').text() === canonical && sitemap(el).find('lastmod').text() === article.dateModified.slice(0, 10)), `${path}: sitemap lastmod`)
+    assert($('time').toArray().some(el => $(el).attr('datetime') === article.datePublished), `${path}: visible publication date`)
     const legacy = manifest.pages.find(page => page.path === path)
     const original = load(await readFile(`src/content-data/pages/${legacy.id}.head.html`, 'utf8'))
     assert.equal(article.datePublished, original('meta[property="article:published_time"]').attr('content'), `${path}: preserve original date`)
   }
 }
-console.log(`Verified SEO for ${guideCatalog.length} guides and ${manifest.postPaths.length} blog articles: unique metadata, canonical URLs, Article/BlogPosting schema, authors, dates, breadcrumbs and sitemap.`)
+console.log(`Verified SEO for ${guideCatalog.length} guides and ${postPaths.length} blog articles: unique metadata, canonical URLs, Article/BlogPosting schema, authors, dates, breadcrumbs and sitemap.`)

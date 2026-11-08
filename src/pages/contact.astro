@@ -1,0 +1,51 @@
+---
+import '../styles/pages.css'
+import Base from '../layouts/Base.astro'
+import Forms from '../components/Forms.astro'
+import Arrow from '../components/Arrow.astro'
+import { helpLines, TELEGRAM_URL } from '../data/site'
+const topics = [
+  ['Une question', 'Sur une substance, une étude, un risque.'],
+  ['Une erreur à signaler', 'Une information fausse ou dépassée.'],
+  ['Une source à proposer', 'Une étude ou une publication officielle.'],
+  ['Autre chose', 'Presse, partenariat, traduction…'],
+]
+---
+<Base title="Contact | La Troisième Vague" description="Une question, une erreur à signaler, une source à proposer ? Écrivez à La Troisième Vague : nous lisons chaque message.">
+  <section class="sec pat csec"><div class="in cgrid">
+    <div class="cmain">
+    <div class="ctitle">
+      <h1>Nous <em>écrire</em></h1><p>Une question, une erreur à signaler, une source à proposer&#8239;? Nous lisons chaque message et répondons en général sous quelques jours.</p></div>
+    <form class="cform" method="post" action="/api/forms" data-form-kind="contact">
+      <input type="hidden" name="kind" value="contact" />
+      <fieldset class="topics"><legend>Votre message concerne</legend>
+        {topics.map(([t, d], i) => <label class="topic"><input type="radio" name="topic" value={t} checked={i === 0} /><span><b>{t}</b><small>{d}</small></span></label>)}
+      </fieldset>
+      <div class="two">
+        <label class="field"><span>Nom</span><input name="your-name" autocomplete="name" required maxlength="200" placeholder="Votre nom ou un pseudonyme" /></label>
+        <label class="field"><span>Adresse de courriel</span><input name="your-email" type="email" autocomplete="email" required maxlength="254" placeholder="Pour vous répondre" /></label>
+      </div>
+      <label class="field"><span>Sujet</span><input name="your-subject" required maxlength="200" placeholder="En quelques mots" /></label>
+      <label class="field"><span>Message</span><textarea name="your-message" required maxlength="10000" placeholder="Si vous signalez une erreur, indiquez la page et, si possible, une source."></textarea><em class="count" aria-hidden="true">0 / 10 000</em></label>
+      <label class="hp-field" aria-hidden="true">Site web<input name="website" tabindex="-1" autocomplete="off" /></label>
+      <div class="send"><button class="btn p" type="submit">Envoyer le message<Arrow /></button></div>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+    </div>
+
+    <aside class="caside">
+      <div class="cbox urgent"><small>Ce formulaire n’est pas un service d’urgence</small><b>Besoin d’aide maintenant&#8239;?</b>
+        <ul>{helpLines.slice(0, 3).map(h => <li><a href={`tel:${h.tel}`}><span>{h.service}<small>{h.country}</small></span><strong>{h.number}</strong></a></li>)}</ul>
+        <a class="rail-link" href="/aide/">Tous les numéros <Arrow /></a></div>
+      <div class="cbox"><small>Pour suivre nos publications</small><b>La chaîne Telegram</b><p>Un message quand un article paraît ou qu’une fiche est mise à jour.</p><a class="rail-link" href={TELEGRAM_URL} rel="noopener">Rejoindre la chaîne <Arrow /></a></div>
+      <div class="cbox"><small>Avant d’écrire</small><b>Ce que nous ne faisons pas</b><p>Nous ne donnons pas de conseils médicaux individuels, ni de conseils de consommation ou d’approvisionnement. Pour un traitement en cours, parlez-en à un médecin ou à un pharmacien.</p></div>
+    </aside>
+  </div></section>
+  <Forms />
+</Base>
+<script>
+  const ta = document.querySelector<HTMLTextAreaElement>('.cform textarea')!, count = document.querySelector('.cform .count')!
+  const upd = () => { count.textContent = `${ta.value.length.toLocaleString('fr-FR')} / 10 000` }
+  ta.addEventListener('input', upd)
+  document.querySelector('.cform')!.addEventListener('reset', () => setTimeout(upd))
+</script>

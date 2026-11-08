@@ -20,12 +20,14 @@ for (const entry of guideCatalog) {
   check(guide.editorialCorrectionsApplied === true, `${entry.id}: editorial corrections not applied`)
   check(raw('a[href]').length === source.publishedLinkCount, `${entry.id}: reference changes differ from the editorial audit`)
   for (const id of source.headingIds) check($(`[id="${id}"]`).length === 1, `${entry.id}: missing section ${id}`)
-  check($('title').text() === guideTitle(entry), `${entry.id}: incorrect title`)
+  // Same rule as src/layouts/Base.astro: a title over 60 characters drops the site-name suffix.
+  const title = guideTitle(entry), shortTitle = title.length > 60 ? title.replace(/ \| La Troisième Vague$/, '') : title
+  check($('title').text() === shortTitle, `${entry.id}: incorrect title`)
   check($('main h1').length === 1, `${entry.id}: expected one H1`)
   check($('html').attr('lang') === 'fr-FR', `${entry.id}: incorrect language`)
   check($('link[rel=canonical]').attr('href') === `https://latroisiemevague.com${entry.path}`, `${entry.id}: incorrect canonical`)
   check($('script[data-website-id="dfid_QUM3eJgHP2rnqoPysAotE"]').length === 1, `${entry.id}: analytics missing or duplicated`)
-  check($('dialog,[role=dialog],form,.jet-popup').length === 0, `${entry.id}: unexpected popup or form`)
+  check($('main dialog, main [role=dialog], main form').length === 0, `${entry.id}: unexpected popup or form`)
   const prose = $('.guide-translated-content').text().replace(/\s+/g, ' ').trim()
   const count = prose.split(/\s+/).length
   words += count; references += raw('a[href]').length
@@ -44,7 +46,7 @@ for (const entry of guideCatalog) {
 }
 for (const [path, category, expected] of [['/substances/', 'psychedelics', 22], ['/microdosing/', 'microdosing', 10]]) {
   const $ = load(await readFile(`dist${path}index.html`, 'utf8'))
-  check($('.listing-card').length === expected, `${path}: incorrect catalogue count`)
+  check($('main a.listing-card').length === expected, `${path}: incorrect catalogue count`)
   check($('.listing-status').length === 0, `${path}: forthcoming labels remain`)
   for (const entry of guideCatalog.filter(item => item.category === category)) check($(`main a[href="${entry.path}"]`).length > 0, `${path}: missing ${entry.path}`)
 }

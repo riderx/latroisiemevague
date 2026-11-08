@@ -1,0 +1,162 @@
+---
+import '../styles/home.css'
+import Base from '../layouts/Base.astro'
+import Ill from '../components/Ill.astro'
+import Arrow from '../components/Arrow.astro'
+import Logo from '../components/Logo.astro'
+import Forms from '../components/Forms.astro'
+import IconSource from '../components/IconSource.astro'
+import IconDate from '../components/IconDate.astro'
+import IconNuance from '../components/IconNuance.astro'
+import IconNoIncite from '../components/IconNoIncite.astro'
+import pieces from '../assets/ill/hero2-pieces.json'
+import { families, substanceBySlug, shortName, illustrationFor, tintFor, helpLines, TELEGRAM_URL, SITE } from '../data/site'
+import { articles } from '../lib/articles'
+
+const slugs = families.flatMap(f => f.slugs)
+const rowA = slugs.slice(0, 11), rowB = slugs.slice(11)
+const disc = (slug: string) => ({ slug, name: shortName(slug, substanceBySlug(slug).name), href: substanceBySlug(slug).path, ill: illustrationFor(slug), tint: tintFor(slug) })
+const news = articles.slice(0, 3)
+const homeHelp = [helpLines[0], helpLines[1], helpLines[2], helpLines[4]]
+const faq = [
+  ['Ce site encourage-t-il la consommation de psychédéliques ?', 'Non. Nous informons pour que chacun comprenne les effets, les risques et l’état de la recherche. Nous ne recommandons aucune consommation et ne vendons rien.'],
+  ['D’où viennent les informations ?', 'Des guides de Third Wave, traduits avec leur accord, puis relus et complétés à partir d’études publiées et des publications des autorités de santé. Chaque source est citée.'],
+  ['Les psychédéliques sont-ils légaux en France ?', 'La plupart sont classés comme stupéfiants. Chaque fiche décrit le contexte juridique présenté par la source ; pour une question concrète, référez-vous aux textes en vigueur dans votre pays.'],
+  ['Que faire si quelqu’un ne va pas bien ?', 'En cas de malaise, de convulsions ou de détresse, appelez le 15 ou le 112. Pour parler à quelqu’un, Drogues Info Service répond au 0 800 23 13 13, de 8 h à 2 h, 7 jours sur 7.'],
+]
+const schema = { '@context': 'https://schema.org', '@graph': [
+  { '@type': 'WebSite', '@id': SITE + '/#website', url: SITE + '/', name: 'La Troisième Vague', inLanguage: 'fr-FR', potentialAction: { '@type': 'SearchAction', target: SITE + '/recherche/?s={q}', 'query-input': 'required name=q' } },
+  { '@type': 'Organization', '@id': SITE + '/#org', name: 'La Troisième Vague', url: SITE + '/', logo: SITE + '/favicon.svg' },
+  { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+] }
+const phone = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5.2 1.8 6.6 5 5 6.3a8.6 8.6 0 0 0 4.7 4.7L11 9.4l3.2 1.4-.5 2.6c-.1.5-.6.9-1.1.8C7 13.7 2.3 9 1.8 3.4c0-.5.3-1 .8-1.1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>'
+const eye = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1.5 8S4 3.5 8 3.5 14.5 8 14.5 8 12 12.5 8 12.5 1.5 8 1.5 8z"/><circle cx="8" cy="8" r="2"/></svg>'
+---
+<Base title="La Troisième Vague : psychédéliques, effets et risques" description="Ce que dit la recherche, les risques et les interactions à connaître. Une information indépendante, sourcée et datée sur les psychédéliques, en français." path="/" schema={schema}>
+  <section class="hero center"><div class="in">
+    <h1>Les psychédéliques&#8239;: <em>effets, risques, recherche</em></h1>
+    <p class="lede">Ce que dit la recherche, les risques et les interactions à connaître. Une information indépendante, sourcée et datée, pour vous aider à comprendre.</p>
+    <div class="ctas"><a class="btn p" href="/substances/">Voir les 22 fiches<Arrow /></a><a class="btn s" href="/aide/">Repères de sécurité<Arrow /></a></div>
+  </div>
+  <div class="stage"><div class="isl-wrap">
+    <Ill name="hero2-base" class="base" alt="Un paysage en trois vagues : les plantes traditionnelles, la découverte en laboratoire autour d’une molécule, puis la recherche clinique et un phare." widths={[640, 960, 1280, 1536]} sizes="(max-width: 1300px) 100vw, 1260px" loading="eager" fetchpriority="high" />
+    <Ill name="hx-wheat" class="hx wheat" widths={[200, 280]} sizes="140px" style="left:55.729%;top:27.273%;width:8.724%" />
+    <div class="water-glint" aria-hidden="true"></div>
+    <svg class="fx" viewBox="0 0 1536 726" aria-hidden="true">
+      <defs><radialGradient id="glow"><stop offset="0" stop-color="#ffe7a1" stop-opacity=".95"/><stop offset="1" stop-color="#f0b429" stop-opacity="0"/></radialGradient>
+        <linearGradient id="beamL" x1="1" x2="0"><stop offset="0" stop-color="#f6cf6a" stop-opacity=".55"/><stop offset="1" stop-color="#f6cf6a" stop-opacity="0"/></linearGradient>
+        <linearGradient id="beamR" x1="0" x2="1"><stop offset="0" stop-color="#f6cf6a" stop-opacity=".55"/><stop offset="1" stop-color="#f6cf6a" stop-opacity="0"/></linearGradient></defs>
+      <g class="beam l"><path d="M1440 266 L1250 226 L1250 312 Z" fill="url(#beamL)"/></g>
+      <g class="beam r"><path d="M1440 266 L1536 236 L1536 300 Z" fill="url(#beamR)"/></g>
+      <circle class="lamp" cx="1441" cy="266" r="34" fill="url(#glow)"/>
+      <g class="halos" fill="url(#glow)"><circle cx="607" cy="152" r="17" style="animation-delay:0.00s"/><circle cx="662" cy="132" r="17" style="animation-delay:-0.22s"/><circle cx="710" cy="170" r="17" style="animation-delay:-0.44s"/><circle cx="690" cy="228" r="17" style="animation-delay:-0.66s"/><circle cx="637" cy="242" r="17" style="animation-delay:-0.88s"/><circle cx="595" cy="208" r="17" style="animation-delay:-1.10s"/><circle cx="770" cy="172" r="17" style="animation-delay:-1.32s"/><circle cx="785" cy="228" r="17" style="animation-delay:-1.54s"/><circle cx="738" cy="260" r="17" style="animation-delay:-1.76s"/><circle cx="797" cy="132" r="17" style="animation-delay:-1.98s"/><circle cx="850" cy="138" r="17" style="animation-delay:-2.20s"/><circle cx="867" cy="95" r="17" style="animation-delay:-2.42s"/><circle cx="918" cy="107" r="17" style="animation-delay:-2.64s"/><circle cx="943" cy="70" r="17" style="animation-delay:-2.86s"/></g>
+      <path class="pulse" d="M595 208 L607 152 L662 132 L710 170 L770 172 L785 228 L738 260 L690 228 L710 170 M770 172 L797 132 L850 138 L867 95 L918 107 L943 70" fill="none" stroke="#fff3c4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <g class="sparks" fill="none" stroke="#fff6d8" stroke-width="5" stroke-linecap="round"><path d="M1072 268c18-14 30 6 48-8s28-24 46-10 22 12 40 2" style="animation-delay:0.0s"/><path d="M1084 232c16-10 28 4 44-6s26-18 44-6" style="animation-delay:-0.9s"/><path d="M1100 300c16-8 30 6 46-2s24-14 44-4" style="animation-delay:-1.8s"/></g>
+      <g class="spores" fill="#fffaf0" stroke="#1f2547" stroke-width="1.6"><circle cx="250" cy="488" r="3.2" style="animation-delay:0s"/><circle cx="268" cy="480" r="3.2" style="animation-delay:-1.2s"/><circle cx="318" cy="512" r="3.2" style="animation-delay:-2.1s"/><circle cx="300" cy="520" r="3.2" style="animation-delay:-0.6s"/><circle cx="236" cy="492" r="3.2" style="animation-delay:-2.8s"/><circle cx="330" cy="506" r="3.2" style="animation-delay:-3.3s"/></g>
+      <g class="bubbles" stroke="#1f2547" stroke-width="3" fill="#fffaf0"><circle cx="806" cy="316" r="7"/><circle cx="816" cy="316" r="5"/><circle cx="811" cy="316" r="4"/></g>
+      <g class="steam" fill="none" stroke-linecap="round"><g><path d="M150 398c-8-12 8-18 0-30s8-18 0-30" stroke="#1f2547" stroke-width="10"/><path d="M150 398c-8-12 8-18 0-30s8-18 0-30" stroke="#fffaf0" stroke-width="5"/></g><g><path d="M178 394c-8-12 8-18 0-30s8-18 0-30" stroke="#1f2547" stroke-width="10"/><path d="M178 394c-8-12 8-18 0-30s8-18 0-30" stroke="#fffaf0" stroke-width="5"/></g><g><path d="M206 398c-8-12 8-18 0-30s8-18 0-30" stroke="#1f2547" stroke-width="10"/><path d="M206 398c-8-12 8-18 0-30s8-18 0-30" stroke="#fffaf0" stroke-width="5"/></g></g>
+    </svg>
+    {pieces.map((p, i) => <Ill name={p.f.replace('.png', '')} class="hp wind" widths={[120, 200]} sizes="100px" style={`left:${p.l.toFixed(2)}%;top:${p.t.toFixed(2)}%;width:${p.w.toFixed(2)}%;--d:${7 + i}s;--dl:${(-i * 2.4).toFixed(1)}s`} />)}
+  </div></div></section>
+
+  <div class="band pat"></div>
+
+  <section class="sec center"><div class="in">
+    <h2 class="h2 rv">Trois points de départ, <em>selon votre question</em></h2>
+    <p class="lede rv">Une fiche sur une substance, un guide sur le microdosage ou un article de fond : choisissez selon votre question.</p>
+    <div class="cards">
+      <a class="card c1 rv" href="/substances/"><h3>Les fiches sur les substances</h3><p>Psilocybine, LSD, MDMA, kétamine, ayahuasca… Effets, risques, recherche et contexte légal, substance par substance.</p><span class="more">Parcourir les fiches <Arrow /></span>
+        <div class="art"><Ill name="specimen-base" /><Ill name="specimen-lens" class="mv lens" style="left:52.4%;top:43.3%;width:32.9%" widths={[160, 240]} sizes="120px" /></div></a>
+      <a class="card c2 rv" href="/blog/"><h3>Comprendre et approfondir</h3><p>Le contexte, le cerveau, la dépendance, les expériences difficiles : des articles de fond pour mieux comprendre.</p><span class="more">Lire les articles <Arrow /></span>
+        <div class="art"><Ill name="library-base" /><Ill name="library-sprout" class="mv sprout" style="left:74%;top:8.1%;width:23.6%" widths={[120, 200]} sizes="90px" /></div></a>
+      <a class="card c3 rv" href="/microdosing/"><h3>Le microdosage</h3><p>Ce que mesurent vraiment les essais contrôlés, et pourquoi les résultats sont souvent proches du placebo.</p><span class="more">Voir le microdosage <Arrow /></span>
+        <div class="art"><Ill name="molecule-base" /><Ill name="molecule-globe" class="mv globe" style="left:79%;top:36.6%;width:19.4%" widths={[120, 200]} sizes="80px" /></div></a>
+    </div>
+  </div></section>
+
+  <section class="sec pat"><div class="in">
+    <div class="box rv">
+      <div class="txt"><h2>Connaître les risques, <em>savoir réagir</em></h2><p>La substance, les associations, l’état de santé et le contexte peuvent tous contribuer à un accident grave.</p>
+        <div class="acc">
+          <div class="acc-i open"><button type="button" aria-expanded="true">Interactions médicamenteuses<span class="pm"></span></button><div class="acc-p"><div><p>Lithium, IMAO, certains antidépresseurs, tramadol : certaines associations peuvent provoquer des convulsions ou un syndrome sérotoninergique. Ne modifiez jamais un traitement sans avis médical.</p></div></div></div>
+          <div class="acc-i"><button type="button" aria-expanded="false">Contre-indications<span class="pm"></span></button><div class="acc-p"><div><p>Antécédents personnels ou familiaux de psychose ou de trouble bipolaire, troubles cardiaques, grossesse : les situations où le risque augmente nettement.</p></div></div></div>
+          <div class="acc-i"><button type="button" aria-expanded="false">Si une expérience tourne mal<span class="pm"></span></button><div class="acc-p"><div><p>Un lieu calme et une présence rassurante peuvent aider. Malaise, convulsions, forte fièvre ou confusion durable : appelez le 15 ou le 112 sans attendre.</p></div></div></div>
+          <div class="acc-i"><button type="button" aria-expanded="false">Faire analyser un produit<span class="pm"></span></button><div class="acc-p"><div><p>Ce qui est vendu n’est pas toujours ce qui est annoncé. Des services d’analyse anonymes existent ; Drogues Info Service peut vous orienter.</p></div></div></div>
+        </div>
+        <p style="margin-top:22px"><a class="btn s" href="/aide/">Tous les repères de sécurité<Arrow /></a></p>
+      </div>
+      <div class="panel tall" style="background:var(--t4)"><Ill name="x-risks" alt="Un plateau de vérification : boîte de médicament et bocal liés par une étiquette d’alerte, kit d’analyse, liste de contrôle, trousse de secours et verre d’eau." widths={[360, 540, 720]} sizes="(max-width: 960px) 70vw, 400px" /></div>
+    </div>
+  </div></section>
+
+  <section class="sec center" style="padding-bottom:96px"><div class="in">
+    <h2 class="h2 rv">Vingt-deux substances, <em>une par une</em></h2>
+    <p class="lede rv">Pour chaque substance, nous présentons les données disponibles et ce qui reste incertain.</p>
+    <div style="margin-top:28px" class="rv"><a class="btn l" href="/substances/">Voir toutes les fiches<Arrow /></a></div>
+  </div>
+  <div class="marquee" id="mq">
+    {[rowA, rowB].map((row, r) => (
+      <div class={r ? 'track r' : 'track'}>{[0, 1].map(dup => row.map(disc).map(d => (
+        <a class={`disc ${d.tint}`} href={d.href} data-n={d.name} aria-hidden={dup ? 'true' : undefined} tabindex={dup ? -1 : undefined}><Ill name={d.ill} alt={dup ? '' : d.name} widths={[160, 260]} sizes="130px" /></a>
+      )))}</div>
+    ))}
+  </div></section>
+
+  <div class="band pat"></div>
+
+  <section class="sec"><div class="in">
+    <div class="vals rv">
+      <div class="lft"><h2>Ce que vous pouvez attendre <em>de nos contenus</em></h2><p>Une information utile n’est ni alarmiste ni complaisante. Voici les règles que nous appliquons à chaque page.</p><Ill name="x-values" widths={[320, 480]} sizes="(max-width: 960px) 70vw, 400px" /></div>
+      <div class="vgrid">
+        <div class="v"><div class="ic"><IconSource /></div><h3>Sourcé</h3><p>Chaque affirmation renvoie à une étude ou à une autorité de santé, citée dans le texte.</p></div>
+        <div class="v"><div class="ic"><IconDate /></div><h3>Daté</h3><p>Chaque page indique sa dernière relecture. Nous signalons les corrections apportées aux informations dépassées.</p></div>
+        <div class="v"><div class="ic"><IconNuance /></div><h3>Nuancé</h3><p>Nous distinguons les essais contrôlés, les études d’observation et les témoignages.</p></div>
+        <div class="v"><div class="ic"><IconNoIncite /></div><h3>Sans incitation</h3><p>Nous informons pour réduire les risques. Rien n’est recommandé, rien n’est vendu.</p></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec pat" id="aide"><div class="in">
+    <div class="help rv">
+      <div><h2>Besoin d’aide <em>maintenant</em>&#8239;?</h2><p class="sub">Vous pouvez demander de l’aide ou parler de ce qui vous arrive.</p>
+        <div class="nums">{homeHelp.map(h => <a href={`tel:${h.tel}`}><span><small>{h.service} · {h.country}</small><b>{h.number}</b></span><span class="call" set:html={phone} /></a>)}</div></div>
+      <div class="art"><Ill name="x-help2" alt="Un coin calme pour veiller sur quelqu’un : coussin, couverture, eau, oranges, lampe et téléphone." widths={[400, 640]} sizes="(max-width: 960px) 80vw, 460px" /></div>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="in tg">
+    <div class="rv"><h2>Suivez les nouvelles publications <em>sur Telegram</em></h2><p class="sub">Un message quand un article paraît ou qu’une fiche est mise à jour.</p>
+      <ul class="ticks"><li>Un message par publication, jamais plus</li><li>Aucune publicité, aucun lien sponsorisé</li><li>Vous pouvez quitter la chaîne à tout moment</li></ul>
+      <a class="btn p" href={TELEGRAM_URL} rel="noopener">Rejoindre la chaîne<Arrow /></a>
+      <form class="signup" method="post" action="/api/forms" data-form-kind="newsletter"><input type="hidden" name="kind" value="newsletter" /><label for="nl-email">Ou par courriel, une fois par mois au plus</label><div><input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="votre@email.fr" maxlength="254" /><button class="btn s" type="submit">S’inscrire</button></div><input class="hp-field" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" /><p class="form-status" role="status" aria-live="polite"></p></form></div>
+    <div class="rv"><div class="chat" data-reveal>
+      <div class="top"><svg class="back" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="av"><Logo size={30} id="lgt" /></span><div><b>La Troisième Vague</b><span>chaîne Telegram</span></div></div>
+      <div class="feed"><span class="day">Novembre 2026</span>
+        {news.map((a, i) => <a class="msg" href={a.path}><span class="from">La Troisième Vague</span><span class="prev"><span><small>{a.category}</small><h3 class="h5">{a.title}</h3></span><span class={`th ${tintFor(a.id)}`}><Ill name={a.cover} widths={[128]} sizes="64px" /></span></span><span class="meta"><Fragment set:html={eye} />{['5 novembre 2026', '29 octobre 2026', '22 octobre 2026'][i]}</span></a>)}
+      </div>
+    </div></div>
+  </div></section>
+
+  <section class="sec" style="padding-bottom:0;border-bottom:0"><div class="in center">
+    <h2 class="h2 rv">Questions <em>fréquentes</em></h2>
+    <p class="lede rv">Vous ne trouvez pas la réponse ? <a href="/contact/" style="text-decoration:underline">Écrivez-nous</a>, nous lisons chaque message.</p></div>
+    <div class="faq in">{faq.map(([q, a]) => <div class="acc-i"><button type="button" aria-expanded="false">{q}<span class="pm"></span></button><div class="acc-p"><div><p>{a}</p></div></div></div>)}</div>
+    <div class="final2">
+      <Ill name="frame" class="frame-ill" alt="Un paysage continu qui encadre la page : forêt et liane d’ayahuasca, molécule, blé et fiole, phare et microscope, livres, crapaud et iboga, reliés par une rivière." widths={[768, 1152, 1536]} sizes="(max-width: 1440px) 100vw, 1440px" />
+      <div class="mid"><h2>La science des psychédéliques, <em>en clair</em></h2><p>Commencez par une substance, ou par les repères de sécurité.</p><div class="mid-ctas"><a class="btn p" href="/substances/">Les fiches<Arrow /></a><a class="btn s" href="/aide/">Aide et sécurité<Arrow /></a></div></div>
+    </div>
+  </section>
+  <Forms />
+  <div class="ptr" id="ptr" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M2 2l13 5.2-5.6 1.6L7.8 15z" style="fill:var(--primary)" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg><span></span></div>
+</Base>
+<script>
+  const ptr = document.getElementById('ptr')!, label = ptr.querySelector('span')!
+  if (matchMedia('(hover: hover)').matches) {
+    addEventListener('scroll', () => ptr.classList.remove('on'), { passive: true })
+    addEventListener('pointermove', e => {
+      ptr.style.transform = `translate(${e.clientX}px,${e.clientY}px)`
+      const d = (e.target as Element).closest?.('.disc') as HTMLElement | null
+      if (d) { label.textContent = d.dataset.n!; ptr.classList.add('on') } else ptr.classList.remove('on')
+    }, { passive: true })
+  }
+</script>

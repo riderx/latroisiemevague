@@ -1,0 +1,32 @@
+---
+import '../styles/pages.css'
+import Base from '../layouts/Base.astro'
+import Ill from '../components/Ill.astro'
+import Arrow from '../components/Arrow.astro'
+import HelpLines from '../components/HelpLines.astro'
+---
+<Base title="Aide et urgences : numéros et repères de sécurité | La Troisième Vague" description="Numéros d’urgence et d’écoute en France, Belgique, Suisse et au Québec. Repères : interactions, contre-indications, expérience difficile, analyse de produits.">
+  <section class="pagehead"><div class="in split">
+    <div>
+      <h1>Besoin d’aide <em>maintenant</em>&#8239;?</h1>
+      <p class="lede">Si quelqu’un fait un malaise, convulse, a une forte fièvre, ne répond plus ou met sa sécurité en danger : appelez les secours immédiatement. Dire ce qui a été consommé aide les soignants ; ils sont là pour soigner, pas pour juger.</p>
+    </div>
+    <div class="art"><Ill name="x-help2" alt="Un coin calme pour veiller sur quelqu’un : coussin, couverture, eau, oranges, lampe et téléphone." widths={[320, 480]} sizes="(max-width: 960px) 260px, 420px" loading="eager" fetchpriority="high" /></div>
+  </div></section>
+  <section class="sec pat"><div class="in">
+    <h2 class="h2">Les numéros <em>à appeler</em></h2>
+    <p class="lede" style="margin-left:0">Gratuits ou au prix d’un appel local. Les lignes d’écoute sont anonymes.</p>
+    <HelpLines />
+  </div></section>
+  <section class="sec"><div class="in">
+    <h2 class="h2">Les repères <em>essentiels</em></h2>
+    <div class="steps">
+      <div class="step k1"><h3>Interactions médicamenteuses</h3><ul><li>Le lithium associé au LSD ou à la psilocybine a été lié à des convulsions.</li><li>Les IMAO, y compris ceux de l’ayahuasca, rendent certaines associations dangereuses, notamment avec des antidépresseurs ou la MDMA.</li><li>Le tramadol augmente le risque de convulsions.</li><li>Ne modifiez ni n’arrêtez jamais un traitement sans avis médical.</li></ul></div>
+      <div class="step k2"><h3>Contre-indications</h3><ul><li>Antécédents personnels ou familiaux de psychose, de schizophrénie ou de trouble bipolaire.</li><li>Troubles cardiaques ou hypertension.</li><li>Grossesse et allaitement.</li><li>Prise de médicaments agissant sur la sérotonine.</li></ul></div>
+      <div class="step k3"><h3>Si une expérience devient difficile</h3><ul><li>Restez dans un endroit calme, avec une lumière douce et une présence rassurante.</li><li>Rappelez que l’effet est temporaire. Ne forcez pas la personne à boire.</li><li>Ne laissez pas la personne seule.</li><li>En cas de malaise, de convulsions, de fièvre ou de confusion persistante, appelez le 15 ou le 112.</li></ul></div>
+      <div class="step k4"><h3>Faire analyser un produit</h3><ul><li>Ce qui est vendu n’est pas toujours ce qui est annoncé, ni à la concentration annoncée.</li><li>Des dispositifs d’analyse anonymes existent en France, en Belgique et en Suisse.</li><li>Drogues Info Service peut vous orienter vers le plus proche.</li></ul></div>
+    </div>
+    <p class="text" style="margin-top:32px">Ces repères ne remplacent pas un avis médical. Pour une question précise sur un traitement, parlez-en à votre médecin ou à votre pharmacien.</p>
+    <p style="margin-top:26px"><a class="btn s" href="/substances/">Lire les fiches sur les substances<Arrow /></a></p>
+  </div></section>
+</Base>

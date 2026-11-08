@@ -3,9 +3,9 @@
     "id": "psychedelics-2c-b",
     "path": "/substances/2c-b/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/2c-b/",
-    "contentHash": "d5730b7ec5810d10e599b0a1c275f013f48c9721fe80262f36b78c06cf56a187",
-    "sourceBlockCount": 158,
-    "sourceWords": 4095,
+    "contentHash": "9d09cf2a11ac3ec5dc43f841efe73e79e092d3da2bd2c2f8c98d39e1859a2dee",
+    "sourceBlockCount": 160,
+    "sourceWords": 4160,
     "headingIds": [
       "overview",
       "experience",
@@ -19,17 +19,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 225,
-    "publishedLinkCount": 217,
-    "editorialCorrections": 1
+    "sourceLinkCount": 226,
+    "publishedLinkCount": 226,
+    "editorialCorrections": 0
   },
   {
     "id": "psychedelics-4-aco-dmt",
     "path": "/substances/4-aco-dmt/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/4-aco-dmt/",
-    "contentHash": "251fd1cf859077320a36981c57cc0f60be6e9482eaa0b20ddef053c90bb9ff96",
-    "sourceBlockCount": 151,
-    "sourceWords": 4267,
+    "contentHash": "27f40e61cfb81729e5b1a765a0b11aef553dd6501b89ea28fbba1cd09e79101b",
+    "sourceBlockCount": 165,
+    "sourceWords": 4594,
     "headingIds": [
       "overview",
       "experience",
@@ -44,17 +44,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 199,
-    "publishedLinkCount": 199,
+    "sourceLinkCount": 215,
+    "publishedLinkCount": 215,
     "editorialCorrections": 0
   },
   {
     "id": "psychedelics-5-meo-dmt",
     "path": "/substances/5-meo-dmt/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/5-meo-dmt/",
-    "contentHash": "ef1e71a9c22c231fd456f14b472d40c0750745807cb892fd47fc3a70295d31f8",
-    "sourceBlockCount": 204,
-    "sourceWords": 5972,
+    "contentHash": "739c6ad266fc719ed739fe0c0de2ecbd3162f6a819855ecea84d4628da629043",
+    "sourceBlockCount": 214,
+    "sourceWords": 6118,
     "headingIds": [
       "overview",
       "experience",
@@ -68,17 +68,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 268,
-    "publishedLinkCount": 263,
-    "editorialCorrections": 4
+    "sourceLinkCount": 270,
+    "publishedLinkCount": 270,
+    "editorialCorrections": 0
   },
   {
     "id": "psychedelics-amanita-muscaria",
     "path": "/substances/amanita-muscaria/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/amanita-muscaria/",
-    "contentHash": "da3536664c4c4078acfa98ff435dd2321a07a01bea2ea9a2e986b9ed14bd29b0",
-    "sourceBlockCount": 157,
-    "sourceWords": 6924,
+    "contentHash": "757b0031abea5cafc783c663f3c3adb0d0d4a961538f5c3083f9f6693011277a",
+    "sourceBlockCount": 171,
+    "sourceWords": 7457,
     "headingIds": [
       "overview",
       "experience",
@@ -93,17 +93,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 202,
-    "publishedLinkCount": 199,
-    "editorialCorrections": 8
+    "sourceLinkCount": 209,
+    "publishedLinkCount": 209,
+    "editorialCorrections": 0
   },
   {
     "id": "psychedelics-ayahuasca",
     "path": "/substances/ayahuasca/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/ayahuasca/",
-    "contentHash": "77ef9ad0aceac4411e7458f83b9f79856b246e9dc60bba41fbdf7f567909f897",
-    "sourceBlockCount": 175,
-    "sourceWords": 4677,
+    "contentHash": "2b5195d35a28279a438cc90ffa106e74813a770181908d684d1d5aa9d16b6e16",
+    "sourceBlockCount": 182,
+    "sourceWords": 4835,
     "headingIds": [
       "overview",
       "effects",
@@ -116,38 +116,39 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 198,
-    "publishedLinkCount": 194,
-    "editorialCorrections": 3
+    "sourceLinkCount": 200,
+    "publishedLinkCount": 200,
+    "editorialCorrections": 1
   },
   {
     "id": "psychedelics-cacao",
     "path": "/substances/cacao/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/cacao/",
-    "contentHash": "618d5d42257dd7604cb4ea478e6a10613ffd7fdab981c8ad32b3d4fa4d7bac56",
-    "sourceBlockCount": 101,
-    "sourceWords": 3701,
+    "contentHash": "b8c14640f23a2be29ffb99defc66539047d8c63633a65a625111242e2b468b6b",
+    "sourceBlockCount": 107,
+    "sourceWords": 3840,
     "headingIds": [
       "overview",
       "experience",
       "benefitsandrisks",
       "therapeuticuse",
       "legality",
+      "sourcing",
       "recipe",
       "ethical",
       "history",
       "myths",
       "faq"
     ],
-    "sourceLinkCount": 7,
-    "publishedLinkCount": 7,
-    "editorialCorrections": 2
+    "sourceLinkCount": 14,
+    "publishedLinkCount": 14,
+    "editorialCorrections": 0
   },
   {
     "id": "psychedelics-cannabis",
     "path": "/substances/cannabis/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/cannabis/",
-    "contentHash": "d4943d83ff986eb51bb16732195f885d132a777b62ff2cc4cf0549b8ee8f356f",
+    "contentHash": "e7feca73297dab90afecf5cd600850ff41f226ec9e968538f337b642867ff58f",
     "sourceBlockCount": 444,
     "sourceWords": 13597,
     "headingIds": [
@@ -165,16 +166,16 @@
       "footnotes"
     ],
     "sourceLinkCount": 690,
-    "publishedLinkCount": 689,
-    "editorialCorrections": 1
+    "publishedLinkCount": 690,
+    "editorialCorrections": 0
   },
   {
     "id": "psychedelics-datura",
     "path": "/substances/datura/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/datura/",
-    "contentHash": "c6169fa39628fde0f81dc27707912cd7f1d07ab49b249c15e022c8ccb30d42fd",
-    "sourceBlockCount": 160,
-    "sourceWords": 4762,
+    "contentHash": "210de90eeb9b82f9b2e947d05abd3f17c7f7ebc116f96276766071df73baa6d5",
+    "sourceBlockCount": 162,
+    "sourceWords": 4832,
     "headingIds": [
       "overview",
       "experience",
@@ -188,17 +189,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 225,
-    "publishedLinkCount": 225,
+    "sourceLinkCount": 229,
+    "publishedLinkCount": 229,
     "editorialCorrections": 0
   },
   {
     "id": "psychedelics-dmt",
     "path": "/substances/dmt/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/dmt/",
-    "contentHash": "b13b0b4df032b9d053ca54a61db084278d3c1d6c6939a1026889b43e4809dfa4",
-    "sourceBlockCount": 111,
-    "sourceWords": 3804,
+    "contentHash": "63bfe633ef9797c76949f1bceedd7873939cf6624143e282d498074f4666027b",
+    "sourceBlockCount": 114,
+    "sourceWords": 3907,
     "headingIds": [
       "overview",
       "experience",
@@ -212,17 +213,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 62,
-    "publishedLinkCount": 62,
+    "sourceLinkCount": 65,
+    "publishedLinkCount": 65,
     "editorialCorrections": 0
   },
   {
     "id": "psychedelics-ibogaine",
     "path": "/substances/ibogaine/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/ibogaine/",
-    "contentHash": "59c6d9405de35ce1e131c5290c9173ce5a8834ac20fe120146487fcde67265b5",
-    "sourceBlockCount": 133,
-    "sourceWords": 5010,
+    "contentHash": "8a3e7ac1902bb49e18fdfee5725a274ec9a19c33c72efe84f84ce5b40a4580af",
+    "sourceBlockCount": 138,
+    "sourceWords": 5131,
     "headingIds": [
       "overview",
       "experience",
@@ -237,17 +238,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 95,
-    "publishedLinkCount": 95,
+    "sourceLinkCount": 102,
+    "publishedLinkCount": 102,
     "editorialCorrections": 1
   },
   {
     "id": "psychedelics-kambo",
     "path": "/substances/kambo/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/kambo/",
-    "contentHash": "814bcb8a8c2560330e8f899f774dd0d78ad9813e1f00b7409f8cc10a46073a9b",
-    "sourceBlockCount": 170,
-    "sourceWords": 4839,
+    "contentHash": "11c6326b61585afee530f7816deff838f426a67b345d3eb18123302773d38e93",
+    "sourceBlockCount": 173,
+    "sourceWords": 4930,
     "headingIds": [
       "overview",
       "effects",
@@ -262,16 +263,16 @@
       "footnotes"
     ],
     "sourceLinkCount": 233,
-    "publishedLinkCount": 232,
-    "editorialCorrections": 1
+    "publishedLinkCount": 233,
+    "editorialCorrections": 0
   },
   {
     "id": "psychedelics-kanna",
     "path": "/substances/kanna/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/kanna/",
-    "contentHash": "65edc9da551604aaf68f1c1567c4b1125701c9a142a5481556e2b84702c76f8f",
-    "sourceBlockCount": 98,
-    "sourceWords": 3585,
+    "contentHash": "c3812471d63a3bc2fe41a281ed9fd5921ec912896fbb3846a123aaf2f8dcca1a",
+    "sourceBlockCount": 113,
+    "sourceWords": 4242,
     "headingIds": [
       "overview",
       "experience",
@@ -286,17 +287,17 @@
       "faq",
       "references"
     ],
-    "sourceLinkCount": 60,
-    "publishedLinkCount": 60,
-    "editorialCorrections": 2
+    "sourceLinkCount": 64,
+    "publishedLinkCount": 64,
+    "editorialCorrections": 0
   },
   {
     "id": "psychedelics-ketamine",
     "path": "/substances/ketamine/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/ketamine/",
-    "contentHash": "0c06d699fb553b570e3a0b6e3a9d1a0d456ffe3e70c244474fea070ffd4879b6",
-    "sourceBlockCount": 169,
-    "sourceWords": 4734,
+    "contentHash": "8a1e62d9b6c2e766508231820e1dcf8e810e7ac73676166c3e0b32dd30d3d4da",
+    "sourceBlockCount": 173,
+    "sourceWords": 4876,
     "headingIds": [
       "overview",
       "experience",
@@ -310,17 +311,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 179,
-    "publishedLinkCount": 180,
+    "sourceLinkCount": 183,
+    "publishedLinkCount": 184,
     "editorialCorrections": 2
   },
   {
     "id": "psychedelics-kratom",
     "path": "/substances/kratom/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/kratom/",
-    "contentHash": "9a76488f513bccb3d5c5a2b17d8227244f12aca2faf7e8f8df660eb3be7bb80e",
-    "sourceBlockCount": 187,
-    "sourceWords": 5296,
+    "contentHash": "0027e6a1961b22f2be4fc30915efb5767b9e112d1fe7b0f8361f2f0865fcbc16",
+    "sourceBlockCount": 204,
+    "sourceWords": 6000,
     "headingIds": [
       "overview",
       "experience",
@@ -334,17 +335,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 269,
-    "publishedLinkCount": 269,
+    "sourceLinkCount": 290,
+    "publishedLinkCount": 290,
     "editorialCorrections": 0
   },
   {
     "id": "psychedelics-lsd",
     "path": "/substances/lsd/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/lsd/",
-    "contentHash": "c2e305dcab0428ae0e6c50f6d36ee8163fca48ffa63b1c28a8f1db824c7a45c4",
-    "sourceBlockCount": 200,
-    "sourceWords": 6249,
+    "contentHash": "46f062439aef7281fc34f13e5a1889c285f4719b209226d5221e66f6535d873a",
+    "sourceBlockCount": 211,
+    "sourceWords": 6501,
     "headingIds": [
       "overview",
       "experience",
@@ -359,17 +360,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 182,
-    "publishedLinkCount": 181,
-    "editorialCorrections": 3
+    "sourceLinkCount": 183,
+    "publishedLinkCount": 183,
+    "editorialCorrections": 2
   },
   {
     "id": "psychedelics-mdma",
     "path": "/substances/mdma/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/mdma/",
-    "contentHash": "dfd9daf2dc16a9b45110dc6c6b9c572b8261efa97ea97a2b0f9dc94ccb638f9d",
-    "sourceBlockCount": 183,
-    "sourceWords": 6016,
+    "contentHash": "e7a9f7250fa20216d441c64907ee6a96be1a83ba6fc80e5eb14b9796a4acd94e",
+    "sourceBlockCount": 186,
+    "sourceWords": 6114,
     "headingIds": [
       "overview",
       "experience",
@@ -383,17 +384,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 146,
-    "publishedLinkCount": 147,
-    "editorialCorrections": 3
+    "sourceLinkCount": 147,
+    "publishedLinkCount": 149,
+    "editorialCorrections": 2
   },
   {
     "id": "psychedelics-mescaline",
     "path": "/substances/mescaline/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/mescaline/",
-    "contentHash": "765a265bbb5b203304395772d4416de82dbf5960ebd1f1f4572b0b9763b3a3fa",
-    "sourceBlockCount": 161,
-    "sourceWords": 4893,
+    "contentHash": "1c7b6f5c05d25dc41cdf948af76152c8685c5421da3a252c63b26c8058c2d711",
+    "sourceBlockCount": 169,
+    "sourceWords": 5096,
     "headingIds": [
       "overview",
       "experience",
@@ -408,17 +409,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 207,
-    "publishedLinkCount": 207,
+    "sourceLinkCount": 213,
+    "publishedLinkCount": 213,
     "editorialCorrections": 0
   },
   {
     "id": "psychedelics-peyote",
     "path": "/substances/peyote/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/peyote/",
-    "contentHash": "d3038a8bd365339d109fe1de65fdb3bc84f36fb44741b8a9d309b088f4bae888",
-    "sourceBlockCount": 176,
-    "sourceWords": 5817,
+    "contentHash": "aa133736a02430483d25c53fa0653e19ee4e1902b968317ebfa2b220ada67a06",
+    "sourceBlockCount": 184,
+    "sourceWords": 6098,
     "headingIds": [
       "overview",
       "experience",
@@ -433,17 +434,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 202,
-    "publishedLinkCount": 201,
-    "editorialCorrections": 1
+    "sourceLinkCount": 206,
+    "publishedLinkCount": 206,
+    "editorialCorrections": 0
   },
   {
     "id": "psychedelics-shrooms",
     "path": "/substances/champignons-psilocybin/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/shrooms/",
-    "contentHash": "75c9af3feb4beaf14cc16cbba6aa980603840c51873fdc07384ae116c18cac38",
-    "sourceBlockCount": 192,
-    "sourceWords": 7221,
+    "contentHash": "7b103401580504ab34aa335a99b3f5019a6c38799e110ad124d1981c1a46cd56",
+    "sourceBlockCount": 220,
+    "sourceWords": 8243,
     "headingIds": [
       "overview",
       "experience",
@@ -458,17 +459,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 198,
-    "publishedLinkCount": 197,
+    "sourceLinkCount": 230,
+    "publishedLinkCount": 229,
     "editorialCorrections": 1
   },
   {
     "id": "psychedelics-salvia",
     "path": "/substances/salvia/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/salvia/",
-    "contentHash": "608e1d5af5ea54f0b0fa32e79fbbd527f5187162f9c73b7c77450ab06ccdd41e",
-    "sourceBlockCount": 111,
-    "sourceWords": 3386,
+    "contentHash": "4bc6f8204a8d6e680dff33fa8dea0d22c79e0b6cedcedb6ab1849e37cc8cf18c",
+    "sourceBlockCount": 116,
+    "sourceWords": 3596,
     "headingIds": [
       "overview",
       "experience",
@@ -483,17 +484,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 94,
-    "publishedLinkCount": 94,
+    "sourceLinkCount": 95,
+    "publishedLinkCount": 95,
     "editorialCorrections": 0
   },
   {
     "id": "psychedelics-san-pedro",
     "path": "/substances/san-pedro/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/san-pedro/",
-    "contentHash": "64c519b45cfc48f4ad31e5306aca79ffd46ea9397265f56fe292446efdbfdfee",
-    "sourceBlockCount": 187,
-    "sourceWords": 6514,
+    "contentHash": "3443d42305ac34692dbe0e591ff324fe11b00f80bb45d933aaab84acb305f1df",
+    "sourceBlockCount": 194,
+    "sourceWords": 6766,
     "headingIds": [
       "overview",
       "experience",
@@ -509,17 +510,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 305,
-    "publishedLinkCount": 305,
+    "sourceLinkCount": 311,
+    "publishedLinkCount": 311,
     "editorialCorrections": 0
   },
   {
     "id": "psychedelics-tobacco",
     "path": "/substances/tabac/",
     "sourceUrl": "https://thethirdwave.co/psychedelics/tobacco/",
-    "contentHash": "89b21a5ff256aee869d776cd8549bf27427456290ba986d78171ef1826aef3d0",
-    "sourceBlockCount": 97,
-    "sourceWords": 3676,
+    "contentHash": "a848bfcc3038221618433fc2b08f4e6b0b3dd2e9071823316092d57bf4d7bbfb",
+    "sourceBlockCount": 109,
+    "sourceWords": 4438,
     "headingIds": [
       "overview",
       "history",
@@ -527,22 +528,23 @@
       "benefits-and-risks",
       "therapeutic-use",
       "legality",
+      "sourcing",
       "ethical-considerations",
       "common-misconceptions",
       "faq",
       "references"
     ],
-    "sourceLinkCount": 68,
-    "publishedLinkCount": 68,
+    "sourceLinkCount": 70,
+    "publishedLinkCount": 70,
     "editorialCorrections": 0
   },
   {
     "id": "microdosing-lsd",
     "path": "/microdosing/lsd/",
     "sourceUrl": "https://thethirdwave.co/microdosing/lsd/",
-    "contentHash": "aa2a83e5e46dda324f3350dacb9de75eb430f56f500b5171fdbf891d5bc23f18",
-    "sourceBlockCount": 142,
-    "sourceWords": 5166,
+    "contentHash": "503c1f0ae82eb41983f11a21aecc3643a38fb402a7166ef926372521504b9389",
+    "sourceBlockCount": 154,
+    "sourceWords": 5583,
     "headingIds": [
       "overview",
       "experience",
@@ -558,17 +560,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 95,
-    "publishedLinkCount": 93,
-    "editorialCorrections": 14
+    "sourceLinkCount": 100,
+    "publishedLinkCount": 102,
+    "editorialCorrections": 5
   },
   {
     "id": "microdosing-mushrooms",
     "path": "/microdosing/champignons-psilocybin/",
     "sourceUrl": "https://thethirdwave.co/microdosing/mushrooms/",
-    "contentHash": "8804d1ee789412b2ac97e5d3667684185196b78289fdc6164d62bbac75344b9a",
-    "sourceBlockCount": 169,
-    "sourceWords": 5070,
+    "contentHash": "abd52ef3882453927a87e74de94fa4288c48554dda1de03b6bbc0d6986bee4ad",
+    "sourceBlockCount": 192,
+    "sourceWords": 5780,
     "headingIds": [
       "overview",
       "experience",
@@ -583,36 +585,37 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 111,
-    "publishedLinkCount": 110,
-    "editorialCorrections": 6
+    "sourceLinkCount": 130,
+    "publishedLinkCount": 130,
+    "editorialCorrections": 5
   },
   {
     "id": "microdosing-1p-lsd",
     "path": "/microdosing/1p-lsd/",
     "sourceUrl": "https://thethirdwave.co/microdosing/1p-lsd/",
-    "contentHash": "641049eaa346ce16bf26a22d54e4269d95e9f8ac4d042442ec50b03d4b3bcc4e",
-    "sourceBlockCount": 122,
-    "sourceWords": 3649,
+    "contentHash": "cfc6abbf8bf0da58b0f23360fd2aa56f4329072c09410e21e4f27925f70eb73a",
+    "sourceBlockCount": 150,
+    "sourceWords": 4549,
     "headingIds": [
       "whatis",
       "science",
+      "howto",
       "benefits",
       "acquire",
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 61,
-    "publishedLinkCount": 63,
-    "editorialCorrections": 9
+    "sourceLinkCount": 67,
+    "publishedLinkCount": 70,
+    "editorialCorrections": 6
   },
   {
     "id": "microdosing-4-aco-dmt",
     "path": "/microdosing/4-aco-dmt/",
     "sourceUrl": "https://thethirdwave.co/microdosing/4-aco-dmt/",
-    "contentHash": "26f11090b61c043e6797f837b5a7c5439c54eb793600aeb509741b7e70f45485",
-    "sourceBlockCount": 169,
-    "sourceWords": 5351,
+    "contentHash": "6bbc97eddae604a63edcc4ff90a9784a32ec023126ec731e8411c072e54b7be4",
+    "sourceBlockCount": 177,
+    "sourceWords": 5659,
     "headingIds": [
       "overview",
       "experience",
@@ -626,17 +629,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 231,
-    "publishedLinkCount": 227,
-    "editorialCorrections": 8
+    "sourceLinkCount": 243,
+    "publishedLinkCount": 243,
+    "editorialCorrections": 0
   },
   {
     "id": "microdosing-ayahuasca",
     "path": "/microdosing/ayahuasca/",
     "sourceUrl": "https://thethirdwave.co/microdosing/ayahuasca/",
-    "contentHash": "3315173ea4998ac4e8c2097caf558eeae981b2bdd5de93af03f1ba2154947853",
-    "sourceBlockCount": 137,
-    "sourceWords": 5180,
+    "contentHash": "65448691e17194815929b3a604d614350ff8fb1603ca5b64c6551358f9422894",
+    "sourceBlockCount": 154,
+    "sourceWords": 5635,
     "headingIds": [
       "overview",
       "experience",
@@ -651,17 +654,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 118,
-    "publishedLinkCount": 117,
-    "editorialCorrections": 9
+    "sourceLinkCount": 123,
+    "publishedLinkCount": 124,
+    "editorialCorrections": 2
   },
   {
     "id": "microdosing-marijuana",
     "path": "/microdosing/cannabis/",
     "sourceUrl": "https://thethirdwave.co/microdosing/marijuana/",
-    "contentHash": "6800c16a88152746283e2f809a8ed21dee50c0a761b6d803ce8f7e980e062a99",
-    "sourceBlockCount": 269,
-    "sourceWords": 8241,
+    "contentHash": "e14d420f2166e495869ca8d0696084857874664fa38421a08ead5f5c6d945f7f",
+    "sourceBlockCount": 283,
+    "sourceWords": 8909,
     "headingIds": [
       "overview",
       "experience",
@@ -675,17 +678,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 398,
-    "publishedLinkCount": 397,
-    "editorialCorrections": 1
+    "sourceLinkCount": 410,
+    "publishedLinkCount": 410,
+    "editorialCorrections": 0
   },
   {
     "id": "microdosing-dmt",
     "path": "/microdosing/dmt/",
     "sourceUrl": "https://thethirdwave.co/microdosing/dmt/",
-    "contentHash": "ef02c13d648df4c07c812da25d8ee453f162c6a78fc8bf31775911a778b2ed97",
-    "sourceBlockCount": 92,
-    "sourceWords": 2980,
+    "contentHash": "2e6c2d9309da881baaabb6b85b38e88e495fbba397d5614116832512aa53c812",
+    "sourceBlockCount": 107,
+    "sourceWords": 3692,
     "headingIds": [
       "overview",
       "experience",
@@ -699,17 +702,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 84,
-    "publishedLinkCount": 83,
-    "editorialCorrections": 2
+    "sourceLinkCount": 94,
+    "publishedLinkCount": 94,
+    "editorialCorrections": 1
   },
   {
     "id": "microdosing-ibogaine",
     "path": "/microdosing/ibogaine/",
     "sourceUrl": "https://thethirdwave.co/microdosing/ibogaine/",
-    "contentHash": "0acc510d09a3842588b6633d021234c760d8c32cf58fb7120b1c6a8fe23bc7a9",
-    "sourceBlockCount": 133,
-    "sourceWords": 4635,
+    "contentHash": "3775ee255a6bb762ee6b54e429012dfb7eacac085f2dd91f06f41139e75ac728",
+    "sourceBlockCount": 141,
+    "sourceWords": 5021,
     "headingIds": [
       "overview",
       "experience",
@@ -724,17 +727,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 106,
-    "publishedLinkCount": 102,
-    "editorialCorrections": 13
+    "sourceLinkCount": 109,
+    "publishedLinkCount": 111,
+    "editorialCorrections": 3
   },
   {
     "id": "microdosing-mescaline",
     "path": "/microdosing/mescaline/",
     "sourceUrl": "https://thethirdwave.co/microdosing/mescaline/",
-    "contentHash": "c35435c1c2476b2cdc221f4227fc1920d4ca334e1a587ffcd24c560fd96be0e1",
-    "sourceBlockCount": 187,
-    "sourceWords": 5823,
+    "contentHash": "e633b3a7683e3e04a3808c888a995ada0d88bdc9c5d6f6401e5af5f5c1223094",
+    "sourceBlockCount": 224,
+    "sourceWords": 6983,
     "headingIds": [
       "overview",
       "experience",
@@ -749,17 +752,17 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 261,
-    "publishedLinkCount": 257,
-    "editorialCorrections": 11
+    "sourceLinkCount": 302,
+    "publishedLinkCount": 302,
+    "editorialCorrections": 2
   },
   {
     "id": "microdosing-psilocybin-truffles",
     "path": "/microdosing/truffes-psilocybine/",
     "sourceUrl": "https://thethirdwave.co/microdosing/psilocybin-truffles/",
-    "contentHash": "817eb1a2e3b01f2d42fb844ee7d5545a896e125794b297e83d2b154f27bc4649",
-    "sourceBlockCount": 118,
-    "sourceWords": 3933,
+    "contentHash": "8d05d8c816bc1937244ca26d8f9e79c0a0720b203dc182ab4ad07730f674afb3",
+    "sourceBlockCount": 126,
+    "sourceWords": 4206,
     "headingIds": [
       "overview",
       "experience",
@@ -773,8 +776,8 @@
       "faq",
       "footnotes"
     ],
-    "sourceLinkCount": 50,
-    "publishedLinkCount": 53,
-    "editorialCorrections": 19
+    "sourceLinkCount": 52,
+    "publishedLinkCount": 57,
+    "editorialCorrections": 6
   }
 ]

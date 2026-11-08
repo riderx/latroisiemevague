@@ -1,0 +1,36 @@
+---
+import '../styles/prose.css'
+import '../styles/article.css'
+import Base from './Base.astro'
+
+import Ill from '../components/Ill.astro'
+import Arrow from '../components/Arrow.astro'
+import { articles, formatDate, seoTitles, type Article } from '../lib/articles'
+import { tintFor, SITE, ogImage } from '../data/site'
+const { article } = Astro.props as { article: Article }
+const canonical = SITE + article.path
+const others = articles.filter(a => a.path !== article.path).sort((a, b) => Number(b.categoryId === article.categoryId) - Number(a.categoryId === article.categoryId)).slice(0, 3)
+const schema = { '@context': 'https://schema.org', '@graph': [
+  { '@type': 'BlogPosting', headline: article.title, description: article.description, inLanguage: 'fr-FR', datePublished: article.published, dateModified: article.modified, url: canonical, mainEntityOfPage: canonical, wordCount: article.words,
+    author: { '@type': 'Person', name: 'Julien Coulaud', url: SITE + '/a-propos/' }, publisher: { '@type': 'Organization', name: 'La Troisième Vague', logo: { '@type': 'ImageObject', url: SITE + '/favicon.svg' } }, image: SITE + ogImage(article.path), articleSection: article.category },
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Articles', item: SITE + '/blog/' }, { '@type': 'ListItem', position: 3, name: article.title, item: canonical }] },
+] }
+---
+<Base title={`${seoTitles[article.id] ?? article.title} | La Troisième Vague`} description={article.description} path={article.path} type="article" schema={schema} published={article.published} modified={article.modified} image={ogImage(article.path)}>
+  <section class="ahead"><div class="in">
+    <h1>{article.title}</h1>
+    <p class="byline"><span>Publié le <b><time datetime={article.published}>{formatDate(article.published)}</time></b></span><span>{Math.ceil(article.words / 230)} min de lecture</span><span>{article.category}</span></p>
+    <div class={`cover ${tintFor(article.id)}`}><Ill name={article.cover} widths={[240, 360, 480]} sizes="(max-width: 960px) 60vw, 260px" loading="eager" fetchpriority="high" /></div>
+  </div></section>
+  <div class="in areading">
+    <article class="prose">
+      <p class="note archive"><strong>Article publié en {new Date(article.published).getUTCFullYear()}.</strong> La recherche a évolué depuis : pour l’état actuel des connaissances, consultez les <a href="/substances/">fiches substances</a>, mises à jour régulièrement.</p>
+      <Fragment set:html={article.html} />
+    </article>
+  </div>
+  <section class="related" style="padding:96px 0;border-top:1px solid var(--line)"><div class="in">
+    <h2 class="h2">À lire <em>ensuite</em></h2>
+    <div class="alist">{others.map(a => <a class={`acard ${tintFor(a.id)}`} href={a.path}><small>{a.category} · {formatDate(a.published)}</small><h3>{a.title}</h3><div class="art"><Ill name={a.cover} widths={[200, 320]} sizes="220px" /></div></a>)}</div>
+    <p style="margin-top:32px"><a class="btn s" href="/blog/">Tous les articles<Arrow /></a></p>
+  </div></section>
+</Base>

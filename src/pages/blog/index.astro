@@ -1,0 +1,21 @@
+---
+import Ill from '../../components/Ill.astro'
+import '../../styles/article.css'
+import Base from '../../layouts/Base.astro'
+
+import Arrow from '../../components/Arrow.astro'
+import { articles, formatDate } from '../../lib/articles'
+import { tintFor, SITE } from '../../data/site'
+const [first, ...rest] = articles
+const schema = { '@context': 'https://schema.org', '@type': 'Blog', name: 'Articles — La Troisième Vague', url: SITE + '/blog/', inLanguage: 'fr-FR', blogPost: articles.map(a => ({ '@type': 'BlogPosting', headline: a.title, url: SITE + a.path, datePublished: a.published })) }
+---
+<Base title="Articles : recherche, histoire et réduction des risques | La Troisième Vague" description="Des articles de fond sur les psychédéliques : recherche clinique, cerveau, contexte, dépendance, histoire et réduction des risques." path="/blog/" schema={schema}>
+  <section class="pagehead"><div class="in">
+    <h1>Comprendre <em>et approfondir</em></h1>
+    <p class="lede">Des articles de fond sur la recherche, le cerveau, le contexte et l’histoire. Ces articles sont datés. Pour des informations plus récentes, consultez aussi les fiches sur les substances.</p>
+  </div></section>
+  <section class="sec" style="padding-top:24px"><div class="in">
+    <a class={`afeat ${tintFor(first.id)}`} href={first.path}><div><small>{first.category} · {formatDate(first.published)}</small><h2>{first.title}</h2><p>{first.description}</p><p style="margin-top:22px"><span class="btn p">Lire l’article<Arrow /></span></p></div><div class="art"><Ill name={first.cover} widths={[280, 420]} sizes="(max-width: 960px) 70vw, 360px" loading="eager" /></div></a>
+    <div class="alist">{rest.map(a => <a class={`acard ${tintFor(a.id)}`} href={a.path}><small>{a.category} · {formatDate(a.published)}</small><h2>{a.title}</h2><p>{a.description.slice(0, 150)}{a.description.length > 150 ? '…' : ''}</p><div class="art"><Ill name={a.cover} widths={[200, 320]} sizes="220px" /></div></a>)}</div>
+  </div></section>
+</Base>

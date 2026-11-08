@@ -1,71 +1,60 @@
 ---
-import '../styles/listings.css'
-import Analytics from '../components/Analytics.astro'
-import ListingNavigation from '../components/ListingNavigation.astro'
-import { listingPages, listingGuides, listingSections, protocols, type ListingCategory } from '../content-data/listings'
+import '../styles/listing.css'
+import Base from './Base.astro'
+import Ill from '../components/Ill.astro'
+import Arrow from '../components/Arrow.astro'
+
+import { listingPages, listingSections, listingGuides, protocols, type ListingCategory } from '../content-data/listings'
+import { families, illustrationFor, tintFor, shortName, SITE } from '../data/site'
 const { category } = Astro.props as { category: ListingCategory }
-const isMicro = category === 'microdosing'
-const path = isMicro ? '/microdosing/' : '/substances/'
+const path = category === 'psychedelics' ? '/substances/' : '/microdosing/'
 const page = listingPages[path]
-const guides = listingGuides(category)
-const available = guides.filter(guide => guide.available)
-const forthcoming = guides.filter(guide => !guide.available)
-const sections = listingSections[category]
-const canonical = new URL(path, 'https://latroisiemevague.com').href
-const toc = [{ id: 'guides', title: 'Guides par substance' }, ...(isMicro ? [{ id: 'protocoles', title: 'Les protocoles' }] : []), ...sections.map(({ id, title }) => ({ id, title })), { id: 'sources', title: 'Sources et édition française' }]
-const schema = {
-  '@context': 'https://schema.org', '@graph': [
-    { '@type': 'CollectionPage', '@id': canonical, url: canonical, name: page.title, description: page.description, inLanguage: 'fr-FR', dateModified: '2026-11-08', isBasedOn: page.sourceUrl, publisher: { '@type': 'Organization', name: 'La Troisième Vague', url: 'https://latroisiemevague.com/' }, mainEntity: { '@id': canonical + '#guides' } },
-    { '@type': 'ItemList', '@id': canonical + '#guides', name: isMicro ? 'Guides du microdosage en français' : 'Guides des substances en français', numberOfItems: available.length, itemListElement: available.map((guide, index) => ({ '@type': 'ListItem', position: index + 1, name: guide.name, url: new URL(guide.path, canonical).href })) },
-    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://latroisiemevague.com/' }, { '@type': 'ListItem', position: 2, name: isMicro ? 'Microdosing' : 'Substances', item: canonical }] },
-  ],
+const guides = listingGuides(category).filter(g => g.available)
+const groups = category === 'psychedelics'
+  ? families.map(f => ({ id: f.id, title: f.name, items: f.slugs.map(s => guides.find(g => g.slug === s)!).filter(Boolean) }))
+  : [{ id: 'guides', title: 'Les guides du microdosage', items: guides }]
+const famIntro: Record<string, string> = {
+  classiques: 'Les molécules qui agissent principalement sur le récepteur sérotoninergique 5-HT2A, et les plantes qui les contiennent.',
+  dissociatifs: 'Des mécanismes différents des psychédéliques classiques, et des profils de risque très distincts.',
+  empathogenes: 'Des substances qui agissent surtout sur la libération de sérotonine.',
+  plantes: 'Des plantes et des préparations issues de traditions, aux effets et aux risques très variés.',
+  guides: 'Ce que l’on sait du microdosage, substance par substance, avec les limites des études.',
 }
+const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: page.heading, description: page.description, url: SITE + path, inLanguage: 'fr-FR',
+  mainEntity: { '@type': 'ItemList', itemListElement: guides.map((g, i) => ({ '@type': 'ListItem', position: i + 1, url: SITE + g.path, name: g.name })) } }
 ---
-<!doctype html>
-<html lang="fr-FR">
-  <head>
-    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{page.title}</title><meta name="description" content={page.description} /><link rel="canonical" href={canonical} />
-    <meta property="og:type" content="website" /><meta property="og:locale" content="fr_FR" /><meta property="og:site_name" content="La Troisième Vague" /><meta property="og:title" content={page.title} /><meta property="og:description" content={page.description} /><meta property="og:url" content={canonical} /><meta property="og:image" content="https://latroisiemevague.com/assets/uploads/2020/09/cover-share-fb.jpg" />
-    <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={page.title} /><meta name="twitter:description" content={page.description} />
-    <link rel="icon" href="/assets/uploads/2020/08/cropped-favicon-32x32.png" />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\u003c')} />
-    <Analytics />
-  </head>
-  <body class:list={['listing-site', isMicro ? 'listing-microdosing' : 'listing-psychedelics']}>
-    <a class="listing-skip" href="#contenu">Aller au contenu</a>
-    <ListingNavigation currentPath={path} />
-    <main id="contenu">
-      <nav class="listing-breadcrumb listing-container" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><span>{isMicro ? 'Microdosing' : 'Substances'}</span></nav>
-      <header class="listing-hero listing-container">
-        <img class="listing-hero-mark" src="/assets/uploads/2020/05/logo-1.png" width="56" height="56" alt="" />
-        <p class="listing-eyebrow">{page.eyebrow}</p>
-        <h1>{page.heading}</h1>
-        <p class="listing-lead">{page.introduction}</p>
-        <div class="listing-hero-links"><a class="listing-button" href="#guides">Explorer les guides <span aria-hidden="true">↓</span></a><a class="listing-text-link" href={isMicro ? '#protocoles' : '#comprendre'}>{isMicro ? 'Comprendre les protocoles' : 'Commencer par les essentiels'} <span aria-hidden="true">↗</span></a></div>
-      </header>
-      <div class="listing-intro-band">
-        <div class="listing-container listing-intro-grid">
-          <span class="listing-intro-number" aria-hidden="true">01 —</span>
-          <h2>{isMicro ? 'De petites quantités. De grandes questions.' : 'Mieux connaître, pour mieux comprendre.'}</h2>
-          <p>{isMicro ? 'Que recouvre le microdosage ? Pourquoi parle-t-on de protocoles ? Quels résultats sont réellement documentés ? Cette page rassemble les repères et les guides pour approfondir.' : 'Chaque substance a une histoire, une pharmacologie et un contexte. Explorez les guides pour comprendre ces différences, au-delà des idées reçues.'}</p>
-        </div>
-      </div>
-      <section class="listing-library listing-container" id="guides" aria-labelledby="guides-title">
-        <div class="listing-section-heading"><div><p class="listing-eyebrow">La bibliothèque</p><h2 id="guides-title">{isMicro ? 'Les guides du microdosing' : 'Les guides des substances'}</h2></div><p>Nos guides disponibles en français.</p></div>
-        <div class="listing-card-grid">{available.map(guide => <a class:list={['listing-card', !guide.image && 'listing-card-text']} href={guide.path}>{guide.image && <div class="listing-card-art"><img src={guide.image} alt="" width="120" height="120" loading="lazy" /></div>}<div class="listing-card-copy"><h3>{guide.name}</h3><p>{guide.description}</p><span class="listing-card-action">Lire le guide <span aria-hidden="true">↗</span></span></div></a>)}</div>
-        {forthcoming.length > 0 && <div class="listing-upcoming"><div class="listing-upcoming-heading"><h3>La bibliothèque s’agrandit</h3><p>Les éditions françaises de ces guides sont en préparation.</p></div><ul class="listing-upcoming-grid">{forthcoming.map(guide => <li><div><h4>{guide.name}</h4><p>{guide.description}</p></div><span class="listing-status">À venir</span></li>)}</ul></div>}
-      </section>
-      {isMicro && <section class="listing-protocols" id="protocoles" aria-labelledby="protocoles-title"><div class="listing-container"><p class="listing-eyebrow">Les approches les plus citées</p><h2 id="protocoles-title">Comprendre les protocoles</h2><p class="listing-section-intro">Le mot « protocole » recouvre des réalités différentes. Voici les grandes approches évoquées dans les discussions sur le microdosage, sans les confondre avec des prescriptions médicales.</p><div class="listing-protocol-grid">{protocols.map((protocol, i) => <article><div class="listing-protocol-top"><span>{String(i + 1).padStart(2, '0')}</span><p>{protocol.label}</p></div><h3>{protocol.name}</h3><p>{protocol.text}</p><p class="listing-protocol-note">{protocol.note}</p></article>)}</div></div></section>}
-      <div class="listing-reading listing-container">
-        <aside class="listing-toc"><details open><summary>Sur cette page</summary><nav aria-label="Sommaire"><ol>{toc.map(item => <li><a href={`#${item.id}`}>{item.title}</a></li>)}</ol></nav></details></aside>
-        <article class="listing-prose" aria-label={isMicro ? 'Comprendre le microdosage' : 'Comprendre les psychédéliques'}>
-          {sections.map(section => <section id={section.id}><h2>{section.title}</h2><Fragment set:html={section.html} /></section>)}
-          <section id="sources" class="listing-sources"><p class="listing-eyebrow">Pour approfondir</p><h2>Sources et édition française</h2><p>Cette page reprend et adapte en français les grands thèmes du <a href={page.sourceUrl}>{isMicro ? 'guide du microdosing' : 'guide des psychédéliques'} de Third Wave</a>, avec l’autorisation de son éditeur. La bibliothèque française est enrichie progressivement.</p><p>Les éléments sur la psilocybine et les limites des connaissances s’appuient également sur la <a href="https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know">fiche du National Center for Complementary and Integrative Health (NCCIH)</a>. Cette synthèse française ne fait pas l’objet d’une validation médicale indépendante.</p><p class="listing-update">Édition française mise à jour le <time datetime="2026-11-08">8 novembre 2026</time>.</p></section>
-        </article>
-      </div>
-      <section class="listing-crosslink listing-container"><div><p class="listing-eyebrow">Continuer à explorer</p><h2>{isMicro ? 'Comprendre les substances' : 'Et le microdosing ?'}</h2><p>{isMicro ? 'Retrouvez l’histoire, les effets et les particularités des substances dans notre bibliothèque.' : 'Découvrez les approches, les substances et les questions de recherche autour du microdosage.'}</p></div><a href={isMicro ? '/substances/' : '/microdosing/'} class="listing-button">{isMicro ? 'Explorer les substances' : 'Explorer le microdosing'} <span aria-hidden="true">→</span></a></section>
-    </main>
-    <footer class="listing-footer"><div class="listing-container"><div class="listing-footer-top"><a class="listing-brand" href="/"><img src="/assets/uploads/2020/05/logo-1.png" width="42" height="42" alt="" /><span>La Troisième<br />Vague</span></a><nav aria-label="Pied de page"><a href="/substances/">Substances</a><a href="/microdosing/">Microdosing</a><a href="/blog/">Articles</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a></nav></div><div class="listing-footer-bottom"><p>Des ressources en français pour une information éclairée.</p><a href="/recherche/">Rechercher sur le site <span aria-hidden="true">↗</span></a></div></div></footer>
-  </body>
-</html>
+<Base title={page.title} description={page.description} path={path} schema={schema}>
+  <section class="lhead"><div class="in">
+    <div>
+      <h1>{category === 'psychedelics' ? <>Les substances, <em>une par une</em></> : <>Le microdosage, <em>sans raccourcis</em></>}</h1>
+      <p class="lede">{page.introduction}</p>
+      {groups.length > 1 && <p class="jump">{groups.map(g => <a href={`#${g.id}`}>{g.title}</a>)}</p>}
+    </div>
+    <div class="art"><Ill name={category === 'psychedelics' ? 'specimen-base' : 'molecule-base'} widths={[320, 480]} sizes="(max-width: 960px) 240px, 420px" loading="eager" fetchpriority="high" /></div>
+  </div></section>
+  {groups.map(g => (
+    <section class="fam" id={g.id}><div class="in">
+      <div class="fam-h"><h2>{g.title}</h2><p>{famIntro[g.id]}</p><span class="count">{g.items.length} {g.items.length > 1 ? 'fiches' : 'fiche'}</span></div>
+      <div class="sgrid">{g.items.map(item => (
+        <a class="sc listing-card" href={item.path}><span class={`disc2 ${tintFor(item.slug)}`}><Ill name={illustrationFor(item.slug)} widths={[200, 320, 400]} sizes="(max-width: 960px) 45vw, 240px" /></span><h3><span>{shortName(item.slug, item.name)}</span></h3><p>{item.description}</p></a>
+      ))}</div>
+    </div></section>
+  ))}
+  {category === 'microdosing' && (
+    <section class="psec"><div class="in">
+      <div class="psec-h"><h2>Protocoles : <em>de quoi parle-t-on&#8239;?</em></h2><p>Trois approches souvent citées dans les discussions sur le microdosage, et ce qu’elles ne prouvent pas.</p></div>
+      <ol class="protos">{protocols.map((p, i) => <li class={`proto k${(i % 4) + 1}`}><span class="pnum">{String(i + 1).padStart(2, '0')}</span><small>{p.label}</small><h3>{p.name}</h3><p>{p.text}</p><p class="warn"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M10 2.5 18 17H2z" stroke-linejoin="round"/><path d="M10 8v4M10 14.5v.3"/></svg><span>{p.note}</span></p></li>)}</ol>
+    </div></section>
+  )}
+  <section class="explain pat"><div class="in grid">
+    <h2>Les repères <em>essentiels</em></h2>
+    <div class="acc">{listingSections[category].map((s, i) => (
+      <div class={`acc-i${i === 0 ? ' open' : ''}`} id={s.id}><button type="button" aria-expanded={i === 0 ? 'true' : 'false'}>{s.title}<span class="pm"></span></button><div class="acc-p"><div><div class="prose-sm" set:html={s.html} /></div></div></div>
+    ))}</div>
+  </div></section>
+  <section class="sec center"><div class="in">
+    <h2 class="h2">Avant tout, <em>la sécurité</em></h2>
+    <p class="lede">Interactions médicamenteuses, contre-indications, que faire si une expérience tourne mal : les repères à connaître, et les numéros à appeler.</p>
+    <p style="margin-top:26px"><a class="btn p" href="/aide/">Aide et repères de sécurité<Arrow /></a></p>
+  </div></section>
+</Base>
