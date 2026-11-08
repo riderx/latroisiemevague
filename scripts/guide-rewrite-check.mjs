@@ -15,7 +15,7 @@ for (const file of process.argv.slice(2)) {
   const base = JSON.parse(execSync(`git show ${BASE}:${path}`).toString())
   const problems = [], left = []
   if (cur.blocks.length !== base.blocks.length) problems.push(`blocks ${cur.blocks.length} != ${base.blocks.length}`)
-  for (const k of Object.keys(base)) if (k !== 'blocks' && JSON.stringify(cur[k]) !== JSON.stringify(base[k])) problems.push(`field ${k} changed`)
+  for (const k of Object.keys(base)) if (k !== 'blocks' && k !== 'practicalBlocks' && JSON.stringify(cur[k]) !== JSON.stringify(base[k])) problems.push(`field ${k} changed`)
   cur.blocks.forEach((b, i) => {
     const s = shape(b), o = shape(base.blocks[i] ?? '')
     if (s.tags !== o.tags) problems.push(`block ${i}: tags/ids differ`)

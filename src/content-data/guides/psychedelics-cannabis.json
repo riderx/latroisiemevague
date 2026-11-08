@@ -463,5 +463,24 @@
   "translationModel": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
   "translationVersion": "fr-v2",
   "editorialCorrectionsApplied": true,
-  "practicalBlocks": []
+  "practicalBlocks": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    203,
+    204,
+    205,
+    206,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    223,
+    224,
+    225
+  ]
 }
