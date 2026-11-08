@@ -46,12 +46,12 @@
   },
   "routes": [
     {
-      "pattern": "latroisiemevague.com",
-      "custom_domain": true
+      "pattern": "latroisiemevague.com/*",
+      "zone_name": "latroisiemevague.com"
     },
     {
-      "pattern": "www.latroisiemevague.com",
-      "custom_domain": true
+      "pattern": "www.latroisiemevague.com/*",
+      "zone_name": "latroisiemevague.com"
     }
   ]
 }
