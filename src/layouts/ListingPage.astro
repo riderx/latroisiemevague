@@ -42,7 +42,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', na
   ))}
   {category === 'microdosing' && (
     <section class="psec"><div class="in">
-      <div class="psec-h"><h2>Protocoles : <em>de quoi parle-t-on&#8239;?</em></h2><p>Trois approches souvent citées dans les discussions sur le microdosage, et ce qu’elles ne prouvent pas.</p></div>
+      <div class="psec-h"><h2>Protocoles : <em>de quoi parle-t-on&#8239;?</em></h2><p>Trois approches souvent citées dans les discussions sur le microdosage, et ce qu’elles ne prouvent pas.</p></div>
       <ol class="protos">{protocols.map((p, i) => <li class={`proto k${(i % 4) + 1}`}><span class="pnum">{String(i + 1).padStart(2, '0')}</span><small>{p.label}</small><h3>{p.name}</h3><p>{p.text}</p><p class="warn"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M10 2.5 18 17H2z" stroke-linejoin="round"/><path d="M10 8v4M10 14.5v.3"/></svg><span>{p.note}</span></p></li>)}</ol>
     </div></section>
   )}
@@ -54,7 +54,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', na
   </div></section>
   <section class="sec center"><div class="in">
     <h2 class="h2">Avant tout, <em>la sécurité</em></h2>
-    <p class="lede">Interactions médicamenteuses, contre-indications, que faire si une expérience tourne mal : les repères à connaître, et les numéros à appeler.</p>
+    <p class="lede">Interactions médicamenteuses, contre-indications, que faire si une expérience tourne mal : les repères à connaître, et les numéros à appeler.</p>
     <p style="margin-top:26px"><a class="btn p" href="/aide/">Aide et repères de sécurité<Arrow /></a></p>
   </div></section>
 </Base>

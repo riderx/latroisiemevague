@@ -19,10 +19,10 @@ const disc = (slug: string) => ({ slug, name: shortName(slug, substanceBySlug(sl
 const news = articles.slice(0, 3)
 const homeHelp = [helpLines[0], helpLines[1], helpLines[2], helpLines[4]]
 const faq = [
-  ['Ce site encourage-t-il la consommation de psychédéliques ?', 'Non. Nous informons pour que chacun comprenne les effets, les risques et l’état de la recherche. Nous ne recommandons aucune consommation et ne vendons rien.'],
-  ['D’où viennent les informations ?', 'Des guides de Third Wave, traduits avec leur accord, puis relus et complétés à partir d’études publiées et des publications des autorités de santé. Chaque source est citée.'],
-  ['Les psychédéliques sont-ils légaux en France ?', 'La plupart sont classés comme stupéfiants. Chaque fiche décrit le contexte juridique présenté par la source ; pour une question concrète, référez-vous aux textes en vigueur dans votre pays.'],
-  ['Que faire si quelqu’un ne va pas bien ?', 'En cas de malaise, de convulsions ou de détresse, appelez le 15 ou le 112. Pour parler à quelqu’un, Drogues Info Service répond au 0 800 23 13 13, de 8 h à 2 h, 7 jours sur 7.'],
+  ['Ce site encourage-t-il la consommation de psychédéliques ?', 'Non. Nous informons pour que chacun comprenne les effets, les risques et l’état de la recherche. Nous ne recommandons aucune consommation et ne vendons rien.'],
+  ['D’où viennent les informations ?', 'Des guides de Third Wave, traduits avec leur accord, puis relus et complétés à partir d’études publiées et des publications des autorités de santé. Chaque source est citée.'],
+  ['Les psychédéliques sont-ils légaux en France ?', 'La plupart sont classés comme stupéfiants. Chaque fiche décrit le contexte juridique présenté par la source ; pour une question concrète, référez-vous aux textes en vigueur dans votre pays.'],
+  ['Que faire si quelqu’un ne va pas bien ?', 'En cas de malaise, de convulsions ou de détresse, appelez le 15 ou le 112. Pour parler à quelqu’un, Drogues Info Service répond au 0 800 23 13 13, de 8 h à 2 h, 7 jours sur 7.'],
 ]
 const schema = { '@context': 'https://schema.org', '@graph': [
   { '@type': 'WebSite', '@id': SITE + '/#website', url: SITE + '/', name: 'La Troisième Vague', inLanguage: 'fr-FR', potentialAction: { '@type': 'SearchAction', target: SITE + '/recherche/?s={q}', 'query-input': 'required name=q' } },
@@ -32,14 +32,14 @@ const schema = { '@context': 'https://schema.org', '@graph': [
 const phone = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5.2 1.8 6.6 5 5 6.3a8.6 8.6 0 0 0 4.7 4.7L11 9.4l3.2 1.4-.5 2.6c-.1.5-.6.9-1.1.8C7 13.7 2.3 9 1.8 3.4c0-.5.3-1 .8-1.1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>'
 const eye = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1.5 8S4 3.5 8 3.5 14.5 8 14.5 8 12 12.5 8 12.5 1.5 8 1.5 8z"/><circle cx="8" cy="8" r="2"/></svg>'
 ---
-<Base title="La Troisième Vague — les psychédéliques, expliqués clairement" description="Ce que dit la recherche, les risques réels et les interactions à connaître. Une information indépendante, sourcée et datée sur les psychédéliques, en français." path="/" schema={schema}>
+<Base title="La Troisième Vague — les psychédéliques, expliqués clairement" description="Ce que dit la recherche, les risques et les interactions à connaître. Une information indépendante, sourcée et datée sur les psychédéliques, en français." path="/" schema={schema}>
   <section class="hero center"><div class="in">
     <h1>Les psychédéliques, expliqués <span class="swash"><em>clairement</em><svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 8, 150 4, 294 12 M 60 27 C 120 20, 200 18, 260 22"/></svg></span></h1>
-    <p class="lede">Ce que dit la recherche, les risques réels et les interactions à connaître. Une information indépendante, sourcée et datée, pour comprendre avant de juger.</p>
+    <p class="lede">Ce que dit la recherche, les risques et les interactions à connaître. Une information indépendante, sourcée et datée, pour vous aider à comprendre.</p>
     <div class="ctas"><a class="btn p" href="/substances/">Voir les 22 fiches<Arrow /></a><a class="btn s" href="/aide/">Repères de sécurité<Arrow /></a></div>
   </div>
   <div class="stage"><div class="isl-wrap">
-    <Ill name="hero2-base" class="base" alt="Un paysage en trois vagues : les plantes traditionnelles, la découverte en laboratoire autour d’une molécule, puis la recherche clinique et un phare." widths={[640, 960, 1280, 1536]} sizes="(max-width: 1300px) 100vw, 1260px" loading="eager" fetchpriority="high" />
+    <Ill name="hero2-base" class="base" alt="Un paysage en trois vagues : les plantes traditionnelles, la découverte en laboratoire autour d’une molécule, puis la recherche clinique et un phare." widths={[640, 960, 1280, 1536]} sizes="(max-width: 1300px) 100vw, 1260px" loading="eager" fetchpriority="high" />
     <Ill name="hx-palm" class="hx palm" widths={[200, 280]} sizes="140px" style="left:13.802%;top:19.284%;width:8.333%" />
     <Ill name="hx-wheat" class="hx wheat" widths={[200, 280]} sizes="140px" style="left:55.729%;top:27.273%;width:8.724%" />
     <div class="water-glint" aria-hidden="true"></div>
@@ -63,12 +63,12 @@ const eye = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-w
   <div class="band pat"></div>
 
   <section class="sec center"><div class="in">
-    <h2 class="h2 rv">Trois façons d’entrer, <em>selon votre question</em></h2>
-    <p class="lede rv">Une information précise sur une substance, le microdosage, ou les articles de fond : chaque contenu indique ses sources et sa date de relecture.</p>
+    <h2 class="h2 rv">Trois points de départ, <em>selon votre question</em></h2>
+    <p class="lede rv">Une fiche sur une substance, un guide sur le microdosage ou un article de fond : choisissez selon votre question.</p>
     <div class="cards">
-      <a class="card c1 rv" href="/substances/"><h3>Les fiches substances</h3><p>Psilocybine, LSD, MDMA, kétamine, ayahuasca… Effets, risques, recherche et contexte légal, substance par substance.</p><span class="more">Parcourir les fiches <Arrow /></span>
+      <a class="card c1 rv" href="/substances/"><h3>Les fiches sur les substances</h3><p>Psilocybine, LSD, MDMA, kétamine, ayahuasca… Effets, risques, recherche et contexte légal, substance par substance.</p><span class="more">Parcourir les fiches <Arrow /></span>
         <div class="art"><Ill name="specimen-base" /><Ill name="specimen-lens" class="mv lens" style="left:52.4%;top:43.3%;width:32.9%" widths={[160, 240]} sizes="120px" /></div></a>
-      <a class="card c2 rv" href="/blog/"><h3>Comprendre et approfondir</h3><p>Le contexte, le cerveau, la dépendance, les expériences difficiles : des articles de fond pour poser des bases solides.</p><span class="more">Lire les articles <Arrow /></span>
+      <a class="card c2 rv" href="/blog/"><h3>Comprendre et approfondir</h3><p>Le contexte, le cerveau, la dépendance, les expériences difficiles : des articles de fond pour mieux comprendre.</p><span class="more">Lire les articles <Arrow /></span>
         <div class="art"><Ill name="library-base" /><Ill name="library-sprout" class="mv sprout" style="left:74%;top:8.1%;width:23.6%" widths={[120, 200]} sizes="90px" /></div></a>
       <a class="card c3 rv" href="/microdosing/"><h3>Le microdosage</h3><p>Ce que mesurent vraiment les essais contrôlés, et pourquoi les résultats sont souvent proches du placebo.</p><span class="more">Voir le microdosage <Arrow /></span>
         <div class="art"><Ill name="molecule-base" /><Ill name="molecule-globe" class="mv globe" style="left:79%;top:36.6%;width:19.4%" widths={[120, 200]} sizes="80px" /></div></a>
@@ -77,22 +77,22 @@ const eye = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-w
 
   <section class="sec pat"><div class="in">
     <div class="box rv">
-      <div class="txt"><h2>Les risques sont réels, <em>l’information aussi</em></h2><p>Les accidents graves viennent rarement de la substance seule. Ils viennent des associations, de l’état de santé et du contexte.</p>
+      <div class="txt"><h2>Connaître les risques, <em>savoir réagir</em></h2><p>La substance, les associations, l’état de santé et le contexte peuvent tous contribuer à un accident grave.</p>
         <div class="acc">
-          <div class="acc-i open"><button type="button" aria-expanded="true">Interactions médicamenteuses<span class="pm"></span></button><div class="acc-p"><div><p>Lithium, IMAO, certains antidépresseurs, tramadol : certaines associations peuvent provoquer des convulsions ou un syndrome sérotoninergique. Ne modifiez jamais un traitement sans avis médical.</p></div></div></div>
-          <div class="acc-i"><button type="button" aria-expanded="false">Contre-indications<span class="pm"></span></button><div class="acc-p"><div><p>Antécédents personnels ou familiaux de psychose ou de trouble bipolaire, troubles cardiaques, grossesse : les situations où le risque augmente nettement.</p></div></div></div>
-          <div class="acc-i"><button type="button" aria-expanded="false">Si une expérience tourne mal<span class="pm"></span></button><div class="acc-p"><div><p>Un lieu calme, une présence rassurante et de l’eau aident souvent. Malaise, convulsions, forte fièvre ou confusion durable : appelez le 15 ou le 112 sans attendre.</p></div></div></div>
-          <div class="acc-i"><button type="button" aria-expanded="false">Faire analyser un produit<span class="pm"></span></button><div class="acc-p"><div><p>Ce qui est vendu n’est pas toujours ce qui est annoncé. Des services d’analyse anonymes existent ; Drogues Info Service peut vous orienter.</p></div></div></div>
+          <div class="acc-i open"><button type="button" aria-expanded="true">Interactions médicamenteuses<span class="pm"></span></button><div class="acc-p"><div><p>Lithium, IMAO, certains antidépresseurs, tramadol : certaines associations peuvent provoquer des convulsions ou un syndrome sérotoninergique. Ne modifiez jamais un traitement sans avis médical.</p></div></div></div>
+          <div class="acc-i"><button type="button" aria-expanded="false">Contre-indications<span class="pm"></span></button><div class="acc-p"><div><p>Antécédents personnels ou familiaux de psychose ou de trouble bipolaire, troubles cardiaques, grossesse : les situations où le risque augmente nettement.</p></div></div></div>
+          <div class="acc-i"><button type="button" aria-expanded="false">Si une expérience tourne mal<span class="pm"></span></button><div class="acc-p"><div><p>Un lieu calme et une présence rassurante peuvent aider. Malaise, convulsions, forte fièvre ou confusion durable : appelez le 15 ou le 112 sans attendre.</p></div></div></div>
+          <div class="acc-i"><button type="button" aria-expanded="false">Faire analyser un produit<span class="pm"></span></button><div class="acc-p"><div><p>Ce qui est vendu n’est pas toujours ce qui est annoncé. Des services d’analyse anonymes existent ; Drogues Info Service peut vous orienter.</p></div></div></div>
         </div>
         <p style="margin-top:22px"><a class="btn s" href="/aide/">Tous les repères de sécurité<Arrow /></a></p>
       </div>
-      <div class="panel tall" style="background:var(--t4)"><Ill name="x-risks" alt="Un plateau de vérification : boîte de médicament et bocal liés par une étiquette d’alerte, kit d’analyse, liste de contrôle, trousse de secours et verre d’eau." widths={[360, 540, 720]} sizes="(max-width: 960px) 70vw, 400px" /></div>
+      <div class="panel tall" style="background:var(--t4)"><Ill name="x-risks" alt="Un plateau de vérification : boîte de médicament et bocal liés par une étiquette d’alerte, kit d’analyse, liste de contrôle, trousse de secours et verre d’eau." widths={[360, 540, 720]} sizes="(max-width: 960px) 70vw, 400px" /></div>
     </div>
   </div></section>
 
   <section class="sec center" style="padding-bottom:96px"><div class="in">
     <h2 class="h2 rv">Vingt-deux substances, <em>une par une</em></h2>
-    <p class="lede rv">Des plus étudiées aux plus méconnues, avec le même niveau d’exigence pour chacune.</p>
+    <p class="lede rv">Pour chaque substance, nous présentons les données disponibles et ce qui reste incertain.</p>
     <div style="margin-top:28px" class="rv"><a class="btn l" href="/substances/">Voir toutes les fiches<Arrow /></a></div>
   </div>
   <div class="marquee" id="mq">
@@ -110,7 +110,7 @@ const eye = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-w
       <div class="lft"><h2>Ce que vous pouvez attendre <em>de nos contenus</em></h2><p>Une information utile n’est ni alarmiste ni complaisante. Voici les règles que nous appliquons à chaque page.</p><Ill name="x-values" widths={[320, 480]} sizes="(max-width: 960px) 70vw, 400px" /></div>
       <div class="vgrid">
         <div class="v"><div class="ic"><IconSource /></div><h3>Sourcé</h3><p>Chaque affirmation renvoie à une étude ou à une autorité de santé, citée dans le texte.</p></div>
-        <div class="v"><div class="ic"><IconDate /></div><h3>Daté</h3><p>Chaque page indique sa dernière relecture. Ce qui devient faux est corrigé, visiblement.</p></div>
+        <div class="v"><div class="ic"><IconDate /></div><h3>Daté</h3><p>Chaque page indique sa dernière relecture. Nous signalons les corrections apportées aux informations dépassées.</p></div>
         <div class="v"><div class="ic"><IconNuance /></div><h3>Nuancé</h3><p>Nous distinguons les essais contrôlés, les études d’observation et les témoignages.</p></div>
         <div class="v"><div class="ic"><IconNoIncite /></div><h3>Sans incitation</h3><p>Nous informons pour réduire les risques. Rien n’est recommandé, rien n’est vendu.</p></div>
       </div>
@@ -119,17 +119,17 @@ const eye = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-w
 
   <section class="sec pat" id="aide"><div class="in">
     <div class="help rv">
-      <div><h2>Besoin d’aide <em>maintenant</em>&#8239;?</h2><p class="sub">Appelez. C’est gratuit, anonyme, et personne ne vous jugera.</p>
+      <div><h2>Besoin d’aide <em>maintenant</em>&#8239;?</h2><p class="sub">Vous pouvez demander de l’aide ou parler de ce qui vous arrive.</p>
         <div class="nums">{homeHelp.map(h => <a href={`tel:${h.tel}`}><span><small>{h.service} · {h.country}</small><b>{h.number}</b></span><span class="call" set:html={phone} /></a>)}</div></div>
-      <div class="art"><Ill name="x-help2" alt="Un coin calme pour veiller sur quelqu’un : coussin, couverture, eau, oranges, lampe et téléphone." widths={[400, 640]} sizes="(max-width: 960px) 80vw, 460px" /></div>
+      <div class="art"><Ill name="x-help2" alt="Un coin calme pour veiller sur quelqu’un : coussin, couverture, eau, oranges, lampe et téléphone." widths={[400, 640]} sizes="(max-width: 960px) 80vw, 460px" /></div>
     </div>
   </div></section>
 
   <section class="sec"><div class="in tg">
     <div class="rv"><h2>Suivez les nouvelles publications <em>sur Telegram</em></h2><p class="sub">Un message quand un article paraît ou qu’une fiche est mise à jour.</p>
-      <ul class="ticks"><li>Un message par publication, jamais plus</li><li>Aucune publicité, aucun lien sponsorisé</li><li>Vous quittez la chaîne en un geste</li></ul>
+      <ul class="ticks"><li>Un message par publication, jamais plus</li><li>Aucune publicité, aucun lien sponsorisé</li><li>Vous pouvez quitter la chaîne à tout moment</li></ul>
       <a class="btn p" href={TELEGRAM_URL} rel="noopener">Rejoindre la chaîne<Arrow /></a>
-      <form class="signup" method="post" action="/api/forms" data-form-kind="newsletter"><input type="hidden" name="kind" value="newsletter" /><label for="nl-email">Ou par email, une fois par mois au plus</label><div><input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="votre@email.fr" maxlength="254" /><button class="btn s" type="submit">S’inscrire</button></div><input class="hp-field" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" /><p class="form-status" role="status" aria-live="polite"></p></form></div>
+      <form class="signup" method="post" action="/api/forms" data-form-kind="newsletter"><input type="hidden" name="kind" value="newsletter" /><label for="nl-email">Ou par courriel, une fois par mois au plus</label><div><input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="votre@email.fr" maxlength="254" /><button class="btn s" type="submit">S’inscrire</button></div><input class="hp-field" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" /><p class="form-status" role="status" aria-live="polite"></p></form></div>
     <div class="rv"><div class="chat" data-reveal>
       <div class="top"><svg class="back" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="av"><Logo size={30} id="lgt" /></span><div><b>La Troisième Vague</b><span>chaîne Telegram</span></div></div>
       <div class="feed"><span class="day">Novembre 2026</span>
@@ -140,10 +140,10 @@ const eye = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-w
 
   <section class="sec" style="padding-bottom:0;border-bottom:0"><div class="in center">
     <h2 class="h2 rv">Questions <em>fréquentes</em></h2>
-    <p class="lede rv">Vous ne trouvez pas la réponse ? <a href="/contact/" style="text-decoration:underline">Écrivez-nous</a>, nous répondons à chaque message.</p></div>
+    <p class="lede rv">Vous ne trouvez pas la réponse ? <a href="/contact/" style="text-decoration:underline">Écrivez-nous</a>, nous lisons chaque message.</p></div>
     <div class="faq in">{faq.map(([q, a]) => <div class="acc-i"><button type="button" aria-expanded="false">{q}<span class="pm"></span></button><div class="acc-p"><div><p>{a}</p></div></div></div>)}</div>
     <div class="final2">
-      <Ill name="frame" class="frame-ill" alt="Un paysage continu qui encadre la page : forêt et liane d’ayahuasca, molécule, blé et fiole, phare et microscope, livres, crapaud et iboga, reliés par une rivière." widths={[768, 1152, 1536]} sizes="(max-width: 1440px) 100vw, 1440px" />
+      <Ill name="frame" class="frame-ill" alt="Un paysage continu qui encadre la page : forêt et liane d’ayahuasca, molécule, blé et fiole, phare et microscope, livres, crapaud et iboga, reliés par une rivière." widths={[768, 1152, 1536]} sizes="(max-width: 1440px) 100vw, 1440px" />
       <div class="grid-lines" aria-hidden="true"></div>
       <div class="mid"><h2>La science des psychédéliques, <em>en clair</em></h2><p>Commencez par une substance, ou par les repères de sécurité.</p><div class="mid-ctas"><a class="btn p" href="/substances/">Les fiches<Arrow /></a><a class="btn s" href="/aide/">Aide et sécurité<Arrow /></a></div></div>
     </div>

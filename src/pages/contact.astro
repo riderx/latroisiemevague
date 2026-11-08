@@ -11,7 +11,7 @@ const topics = [
   ['Autre chose', 'Presse, partenariat, traduction…'],
 ]
 ---
-<Base title="Contact | La Troisième Vague" description="Une question, une erreur à signaler, une source à proposer ? Écrivez à La Troisième Vague : nous lisons chaque message.">
+<Base title="Contact | La Troisième Vague" description="Une question, une erreur à signaler, une source à proposer ? Écrivez à La Troisième Vague : nous lisons chaque message.">
   <section class="sec pat csec"><div class="in cgrid">
     <div class="cmain">
     <div class="ctitle">
@@ -23,7 +23,7 @@ const topics = [
       </fieldset>
       <div class="two">
         <label class="field"><span>Nom</span><input name="your-name" autocomplete="name" required maxlength="200" placeholder="Votre nom ou un pseudonyme" /></label>
-        <label class="field"><span>Adresse email</span><input name="your-email" type="email" autocomplete="email" required maxlength="254" placeholder="pour pouvoir vous répondre" /></label>
+        <label class="field"><span>Adresse de courriel</span><input name="your-email" type="email" autocomplete="email" required maxlength="254" placeholder="Pour vous répondre" /></label>
       </div>
       <label class="field"><span>Sujet</span><input name="your-subject" required maxlength="200" placeholder="En quelques mots" /></label>
       <label class="field"><span>Message</span><textarea name="your-message" required maxlength="10000" placeholder="Si vous signalez une erreur, indiquez la page et, si possible, une source."></textarea><em class="count" aria-hidden="true">0 / 10 000</em></label>
@@ -38,7 +38,7 @@ const topics = [
         <ul>{helpLines.slice(0, 3).map(h => <li><a href={`tel:${h.tel}`}><span>{h.service}<small>{h.country}</small></span><strong>{h.number}</strong></a></li>)}</ul>
         <a class="rail-link" href="/aide/">Tous les numéros <Arrow /></a></div>
       <div class="cbox"><small>Pour suivre nos publications</small><b>La chaîne Telegram</b><p>Un message quand un article paraît ou qu’une fiche est mise à jour.</p><a class="rail-link" href={TELEGRAM_URL} rel="noopener">Rejoindre la chaîne <Arrow /></a></div>
-      <div class="cbox"><small>Avant d’écrire</small><b>Ce que nous ne faisons pas</b><p>Nous ne donnons pas de conseils médicaux individuels, ni de conseils de consommation ou d’approvisionnement. Pour un traitement en cours, parlez-en à un médecin ou un pharmacien.</p></div>
+      <div class="cbox"><small>Avant d’écrire</small><b>Ce que nous ne faisons pas</b><p>Nous ne donnons pas de conseils médicaux individuels, ni de conseils de consommation ou d’approvisionnement. Pour un traitement en cours, parlez-en à un médecin ou à un pharmacien.</p></div>
     </aside>
   </div></section>
   <Forms />

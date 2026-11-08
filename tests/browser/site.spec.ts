@@ -102,7 +102,7 @@ test('blog lists every article on a single page', async ({ page }) => {
   await expect(page.locator('main a.afeat, main a.acard')).toHaveCount(13)
   await page.locator(`main a[href="${ARTICLE}"]`).click()
   await expect(page).toHaveURL(ARTICLE)
-  await expect(page.locator('main h1')).toContainText('mécanismes de contrôle')
+  await expect(page.locator('main h1')).toContainText('mode par défaut')
 })
 
 test('search finds a known article and renders the query as text', async ({ page }) => {

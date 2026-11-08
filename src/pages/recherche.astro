@@ -26,6 +26,6 @@ import Base from '../layouts/Base.astro'
         a.href = p.path; b.textContent = p.title.replace(/ \| La Troisième Vague$/, ''); d.textContent = p.description || p.text.slice(0, 200)
         a.append(b, d); results.append(a)
       }
-    } catch { status.textContent = 'La recherche est indisponible. Veuillez réessayer.' }
+    } catch { status.textContent = 'La recherche est indisponible. Réessayez dans quelques instants.' }
   }
 </script>

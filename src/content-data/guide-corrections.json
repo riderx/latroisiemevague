@@ -5,7 +5,7 @@
       {
         "index": 33,
         "reason": "Replace operational administration directions with a non-procedural note.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Le passage pratique de la source n’est pas reproduit dans cette édition. Les voies d’exposition, la composition des produits et les interactions modifient les risques ; ce guide ne fournit pas de mode d’administration.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les instructions pratiques de la source ne sont pas reprises ici. Les voies d’exposition, la composition des produits et les interactions modifient les risques ; ce guide ne donne pas de consignes d’administration.</p>"
       }
     ]
   },
@@ -34,7 +34,7 @@
       {
         "index": 106,
         "reason": "Replace operational administration directions with a non-procedural note.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Le passage pratique de la source n’est pas reproduit dans cette édition. Les voies d’exposition, la composition des produits et les interactions modifient les risques ; ce guide ne fournit pas de mode d’administration.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les instructions pratiques de la source ne sont pas reprises ici. Les voies d’exposition, la composition des produits et les interactions modifient les risques ; ce guide ne donne pas de consignes d’administration.</p>"
       }
     ]
   },
@@ -89,7 +89,7 @@
       {
         "index": 48,
         "reason": "Avoid presenting a historical jurisdiction list as current legal permission.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La source anglaise mentionne les juridictions suivantes dans sa discussion de la dépénalisation. Cette liste constitue un contexte documentaire, et non une vérification du droit actuellement applicable : elle ne doit pas être interprétée comme une autorisation de possession ou d’usage.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La source anglaise mentionne les juridictions suivantes dans sa discussion de la dépénalisation. Cette liste décrit le contexte de la source, sans vérifier le droit actuel : elle ne doit pas être interprétée comme une autorisation de possession ou d’usage.</p>"
       },
       {
         "index": 111,
@@ -109,12 +109,12 @@
       {
         "index": 14,
         "reason": "Replace operational administration directions with a non-procedural note.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Le passage pratique de la source n’est pas reproduit dans cette édition. Les voies d’exposition, la composition des produits et les interactions modifient les risques ; ce guide ne fournit pas de mode d’administration.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les instructions pratiques de la source ne sont pas reprises ici. Les voies d’exposition, la composition des produits et les interactions modifient les risques ; ce guide ne donne pas de consignes d’administration.</p>"
       },
       {
         "index": 77,
         "reason": "Replace operational administration directions with a non-procedural note.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Le passage pratique de la source n’est pas reproduit dans cette édition. Les voies d’exposition, la composition des produits et les interactions modifient les risques ; ce guide ne fournit pas de mode d’administration.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les instructions pratiques de la source ne sont pas reprises ici. Les voies d’exposition, la composition des produits et les interactions modifient les risques ; ce guide ne donne pas de consignes d’administration.</p>"
       }
     ]
   },
@@ -142,7 +142,7 @@
       {
         "index": 34,
         "reason": "Correct the unsupported exclusion of ibogaine toxicity in reported deaths.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La revue historique rapporte 19 décès survenus après une prise d’ibogaïne entre 1990 et 2008. La présence de maladies préexistantes ou d’autres substances ne permet pas d’exclure la toxicité propre de l’ibogaïne : des troubles du rythme cardiaque potentiellement mortels sont documentés. <a href=\"https://pubmed.ncbi.nlm.nih.gov/38182784/\">Contexte et limites de la recherche clinique</a>.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La revue historique rapporte 19 décès survenus après une prise d’ibogaïne entre 1990 et 2008. La présence de maladies préexistantes ou d’autres substances ne permet pas d’exclure la toxicité propre de l’ibogaïne : des troubles du rythme cardiaque potentiellement mortels sont documentés. <a href=\"https://pubmed.ncbi.nlm.nih.gov/38182784/\">Contexte et limites de la recherche clinique</a>.</p>"
       }
     ]
   },
@@ -162,7 +162,7 @@
       {
         "index": 75,
         "reason": "Exclude practical schedules and promotional growing sections.",
-        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites dans cette édition documentaire.</p>"
+        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites ici.</p>"
       },
       {
         "index": 76,
@@ -177,7 +177,7 @@
       {
         "index": 1,
         "reason": "Clarify ketamine versus esketamine and remove an obsolete relative approval date.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La kétamine est un anesthésique dissociatif. Il faut distinguer cette substance des indications réglementaires de l’eskétamine, l’un de ses énantiomères : dans l’Union européenne, le médicament Spravato est autorisé pour certaines situations de dépression, selon des conditions précises et sous supervision médicale. <a href=\"https://www.ema.europa.eu/en/medicines/human/EPAR/spravato\">Informations de l’EMA</a>.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La kétamine est un anesthésique dissociatif. Il faut distinguer cette substance des indications réglementaires de l’eskétamine, l’un de ses énantiomères : dans l’Union européenne, le médicament Spravato est autorisé pour certaines situations de dépression, selon des conditions précises et sous supervision médicale. <a href=\"https://www.ema.europa.eu/en/medicines/human/EPAR/spravato\">Informations de l’EMA</a>.</p>"
       },
       {
         "index": 109,
@@ -196,7 +196,7 @@
       {
         "index": 36,
         "reason": "Remove categorical individual safety claims inferred from comparative harm rankings.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparatifs des dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être considérés ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparant les dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être pris en compte ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
       },
       {
         "index": 60,
@@ -206,7 +206,7 @@
       {
         "index": 81,
         "reason": "Avoid presenting a historical jurisdiction list as current legal permission.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La source anglaise mentionne les juridictions suivantes dans sa discussion de la dépénalisation. Cette liste constitue un contexte documentaire, et non une vérification du droit actuellement applicable : elle ne doit pas être interprétée comme une autorisation de possession ou d’usage.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La source anglaise mentionne les juridictions suivantes dans sa discussion de la dépénalisation. Cette liste décrit le contexte de la source, sans vérifier le droit actuel : elle ne doit pas être interprétée comme une autorisation de possession ou d’usage.</p>"
       }
     ]
   },
@@ -216,7 +216,7 @@
       {
         "index": 2,
         "reason": "Replace an expired approval prediction with the dated regulatory decision.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les recherches sur la MDMA associée à une psychothérapie ont conduit à des essais de phase III. La prévision d’une commercialisation dès 2022 est dépassée : la FDA a émis une réponse négative à la demande soumise le 8 août 2024, en précisant les insuffisances à résoudre. Ce document ne préjuge pas d’une décision future. <a href=\"https://download.open.fda.gov/crl/CRL_NDA215455_20240808.pdf\">Décision et motifs de la FDA</a>.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les recherches sur la MDMA associée à une psychothérapie ont conduit à des essais de phase III. La prévision d’une commercialisation dès 2022 est dépassée : la FDA a émis une réponse négative à la demande soumise le 8 août 2024, en précisant les insuffisances à résoudre. Ce document ne préjuge pas d’une décision future. <a href=\"https://download.open.fda.gov/crl/CRL_NDA215455_20240808.pdf\">Décision et motifs de la FDA</a>.</p>"
       },
       {
         "index": 77,
@@ -226,7 +226,7 @@
       {
         "index": 96,
         "reason": "Replace an expired approval prediction with the dated regulatory decision.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les recherches sur la MDMA associée à une psychothérapie ont conduit à des essais de phase III. La prévision d’une commercialisation dès 2022 est dépassée : la FDA a émis une réponse négative à la demande soumise le 8 août 2024, en précisant les insuffisances à résoudre. Ce document ne préjuge pas d’une décision future. <a href=\"https://download.open.fda.gov/crl/CRL_NDA215455_20240808.pdf\">Décision et motifs de la FDA</a>.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les recherches sur la MDMA associée à une psychothérapie ont conduit à des essais de phase III. La prévision d’une commercialisation dès 2022 est dépassée : la FDA a émis une réponse négative à la demande soumise le 8 août 2024, en précisant les insuffisances à résoudre. Ce document ne préjuge pas d’une décision future. <a href=\"https://download.open.fda.gov/crl/CRL_NDA215455_20240808.pdf\">Décision et motifs de la FDA</a>.</p>"
       }
     ]
   },
@@ -277,7 +277,7 @@
       {
         "index": 8,
         "reason": "Exclude practical schedules and promotional growing sections.",
-        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites dans cette édition documentaire.</p>"
+        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites ici.</p>"
       },
       {
         "index": 9,
@@ -312,17 +312,17 @@
       {
         "index": 47,
         "reason": "Remove outdated legal sourcing recommendations and product assurances.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La dénomination « substance de recherche » ou « analogue » ne garantit ni la légalité, ni la composition, ni la sécurité d’un produit. Les règles applicables doivent être vérifiées auprès des sources officielles du pays concerné.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> L’appellation « substance de recherche » ou « analogue » ne garantit ni la légalité, ni la composition, ni la sécurité d’un produit. Les règles applicables doivent être vérifiées auprès des sources officielles du pays concerné.</p>"
       },
       {
         "index": 52,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 53,
         "reason": "Remove categorical individual safety claims inferred from comparative harm rankings.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparatifs des dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être considérés ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparant les dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être pris en compte ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
       },
       {
         "index": 55,
@@ -332,12 +332,12 @@
       {
         "index": 96,
         "reason": "Remove outdated legal sourcing recommendations and product assurances.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La dénomination « substance de recherche » ou « analogue » ne garantit ni la légalité, ni la composition, ni la sécurité d’un produit. Les règles applicables doivent être vérifiées auprès des sources officielles du pays concerné.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> L’appellation « substance de recherche » ou « analogue » ne garantit ni la légalité, ni la composition, ni la sécurité d’un produit. Les règles applicables doivent être vérifiées auprès des sources officielles du pays concerné.</p>"
       },
       {
         "index": 131,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       }
     ]
   },
@@ -352,7 +352,7 @@
       {
         "index": 61,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 143,
@@ -362,17 +362,17 @@
       {
         "index": 157,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 158,
         "reason": "Remove categorical individual safety claims inferred from comparative harm rankings.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparatifs des dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être considérés ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparant les dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être pris en compte ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
       },
       {
         "index": 159,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       }
     ]
   },
@@ -387,22 +387,22 @@
       {
         "index": 74,
         "reason": "Remove outdated legal sourcing recommendations and product assurances.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La dénomination « substance de recherche » ou « analogue » ne garantit ni la légalité, ni la composition, ni la sécurité d’un produit. Les règles applicables doivent être vérifiées auprès des sources officielles du pays concerné.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> L’appellation « substance de recherche » ou « analogue » ne garantit ni la légalité, ni la composition, ni la sécurité d’un produit. Les règles applicables doivent être vérifiées auprès des sources officielles du pays concerné.</p>"
       },
       {
         "index": 75,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 76,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 77,
         "reason": "Remove categorical individual safety claims inferred from comparative harm rankings.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparatifs des dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être considérés ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparant les dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être pris en compte ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
       },
       {
         "index": 81,
@@ -412,17 +412,17 @@
       {
         "index": 96,
         "reason": "Remove outdated legal sourcing recommendations and product assurances.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La dénomination « substance de recherche » ou « analogue » ne garantit ni la légalité, ni la composition, ni la sécurité d’un produit. Les règles applicables doivent être vérifiées auprès des sources officielles du pays concerné.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> L’appellation « substance de recherche » ou « analogue » ne garantit ni la légalité, ni la composition, ni la sécurité d’un produit. Les règles applicables doivent être vérifiées auprès des sources officielles du pays concerné.</p>"
       },
       {
         "index": 105,
         "reason": "Update an obsolete absence-of-human-research statement.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Des essais contrôlés chez l’être humain ont depuis été publiés. Leurs résultats ne justifient pas de présenter le microdosage comme un traitement établi : <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11923771/\">essai sur le LSD de 2025</a> et <a href=\"https://pubmed.ncbi.nlm.nih.gov/41110634/\">essais sur la psilocybine publiés en 2025–2026</a>.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Des essais contrôlés chez l’être humain ont depuis été publiés. Leurs résultats ne justifient pas de présenter le microdosage comme un traitement établi : <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11923771/\">essai sur le LSD de 2025</a> et <a href=\"https://pubmed.ncbi.nlm.nih.gov/41110634/\">essais sur la psilocybine publiés en 2025–2026</a>.</p>"
       },
       {
         "index": 107,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       }
     ]
   },
@@ -432,7 +432,7 @@
       {
         "index": 14,
         "reason": "Exclude practical schedules and promotional growing sections.",
-        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites dans cette édition documentaire.</p>"
+        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites ici.</p>"
       },
       {
         "index": 15,
@@ -477,7 +477,7 @@
       {
         "index": 6,
         "reason": "Exclude practical schedules and promotional growing sections.",
-        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites dans cette édition documentaire.</p>"
+        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites ici.</p>"
       },
       {
         "index": 7,
@@ -512,12 +512,12 @@
       {
         "index": 105,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 107,
         "reason": "Remove an unsupported assurance about a drug combination.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Il n’est pas possible d’affirmer qu’une association de cannabis et d’ayahuasca est sûre. Les interactions et les effets sont variables ; les témoignages de consommation combinée ne constituent pas une étude de sécurité.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Il n’est pas possible d’affirmer qu’une association de cannabis et d’ayahuasca est sûre. Les interactions et les effets sont variables ; les témoignages de consommation combinée ne constituent pas une étude de sécurité.</p>"
       }
     ]
   },
@@ -542,7 +542,7 @@
       {
         "index": 69,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       }
     ]
   },
@@ -557,7 +557,7 @@
       {
         "index": 7,
         "reason": "Exclude practical schedules and promotional growing sections.",
-        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites dans cette édition documentaire.</p>"
+        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites ici.</p>"
       },
       {
         "index": 8,
@@ -592,12 +592,12 @@
       {
         "index": 33,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 41,
         "reason": "Correct the unsupported exclusion of ibogaine toxicity in reported deaths.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La revue historique rapporte 19 décès survenus après une prise d’ibogaïne entre 1990 et 2008. La présence de maladies préexistantes ou d’autres substances ne permet pas d’exclure la toxicité propre de l’ibogaïne : des troubles du rythme cardiaque potentiellement mortels sont documentés. <a href=\"https://pubmed.ncbi.nlm.nih.gov/38182784/\">Contexte et limites de la recherche clinique</a>.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La revue historique rapporte 19 décès survenus après une prise d’ibogaïne entre 1990 et 2008. La présence de maladies préexistantes ou d’autres substances ne permet pas d’exclure la toxicité propre de l’ibogaïne : des troubles du rythme cardiaque potentiellement mortels sont documentés. <a href=\"https://pubmed.ncbi.nlm.nih.gov/38182784/\">Contexte et limites de la recherche clinique</a>.</p>"
       },
       {
         "index": 55,
@@ -612,7 +612,7 @@
       {
         "index": 102,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       }
     ]
   },
@@ -622,7 +622,7 @@
       {
         "index": 6,
         "reason": "Exclude practical schedules and promotional growing sections.",
-        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites dans cette édition documentaire.</p>"
+        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites ici.</p>"
       },
       {
         "index": 7,
@@ -672,7 +672,7 @@
       {
         "index": 109,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       }
     ]
   },
@@ -682,7 +682,7 @@
       {
         "index": 9,
         "reason": "Exclude practical schedules and promotional growing sections.",
-        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites dans cette édition documentaire.</p>"
+        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites ici.</p>"
       },
       {
         "index": 10,
@@ -732,17 +732,17 @@
       {
         "index": 44,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 45,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 46,
         "reason": "Remove categorical individual safety claims inferred from comparative harm rankings.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparatifs des dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être considérés ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Les classements comparant les dommages n’établissent pas la sécurité d’un usage individuel. Les effets psychologiques, les interactions, les accidents et les incertitudes à long terme doivent être pris en compte ; un risque comparativement moindre sur un critère ne signifie pas une absence de risque.</p>"
       },
       {
         "index": 49,
@@ -752,17 +752,17 @@
       {
         "index": 104,
         "reason": "Update an obsolete absence-of-human-research statement.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Des essais contrôlés chez l’être humain ont depuis été publiés. Leurs résultats ne justifient pas de présenter le microdosage comme un traitement établi : <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11923771/\">essai sur le LSD de 2025</a> et <a href=\"https://pubmed.ncbi.nlm.nih.gov/41110634/\">essais sur la psilocybine publiés en 2025–2026</a>.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Des essais contrôlés chez l’être humain ont depuis été publiés. Leurs résultats ne justifient pas de présenter le microdosage comme un traitement établi : <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11923771/\">essai sur le LSD de 2025</a> et <a href=\"https://pubmed.ncbi.nlm.nih.gov/41110634/\">essais sur la psilocybine publiés en 2025–2026</a>.</p>"
       },
       {
         "index": 106,
         "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> La faible quantité ne suffit pas à établir la sécurité, et il n’est pas possible de garantir l’absence d’effet perceptible ou d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne valide pas les autres substances.</p>"
+        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
       {
         "index": 107,
         "reason": "Exclude practical schedules and promotional growing sections.",
-        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites dans cette édition documentaire.</p>"
+        "html": "<p class=\"guide-editorial-update\">Les instructions pratiques et les offres commerciales de cette section ne sont pas reproduites ici.</p>"
       },
       {
         "index": 108,

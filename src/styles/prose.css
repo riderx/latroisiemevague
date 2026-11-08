@@ -33,3 +33,6 @@
 .attribution a{color:var(--primary);text-decoration:underline}
 @media(max-width:1200px){.reading{grid-template-columns:220px minmax(0,1fr);gap:48px}}
 @media(max-width:760px){.reading{display:block;padding-top:28px;padding-bottom:72px}.prose{font-size:17px}.evidence{padding:22px}}
+.prose sup.src{margin-left:3px}
+.prose sup.src a{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:500;line-height:1;padding:3px 6px;border-radius:6px;background:var(--soft);color:var(--primary);text-decoration:none;vertical-align:.35em}
+.prose sup.src a:hover{background:var(--primary);color:#fff}

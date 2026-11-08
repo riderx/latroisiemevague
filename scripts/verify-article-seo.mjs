@@ -47,7 +47,7 @@ for (const path of paths) {
   if (guide) {
     assert.equal($('main h1').text(), guideHeading(guide))
     assert.equal($('.reader-toc').length, 1)
-    assert($('.reader-toc summary').text().includes('Table des matières'))
+    assert($('.reader-toc summary').text().includes('Sommaire'))
     assert.equal($('.reader-progress[aria-label="Progression de lecture"]').length, 1)
     assert.equal($('.guide-illustration img[width][height][alt]').length, 1)
     assert(sitemap('url').toArray().some(el => sitemap(el).find('loc').text() === canonical && sitemap(el).find('lastmod').text() === article.dateModified.slice(0, 10)), `${path}: sitemap lastmod`)

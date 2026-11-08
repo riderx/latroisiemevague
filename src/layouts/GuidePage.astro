@@ -22,7 +22,7 @@ const parentPath = micro ? '/microdosing/' : '/substances/'
 const categoryName = micro ? 'Microdosage' : 'Substances'
 const dates = guideDates(guide)
 const heading = guideHeading(guide)
-const dek = micro ? `Ce que l’on sait du microdosage de ${guide.name}, ce que les études mesurent vraiment, et les risques à connaître.` : `Histoire, effets, risques et état de la recherche : l’essentiel pour comprendre ${guide.name.startsWith('Champignons') || guide.name.startsWith('Truffes') ? 'les ' + guide.name.toLowerCase() : guide.name}.`
+const dek = micro ? `Ce que l’on sait du microdosage de ${guide.name}, ce que mesurent les études et les risques à connaître.` : `Histoire, effets, risques et état de la recherche : l’essentiel pour comprendre ${guide.name.startsWith('Champignons') || guide.name.startsWith('Truffes') ? 'les ' + guide.name.toLowerCase() : guide.name}.`
 const key = keyOf(guide)
 const family = micro ? undefined : familyOf(key)
 const sibling = guideCatalog.find(g => keyOf(g) === key && g.category !== guide.category)
@@ -88,15 +88,15 @@ const schema = { '@context': 'https://schema.org', '@graph': [
       </ul>
       <p class="gactions"><a class="btn p" href="#point-recherche">Commencer la lecture<Arrow /></a>{sibling && <a class="btn s" href={sibling.path}>{sibling.category === 'microdosing' ? 'Voir le microdosage' : 'Voir la fiche complète'}<Arrow /></a>}</p>
     </div>
-    <div class={`gplate pat ${tintFor(key)}`}><div class="porthole guide-illustration"><Ill name={illustrationFor(key)} alt={`Illustration : ${guide.name}`} widths={[280, 420, 560]} sizes="(max-width: 960px) 220px, 380px" loading="eager" fetchpriority="high" /></div></div>
+    <div class={`gplate pat ${tintFor(key)}`}><div class="porthole guide-illustration"><Ill name={illustrationFor(key)} alt={`Illustration : ${guide.name}`} widths={[280, 420, 560]} sizes="(max-width: 960px) 220px, 380px" loading="eager" fetchpriority="high" /></div></div>
   </div>
   </section>
   <div class="in reading greading">
     <TableOfContents items={contents} contentId="guide-article" />
     <article class="prose" id="guide-article" aria-label={heading}>
-      <section class="evidence" id="point-recherche"><div class="ev-head"><span class="ev-ic"><IconNuance /></span><div><small>Avant de lire</small><h2>Lire ce guide avec le recul nécessaire</h2></div></div><Fragment set:html={evidence} /></section>
+      <section class="evidence" id="point-recherche"><div class="ev-head"><span class="ev-ic"><IconNuance /></span><div><small>Avant de lire</small><h2>Ce qu’il faut savoir avant de lire</h2></div></div><Fragment set:html={evidence} /></section>
       <div class="guide-translated-content"><Fragment set:html={structured} /></div>
-      <footer class="attribution guide-attribution" id="source-originale"><h2>Source et traduction</h2><p>Source : <a href={guide.sourceUrl} rel="noopener">{guide.originalTitle || guide.name} — Third Wave</a>. Version anglaise consultée le {formatDate(guide.retrievedAt)}.</p><p>Traduction française assistée par IA et adaptation éditoriale autorisées. Les sections commerciales et les instructions pratiques ont été écartées. Les compléments éditoriaux sont distingués du texte traduit et renvoient à leurs sources.</p><p>Une éventuelle relecture médicale citée dans le texte concerne la version anglaise. La version française n’a pas fait l’objet d’une validation médicale indépendante. Les passages juridiques décrivent le contexte de la source et ne remplacent pas la vérification des règles en vigueur dans votre pays.</p></footer>
+      <footer class="attribution guide-attribution" id="source-originale"><h2>Source et traduction</h2><p>Source : <a href={guide.sourceUrl} rel="noopener">{guide.originalTitle || guide.name} — Third Wave</a>. Version anglaise consultée le {formatDate(guide.retrievedAt)}.</p><p>Traduction française assistée par IA et adaptation éditoriale autorisées. Les sections commerciales et les instructions pratiques ont été écartées. Les compléments éditoriaux sont distingués du texte traduit et renvoient à leurs sources.</p><p>Une éventuelle relecture médicale citée dans le texte concerne la version anglaise. La version française n’a pas fait l’objet d’une validation médicale indépendante. Les passages juridiques décrivent le contexte de la source et ne remplacent pas la vérification des règles en vigueur dans votre pays.</p></footer>
     </article>
     <aside class="grail" aria-label="Sécurité">
       <div class="rail-card help-mini"><small>En cas de besoin</small><b>Appelez, c’est anonyme</b>
@@ -108,7 +108,7 @@ const schema = { '@context': 'https://schema.org', '@graph': [
   <section class="related"><div class="in">
     <h2>Pour <em>approfondir</em></h2>
     <div class="rgrid">{more.map(g => <a class={`rcard ${tintFor(keyOf(g))}`} href={g.path}><small>{g.category === 'microdosing' ? 'Microdosage' : familyOf(keyOf(g))?.name ?? 'Substance'}</small><h3>{shortName(keyOf(g), g.name)}</h3><div class="art"><Ill name={illustrationFor(keyOf(g))} widths={[200, 320]} sizes="200px" /></div></a>)}</div>
-    <p style="margin-top:32px"><a class="btn s" href={parentPath}>{micro ? 'Tous les guides du microdosage' : 'Toutes les fiches substances'}<Arrow /></a></p>
+    <p style="margin-top:32px"><a class="btn s" href={parentPath}>{micro ? 'Tous les guides sur le microdosage' : 'Toutes les fiches sur les substances'}<Arrow /></a></p>
   </div></section>
 </Base>
 <script>

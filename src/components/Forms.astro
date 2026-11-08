@@ -12,10 +12,10 @@
         if (topic && typeof subject === 'string') { data.set('your-subject', `[${topic}] ${subject}`.slice(0, 200)); data.delete('topic') }
         const response = await fetch('/api/forms', { method: 'POST', body: data, headers: { Accept: 'application/json' } })
         const result = await response.json()
-        if (!response.ok) throw new Error(result.message || 'L’envoi a échoué. Veuillez réessayer.')
+        if (!response.ok) throw new Error(result.message || 'L’envoi a échoué. Réessayez dans quelques instants.')
         status.textContent = result.message; form.reset(); id.value = crypto.randomUUID()
       } catch (error) {
-        status.dataset.error = 'true'; status.textContent = error instanceof Error ? error.message : 'Erreur réseau. Veuillez réessayer.'
+        status.dataset.error = 'true'; status.textContent = error instanceof Error ? error.message : 'Erreur réseau. Réessayez dans quelques instants.'
       } finally { submit.disabled = false }
     })
   })
