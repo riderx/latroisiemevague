@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto'
 import { readFile, access, readdir } from 'node:fs/promises'
 import path from 'node:path'
 import * as cheerio from 'cheerio'
+import { listingPages } from '../src/content-data/listings.ts'
 const manifest = JSON.parse(await readFile('src/content-data/pages/manifest.json', 'utf8'))
 const routes = new Set(manifest.pages.map(p => p.path))
 const errors = []
@@ -15,9 +16,22 @@ for (const page of manifest.pages) {
   const file = path.join('dist', page.path, 'index.html')
   const $ = cheerio.load(await readFile(file, 'utf8'))
   documents.set(page.path, $)
+  const listing = listingPages[page.path]
   const hashes = new Set($('main p, main h1, main h2, main h3, main h4, main h5, main h6, main td, main blockquote, main .elementor-widget-text-editor').toArray().map(el => createHash('sha256').update(normalize($(el).text())).digest('hex')))
-  for (const hash of page.sourceContentHashes) check(hashes.has(hash), `${page.path}: missing source content block ${hash}`)
-  check($('title').text() === page.title, `${page.path}: wrong title`)
+  // The two hubs are deliberate editorial replacements; all other original pages remain exact imports.
+  if (!listing) for (const hash of page.sourceContentHashes) check(hashes.has(hash), `${page.path}: missing source content block ${hash}`)
+  check($('title').text() === (listing?.title ?? page.title), `${page.path}: wrong title`)
+  if (listing) {
+    check($('main h1').length === 1, `${page.path}: expected one H1`)
+    check($('meta[name=description]').attr('content') === listing.description, `${page.path}: wrong description`)
+    check($('html').attr('lang')?.startsWith('fr'), `${page.path}: wrong language`)
+    check($('script[data-website-id="dfid_QUM3eJgHP2rnqoPysAotE"]').length === 1, `${page.path}: analytics missing or duplicated`)
+    check($('script[type="application/ld+json"]').length > 0, `${page.path}: missing structured data`)
+    $('script[type="application/ld+json"]').each((_, el) => {
+      try { JSON.parse($(el).html()) } catch { errors.push(`${page.path}: invalid structured data JSON`) }
+    })
+    check($('[role="dialog"], dialog, .jet-popup').length === 0, `${page.path}: unexpected modal`)
+  }
   check($('link[rel=canonical]').attr('href') === manifest.origin + page.path, `${page.path}: wrong canonical`)
   check($('script[src*="wp-"], script[src*="jquery"]').length === 0, `${page.path}: WordPress runtime dependency`)
   $('img[src], link[rel=stylesheet][href], script[src]').each((_, el) => {
@@ -29,7 +43,7 @@ for (const page of manifest.pages) {
   // Compare each original prose block, without treating changed form/status UI as editorial content.
   let original
   try { original = cheerio.load(await readFile(`.wordpress-import/cache/${encodeURIComponent(page.path)}.html`, 'utf8')) } catch {}
-  if (original) {
+  if (original && !listing) {
     const text = normalize($('main').text())
     original('main p, main h1, main h2, main h3, main h4, main h5, main h6, main td, main blockquote, main .elementor-widget-text-editor').each((_, el) => {
       if (original(el).hasClass('must-log-in')) return
@@ -76,4 +90,4 @@ const blogLinks = new Set()
 for (const [route, $] of documents) if (route === '/blog/' || route.startsWith('/blog/page/')) $('.raven-post-title-link').each((_, el) => blogLinks.add($(el).attr('href')))
 for (const post of manifest.postPaths) check(blogLinks.has(post), `Article missing from blog: ${post}`)
 assert.deepEqual(errors, [], `${errors.length} migration problems:\n${errors.join('\n')}`)
-console.log(`Verified ${routes.size} routes, ${manifest.sourceUrls.length} sitemap URLs, ${blogLinks.size} articles, ${assetPaths.size} assets, original prose, links and anchors.`)
+console.log(`Verified ${routes.size} routes, ${manifest.sourceUrls.length} sitemap URLs, ${blogLinks.size} articles, ${assetPaths.size} assets, two updated hubs, retained original prose, links and anchors.`)

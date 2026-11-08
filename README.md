@@ -17,7 +17,9 @@ bun run test:browser
 
 The committed import contains all 37 WordPress sitemap routes, the second author archive page, and three additional blog pagination pages. All 15 posts are discoverable without JavaScript. Search and a real 404 page are also generated. Original page markup, responsive styles, images, metadata, and section anchors are retained; WordPress, Elementor, and jQuery scripts are replaced with a small native client module. No WordPress requests are needed to build or serve the site.
 
-`src/content-data/pages/manifest.json` records the source routes and SHA-256 fingerprints of the original prose blocks. `verify:migration` checks these against the production build, along with internal links, section anchors, canonical URLs, local assets, and blog coverage. Existing comments remain readable; the WordPress login-to-comment prompt links to Contact instead. Obsolete decorative images from the defunct `letroisiemecycle.com` domain are deliberately omitted to match the live site's appearance. A broken source link and footnote target are repaired.
+`src/content-data/pages/manifest.json` records the source routes and SHA-256 fingerprints of the original prose blocks. `verify:migration` checks these against the production build, along with internal links, section anchors, canonical URLs, local assets, and blog coverage. The two listing pages, `/substances/` and `/microdosing/`, are intentional replacements with French editorial hubs inspired by Third Wave. Their metadata and searchable content live in `src/content-data/listings.ts`; existing detailed guides keep their original URLs and content. Forthcoming guides are labelled without linking to unpublished routes. The verifier checks the new hubs separately and still checks the original prose of every other imported page.
+
+Existing comments remain readable; the WordPress login-to-comment prompt links to Contact instead. Obsolete decorative images from the defunct `letroisiemecycle.com` domain are deliberately omitted to match the live site's appearance. A broken source link and footnote target are repaired.
 
 ## Refreshing the WordPress import
 

@@ -1,0 +1,38 @@
+---
+import { listingGuides } from '../content-data/listings'
+const { currentPath } = Astro.props as { currentPath: string }
+const substances = listingGuides('psychedelics').filter(guide => guide.available)
+const microdosing = listingGuides('microdosing').filter(guide => guide.available)
+---
+<header class="listing-header">
+  <div class="listing-nav-wrap">
+    <a href="/" class="listing-brand" aria-label="La Troisième Vague — Accueil"><img src="/assets/uploads/2020/05/logo-1.png" alt="" width="45" height="45" /><span>La Troisième<br />Vague</span></a>
+    <nav class="listing-navigation" aria-label="Navigation principale">
+      <details class="listing-megamenu">
+        <summary>Comprendre <span aria-hidden="true">+</span></summary>
+        <div class="listing-megamenu-panel">
+          <section><h2>Les psychédéliques</h2><ul>{substances.map(guide => <li><a href={guide.path}>{guide.name}</a></li>)}</ul><a class="listing-menu-all" href="/substances/" aria-current={currentPath === '/substances/' ? 'page' : undefined}>Toutes les substances <span aria-hidden="true">→</span></a></section>
+          <section><h2>Le microdosing</h2><ul>{microdosing.map(guide => <li><a href={guide.path}>{guide.name}</a></li>)}</ul><a class="listing-menu-all" href="/microdosing/" aria-current={currentPath === '/microdosing/' ? 'page' : undefined}>Guides et protocoles <span aria-hidden="true">→</span></a></section>
+          <div class="listing-menu-utility"><a href="/blog/">Articles</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a></div>
+        </div>
+      </details>
+      <a href="/blog/" class="listing-nav-articles">Articles</a>
+      <a href="/a-propos/" class="listing-nav-about">À propos</a>
+      <a href="/contact/" class="listing-nav-contact">Contact</a>
+      <a href="/recherche/" class="listing-search-link" aria-label="Rechercher"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5" /><path d="m16 16 6 6" /></svg></a>
+    </nav>
+  </div>
+</header>
+<script>
+  document.querySelectorAll<HTMLDetailsElement>('.listing-megamenu').forEach(menu => {
+    document.addEventListener('click', event => {
+      if (event.target instanceof Node && !menu.contains(event.target)) menu.open = false
+    })
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && menu.open) {
+        menu.open = false
+        menu.querySelector('summary')?.focus()
+      }
+    })
+  })
+</script>
