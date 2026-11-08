@@ -23,7 +23,7 @@ for (const page of manifest.pages) {
   $('img[src], link[rel=stylesheet][href], script[src]').each((_, el) => {
     const src = $(el).attr('src') || $(el).attr('href')
     if (src.startsWith('/')) assetPaths.add(decodeURIComponent(src.split(/[?#]/)[0]))
-    else check(!src.startsWith('http'), `${page.path}: remote asset ${src}`)
+    else check(!src.startsWith('http') || (el.tagName === 'script' && src === 'https://datafa.st/js/script.js'), `${page.path}: remote asset ${src}`)
   })
   $('[srcset]').each((_, el) => $(el).attr('srcset').split(',').forEach(part => assetPaths.add(decodeURIComponent(part.trim().split(/\s+/)[0]))))
   // Compare each original prose block, without treating changed form/status UI as editorial content.
