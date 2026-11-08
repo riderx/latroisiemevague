@@ -6,7 +6,7 @@ export type Guide = GuideEntry & {
   contentHash: string; originalTitle: string; translationModel: string; translationVersion: string;
   omissions: { heading: string; reason: string }[]
 }
-const files = import.meta.glob('../content-data/guides/*.json', { eager: true, import: 'default' }) as Record<string, Guide>
+const files = import.meta.glob(['../content-data/guides/*.json', '!../content-data/guides/catalog.json'], { eager: true, import: 'default' }) as Record<string, Guide>
 const legacyHeads = import.meta.glob('../content-data/pages/{substances,microdosing}-*.head.html', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>
 export function guideDates(guide: Guide) {
   const legacyId = guide.path.slice(1, -1).replaceAll('/', '-')

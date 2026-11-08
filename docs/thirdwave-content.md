@@ -21,9 +21,9 @@ The source snapshots and translation caches remain in ignored `.wordpress-import
 
 ## Article layout and search metadata
 
-All 32 guides use the source site's two-column introduction and left-hand contents structure, with locally hosted source illustrations recorded in `guide-illustrations.json`. The French contents panel highlights the active section, indicates completed sections and reading progress, and follows scrolling in both directions without changing browser history. On mobile it becomes a compact sticky disclosure. Normal anchor links remain available without JavaScript; reduced-motion preferences are respected.
+Each guide opens with its own illustration (one per substance, shared by the substance and microdosing guides), the update date, reading time and a link to the English source. A sticky contents panel highlights the active section and shows reading progress; on mobile it becomes a compact disclosure. Anchor links work without JavaScript and reduced-motion preferences are respected.
 
-Guides have distinct titles and H1s for substance and microdosing pages, French descriptions, canonical URLs, social metadata, source-linked Article schema and dated sitemap entries. Existing French publication dates are retained where the original WordPress metadata provides them. The 15 legacy blog posts receive BlogPosting schema using their existing bylines, publication dates, descriptions and images; article bodies remain unchanged. The automated SEO verification checks all 47 articles. Search indexing and ranking remain decisions made by search engines.
+Guides have distinct titles and H1s for substance and microdosing pages, French descriptions, canonical URLs, social metadata, source-linked Article schema and dated sitemap entries. Existing French publication dates are retained where the original WordPress metadata provides them. Articles receive BlogPosting schema with their original publication dates. Search indexing and ranking remain decisions made by search engines.
 
 ## Editorial updates
 
@@ -45,10 +45,10 @@ bun run import:guides
 bun run check
 bun run test
 bun run build
-bun run verify:migration
+bun run verify:site
 bun run test:browser
 ```
 
 The translator uses Cloudflare Workers AI. It caches validated batches, checks HTML structure and link counts, resumes incomplete work, and stops scheduling requests if authentication expires. Credentials are supplied by the environment and never committed. After refreshing source data, review the generated editorial corrections and translated content before deploying; the automated checks do not certify medical accuracy.
 
-`verify:migration` checks untouched WordPress content, all internal links/assets/anchors and blog coverage, then runs the guide audit. The guide audit requires every translation and every section, exact source block/link counts, French headings, source attribution, Article metadata, all 32 search/sitemap entries, and complete listing-page links without “À venir” labels. Browser checks cover every route plus guide navigation, citations, responsive layouts and search.
+`verify:site` checks every built page (metadata, canonical URLs, structured data, internal links, anchors, redirects and local assets), then runs the guide audit. The guide audit requires every translation and every section, exact source block/link counts, French headings, source attribution, Article metadata, all 32 search/sitemap entries and complete listing-page links. Browser checks cover every route plus navigation, guide reading progress, search, forms and responsive layouts.

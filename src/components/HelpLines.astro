@@ -1,0 +1,5 @@
+---
+import { helpLines } from '../data/site'
+const phone = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5.2 1.8 6.6 5 5 6.3a8.6 8.6 0 0 0 4.7 4.7L11 9.4l3.2 1.4-.5 2.6c-.1.5-.6.9-1.1.8C7 13.7 2.3 9 1.8 3.4c0-.5.3-1 .8-1.1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>'
+---
+<div class="lines">{helpLines.map(h => <a class="line" href={`tel:${h.tel}`}><span><small>{h.service} · {h.country}, {h.hours}</small><b>{h.number}</b></span><span class="call" set:html={phone} /></a>)}</div>

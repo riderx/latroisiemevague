@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test'
 
+test.beforeEach(async ({ page }) => {
+  await page.route('https://datafa.st/**', route => route.fulfill({ contentType: 'text/javascript', body: '' }))
+})
+
 test('contents track manual scrolling, deep links and history in both guide categories', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   for (const path of ['/substances/lsd/', '/microdosing/lsd/']) {
@@ -17,6 +21,9 @@ test('contents track manual scrolling, deep links and history in both guide cate
     await toc.locator('a[href="#faq"]').click()
     await expect(page).toHaveURL(/#faq$/)
     await expect(active).toHaveAttribute('href', '#faq')
+    // The target heading must not be hidden under the sticky site header.
+    const header = (await page.locator('.site-header').boundingBox())!
+    expect((await page.locator('#faq').boundingBox())!.y).toBeGreaterThanOrEqual(header.y + header.height)
     await page.goBack()
     await expect(page).toHaveURL(/#overview$/)
     await page.locator('#overview').evaluate(el => el.scrollIntoView())
@@ -43,8 +50,11 @@ test('mobile contents stay visible, close after navigation and respect reduced m
     await page.locator('#effects').evaluate(el => el.scrollIntoView())
     await expect(toc.locator('a[aria-current="location"]')).toHaveAttribute('href', '#effects')
     await expect(toc.locator('summary')).toBeInViewport()
-    expect((await toc.boundingBox())!.y).toBeGreaterThanOrEqual(9)
-    expect((await toc.boundingBox())!.y).toBeLessThanOrEqual(11)
+    // The contents bar sticks just below the sticky site header.
+    const header = (await page.locator('.site-header').boundingBox())!
+    const tocTop = (await toc.boundingBox())!.y
+    expect(tocTop).toBeGreaterThanOrEqual(header.y + header.height)
+    expect(tocTop).toBeLessThanOrEqual(header.y + header.height + 12)
     await toc.locator('summary').click()
     await expect(details).toHaveAttribute('open')
     await toc.locator('a[href="#history"]').click()
@@ -63,8 +73,8 @@ test('mobile contents stay visible, close after navigation and respect reduced m
   await expect(page.locator('.reader-toc details')).toHaveAttribute('open')
 })
 
-test('guide contents and full article remain usable without JavaScript', async ({ browser }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false, baseURL: 'http://127.0.0.1:4321' })
+test('guide contents and full article remain usable without JavaScript', async ({ browser, baseURL }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, baseURL })
   const page = await context.newPage()
   await page.goto('/substances/ibogaine/')
   await expect(page.locator('.reader-toc details')).toHaveAttribute('open')

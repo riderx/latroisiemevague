@@ -1,139 +1,151 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, type Page } from '@playwright/test'
 import { readFileSync } from 'node:fs'
-import { listingPages } from '../../src/content-data/listings'
-import { guideCatalog, guideTitle } from '../../src/content-data/guide-catalog'
-const manifest = JSON.parse(readFileSync('src/content-data/pages/manifest.json', 'utf8'))
+import { guideCatalog } from '../../src/content-data/guide-catalog'
 
-test('all migrated pages render with local assets and no browser errors', async ({ page }) => {
+const ORIGIN = 'https://latroisiemevague.com'
+const sitemapRoutes = [...readFileSync('dist/sitemap.xml', 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1].slice(ORIGIN.length))
+const routes = [...sitemapRoutes, '/recherche/', '/404.html']
+const guidePaths = new Set(guideCatalog.map(guide => guide.path))
+const ARTICLE = '/comment-les-psychedeliques-liberent-les-mecanismes-de-controle-de-votre-cerveau/'
+
+// The analytics script is third-party; serve an empty one so tests stay offline and deterministic.
+test.beforeEach(async ({ page }) => {
+  await page.route('https://datafa.st/**', route => route.fulfill({ contentType: 'text/javascript', body: '' }))
+})
+
+const pageWidth = (page: Page) => page.evaluate(() => document.documentElement.scrollWidth)
+
+test('every route renders without page errors or failed responses', async ({ page }) => {
+  expect(routes.length).toBeGreaterThan(50)
   const errors: string[] = []
-  page.on('pageerror', error => errors.push(error.message))
-  page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`) })
-  const routes = [...manifest.pages, ...guideCatalog.filter(guide => !manifest.pages.some((page: { path: string }) => page.path === guide.path))]
+  page.on('pageerror', error => errors.push(`${page.url()}: ${error.message}`))
+  page.on('response', response => { if (response.status() >= 400 && !response.url().endsWith('/404.html')) errors.push(`${response.status()} ${response.url()}`) })
   for (const route of routes) {
-    await page.goto(route.path)
-    const guide = guideCatalog.find(guide => guide.path === route.path)
-    await expect(page).toHaveTitle(guide ? guideTitle(guide) : listingPages[route.path as keyof typeof listingPages]?.title ?? route.title)
-    await expect(page.locator('main')).toBeVisible()
-    if (guide) await expect(page.locator('.guide-illustration img')).toHaveJSProperty('complete', true)
-    if (guide) expect(await page.locator('.guide-illustration img').evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0)
+    await page.goto(route)
+    await expect(page.locator('main h1'), route).toHaveCount(1)
+    await expect(page.locator('.site-header'), route).toBeVisible()
+    await expect(page.locator('.site-footer'), route).toBeVisible()
+    if (guidePaths.has(route)) {
+      const img = page.locator('.guide-illustration img')
+      await expect(img, route).toHaveJSProperty('complete', true)
+      expect(await img.evaluate(el => (el as HTMLImageElement).naturalWidth), route).toBeGreaterThan(0)
+    }
   }
   expect(errors).toEqual([])
 })
-test('blog loads every article and retains real pagination links', async ({ page }) => {
+
+test('substances mega menu opens on hover and swaps the feature image', async ({ page }) => {
   await page.goto('/blog/')
-  await expect(page.locator('.raven-post-item')).toHaveCount(4)
-  await page.locator('.raven-load-more-button').click()
-  await expect(page.locator('.raven-post-item')).toHaveCount(8)
-  await page.locator('.raven-load-more-button').click()
-  await expect(page.locator('.raven-post-item')).toHaveCount(12)
-  await page.locator('.raven-load-more-button').click()
-  await expect(page.locator('.raven-post-item')).toHaveCount(15)
-  await expect(page.locator('.raven-load-more-button')).toHaveCount(0)
-  await page.goto('/blog/page/4/')
-  await expect(page.locator('.raven-post-item')).toHaveCount(3)
+  const dd = page.locator('.site-header .dd').filter({ has: page.locator('> a[href="/substances/"]') })
+  const mega = dd.locator('.mega')
+  await expect(mega).toBeHidden()
+  await dd.locator('> a').hover()
+  await expect(mega).toBeVisible()
+  const img = mega.locator('.fimg img'), label = mega.locator('.ftxt b')
+  const initial = await img.evaluate(el => (el as HTMLImageElement).src)
+  const link = mega.locator('a[href="/substances/lsd/"][data-img]')
+  await link.hover()
+  await expect(img).toHaveAttribute('src', (await link.getAttribute('data-img'))!)
+  await expect(label).toHaveText((await link.getAttribute('data-t'))!)
+  expect(await img.evaluate(el => (el as HTMLImageElement).src)).not.toBe(initial)
+  await page.mouse.move(5, 900)
+  await expect(mega).toBeHidden()
+  await expect(img).toHaveJSProperty('src', initial)
 })
-test('mobile navigation and content fit the viewport', async ({ page }) => {
+
+test('articles mega menu lists recent articles', async ({ page }) => {
+  await page.goto('/')
+  const dd = page.locator('.site-header .dd').filter({ has: page.locator('> a[href="/blog/"]') })
+  await dd.locator('> a').hover()
+  await expect(dd.locator('.mega')).toBeVisible()
+  await expect(dd.locator('.mega a.lesson')).toHaveCount(6)
+})
+
+test('mobile menu opens, closes with Escape, and pages fit 390px', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto('/')
-  await page.locator('.raven-nav-menu-toggle-button').click()
-  await expect(page.locator('.raven-nav-menu-mobile')).toBeVisible()
+  const burger = page.locator('.burger'), mnav = page.locator('#mnav')
+  await expect(burger).toBeVisible()
+  await expect(mnav).toBeHidden()
+  await burger.click()
+  await expect(page.locator('body')).toHaveClass(/menu-open/)
+  await expect(burger).toHaveAttribute('aria-expanded', 'true')
+  await expect(mnav).toBeVisible()
+  await mnav.locator('summary').click()
+  await expect(mnav.locator('a[href="/substances/lsd/"]')).toBeVisible()
   await page.keyboard.press('Escape')
-  await expect(page.locator('.raven-nav-menu-toggle-button')).toHaveAttribute('aria-expanded', 'false')
-  await page.screenshot({ path: 'output/home-mobile.png', fullPage: true })
-  for (const route of ['/contact/', '/microdosing/lsd/', '/substances/', '/blog/']) {
+  await expect(page.locator('body')).not.toHaveClass(/menu-open/)
+  await expect(burger).toHaveAttribute('aria-expanded', 'false')
+  await expect(mnav).toBeHidden()
+  await burger.click()
+  await mnav.locator('a[href="/contact/"]').click()
+  await expect(page).toHaveURL(/\/contact\/$/)
+  for (const route of ['/', '/substances/', '/substances/lsd/', '/blog/', '/contact/', '/aide/']) {
     await page.goto(route)
-    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(391)
+    expect(await pageWidth(page), route).toBeLessThanOrEqual(390)
   }
-  await page.locator('.jupiterx-navbar-toggler').click()
-  await expect(page.locator('#jupiterxSiteNavbar')).toBeVisible()
 })
-test('search finds article content and renders query as text', async ({ page }) => {
+
+test('listing hubs link every published guide', async ({ page }) => {
+  for (const [path, category, count] of [['/substances/', 'psychedelics', 22], ['/microdosing/', 'microdosing', 10]] as const) {
+    await page.goto(path)
+    await expect(page.locator('main a.sc.listing-card')).toHaveCount(count)
+    for (const guide of guideCatalog.filter(g => g.category === category)) await expect(page.locator(`main a.listing-card[href="${guide.path}"]`)).toHaveCount(1)
+  }
+  await page.goto('/microdosing/')
+  await expect(page.locator('main')).toContainText('Fadiman')
+})
+
+test('blog lists every article on a single page', async ({ page }) => {
+  await page.goto('/blog/')
+  await expect(page.locator('main a.afeat')).toHaveCount(1)
+  await expect(page.locator('main a.afeat, main a.acard')).toHaveCount(13)
+  await page.locator(`main a[href="${ARTICLE}"]`).click()
+  await expect(page).toHaveURL(ARTICLE)
+  await expect(page.locator('main h1')).toContainText('mécanismes de contrôle')
+})
+
+test('search finds a known article and renders the query as text', async ({ page }) => {
   await page.goto('/recherche/?s=cerveau')
-  await expect(page.locator('.search-results article').first()).toBeVisible()
-  await expect(page.locator('.search-results')).toContainText('mécanismes de contrôle')
-})
-test('contact form reports success and preserves input on failure', async ({ page }) => {
-  await page.goto('/contact/')
-  await page.locator('[name=your-name]').fill('Test')
-  await page.locator('[name=your-email]').fill('person@example.org')
-  await page.locator('[name=your-subject]').fill('Question')
-  await page.locator('[name=your-message]').fill('Bonjour')
-  await page.route('**/api/forms', route => route.fulfill({ status: 503, json: { message: 'Veuillez réessayer.' } }))
-  await page.locator('input[type=submit]').click()
-  await expect(page.locator('.form-status')).toHaveText('Veuillez réessayer.')
-  await expect(page.locator('[name=your-message]')).toHaveValue('Bonjour')
-  await page.route('**/api/forms', route => route.fulfill({ json: { message: 'Merci !' } }))
-  await page.locator('input[type=submit]').click()
-  await expect(page.locator('.form-status')).toHaveText('Merci !')
-  await expect(page.locator('[name=your-message]')).toHaveValue('')
-})
-test('homepage and guide screenshots', async ({ page }) => {
-  await page.goto('/')
-  expect(await page.locator('main').evaluate(el => [...el.querySelectorAll('*')].map(node => getComputedStyle(node).backgroundImage).join(' '))).not.toContain('hero-walking')
-  await page.screenshot({ path: 'output/home-desktop.png', fullPage: true })
-  await page.goto('/microdosing/lsd/')
-  await page.screenshot({ path: 'output/guide-desktop.png', fullPage: true })
-})
-
-test('French listing hubs expose published guides and fit desktop and mobile screens', async ({ page }) => {
-  for (const [path, slugs] of [
-    ['/substances/', ['lsd', 'champignons-psilocybin', 'dmt', 'ayahuasca']],
-    ['/microdosing/', ['lsd', 'champignons-psilocybin', 'dmt', '1p-lsd']],
-  ] as const) {
-    await page.goto(path)
-    await expect(page.locator('main h1')).toHaveCount(1)
-    await expect(page.locator('dialog, [role="dialog"]')).toHaveCount(0)
-    await expect(page.locator('.listing-card')).toHaveCount(path === '/substances/' ? 22 : 10)
-    await expect(page.locator('.listing-status')).toHaveCount(0)
-    await expect(page.locator('.listing-upcoming-grid a')).toHaveCount(0)
-    for (const slug of slugs) await expect(page.locator(`main a[href="${path}${slug}/"]`).first()).toBeVisible()
-    await page.screenshot({ path: `output/${path.slice(1, -1)}-listing-desktop.png`, fullPage: true })
-    await page.setViewportSize({ width: 390, height: 844 })
-    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(391)
-    for (const slug of slugs) await expect(page.locator(`main a[href="${path}${slug}/"]`).first()).toBeVisible()
-    await page.screenshot({ path: `output/${path.slice(1, -1)}-listing-mobile.png`, fullPage: true })
-    await page.screenshot({ path: `output/${path.slice(1, -1)}-listing-mobile-viewport.png` })
-    const menu = page.locator('.listing-megamenu')
-    await menu.locator('summary').click()
-    await expect(menu.locator('.listing-megamenu-panel')).toBeVisible()
-    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(391)
-    await page.keyboard.press('Escape')
-    await expect(menu).not.toHaveAttribute('open')
-    await expect(menu.locator('summary')).toBeFocused()
-    await page.setViewportSize({ width: 320, height: 740 })
-    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(321)
-    await page.setViewportSize({ width: 1440, height: 1000 })
-  }
-  await page.goto('/microdosing/#protocoles')
-  await expect(page.locator('#protocoles')).toContainText('Approche Fadiman')
-  await expect(page.locator('#protocoles')).toContainText('Approche Stamets')
-  await page.goto('/recherche/?s=Fadiman')
-  await expect(page.locator('.search-results a[href="/microdosing/"]')).toBeVisible()
-})
-
-test('new guide references, related pages, search and mobile menu work', async ({ page }) => {
-  await page.goto('/substances/4-aco-dmt/')
-  await expect(page.locator('.guide-translated-content')).toContainText('Présentation')
-  await page.locator('.guide-toc a[href="#footnotes"]').click()
-  await expect(page).toHaveURL(/#footnotes$/)
-  await expect(page.locator('#footnotes')).toHaveText('Références')
-  await expect(page.locator('.guide-toc summary')).toBeInViewport()
-  await expect(page.locator('.guide-related-grid a')).toHaveCount(4)
-  for (const path of ['/substances/champignons-psilocybin/', '/substances/ibogaine/', '/microdosing/truffes-psilocybine/']) {
-    await page.goto(path)
-    await page.setViewportSize({ width: 320, height: 740 })
-    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(321)
-  }
-  const menu = page.locator('.listing-megamenu')
-  await menu.locator('summary').click()
-  await menu.locator('a[href="/substances/tabac/"]').click()
-  await expect(page).toHaveURL('/substances/tabac/')
+  await expect(page.locator(`#results a[href="${ARTICLE}"]`)).toBeVisible()
+  await expect(page.locator('#search-status')).toContainText('résultat')
   await page.goto('/recherche/?s=ibogaïne')
-  await expect(page.locator('.search-results a[href="/substances/ibogaine/"]')).toBeVisible()
-  await page.goto('/substances/lsd/')
-  await page.setViewportSize({ width: 1440, height: 1000 })
-  await page.screenshot({ path: 'output/new-guide-desktop-viewport.png' })
-  await page.screenshot({ path: 'output/new-guide-desktop.png', fullPage: true })
+  await expect(page.locator('#results a[href="/substances/ibogaine/"]')).toBeVisible()
+
+  const payload = '<img src=x onerror="window.__xss=1"><b id="injected">x</b>'
+  await page.goto(`/recherche/?s=${encodeURIComponent(payload)}`)
+  await expect(page.locator('#search-status')).toHaveText('0 résultats')
+  await expect(page.locator('#q')).toHaveValue(payload)
+  await expect(page.locator('#injected, main img[src="x"]')).toHaveCount(0)
+  expect(await page.evaluate(() => (window as unknown as { __xss?: number }).__xss)).toBeUndefined()
+})
+
+test('contact form shows the server message and keeps input on failure', async ({ page }) => {
+  await page.goto('/contact/')
+  const form = page.locator('form[data-form-kind=contact]')
+  await form.locator('[name=your-name]').fill('Test')
+  await form.locator('[name=your-email]').fill('person@example.org')
+  await form.locator('[name=your-subject]').fill('Question')
+  await form.locator('[name=your-message]').fill('Bonjour')
+  await page.route('**/api/forms', route => route.fulfill({ status: 503, json: { message: 'Veuillez réessayer.' } }))
+  await form.locator('[type=submit]').click()
+  await expect(form.locator('.form-status')).toHaveText('Veuillez réessayer.')
+  await expect(form.locator('[name=your-message]')).toHaveValue('Bonjour')
+  await page.unroute('**/api/forms')
+  let body = ''
+  await page.route('**/api/forms', route => { body = route.request().postData() ?? ''; return route.fulfill({ json: { message: 'Merci, votre message a bien été envoyé.' } }) })
+  await form.locator('[type=submit]').click()
+  await expect(form.locator('.form-status')).toHaveText('Merci, votre message a bien été envoyé.')
+  await expect(form.locator('[name=your-message]')).toHaveValue('')
+  for (const field of ['kind', 'your-name', 'your-email', 'your-subject', 'your-message', 'request_id']) expect(body).toContain(`name="${field}"`)
+})
+
+test('desktop and mobile screenshots', async ({ page }) => {
+  for (const [name, route] of [['home', '/'], ['substances', '/substances/'], ['guide', '/microdosing/lsd/'], ['blog', '/blog/']]) {
+    await page.goto(route)
+    await page.screenshot({ path: `output/${name}-desktop.png`, fullPage: true })
+  }
   await page.setViewportSize({ width: 390, height: 844 })
-  await page.screenshot({ path: 'output/new-guide-mobile.png' })
+  await page.goto('/')
+  await page.screenshot({ path: 'output/home-mobile.png', fullPage: true })
 })

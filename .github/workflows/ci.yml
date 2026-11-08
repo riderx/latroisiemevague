@@ -30,6 +30,6 @@ jobs:
       - run: bun run check
       - run: bun run test
       - run: bun run build
-      - run: bun run verify:migration
+      - run: bun run verify:site
       - run: bunx playwright install --with-deps chromium
       - run: bun run test:browser

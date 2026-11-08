@@ -1,35 +1,30 @@
 ---
-import ImportedPage from '../layouts/ImportedPage.astro'
-import { pages, headFor, bodyFor } from '../lib/pages'
-import { load } from 'cheerio'
-const page = pages.find(page => page.path === '/contact/')!
-const $ = load(bodyFor(page), null, false)
-$('main').html(`<section class="search-page"><h1>Rechercher</h1><form role="search" action="/recherche/"><label for="search-query">Rechercher sur La Troisième Vague</label><p><input type="search" id="search-query" name="s" required><button type="submit">Rechercher</button></p></form><p id="search-status" role="status"></p><div class="search-results"></div></section>`)
-const head = load(headFor(page), null, false)
-head('title').text('Recherche - La troisième vague')
-head('meta[name=robots]').attr('content', 'noindex, follow')
-head('link[rel=canonical]').attr('href', 'https://latroisiemevague.com/recherche/')
-head('script[type="application/ld+json"]').remove()
+import '../styles/pages.css'
+import Base from '../layouts/Base.astro'
 ---
-<ImportedPage page={page} head={head.html()} body={$.html()} />
+<Base title="Rechercher | La Troisième Vague" description="Rechercher dans les fiches et les articles de La Troisième Vague." noindex>
+  <section class="pagehead"><div class="in">
+    <h1>Rechercher</h1>
+    <form class="search" role="search" action="/recherche/"><label class="sr" for="q">Rechercher sur La Troisième Vague</label><input type="search" id="q" name="s" required placeholder="Une substance, un sujet…" /><button class="btn p" type="submit">Rechercher</button></form>
+    <p id="search-status" role="status" style="margin-top:18px;color:var(--ink-3)"></p>
+    <div class="results" id="results"></div>
+  </div></section>
+</Base>
 <script>
   const query = new URLSearchParams(location.search).get('s') || ''
-  const input = document.querySelector<HTMLInputElement>('#search-query')!
+  const input = document.querySelector<HTMLInputElement>('#q')!, status = document.querySelector('#search-status')!, results = document.querySelector('#results')!
   input.value = query
-  const status = document.querySelector('#search-status')!
   if (query) {
     try {
-      const response = await fetch('/search.json')
-      const pages: { title: string; path: string; description: string; text: string }[] = await response.json()
-      const normalize = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
-      const words = normalize(query).split(/\s+/).filter(Boolean)
-      const matches = pages.filter(page => words.every(word => normalize(page.title + ' ' + page.text).includes(word)))
-      status.textContent = `${matches.length} résultat${matches.length === 1 ? '' : 's'}`
-      for (const page of matches) {
-        const article = document.createElement('article'), title = document.createElement('h2'), link = document.createElement('a'), excerpt = document.createElement('p')
-        link.href = page.path; link.textContent = page.title.replace(' - La troisième vague', '')
-        excerpt.textContent = page.description || page.text.slice(0, 240)
-        title.append(link); article.append(title, excerpt); document.querySelector('.search-results')!.append(article)
+      const pages: { title: string; path: string; description: string; text: string }[] = await (await fetch('/search.json')).json()
+      const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+      const words = norm(query).split(/\s+/).filter(Boolean)
+      const scored = pages.map(p => { const t = norm(p.title), b = norm(p.text); return { p, ok: words.every(w => t.includes(w) || b.includes(w)), s: words.reduce((n, w) => n + (t.includes(w) ? 5 : 0) + (b.split(w).length - 1), 0) } }).filter(x => x.ok).sort((a, b) => b.s - a.s)
+      status.textContent = `${scored.length} résultat${scored.length === 1 ? '' : 's'}`
+      for (const { p } of scored) {
+        const a = document.createElement('a'), b = document.createElement('b'), d = document.createElement('span')
+        a.href = p.path; b.textContent = p.title.replace(/ \| La Troisième Vague$/, ''); d.textContent = p.description || p.text.slice(0, 200)
+        a.append(b, d); results.append(a)
       }
     } catch { status.textContent = 'La recherche est indisponible. Veuillez réessayer.' }
   }

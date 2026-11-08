@@ -1,6 +1,6 @@
 # La Troisième Vague
 
-Astro migration of `https://latroisiemevague.com`, deployed to a Cloudflare Worker at **https://latroisiemevague.com**. The www hostname also serves the site; canonical URLs use the main domain.
+French, independent, sourced information about psychedelics, built with Astro and served by a Cloudflare Worker at **https://latroisiemevague.com** (the www hostname also serves the site; canonical URLs use the main domain).
 
 ## Development and verification
 
@@ -10,26 +10,22 @@ bun run dev
 bun run check
 bun run test
 bun run build
-bun run verify:migration
+bun run verify:site
 bunx playwright install chromium
 bun run test:browser
 ```
 
-The committed import contains all 37 WordPress sitemap routes, the second author archive page, and three additional blog pagination pages. All 15 posts are discoverable without JavaScript. Search and a real 404 page are also generated. Original page markup, responsive styles, images, metadata, and section anchors are retained; WordPress, Elementor, and jQuery scripts are replaced with a small native client module. No WordPress requests are needed to build or serve the site.
+## Structure
 
-`src/content-data/pages/manifest.json` records the original source routes and SHA-256 fingerprints. The two listing pages, `/substances/` and `/microdosing/`, and eight original detailed guide pages have been replaced with the authorized French Third Wave edition. The library now contains 22 substance guides and 10 microdosing guides, preserving existing French URLs and adding 24 routes. The 15 blog posts retain their original content and archive structure.
+- `src/layouts/Base.astro`: document head, header (mega menus, mobile menu), footer. Design tokens and shared components live in `src/styles/site.css`; each page type has its own stylesheet (`home.css`, `guide.css`, `listing.css`, `article.css`, `prose.css`, `pages.css`). CSS is inlined at build time.
+- Pages: home (`src/pages/index.astro`), the two hubs and the 32 guides (`ListingPage`, `GuidePage`), the articles (`ArticlePage`, `/blog/`), and `/aide/`, `/a-propos/`, `/contact/`, `/recherche/`, `404`.
+- `src/data/site.ts`: substance families, illustration mapping, navigation, help lines and the Telegram link.
+- Illustrations: `src/assets/ill/*.webp` (source files). `src/components/Ill.astro` serves them as responsive AVIF/WebP through `astro:assets`. The hero is split into a base image and floating pieces (`hero2-pieces.json`) so the pieces can be animated.
+- Fonts (Erode, Switzer, from Fontshare under the ITF Free Font License) are self-hosted in `public/fonts`.
 
-`verify:migration` checks untouched original prose, internal links, section anchors, canonical URLs, local assets and blog coverage, then verifies the complete guide library against its source audit. The guide pages provide numbered references, a table of contents, source attribution, explicit editorial corrections, search entries and Article structured data. See [Third Wave content provenance and verification](docs/thirdwave-content.md).
+Articles are extracted at build time from the archived WordPress posts in `src/content-data/pages` (`src/lib/articles.ts`): only the article body is kept, with a dated archive notice. Two posts that gave practical preparation or dosing instructions are retired and redirect to the relevant guide. Legacy WordPress routes (archives, pagination, template pages) redirect through `public/_redirects`.
 
-Existing comments remain readable; the WordPress login-to-comment prompt links to Contact instead. Obsolete decorative images from the defunct `letroisiemecycle.com` domain are deliberately omitted to match the live site's appearance. A broken source link and footnote target are repaired.
-
-## Refreshing the WordPress import
-
-```sh
-bun run crawl
-```
-
-This is an explicit editorial update, not part of builds. The crawler reads the source sitemaps, follows internal archive links, caches responses in `.wordpress-import/cache`, downloads styles and media, and preserves full HTML instead of flattening it. Delete an individual cache file to fetch a newer version; remove `.wordpress-import/posts.json` to refresh the blog inventory. The committed import remains buildable after WordPress is retired.
+The guide library is the authorized French edition of Third Wave's guides. See [Third Wave content provenance and verification](docs/thirdwave-content.md).
 
 ## Forms
 

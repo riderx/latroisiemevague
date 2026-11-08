@@ -1,68 +1,119 @@
 ---
-import '../styles/listings.css'
-import '../styles/guides.css'
-import Analytics from '../components/Analytics.astro'
-import ListingNavigation from '../components/ListingNavigation.astro'
+import '../styles/prose.css'
+import '../styles/guide.css'
+import Base from './Base.astro'
+
+import Ill from '../components/Ill.astro'
+import Arrow from '../components/Arrow.astro'
 import TableOfContents from '../components/TableOfContents.astro'
+import IconNuance from '../components/IconNuance.astro'
+import { load } from 'cheerio'
+import { helpLines } from '../data/site'
 import { guideCatalog, guideContent, guideDates, type Guide } from '../lib/guides'
 import { guideTitle, guideHeading } from '../content-data/guide-catalog'
-import illustrations from '../content-data/guide-illustrations.json'
+import { illustrationFor, tintFor, familyOf, shortName, keyOf, SITE } from '../data/site'
+import { formatDate } from '../lib/articles'
 const { guide } = Astro.props as { guide: Guide }
 const { html, toc, description, words, evidence } = guideContent(guide)
 const title = guideTitle(guide)
-const canonical = new URL(guide.path, 'https://latroisiemevague.com').href
-const parentPath = guide.category === 'psychedelics' ? '/substances/' : '/microdosing/'
-const categoryName = guide.category === 'psychedelics' ? 'Substances' : 'Microdosing'
+const canonical = new URL(guide.path, SITE).href
+const micro = guide.category === 'microdosing'
+const parentPath = micro ? '/microdosing/' : '/substances/'
+const categoryName = micro ? 'Microdosage' : 'Substances'
 const dates = guideDates(guide)
-const formatDate = (date: string) => new Date(date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
 const heading = guideHeading(guide)
-const illustration = illustrations[guide.id as keyof typeof illustrations]
+const dek = micro ? `Ce que l’on sait du microdosage de ${guide.name}, ce que les études mesurent vraiment, et les risques à connaître.` : `Histoire, effets, risques et état de la recherche : l’essentiel pour comprendre ${guide.name.startsWith('Champignons') || guide.name.startsWith('Truffes') ? 'les ' + guide.name.toLowerCase() : guide.name}.`
+const key = keyOf(guide)
+const family = micro ? undefined : familyOf(key)
+const sibling = guideCatalog.find(g => keyOf(g) === key && g.category !== guide.category)
+// Structure the translated body: one <section> per chapter, FAQ as disclosures, compact references
+const $ = load(html, null, false)
+const chapters: string[] = []
+let current: string[] = []
+$.root().children().each((_, el) => {
+  if (el.type === 'tag' && el.tagName === 'h2') { if (current.length) chapters.push(current.join('')); current = [] }
+  current.push($.html(el))
+})
+if (current.length) chapters.push(current.join(''))
+let chapterNo = 0
+const structured = chapters.map(chunk => {
+  const c = load(chunk, null, false)
+  const h2 = c('h2').first()
+  const id = h2.attr('id') ?? ''
+  if (!h2.length) return `<div class="gsec-intro">${chunk}</div>`
+  const num = String(++chapterNo).padStart(2, '0')
+  if (id === 'faq') {
+    const out: string[] = []; let q: string | null = null; let body: string[] = []
+    const flush = () => { if (q) out.push(`<details class="qa"><summary>${q}</summary><div>${body.join('')}</div></details>`); q = null; body = [] }
+    c.root().children().each((_, el) => { if (el.type !== 'tag' || el.tagName === 'h2') return; if (/^h[34]$/.test(el.tagName)) { flush(); q = c(el).html() } else if (q) body.push(c.html(el)); else out.push(c.html(el)) })
+    flush()
+    return `<section class="gsec gsec-faq" aria-labelledby="${id}"><span class="gnum" aria-hidden="true">${num}</span>${c.html(h2)}${out.join('')}</section>`
+  }
+  if (id === 'footnotes') { h2.remove(); return `<section class="gsec gsec-refs" aria-labelledby="${id}"><span class="gnum" aria-hidden="true">${num}</span><h2 id="footnotes">${h2.text()}</h2><div class="refs">${c.html()}</div></section>` }
+  return `<section class="gsec" aria-labelledby="${id}"><span class="gnum" aria-hidden="true">${num}</span>${chunk}</section>`
+}).join('')
+// Guard: restructuring must not drop any text
+{ const norm = (h: string) => load(h, null, false).root().text().replace(/\s+/g, '')
+  const before = norm(html), after = norm(structured.replace(/<span class="gnum"[^>]*>\d+<\/span>/g, ''))
+  if (before !== after) throw new Error(`Guide restructuring changed the text of ${guide.id} (${before.length} → ${after.length} chars)`) }
+const refCount = (html.match(/id="_ftn\d+"/g) ?? []).length
+const ico = {
+  fam: '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 12c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3"/><path d="M2 16c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3" opacity=".5"/></svg>',
+  time: '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>',
+  refs: '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M4 3h9l3 3v11H4z"/><path d="M7 9h6M7 12h6M7 15h3"/></svg>',
+  date: '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><rect x="3" y="4.5" width="14" height="12.5" rx="2"/><path d="M3 8.5h14M7 2.5v3M13 2.5v3"/></svg>',
+}
 const contents = [{ id: 'point-recherche', title: 'Repères et état de la recherche' }, ...toc, { id: 'source-originale', title: 'Source et traduction' }]
-const related = guideCatalog.filter(item => item.path !== guide.path).sort((a, b) => Number(b.name === guide.name) - Number(a.name === guide.name) || Number(b.category === guide.category) - Number(a.category === guide.category)).slice(0, 4)
+const related = guideCatalog.filter(g => g.path !== guide.path && g.category === guide.category && (!family || family.slugs.includes(keyOf(g)))).slice(0, 4)
+const fill = guideCatalog.filter(g => g.path !== guide.path && g.category === guide.category && !related.includes(g)).slice(0, 4 - related.length)
+const more = [...related, ...fill]
 const schema = { '@context': 'https://schema.org', '@graph': [
   { '@type': 'Article', '@id': canonical + '#article', url: canonical, headline: heading, description, inLanguage: 'fr-FR', datePublished: dates.published, dateModified: dates.modified,
-    author: { '@type': 'Organization', name: 'Third Wave', url: 'https://thethirdwave.co/' },
-    translator: { '@type': 'Organization', name: 'La Troisième Vague', url: 'https://latroisiemevague.com/' },
-    publisher: { '@type': 'Organization', name: 'La Troisième Vague', url: 'https://latroisiemevague.com/', logo: { '@type': 'ImageObject', url: 'https://latroisiemevague.com/assets/uploads/2020/05/logo-1.png' } }, isBasedOn: guide.sourceUrl, mainEntityOfPage: canonical, wordCount: words, articleSection: categoryName,
-    image: 'https://latroisiemevague.com/assets/uploads/2020/09/cover-share-fb.jpg' },
-  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://latroisiemevague.com/' }, { '@type': 'ListItem', position: 2, name: categoryName, item: new URL(parentPath, canonical).href }, { '@type': 'ListItem', position: 3, name: guide.name, item: canonical }] },
+    author: { '@type': 'Organization', name: 'Third Wave', url: 'https://thethirdwave.co/' }, translator: { '@type': 'Organization', name: 'La Troisième Vague', url: SITE + '/' },
+    publisher: { '@type': 'Organization', name: 'La Troisième Vague', url: SITE + '/', logo: { '@type': 'ImageObject', url: SITE + '/favicon.svg' } }, isBasedOn: guide.sourceUrl, mainEntityOfPage: canonical, wordCount: words, articleSection: categoryName, image: SITE + '/og.jpg' },
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: categoryName, item: SITE + parentPath }, { '@type': 'ListItem', position: 3, name: guide.name, item: canonical }] },
 ] }
 ---
-<!doctype html>
-<html lang="fr-FR">
-  <head>
-    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title><meta name="description" content={description} /><link rel="canonical" href={canonical} />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta property="og:type" content="article" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content="La Troisième Vague" /><meta property="article:published_time" content={dates.published} /><meta property="article:modified_time" content={dates.modified} /><meta property="article:section" content={categoryName} />
-    <meta property="og:image" content="https://latroisiemevague.com/assets/uploads/2020/09/cover-share-fb.jpg" /><meta property="og:image:alt" content="La Troisième Vague — guides en français" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content="https://latroisiemevague.com/assets/uploads/2020/09/cover-share-fb.jpg" />
-    <link rel="icon" href="/assets/uploads/2020/08/cropped-favicon-32x32.png" />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\u003c')} /><Analytics />
-  </head>
-  <body class="listing-site guide-site">
-    <a class="listing-skip" href="#contenu">Aller au contenu</a>
-    <ListingNavigation currentPath={guide.path} />
-    <main id="contenu">
-      <nav class="listing-breadcrumb listing-container" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><a href={parentPath}>{categoryName}</a><span aria-hidden="true">/</span><span>{guide.name}</span></nav>
-      <header class="listing-hero listing-container guide-hero">
-        <div class="guide-hero-copy"><p class="listing-eyebrow">{guide.category === 'microdosing' ? 'Les guides du microdosing' : 'Les guides des substances'}</p>
-          <h1>{heading}</h1><p class="guide-introduction">{description}</p>
-          <p class="guide-meta">Source : <a href={guide.sourceUrl}>Third Wave</a> · Édition française : <a href="/a-propos/">La Troisième Vague</a></p>
-          <p class="guide-meta guide-dates">Publié le <time datetime={dates.published}>{formatDate(dates.published)}</time> · Mise à jour le <time datetime={dates.modified}>{formatDate(dates.modified)}</time> · {Math.ceil(words / 230)} min de lecture</p>
-        </div>
-        <figure class="guide-illustration"><img src={illustration.path} width="240" height="200" alt={`Illustration : ${guide.name}`} fetchpriority="high" /><figcaption>{guide.name}</figcaption></figure>
-      </header>
-      <div class="guide-reading listing-container">
-        <TableOfContents items={contents} contentId="guide-article" />
-        <article class="guide-prose" id="guide-article" aria-label={heading}>
-          <section class="guide-evidence" id="point-recherche"><p class="listing-eyebrow">Repères de l’édition française</p><h2>Lire ce guide avec le recul nécessaire</h2><Fragment set:html={evidence} /></section>
-          <div class="guide-translated-content"><Fragment set:html={html} /></div>
-          <footer class="guide-attribution" id="source-originale"><h2>Source et traduction</h2><p>Source : <a href={guide.sourceUrl}>{guide.originalTitle || guide.name} — Third Wave</a>. Version anglaise consultée le {new Date(guide.retrievedAt).toLocaleDateString('fr-FR', { timeZone: 'UTC' })}.</p><p>Traduction française assistée par IA et adaptation éditoriale autorisées. Les sections commerciales et certaines instructions pratiques ont été écartées. Les compléments éditoriaux sont distingués du texte traduit et renvoient à leurs sources.</p><p>Une éventuelle relecture médicale citée dans le texte concerne la version anglaise. La version française n’a pas fait l’objet d’une validation médicale indépendante. Les passages juridiques décrivent le contexte de la source et ne remplacent pas la vérification des règles en vigueur dans votre pays.</p></footer>
-        </article>
-      </div>
-      <section class="guide-related listing-container"><p class="listing-eyebrow">Poursuivre la lecture</p><h2>Pour approfondir</h2><div class="guide-related-grid">{related.map(item => <a href={item.path}><span>{item.category === 'microdosing' ? 'Microdosing' : 'Substances'}</span><h3>{item.name}</h3><span class="guide-related-action">Lire le guide →</span></a>)}</div><a class="listing-text-link" href={parentPath}>Tous les guides {guide.category === 'microdosing' ? 'du microdosing' : 'des substances'} →</a></section>
-    </main>
-    <footer class="listing-footer"><div class="listing-container listing-footer-top"><a class="listing-brand" href="/">La Troisième Vague</a><nav aria-label="Pied de page"><a href="/substances/">Substances</a><a href="/microdosing/">Microdosing</a><a href="/blog/">Articles</a><a href="/contact/">Contact</a></nav></div></footer>
-  </body>
-</html>
+<Base title={title} description={description} path={guide.path} type="article" schema={schema} published={dates.published} modified={dates.modified}>
+  <div class="read-progress" aria-hidden="true"></div>
+  <section class="ghead"><div class="in">
+    <div class="ghead-txt">
+      <nav class="crumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">›</span><a href={parentPath}>{categoryName}</a><span aria-hidden="true">›</span><span>{guide.name}</span></nav>
+      <h1>{heading}</h1>
+      <p class="dek">{dek}</p>
+      <ul class="colophon">
+        {family && <li><span set:html={ico.fam} />{family.name}</li>}
+        <li><span set:html={ico.time} />{Math.ceil(words / 230)} min de lecture</li>
+        {refCount > 0 && <li><span set:html={ico.refs} />{refCount} références</li>}
+        <li><span set:html={ico.date} />Mis à jour le <time datetime={dates.modified}>{formatDate(dates.modified)}</time></li>
+      </ul>
+      <p class="gactions"><a class="btn p" href="#point-recherche">Commencer la lecture<Arrow /></a>{sibling && <a class="btn s" href={sibling.path}>{sibling.category === 'microdosing' ? 'Voir le microdosage' : 'Voir la fiche complète'}<Arrow /></a>}</p>
+    </div>
+    <div class={`gplate pat ${tintFor(key)}`}><div class="porthole guide-illustration"><Ill name={illustrationFor(key)} alt={`Illustration : ${guide.name}`} widths={[280, 420, 560]} sizes="(max-width: 960px) 220px, 380px" loading="eager" fetchpriority="high" /></div></div>
+  </div>
+  </section>
+  <div class="in reading greading">
+    <TableOfContents items={contents} contentId="guide-article" />
+    <article class="prose" id="guide-article" aria-label={heading}>
+      <section class="evidence" id="point-recherche"><div class="ev-head"><span class="ev-ic"><IconNuance /></span><div><small>Avant de lire</small><h2>Lire ce guide avec le recul nécessaire</h2></div></div><Fragment set:html={evidence} /></section>
+      <div class="guide-translated-content"><Fragment set:html={structured} /></div>
+      <footer class="attribution guide-attribution" id="source-originale"><h2>Source et traduction</h2><p>Source : <a href={guide.sourceUrl} rel="noopener">{guide.originalTitle || guide.name} — Third Wave</a>. Version anglaise consultée le {formatDate(guide.retrievedAt)}.</p><p>Traduction française assistée par IA et adaptation éditoriale autorisées. Les sections commerciales et les instructions pratiques ont été écartées. Les compléments éditoriaux sont distingués du texte traduit et renvoient à leurs sources.</p><p>Une éventuelle relecture médicale citée dans le texte concerne la version anglaise. La version française n’a pas fait l’objet d’une validation médicale indépendante. Les passages juridiques décrivent le contexte de la source et ne remplacent pas la vérification des règles en vigueur dans votre pays.</p></footer>
+    </article>
+    <aside class="grail" aria-label="Sécurité">
+      <div class="rail-card help-mini"><small>En cas de besoin</small><b>Appelez, c’est anonyme</b>
+        <ul>{helpLines.slice(0, 3).map(h => <li><a href={`tel:${h.tel}`}><span>{h.service}<small>{h.country}</small></span><strong>{h.number}</strong></a></li>)}</ul>
+        <a class="rail-link" href="/aide/">Toutes les aides <Arrow /></a></div>
+      <div class="rail-card"><small>Avant tout</small><b>Interactions dangereuses</b><p>Lithium, IMAO, certains antidépresseurs et le tramadol peuvent rendre une association dangereuse.</p><a class="rail-link" href="/aide/">Les repères de sécurité <Arrow /></a></div>
+    </aside>
+  </div>
+  <section class="related"><div class="in">
+    <h2>Pour <em>approfondir</em></h2>
+    <div class="rgrid">{more.map(g => <a class={`rcard ${tintFor(keyOf(g))}`} href={g.path}><small>{g.category === 'microdosing' ? 'Microdosage' : familyOf(keyOf(g))?.name ?? 'Substance'}</small><h3>{shortName(keyOf(g), g.name)}</h3><div class="art"><Ill name={illustrationFor(keyOf(g))} widths={[200, 320]} sizes="200px" /></div></a>)}</div>
+    <p style="margin-top:32px"><a class="btn s" href={parentPath}>{micro ? 'Tous les guides du microdosage' : 'Toutes les fiches substances'}<Arrow /></a></p>
+  </div></section>
+</Base>
+<script>
+  const bar = document.querySelector<HTMLElement>('.read-progress')!, art = document.getElementById('guide-article')!
+  const upd = () => { const r = art.getBoundingClientRect(); const p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight))); bar.style.transform = `scaleX(${p})` }
+  addEventListener('scroll', upd, { passive: true }); upd()
+</script>

@@ -1,7 +1,18 @@
 ---
-import ImportedPage from '../layouts/ImportedPage.astro'
-import { pages, headFor } from '../lib/pages'
-const page = pages.find(page => page.path === '/oups-404/')!
-const head = headFor(page).replace(/<meta name="robots"[^>]*>/g, '<meta name="robots" content="noindex, follow">')
+import '../styles/pages.css'
+import Base from '../layouts/Base.astro'
+import Ill from '../components/Ill.astro'
+import Arrow from '../components/Arrow.astro'
 ---
-<ImportedPage page={page} head={head} />
+<Base title="Page introuvable | La Troisième Vague" description="Cette page n’existe pas ou a été déplacée." noindex>
+  <section class="nf"><div class="in nf-grid">
+    <div>
+      <span class="nf-code">404</span>
+      <h1>Cette page <em>a dérivé</em></h1>
+      <p class="lede">Elle n’existe pas, ou a été déplacée. Cherchez ce dont vous avez besoin, ou repartez d’un point sûr.</p>
+      <form class="search" role="search" action="/recherche/"><label class="sr" for="q404">Rechercher</label><input type="search" id="q404" name="s" required placeholder="Une substance, un sujet…" /><button class="btn p" type="submit">Rechercher</button></form>
+      <p class="nf-links"><a class="btn s" href="/">Accueil<Arrow /></a><a class="btn s" href="/substances/">Les fiches<Arrow /></a><a class="btn l" href="/aide/">Besoin d’aide<Arrow /></a></p>
+    </div>
+    <div class="nf-art"><Ill name="x-404" alt="Une barque perdue sur les vagues, éclairée par le faisceau d’un phare." widths={[360, 540, 720]} sizes="(max-width: 960px) 80vw, 520px" loading="eager" fetchpriority="high" /></div>
+  </div></section>
+</Base>

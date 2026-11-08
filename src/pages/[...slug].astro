@@ -1,14 +1,20 @@
 ---
-import ImportedPage from '../layouts/ImportedPage.astro'
 import ListingPage from '../layouts/ListingPage.astro'
 import GuidePage from '../layouts/GuidePage.astro'
+import ArticlePage from '../layouts/ArticlePage.astro'
 import { guideCatalog, guideFor } from '../lib/guides'
-import { pages } from '../lib/pages'
+import { articles } from '../lib/articles'
 export function getStaticPaths() {
-  return pages.map(page => ({ params: { slug: page.path.slice(1).replace(/\/$/, '') || undefined }, props: { page } }))
+  const strip = (p: string) => p.slice(1).replace(/\/$/, '')
+  return [
+    { params: { slug: 'substances' }, props: { kind: 'listing', category: 'psychedelics' } },
+    { params: { slug: 'microdosing' }, props: { kind: 'listing', category: 'microdosing' } },
+    ...guideCatalog.map(entry => ({ params: { slug: strip(entry.path) }, props: { kind: 'guide', path: entry.path } })),
+    ...articles.map(a => ({ params: { slug: strip(a.path) }, props: { kind: 'article', path: a.path } })),
+  ]
 }
-const { page } = Astro.props
-const listingCategory = page.path === '/substances/' ? 'psychedelics' : page.path === '/microdosing/' ? 'microdosing' : undefined
-const guideEntry = guideCatalog.find(entry => entry.path === page.path)
+const props = Astro.props as { kind: 'listing'; category: 'psychedelics' | 'microdosing' } | { kind: 'guide' | 'article'; path: string }
 ---
-{listingCategory ? <ListingPage category={listingCategory} /> : guideEntry ? <GuidePage guide={guideFor(guideEntry)} /> : <ImportedPage page={page} />}
+{props.kind === 'listing' ? <ListingPage category={props.category} />
+  : props.kind === 'guide' ? <GuidePage guide={guideFor(guideCatalog.find(e => e.path === props.path)!)} />
+  : <ArticlePage article={articles.find(a => a.path === props.path)!} />}

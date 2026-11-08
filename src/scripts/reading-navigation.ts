@@ -48,7 +48,8 @@ document.querySelectorAll<HTMLElement>('[data-reading-toc]').forEach(toc => {
   }
   const schedule = () => { if (!frame) frame = requestAnimationFrame(update) }
   const measure = () => {
-    offset = mobile.matches ? summary.getBoundingClientRect().height + 32 : 32
+    const header = document.querySelector('.site-header')?.getBoundingClientRect().height ?? 0
+    offset = mobile.matches ? (parseFloat(getComputedStyle(toc).top) || header) + summary.getBoundingClientRect().height + 16 : header + 24
     document.documentElement.style.setProperty('--reader-offset', `${offset}px`)
     entries.forEach(entry => { entry.top = entry.target.getBoundingClientRect().top + window.scrollY })
     const bounds = article.getBoundingClientRect()

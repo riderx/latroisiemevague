@@ -1,0 +1,22 @@
+<script>
+  document.querySelectorAll<HTMLFormElement>('form[data-form-kind]').forEach(form => {
+    const id = Object.assign(document.createElement('input'), { type: 'hidden', name: 'request_id', value: crypto.randomUUID() })
+    form.append(id)
+    form.addEventListener('submit', async event => {
+      event.preventDefault()
+      if (!form.reportValidity()) return
+      const submit = form.querySelector<HTMLButtonElement>('[type=submit]')!, status = form.querySelector<HTMLElement>('.form-status')!
+      submit.disabled = true; status.textContent = 'Envoi en cours…'; status.dataset.error = 'false'
+      try {
+        const data = new FormData(form), topic = data.get('topic'), subject = data.get('your-subject')
+        if (topic && typeof subject === 'string') { data.set('your-subject', `[${topic}] ${subject}`.slice(0, 200)); data.delete('topic') }
+        const response = await fetch('/api/forms', { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+        const result = await response.json()
+        if (!response.ok) throw new Error(result.message || 'L’envoi a échoué. Veuillez réessayer.')
+        status.textContent = result.message; form.reset(); id.value = crypto.randomUUID()
+      } catch (error) {
+        status.dataset.error = 'true'; status.textContent = error instanceof Error ? error.message : 'Erreur réseau. Veuillez réessayer.'
+      } finally { submit.disabled = false }
+    })
+  })
+</script>
