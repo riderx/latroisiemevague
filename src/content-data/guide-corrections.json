@@ -172,17 +172,7 @@
     "sourceHash": "abd52ef3882453927a87e74de94fa4288c48554dda1de03b6bbc0d6986bee4ad",
     "replacements": [
       {
-        "index": 76,
-        "reason": "Update the obsolete claim that no clinical research exists.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Des études contrôlées existent, mais leur durée, leurs populations et les substances étudiées limitent les conclusions. La sécurité d’un usage répété à long terme ne peut pas être déduite de ces seuls essais. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11923771/\">Exemple d’essai contrôlé sur le LSD</a> et <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">état des connaissances sur la psilocybine</a>.</p>"
-      },
-      {
         "index": 77,
-        "reason": "Remove categorical claims of safety or effectiveness.",
-        "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
-      },
-      {
-        "index": 177,
         "reason": "Remove categorical claims of safety or effectiveness.",
         "html": "<p class=\"guide-editorial-update\"><strong>Note de l’édition française.</strong> Une faible quantité ne garantit pas la sécurité, l’absence d’effet perceptible ou l’absence d’expérience difficile. La tolérance, les interactions et les effets à long terme doivent être distingués. Le <a href=\"https://www.nccih.nih.gov/health/psilocybin-for-mental-health-and-addiction-what-you-need-to-know\">NCCIH rappelle les incertitudes et les effets indésirables possibles du microdosage de psilocybine</a> ; cela ne démontre pas la sécurité ou l’efficacité des autres substances.</p>"
       },
