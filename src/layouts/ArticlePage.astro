@@ -16,15 +16,15 @@ const schema = { '@context': 'https://schema.org', '@graph': [
   { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Articles', item: SITE + '/blog/' }, { '@type': 'ListItem', position: 3, name: article.title, item: canonical }] },
 ] }
 ---
-<Base title={`${seoTitles[article.id] ?? article.title} | La Troisième Vague`} description={article.description} path={article.path} type="article" schema={schema} published={article.published} modified={article.modified} image={ogImage(article.path)}>
+<Base title={`${(!article.current && seoTitles[article.id]) || article.title} | La Troisième Vague`} description={article.description} path={article.path} type="article" schema={schema} published={article.published} modified={article.modified} image={ogImage(article.path)}>
   <section class="ahead"><div class="in">
     <h1>{article.title}</h1>
-    <p class="byline"><span>Publié le <b><time datetime={article.published}>{formatDate(article.published)}</time></b></span><span>{Math.ceil(article.words / 230)} min de lecture</span><span>{article.category}</span></p>
+    <p class="byline"><span>{article.current && article.modified !== article.published ? 'Mis à jour le' : 'Publié le'} <b><time datetime={article.current ? article.modified : article.published}>{formatDate(article.current ? article.modified : article.published)}</time></b></span><span>{Math.ceil(article.words / 230)} min de lecture</span><span>{article.category}</span></p>
     <div class={`cover ${tintFor(article.id)}`}><Ill name={article.cover} widths={[240, 360, 480]} sizes="(max-width: 960px) 60vw, 260px" loading="eager" fetchpriority="high" /></div>
   </div></section>
   <div class="in areading">
     <article class="prose">
-      <p class="note archive"><strong>Article publié en {new Date(article.published).getUTCFullYear()}.</strong> La recherche a évolué depuis : pour l’état actuel des connaissances, consultez les <a href="/substances/">fiches substances</a>, mises à jour régulièrement.</p>
+      {!article.current && <p class="note archive"><strong>Article publié en {new Date(article.published).getUTCFullYear()}.</strong> La recherche a évolué depuis : pour l’état actuel des connaissances, consultez les <a href="/substances/">fiches substances</a>, mises à jour régulièrement.</p>}
       <Fragment set:html={article.html} />
     </article>
   </div>

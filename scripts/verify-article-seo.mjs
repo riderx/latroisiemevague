@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { readFile } from 'node:fs/promises'
+import { readFile, readdir } from 'node:fs/promises'
 import { load } from 'cheerio'
 import { guideCatalog, guideHeading } from '../src/content-data/guide-catalog.ts'
 const manifest = JSON.parse(await readFile('src/content-data/pages/manifest.json', 'utf8'))
@@ -10,7 +10,10 @@ assert(retiredBlock, 'retiredPosts not found in src/lib/articles.ts')
 const retired = new Set([...retiredBlock.matchAll(/'([^']+)'\s*:/g)].map(m => m[1]))
 const postPaths = manifest.postPaths.filter(path => !retired.has(path))
 assert(postPaths.length > 0 && postPaths.length === manifest.postPaths.length - retired.size, 'retired posts must come from the legacy post list')
-const paths = [...guideCatalog.map(guide => guide.path), ...postPaths]
+// New articles live in src/content-data/articles/<slug>.json; a slug that matches a legacy post only rewrites it.
+const articleFiles = (await readdir('src/content-data/articles')).filter(f => f.endsWith('.json')).map(f => f.slice(0, -5))
+const newArticlePaths = articleFiles.filter(id => !manifest.pages.some(p => p.id === id)).map(id => `/${id}/`)
+const paths = [...guideCatalog.map(guide => guide.path), ...postPaths, ...newArticlePaths]
 const titles = new Set(), descriptions = new Set()
 for (const path of paths) {
   const $ = load(await readFile(`dist${path}index.html`, 'utf8'))
@@ -55,10 +58,12 @@ for (const path of paths) {
     assert($('time').toArray().some(el => $(el).attr('datetime') === article.dateModified), `${path}: visible update date`)
   } else {
     assert(sitemap('url').toArray().some(el => sitemap(el).find('loc').text() === canonical && sitemap(el).find('lastmod').text() === article.dateModified.slice(0, 10)), `${path}: sitemap lastmod`)
-    assert($('time').toArray().some(el => $(el).attr('datetime') === article.datePublished), `${path}: visible publication date`)
+    assert($('time').toArray().some(el => [article.datePublished, article.dateModified].includes($(el).attr('datetime'))), `${path}: visible publication or update date`)
     const legacy = manifest.pages.find(page => page.path === path)
-    const original = load(await readFile(`src/content-data/pages/${legacy.id}.head.html`, 'utf8'))
-    assert.equal(article.datePublished, original('meta[property="article:published_time"]').attr('content'), `${path}: preserve original date`)
+    if (legacy) {
+      const original = load(await readFile(`src/content-data/pages/${legacy.id}.head.html`, 'utf8'))
+      assert.equal(article.datePublished, original('meta[property="article:published_time"]').attr('content'), `${path}: preserve original date`)
+    }
   }
 }
 console.log(`Verified SEO for ${guideCatalog.length} guides and ${postPaths.length} blog articles: unique metadata, canonical URLs, Article/BlogPosting schema, authors, dates, breadcrumbs and sitemap.`)
