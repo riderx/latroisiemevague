@@ -17,9 +17,10 @@ Public : francophones adultes curieux, parfois inquiets. Site d'information et d
 - intégration ; thérapie assistée par psychédéliques ; essai contrôlé randomisé ; effet placebo ; récepteur 5-HT2A ; IMAO (inhibiteurs de la monoamine oxydase)
 - substance / produit (pas « drogue » de façon péjorative)
 
-## Ce qu'on retire (cadre légal français, art. L3421-4 CSP : pas de présentation favorable ni d'incitation)
-- Toute instruction pratique : comment se procurer, cultiver, préparer, extraire, doser ou consommer une substance (posologies en mg/g par palier, recettes, voies d'administration détaillées comme mode d'emploi). Remplacez par une phrase neutre du type : « Les doses varient fortement selon le produit et la personne ; ce guide ne donne pas de repères de dosage. »
-- Tout ton promotionnel, toute mention commerciale (kits, cours, coaching, codes promo, « notre partenaire »).
+## Informations pratiques (doses, préparation, approvisionnement)
+- On reprend toutes les informations de la source, y compris les doses, la préparation, les modes de prise et l'approvisionnement. On ne les supprime pas et on ne les remplace pas par une phrase du type « ce guide ne donne pas de repères ».
+- On les écrit comme de l'information de réduction des risques : factuelle, sans enthousiasme, avec les risques et les limites que donne la source. Pas d'incitation (« essayez », « idéal pour »). Le site ajoute lui-même un avertissement en tête de chaque section pratique (`practicalBlocks`) : ne l'écrivez pas dans le texte.
+- Pas de ton promotionnel. Une mention commerciale de la source (cours, kit, code promo, « notre partenaire ») se traduit en une phrase neutre qui décrit ce qui est lié, sans formule d'achat.
 - Les mentions de durée d'effet ou de mécanisme restent, car ce sont des informations de sécurité.
 
 ## Titres et accroches
