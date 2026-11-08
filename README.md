@@ -49,4 +49,14 @@ bun run deploy
 
 `wrangler.jsonc` owns the `latroisiemevague-v2` Worker, its static assets, D1 binding, email restrictions, cron, and `latroisiemevague.com/*` and `www.latroisiemevague.com/*` routes. Cloudflare Email Sending must remain enabled for `latroisiemevague.com` with its SPF/DKIM records.
 
-Pushes to `main` run checks and deploy through GitHub Actions. Repository secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. The token needs access to Workers deployment, the zone's Workers routes, D1 migrations, and Email Sending bindings. The WordPress server and legacy Pages project are not deleted; the public domain is served by the Worker through routes on the existing proxied DNS records.
+Pushes to `main` run type checks, form tests, the build, content/SEO audits, and Chromium browser tests before deploying through GitHub Actions. The workflow applies D1 migrations, deploys the Worker, then compares representative production pages, search data, and the sitemap against the built release. It also checks the www canonical URL. Manual production deployments are restricted to `main`; production runs are serialized.
+
+The repository's encrypted Actions secrets are `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. The dedicated account-owned token, **GitHub Actions - latroisiemevague production**, has these permissions in the Digital shift account:
+
+- **Individual Workers Editor** on `latroisiemevague-v2` only.
+- **Workers Routes Write** and **Zone Read** on `latroisiemevague.com` only.
+- **D1 Write** for database migrations (Cloudflare currently scopes this permission to the account).
+
+The token has no expiration and no token-management permission. To rotate it, create a replacement with the same permissions in Cloudflare's Account API tokens, update `CLOUDFLARE_API_TOKEN` in GitHub Settings → Secrets and variables → Actions, verify a deployment, then revoke the old token. Never commit the token or use a local Wrangler OAuth token for CI. The account ID is `9ee3d7479a3c359681e3fab2c8cb22c0`.
+
+The WordPress server and legacy Pages project are not deleted; the public domain is served by the Worker through routes on the existing proxied DNS records.
