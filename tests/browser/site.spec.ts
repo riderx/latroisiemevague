@@ -7,6 +7,9 @@ const sitemapRoutes = [...readFileSync('dist/sitemap.xml', 'utf8').matchAll(/<lo
 const routes = [...sitemapRoutes, '/recherche/', '/404.html']
 const guidePaths = new Set(guideCatalog.map(guide => guide.path))
 const ARTICLE = '/comment-les-psychedeliques-liberent-les-mecanismes-de-controle-de-votre-cerveau/'
+const staticRoutes = new Set(['/', '/substances/', '/microdosing/', '/blog/', '/aide/', '/a-propos/', '/contact/', '/confidentialite/'])
+// Every sitemap route that is neither a guide nor a fixed page is an article.
+const articleCount = sitemapRoutes.filter(route => !guidePaths.has(route) && !staticRoutes.has(route)).length
 
 // The analytics script is third-party; serve an empty one so tests stay offline and deterministic.
 test.beforeEach(async ({ page }) => {
@@ -99,10 +102,10 @@ test('listing hubs link every published guide', async ({ page }) => {
 test('blog lists every article on a single page', async ({ page }) => {
   await page.goto('/blog/')
   await expect(page.locator('main a.afeat')).toHaveCount(1)
-  await expect(page.locator('main a.afeat, main a.acard')).toHaveCount(13)
+  await expect(page.locator('main a.afeat, main a.acard')).toHaveCount(articleCount)
   await page.locator(`main a[href="${ARTICLE}"]`).click()
   await expect(page).toHaveURL(ARTICLE)
-  await expect(page.locator('main h1')).toContainText('mode par défaut')
+  await expect(page.locator('main h1')).toContainText('réseau par défaut')
 })
 
 test('search finds a known article and renders the query as text', async ({ page }) => {

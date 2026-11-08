@@ -16,7 +16,10 @@ const manifest = JSON.parse(await readFile('src/content-data/pages/manifest.json
 const retiredBlock = (await readFile('src/lib/articles.ts', 'utf8')).match(/export const retiredPosts[^=]*=\s*\{([^}]*)\}/)?.[1]
 assert(retiredBlock, 'retiredPosts not found in src/lib/articles.ts')
 const retired = Object.fromEntries([...retiredBlock.matchAll(/'([^']+)'\s*:\s*'([^']+)'/g)].map(m => [m[1], m[2]]))
-const articlePaths = manifest.postPaths.filter(p => !retired[p])
+// New articles live in src/content-data/articles/<slug>.json; a slug that matches a legacy post only rewrites it.
+const articleFiles = (await readdir('src/content-data/articles')).filter(f => f.endsWith('.json')).map(f => f.slice(0, -5))
+const newArticlePaths = articleFiles.filter(id => !manifest.pages.some(p => p.id === id)).map(id => `/${id}/`)
+const articlePaths = [...manifest.postPaths.filter(p => !retired[p]), ...newArticlePaths]
 
 async function htmlFiles(dir) {
   const out = []

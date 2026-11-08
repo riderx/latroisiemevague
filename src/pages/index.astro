@@ -11,7 +11,7 @@ import IconNuance from '../components/IconNuance.astro'
 import IconNoIncite from '../components/IconNoIncite.astro'
 import pieces from '../assets/ill/hero2-pieces.json'
 import { families, substanceBySlug, shortName, illustrationFor, tintFor, helpLines, TELEGRAM_URL, SITE } from '../data/site'
-import { articles } from '../lib/articles'
+import { articles, formatDate } from '../lib/articles'
 
 const slugs = families.flatMap(f => f.slugs)
 const rowA = slugs.slice(0, 11), rowB = slugs.slice(11)
@@ -135,7 +135,7 @@ const eye = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-w
     <div class="rv"><div class="chat" data-reveal>
       <div class="top"><svg class="back" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="av"><Logo size={30} id="lgt" /></span><div><b>La Troisième Vague</b><span>chaîne Telegram</span></div></div>
       <div class="feed"><span class="day">Novembre 2026</span>
-        {news.map((a, i) => <a class="msg" href={a.path}><span class="from">La Troisième Vague</span><span class="prev"><span><small>{a.category}</small><h3 class="h5">{a.title}</h3></span><span class={`th ${tintFor(a.id)}`}><Ill name={a.cover} widths={[128]} sizes="64px" /></span></span><span class="meta"><Fragment set:html={eye} />{['5 novembre 2026', '29 octobre 2026', '22 octobre 2026'][i]}</span></a>)}
+        {news.map(a => <a class="msg" href={a.path}><span class="from">La Troisième Vague</span><span class="prev"><span><small>{a.category}</small><h3 class="h5">{a.title}</h3></span><span class={`th ${tintFor(a.id)}`}><Ill name={a.cover} widths={[128]} sizes="64px" /></span></span><span class="meta"><Fragment set:html={eye} />{formatDate(a.modified)}</span></a>)}
       </div>
     </div></div>
   </div></section>

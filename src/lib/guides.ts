@@ -1,6 +1,7 @@
 import { load } from 'cheerio'
 import { allGuideSources, guideCatalog, guideDescription, type GuideEntry } from '../content-data/guide-catalog'
 import { evidenceFor, applyEditorialUpdates } from '../content-data/guide-updates'
+import franceStatus from '../content-data/france-status.json' with { type: 'json' }
 export type Guide = GuideEntry & {
   blocks: string[]; retrievedAt: string; translatedAt: string; sourceWords: number; sourceBlockCount: number;
   contentHash: string; originalTitle: string; translationModel: string; translationVersion: string;
@@ -39,6 +40,13 @@ function withRiskNotices(guide: Guide, blocks: string[]) {
     return !startsRun ? [block] : heading ? [block, riskNotice] : [riskNotice, block]
   })
 }
+/** Legal status in France, checked against French sources (src/content-data/france-status.json), shown at the top of « Légalité ». */
+function franceBox(guide: Guide) {
+  const entry = (franceStatus as Record<string, { html: string; checked: string }>)[guide.path.replace(/\/$/, '').split('/').pop()!]
+  if (!entry) return null
+  const checked = new Date(entry.checked).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+  return `<div class="guide-editorial-update guide-france-status"><strong>Statut en France.</strong>${entry.html}<p class="checked">Vérifié le ${checked}.</p></div>`
+}
 function prepare(guide: Guide) {
   const $ = load(withRiskNotices(guide, applyEditorialUpdates(guide.id, guide.blocks, guide.contentHash)).join('\n'), null, false)
   if (guide.slug === 'ibogaine') {
@@ -56,8 +64,10 @@ function prepare(guide: Guide) {
   $('h2[id]').each((_, element) => {
     const label = sectionLabels[$(element).attr('id')!.replace(/[-_]/g, '').toLowerCase()]
     if (label) $(element).text(label)
+    if (label === 'Légalité') $(element).after(franceBox(guide) ?? '')
     if (label === 'Légalité') $(element).after('<p class="guide-editorial-update"><strong>Contexte juridique.</strong> Cette section traduit le contexte présenté par la source anglaise. Elle ne constitue pas une vérification actualisée des lois de chaque pays. Dépénalisation, autorisation médicale et légalité générale sont des notions distinctes.</p>')
   })
+  if (!$('.guide-france-status').length) { const box = franceBox(guide); const faq = $('h2#faq').first(); if (box) faq.length ? faq.before(box) : $.root().append(box) }
   // Some sources jump from h2 to h4: lower such a heading to one level below the previous heading.
   let previous = 2
   $('h2,h3,h4,h5,h6').each((_, element) => {

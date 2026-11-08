@@ -6,6 +6,7 @@ import { bodyFor, headFor, type Page } from './pages'
 export const retiredPosts: Record<string, string> = {
   '/comment-faire-son-propre-ayahuasca-chez-soit/': '/substances/ayahuasca/',
   '/microdosing-volumetrique-avec-le-lsd/': '/microdosing/lsd/',
+  '/johns-hopkins-ouvre-le-plus-grand-centre-de-recherche-psychedelique-du-monde/': '/recherche-psychedelique-2026/',
 }
 
 const categories: Record<string, string> = { information: 'Comprendre', actualites: 'Actualités', guides: 'Guides pratiques' }
@@ -35,7 +36,21 @@ export const seoTitles: Record<string, string> = {
   'ayahuasca-lancien-antidepresseur': 'Ayahuasca et dépression : premiers essais et limites',
 }
 
-export type Article = { id: string; path: string; title: string; description: string; category: string; categoryId: string; published: string; modified: string; html: string; text: string; cover: string; words: number }
+export type Article = { id: string; path: string; title: string; description: string; category: string; categoryId: string; published: string; modified: string; html: string; text: string; cover: string; words: number; current: boolean }
+
+/**
+ * Articles written or rewritten for the current site: src/content-data/articles/<slug>.json.
+ * A file whose slug matches a legacy post replaces that post's body and keeps its URL; any other slug is a new article at /<slug>/.
+ */
+type ArticleFile = { title: string; description: string; category: keyof typeof categories; published: string; modified: string; cover: string; html: string }
+const files = import.meta.glob('../content-data/articles/*.json', { eager: true, import: 'default' }) as Record<string, ArticleFile>
+const edited = new Map(Object.entries(files).map(([file, data]) => [file.split('/').pop()!.replace(/\.json$/, ''), data]))
+
+function fromFile(id: string, file: ArticleFile, path = `/${id}/`): Article {
+  const text = load(file.html).text().replace(/\s+/g, ' ').trim()
+  return { id, path, title: file.title, description: file.description, category: categories[file.category], categoryId: file.category,
+    published: file.published, modified: file.modified, html: file.html, text, cover: file.cover, words: text.split(/\s+/).length, current: true }
+}
 
 const clean = (title: string) => title.replace(/\s*[-–|]\s*La troisième vague\s*$/i, '').trim()
 
@@ -70,14 +85,15 @@ function parse(page: Page): Article {
     id: page.id, path: page.path, title: clean($('h1').first().text() || page.title), description: page.description || text.slice(0, 160),
     category: categories[categoryId] ?? 'Comprendre', categoryId,
     published: node?.datePublished ?? '2020-01-01', modified: node?.dateModified ?? node?.datePublished ?? '2020-01-01',
-    html, text, cover: covers[page.id] ?? 'library', words: text.split(/\s+/).length,
+    html, text, cover: covers[page.id] ?? 'library', words: text.split(/\s+/).length, current: false,
   }
 }
 
 const postPaths = new Set(manifest.postPaths)
-export const articles: Article[] = manifest.pages
-  .filter(p => postPaths.has(p.path) && !retiredPosts[p.path])
-  .map(p => parse(p))
-  .sort((a, b) => b.published.localeCompare(a.published))
+const legacy = manifest.pages.filter(p => postPaths.has(p.path) && !retiredPosts[p.path])
+export const articles: Article[] = [
+  ...legacy.map(p => edited.has(p.id) ? fromFile(p.id, edited.get(p.id)!, p.path) : parse(p)),
+  ...[...edited].filter(([id]) => !legacy.some(p => p.id === id)).map(([id, file]) => fromFile(id, file)),
+].sort((a, b) => b.modified.localeCompare(a.modified))
 
 export const formatDate = (iso: string) => new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
