@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { markdownPath, serveAsset, wantsMarkdown } from '../worker/markdown.ts'
+import { serveAsset, wantsMarkdown } from '../worker/markdown.ts'
 import { notFoundMarkdown, pageMarkdown } from '../scripts/build-markdown.mjs'
 
 const SITE = 'https://latroisiemevague.com'
@@ -30,14 +30,10 @@ test('Accept parsing prefers Markdown only when asked at least as strongly as HT
   assert.equal(wantsMarkdown(req('text/html,application/xhtml+xml,*/*;q=0.8')), false)
   assert.equal(wantsMarkdown(req('*/*')), false)
   assert.equal(wantsMarkdown(req('text/markdown;q=0')), false)
-})
-
-test('page paths map to their Markdown copy; files have none', () => {
-  assert.equal(markdownPath('/'), '/index.md')
-  assert.equal(markdownPath('/substances/lsd/'), '/substances/lsd/index.md')
-  assert.equal(markdownPath('/substances/lsd'), '/substances/lsd/index.md')
-  assert.equal(markdownPath('/og.jpg'), null)
-  assert.equal(markdownPath('/llms.txt'), null)
+  // A wildcard can still rank HTML above Markdown (RFC 9110 §12.5.1).
+  assert.equal(wantsMarkdown(req('text/markdown;q=0.1, text/*;q=0.9')), false)
+  assert.equal(wantsMarkdown(req('text/markdown, */*;q=0.8')), true)
+  assert.equal(wantsMarkdown(req('text/*')), false)
 })
 
 test('Accept: text/markdown on the home page returns Markdown with Vary: Accept', async () => {
@@ -65,6 +61,13 @@ test('a missing page returns 404 with a Markdown body that links to llms.txt and
   assert.match(body, /llms\.txt/)
   assert.match(body, /sitemap\.xml/)
   assert.equal((await get('/nexiste-pas/', 'text/html')).status, 404)
+  // Paths without a trailing slash (like audit probes) and stale .md links get the same Markdown 404.
+  for (const path of ['/__probe-404', '/ancienne-page/index.md']) {
+    const missing = await get(path, 'text/markdown')
+    assert.equal(missing.status, 404, path)
+    assert.match(missing.headers.get('content-type')!, /^text\/markdown/, path)
+  }
+  assert.match((await get('/ancienne-page/index.md', '*/*')).headers.get('content-type')!, /^text\/markdown/)
 })
 
 test('redirects still apply to Markdown requests', async () => {
@@ -72,7 +75,10 @@ test('redirects still apply to Markdown requests', async () => {
   assert.equal(res.status, 301)
   assert.equal(res.headers.get('location'), '/a-propos/')
   assert.match(res.headers.get('vary')!, /Accept/)
-  assert.equal((await get('/substances/lsd', 'text/markdown')).status, 200)
+  // No duplicate Markdown URL without the trailing slash: the canonical redirect applies.
+  const noSlash = await get('/substances/lsd', 'text/markdown')
+  assert.equal(noSlash.status, 301)
+  assert.equal(noSlash.headers.get('location'), '/substances/lsd/')
 })
 
 test('HEAD returns Markdown headers without a body, and files are served untouched', async () => {

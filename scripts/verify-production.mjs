@@ -47,4 +47,11 @@ for (const [from, to] of [['/about/', '/a-propos/'], ['/privacy/', '/confidentia
   const response = await fetch(`https://latroisiemevague.com${from}`, { signal: AbortSignal.timeout(15000) })
   assert.equal(new URL(response.url).pathname, to, `${from} should redirect to ${to}`)
 }
+// _headers still apply now that most requests go through the Worker.
+const home = await fetchAs('/', 'text/html')
+assert.equal(home.headers.get('x-content-type-options'), 'nosniff', 'HTML lost X-Content-Type-Options from _headers')
+const asset = (await readFile('dist/index.html', 'utf8')).match(/\/_astro\/[^"' )]+\.(?:css|js|webp)/)?.[0]
+assert(asset, 'no /_astro/ asset referenced from the home page')
+const assetResponse = await fetch(`https://latroisiemevague.com${asset}`, { signal: AbortSignal.timeout(15000) })
+assert.match(assetResponse.headers.get('cache-control') ?? '', /immutable/, `${asset} lost its immutable Cache-Control`)
 console.log('Verified Markdown negotiation, the Markdown 404 and the trust-page redirects.')
