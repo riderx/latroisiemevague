@@ -46,7 +46,11 @@
   },
   "routes": [
     {
-      "pattern": "v2.latroisiemevague.com",
+      "pattern": "latroisiemevague.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.latroisiemevague.com",
       "custom_domain": true
     }
   ]

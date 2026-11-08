@@ -1,6 +1,6 @@
 # La Troisième Vague
 
-Astro migration of `https://latroisiemevague.com`, deployed to a Cloudflare Worker at **https://v2.latroisiemevague.com**. The original WordPress domain is unchanged.
+Astro migration of `https://latroisiemevague.com`, deployed to a Cloudflare Worker at **https://latroisiemevague.com**. The www hostname redirects to the canonical domain.
 
 ## Development and verification
 
@@ -47,6 +47,6 @@ bun run build
 bun run deploy
 ```
 
-`wrangler.jsonc` owns the `latroisiemevague-v2` Worker, its static assets, D1 binding, email restrictions, cron, and `v2.latroisiemevague.com` custom domain. Cloudflare Email Sending must remain enabled for `latroisiemevague.com` with its SPF/DKIM records.
+`wrangler.jsonc` owns the `latroisiemevague-v2` Worker, its static assets, D1 binding, email restrictions, cron, and `latroisiemevague.com` and `www.latroisiemevague.com` custom domains. Cloudflare Email Sending must remain enabled for `latroisiemevague.com` with its SPF/DKIM records.
 
-Pushes to `main` run checks and deploy through GitHub Actions. Repository secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. The token needs access to Workers deployment, the zone's Workers routes, D1 migrations, and Email Sending bindings. Existing WordPress and Pages hosting are not removed.
+Pushes to `main` run checks and deploy through GitHub Actions. Repository secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. The token needs access to Workers deployment, the zone's Workers routes, D1 migrations, and Email Sending bindings. The WordPress server and legacy Pages project are not deleted; the public domain is served by the Worker.

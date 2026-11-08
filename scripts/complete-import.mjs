@@ -52,5 +52,5 @@ for (let page = 1; page <= count; page++) {
 }
 manifest.postPaths = posts.map(post => new URL(post.link).pathname)
 await writeFile(new URL('manifest.json', content), JSON.stringify(manifest, null, 2) + '\n')
-await writeFile(new URL('public/_redirects', root), Object.entries(manifest.redirects).map(([from,to]) => `${from} ${to} 301`).join('\n') + '\n/sitemap_index.xml /sitemap.xml 301\n')
+await writeFile(new URL('public/_redirects', root), Object.entries(manifest.redirects).map(([from,to]) => `${from} ${to} 301`).join('\n') + '\n/sitemap_index.xml /sitemap.xml 301\nhttps://www.latroisiemevague.com/* https://latroisiemevague.com/:splat 301\n')
 console.log(`Completed blog pagination: ${posts.length} articles across ${count} pages`)
