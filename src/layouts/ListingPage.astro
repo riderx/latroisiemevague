@@ -26,7 +26,6 @@ const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', na
 <Base title={page.title} description={page.description} path={path} schema={schema}>
   <section class="lhead"><div class="in">
     <div>
-      <nav class="crumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">›</span><span>{category === 'psychedelics' ? 'Substances' : 'Microdosage'}</span></nav>
       <h1>{category === 'psychedelics' ? <>Les substances, <em>une par une</em></> : <>Le microdosage, <em>sans raccourcis</em></>}</h1>
       <p class="lede">{page.introduction}</p>
       {groups.length > 1 && <p class="jump">{groups.map(g => <a href={`#${g.id}`}>{g.title}</a>)}</p>}

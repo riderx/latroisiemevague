@@ -69,3 +69,6 @@
 .proto .warn{padding-top:18px;border-top:1px solid rgba(31,37,71,.12)}
 .psec-h{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}
 .psec-h h2{max-width:none}
+.lhead .in{padding-top:44px;padding-bottom:40px;gap:40px}
+.lhead h1{margin-top:0}
+.lhead .art{max-width:300px}

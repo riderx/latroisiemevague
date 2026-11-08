@@ -18,7 +18,6 @@ const schema = { '@context': 'https://schema.org', '@graph': [
 ---
 <Base title={`${article.title} | La Troisième Vague`} description={article.description} path={article.path} type="article" schema={schema} published={article.published} modified={article.modified}>
   <section class="ahead"><div class="in">
-    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">›</span><a href="/blog/">Articles</a><span aria-hidden="true">›</span><span>{article.category}</span></nav>
     <h1>{article.title}</h1>
     <p class="byline"><span>Publié le <b><time datetime={article.published}>{formatDate(article.published)}</time></b></span><span>{Math.ceil(article.words / 230)} min de lecture</span><span>{article.category}</span></p>
     <div class={`cover ${tintFor(article.id)}`}><Ill name={article.cover} widths={[240, 360, 480]} sizes="(max-width: 960px) 60vw, 260px" loading="eager" fetchpriority="high" /></div>

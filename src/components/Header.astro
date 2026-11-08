@@ -11,7 +11,8 @@ const current = Astro.url.pathname
 const famLinks = await Promise.all(families.map(async f => ({ ...f, links: await Promise.all(f.slugs.map(async slug => {
   const g = substanceBySlug(slug); return { name: shortName(slug, g.name), href: g.path, img: await thumb(illustrationFor(slug)) }
 })) })))
-const latest = await Promise.all(articles.slice(0, 6).map(async a => ({ title: a.title, href: a.path, category: a.category, img: await thumb(a.cover) })))
+const menuArticles = articles.slice(0, 6); [menuArticles[1], menuArticles[4]] = [menuArticles[4], menuArticles[1]]
+const latest = await Promise.all(menuArticles.map(async a => ({ title: a.title, href: a.path, category: a.category, img: await thumb(a.cover) })))
 const featSubst = await thumb('s-psilocybine'), featArt = await thumb('library')
 const chev = '<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.3"/></svg>'
 const isActive = (href: string) => current === href || (href !== '/' && current.startsWith(href))

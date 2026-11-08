@@ -101,3 +101,6 @@
 .colophon span{display:inline-grid;width:18px;height:18px;color:var(--primary)}
 .colophon time{color:var(--ink);font-weight:500}
 .ghead .in:first-child{padding-bottom:56px}
+.ghead .in:first-child{padding-top:40px;padding-bottom:44px}
+.ghead h1{margin-top:0}
+.gplate{max-height:360px}
