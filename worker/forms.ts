@@ -1,3 +1,4 @@
+import { serveAsset } from './markdown.ts'
 const recipients = ['martindonadieu@gmail.com', 'orion.aubert@gmail.com']
 const success = 'Merci ! Votre demande a bien été enregistrée.'
 const json = (message: string, status = 200) => Response.json({ message }, { status, headers: { 'Cache-Control': 'no-store' } })
@@ -30,7 +31,7 @@ export async function deliver(env: Env) {
 }
 export default {
   async fetch(request, env, ctx) {
-    if (new URL(request.url).pathname !== '/api/forms') return env.ASSETS.fetch(request)
+    if (new URL(request.url).pathname !== '/api/forms') return serveAsset(request, env.ASSETS)
     if (request.method !== 'POST') return new Response('Method not allowed', { status: 405, headers: { Allow: 'POST' } })
     const origin = request.headers.get('origin')
     if (origin && origin !== new URL(request.url).origin) return json('Origine non autorisée.', 403)

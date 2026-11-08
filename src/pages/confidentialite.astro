@@ -1,0 +1,30 @@
+---
+import '../styles/pages.css'
+import Base from '../layouts/Base.astro'
+import Arrow from '../components/Arrow.astro'
+---
+<Base title="Confidentialité : données collectées et vos droits | La Troisième Vague" description="Ce que La Troisième Vague collecte avec le formulaire de contact, la lettre d’information et la mesure d’audience, qui y a accès, et comment exercer vos droits.">
+  <section class="pagehead"><div class="in">
+    <h1>Confidentialité</h1>
+    <p class="lede">Ce que nous collectons, pourquoi, qui y a accès, et comment exercer vos droits. Le site n’affiche aucune publicité et ne vend aucune donnée.</p>
+  </div></section>
+  <section class="sec"><div class="in text">
+    <h2>Le formulaire de contact</h2>
+    <p>Quand vous nous écrivez, nous enregistrons votre nom, votre adresse email, le sujet et votre message, avec la date d’envoi. Ces données servent uniquement à vous répondre. Elles sont stockées dans une base de données Cloudflare D1, puis transmises par email aux deux personnes qui répondent aux messages. Leurs boîtes de réception sont hébergées par Google (Gmail).</p>
+    <h2>La lettre d’information</h2>
+    <p>Si vous vous inscrivez, nous enregistrons votre adresse email et la date d’inscription. Chaque inscription est aussi envoyée par email aux deux mêmes personnes, sur Gmail. Nous utilisons votre adresse seulement pour vous envoyer la lettre, une fois par mois au plus. Pour vous désinscrire, écrivez-nous depuis la page contact : nous supprimons votre adresse.</p>
+    <h2>Protection contre les abus</h2>
+    <p>Pour limiter les envois automatiques, nous enregistrons une empreinte calculée à partir de votre adresse IP et de l’heure d’envoi. C’est une donnée pseudonymisée : elle ne contient pas l’adresse en clair, mais elle reste liée à elle. L’empreinte est supprimée automatiquement quelques minutes après la fin de la période de limitation.</p>
+    <h2>Les données de l’ancien site</h2>
+    <p>L’ancienne version du site, sous WordPress, avait des comptes, des commentaires, un formulaire de contact et une lettre d’information. Lors du passage au nouveau site, nous avons conservé dans la même base de données les adresses email, les noms affichés, les dates, les rôles des comptes et le statut d’inscription à la lettre. Ces données sont gardées comme archive de l’ancien site. Les mêmes droits s’appliquent : vous pouvez en demander la consultation ou la suppression.</p>
+    <h2>La mesure d’audience</h2>
+    <p>Nous mesurons la fréquentation avec <a href="https://datafa.st/" rel="noopener">DataFast</a> : pages vues, provenance des visites, type d’appareil et pays. Ces statistiques nous servent à savoir quelles pages sont utiles. Pour le détail des données traitées par ce service, consultez <a href="https://datafa.st/privacy-policy" rel="noopener">sa politique de confidentialité</a>.</p>
+    <h2>Hébergement</h2>
+    <p>Le site, la base de données et l’envoi des emails reposent sur Cloudflare. Comme tout hébergeur, Cloudflare traite les données techniques nécessaires pour afficher les pages, dont l’adresse IP.</p>
+    <h2>Durée de conservation</h2>
+    <p>Les messages, les inscriptions et l’archive de l’ancien site sont conservés jusqu’à ce que vous demandiez leur suppression. L’empreinte anti-abus est supprimée quelques minutes après la fin de sa période.</p>
+    <h2>Vos droits</h2>
+    <p>Conformément au RGPD, vous pouvez demander l’accès à vos données, leur rectification ou leur suppression, et vous opposer à leur traitement. Écrivez-nous depuis la page contact en précisant l’adresse email concernée. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la <a href="https://www.cnil.fr/fr/plaintes" rel="noopener">CNIL</a>.</p>
+    <p style="margin-top:26px"><a class="btn p" href="/contact/">Nous contacter<Arrow /></a></p>
+  </div></section>
+</Base>
