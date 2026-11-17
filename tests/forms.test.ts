@@ -25,7 +25,7 @@ function setup(failRecipient = '') {
   async function submit(values: Record<string, string> = {}, headers = {}) {
     pending = []
     const form = new FormData()
-    for (const [key, value] of Object.entries({ kind: 'contact', 'your-name': 'Test', 'your-email': 'person@example.org', 'your-subject': 'Question', 'your-message': 'Bonjour', ...values })) form.set(key, value)
+    for (const [key, value] of Object.entries({ kind: 'contact', 'your-name': 'Test', 'your-email': 'person@example.org', 'your-subject': 'Question', 'your-message': 'Bonjour', elapsed: '5000', ...values })) form.set(key, value)
     const response = await worker.fetch(new Request('https://latroisiemevague.com/api/forms', { method: 'POST', body: form, headers: { accept: 'application/json', origin: 'https://latroisiemevague.com', ...headers } }), env, ctx)
     await Promise.all(pending)
     return response
@@ -64,6 +64,8 @@ test('invalid input, cross-origin requests and honeypots never store or email', 
   assert.equal((await submit({ 'your-subject': 'line\r\ninjection' })).status, 400)
   assert.equal((await submit({}, { origin: 'https://unrelated.example' })).status, 403)
   assert.equal((await submit({ website: 'spam.example' })).status, 200)
+  assert.equal((await submit({ elapsed: '1200' })).status, 200)
+  assert.equal((await submit({ elapsed: '' })).status, 400)
   assert.equal(db.prepare('SELECT count(*) AS n FROM submissions').get()!.n, 0)
   assert.equal(sent.length, 0)
 })

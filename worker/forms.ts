@@ -55,6 +55,10 @@ export default {
       catch { return json('Formulaire invalide.', 400) }
       const field = (name: string) => typeof data.get(name) === 'string' ? String(data.get(name)).trim() : ''
       if (field('website')) return json(success)
+      // The form script sends how long the page was open. Scripts that post directly send nothing.
+      const elapsed = Number(field('elapsed'))
+      if (!field('elapsed') || !Number.isFinite(elapsed)) return json('Activez JavaScript pour envoyer ce formulaire.', 400)
+      if (elapsed < 3000) return json(success)
       const kind = field('kind'), email = (field('your-email') || field('email')).toLowerCase()
       const name = field('your-name'), subject = field('your-subject'), message = field('your-message')
       if (!['contact', 'newsletter'].includes(kind) || email.length > 254 || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) return json('Veuillez saisir une adresse email valide.', 400)
